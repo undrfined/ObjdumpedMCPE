@@ -1,0 +1,166 @@
+  83d984:	b5f0      	push	{r4, r5, r6, r7, lr}
+  83d986:	b087      	sub	sp, #28
+  83d988:	ae02      	add	r6, sp, #8
+  83d98a:	4604      	mov	r4, r0
+  83d98c:	460d      	mov	r5, r1
+  83d98e:	4630      	mov	r0, r6
+  83d990:	f63d ebbe 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83d994:	f104 000c 	add.w	r0, r4, #12
+  83d998:	4631      	mov	r1, r6
+  83d99a:	f2a1 e868 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83d99e:	4858      	ldr	r0, [pc, #352]	; (83db00 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x17c>)
+  83d9a0:	4f54      	ldr	r7, [pc, #336]	; (83daf4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x170>)
+  83d9a2:	4478      	add	r0, pc
+  83d9a4:	9902      	ldr	r1, [sp, #8]
+  83d9a6:	583a      	ldr	r2, [r7, r0]
+  83d9a8:	f1a1 000c 	sub.w	r0, r1, #12
+  83d9ac:	4290      	cmp	r0, r2
+  83d9ae:	d120      	bne.n	83d9f2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6e>
+  83d9b0:	4628      	mov	r0, r5
+  83d9b2:	f63e e9fc 	blx	67bdac <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  83d9b6:	6120      	str	r0, [r4, #16]
+  83d9b8:	4628      	mov	r0, r5
+  83d9ba:	f63e e9f8 	blx	67bdac <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  83d9be:	6160      	str	r0, [r4, #20]
+  83d9c0:	4628      	mov	r0, r5
+  83d9c2:	f63e e850 	blx	67ba64 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  83d9c6:	ae01      	add	r6, sp, #4
+  83d9c8:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  83d9cc:	4629      	mov	r1, r5
+  83d9ce:	4630      	mov	r0, r6
+  83d9d0:	f63d eb9e 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83d9d4:	f104 0020 	add.w	r0, r4, #32
+  83d9d8:	4631      	mov	r1, r6
+  83d9da:	f2a1 e848 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83d9de:	484c      	ldr	r0, [pc, #304]	; (83db10 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x18c>)
+  83d9e0:	9901      	ldr	r1, [sp, #4]
+  83d9e2:	4478      	add	r0, pc
+  83d9e4:	583a      	ldr	r2, [r7, r0]
+  83d9e6:	f1a1 000c 	sub.w	r0, r1, #12
+  83d9ea:	4290      	cmp	r0, r2
+  83d9ec:	d113      	bne.n	83da16 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x92>
+  83d9ee:	b007      	add	sp, #28
+  83d9f0:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  83d9f2:	4a44      	ldr	r2, [pc, #272]	; (83db04 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x180>)
+  83d9f4:	4b41      	ldr	r3, [pc, #260]	; (83dafc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  83d9f6:	447a      	add	r2, pc
+  83d9f8:	589b      	ldr	r3, [r3, r2]
+  83d9fa:	1f0a      	subs	r2, r1, #4
+  83d9fc:	b1eb      	cbz	r3, 83da3a <ResourcePackDataInfoPacket::read(BinaryStream&)+0xb6>
+  83d9fe:	f3bf 8f5b 	dmb	ish
+  83da02:	e852 1f00 	ldrex	r1, [r2]
+  83da06:	1e4b      	subs	r3, r1, #1
+  83da08:	e842 3600 	strex	r6, r3, [r2]
+  83da0c:	2e00      	cmp	r6, #0
+  83da0e:	d1f8      	bne.n	83da02 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x7e>
+  83da10:	f3bf 8f5b 	dmb	ish
+  83da14:	e014      	b.n	83da40 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xbc>
+  83da16:	4a3f      	ldr	r2, [pc, #252]	; (83db14 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x190>)
+  83da18:	4b38      	ldr	r3, [pc, #224]	; (83dafc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  83da1a:	447a      	add	r2, pc
+  83da1c:	589b      	ldr	r3, [r3, r2]
+  83da1e:	1f0a      	subs	r2, r1, #4
+  83da20:	b1a3      	cbz	r3, 83da4c <ResourcePackDataInfoPacket::read(BinaryStream&)+0xc8>
+  83da22:	f3bf 8f5b 	dmb	ish
+  83da26:	e852 1f00 	ldrex	r1, [r2]
+  83da2a:	1e4b      	subs	r3, r1, #1
+  83da2c:	e842 3700 	strex	r7, r3, [r2]
+  83da30:	2f00      	cmp	r7, #0
+  83da32:	d1f8      	bne.n	83da26 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xa2>
+  83da34:	f3bf 8f5b 	dmb	ish
+  83da38:	e00b      	b.n	83da52 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xce>
+  83da3a:	6811      	ldr	r1, [r2, #0]
+  83da3c:	1e4b      	subs	r3, r1, #1
+  83da3e:	6013      	str	r3, [r2, #0]
+  83da40:	2900      	cmp	r1, #0
+  83da42:	dcb5      	bgt.n	83d9b0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x2c>
+  83da44:	a903      	add	r1, sp, #12
+  83da46:	f2a0 efc2 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83da4a:	e7b1      	b.n	83d9b0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x2c>
+  83da4c:	6811      	ldr	r1, [r2, #0]
+  83da4e:	1e4b      	subs	r3, r1, #1
+  83da50:	6013      	str	r3, [r2, #0]
+  83da52:	2900      	cmp	r1, #0
+  83da54:	dccb      	bgt.n	83d9ee <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6a>
+  83da56:	a904      	add	r1, sp, #16
+  83da58:	f2a0 efb8 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83da5c:	e7c7      	b.n	83d9ee <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6a>
+  83da5e:	4a24      	ldr	r2, [pc, #144]	; (83daf0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x16c>)
+  83da60:	4604      	mov	r4, r0
+  83da62:	4b24      	ldr	r3, [pc, #144]	; (83daf4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x170>)
+  83da64:	447a      	add	r2, pc
+  83da66:	9902      	ldr	r1, [sp, #8]
+  83da68:	f1a1 000c 	sub.w	r0, r1, #12
+  83da6c:	589a      	ldr	r2, [r3, r2]
+  83da6e:	4290      	cmp	r0, r2
+  83da70:	d033      	beq.n	83dada <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  83da72:	4a21      	ldr	r2, [pc, #132]	; (83daf8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x174>)
+  83da74:	4b21      	ldr	r3, [pc, #132]	; (83dafc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  83da76:	447a      	add	r2, pc
+  83da78:	589b      	ldr	r3, [r3, r2]
+  83da7a:	1f0a      	subs	r2, r1, #4
+  83da7c:	b383      	cbz	r3, 83dae0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x15c>
+  83da7e:	f3bf 8f5b 	dmb	ish
+  83da82:	e852 1f00 	ldrex	r1, [r2]
+  83da86:	1e4b      	subs	r3, r1, #1
+  83da88:	e842 3700 	strex	r7, r3, [r2]
+  83da8c:	2f00      	cmp	r7, #0
+  83da8e:	d1f8      	bne.n	83da82 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xfe>
+  83da90:	f3bf 8f5b 	dmb	ish
+  83da94:	2900      	cmp	r1, #0
+  83da96:	dc20      	bgt.n	83dada <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  83da98:	a905      	add	r1, sp, #20
+  83da9a:	e01c      	b.n	83dad6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x152>
+  83da9c:	4a1a      	ldr	r2, [pc, #104]	; (83db08 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x184>)
+  83da9e:	4604      	mov	r4, r0
+  83daa0:	9901      	ldr	r1, [sp, #4]
+  83daa2:	447a      	add	r2, pc
+  83daa4:	f1a1 000c 	sub.w	r0, r1, #12
+  83daa8:	58ba      	ldr	r2, [r7, r2]
+  83daaa:	4290      	cmp	r0, r2
+  83daac:	d015      	beq.n	83dada <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  83daae:	4a17      	ldr	r2, [pc, #92]	; (83db0c <ResourcePackDataInfoPacket::read(BinaryStream&)+0x188>)
+  83dab0:	4b12      	ldr	r3, [pc, #72]	; (83dafc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+  83dab2:	447a      	add	r2, pc
+  83dab4:	589b      	ldr	r3, [r3, r2]
+  83dab6:	1f0a      	subs	r2, r1, #4
+  83dab8:	b1b3      	cbz	r3, 83dae8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x164>
+  83daba:	f3bf 8f5b 	dmb	ish
+  83dabe:	e852 1f00 	ldrex	r1, [r2]
+  83dac2:	1e4b      	subs	r3, r1, #1
+  83dac4:	e842 3700 	strex	r7, r3, [r2]
+  83dac8:	2f00      	cmp	r7, #0
+  83daca:	d1f8      	bne.n	83dabe <ResourcePackDataInfoPacket::read(BinaryStream&)+0x13a>
+  83dacc:	f3bf 8f5b 	dmb	ish
+  83dad0:	2900      	cmp	r1, #0
+  83dad2:	dc02      	bgt.n	83dada <ResourcePackDataInfoPacket::read(BinaryStream&)+0x156>
+  83dad4:	a906      	add	r1, sp, #24
+  83dad6:	f2a0 ef7a 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83dada:	4620      	mov	r0, r4
+  83dadc:	f63b ec0c 	blx	6792f8 <_Unwind_Resume@plt>
+  83dae0:	6811      	ldr	r1, [r2, #0]
+  83dae2:	1e4b      	subs	r3, r1, #1
+  83dae4:	6013      	str	r3, [r2, #0]
+  83dae6:	e7d5      	b.n	83da94 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x110>
+  83dae8:	6811      	ldr	r1, [r2, #0]
+  83daea:	1e4b      	subs	r3, r1, #1
+  83daec:	6013      	str	r3, [r2, #0]
+  83daee:	e7ef      	b.n	83dad0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14c>
+  83daf0:	e51c      	b.n	83d52c <GameRulesChangedPacket::~GameRulesChangedPacket()+0x9c>
+  83daf2:	0152      	lsls	r2, r2, #5
+  83daf4:	8bdc      	ldrh	r4, [r3, #30]
+  83daf6:	ffff e50a 	vabal.u<illegal width 64>	q15, d15, d10
+  83dafa:	0152      	lsls	r2, r2, #5
+  83dafc:	8be0      	ldrh	r0, [r4, #30]
+  83dafe:	ffff e5de 	vsli.64	q15, q7, #63	; 0x3f
+  83db02:	0152      	lsls	r2, r2, #5
+  83db04:	e58a      	b.n	83d61c <GameRulesChangedPacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0xc>
+  83db06:	0152      	lsls	r2, r2, #5
+  83db08:	e4de      	b.n	83d4c8 <GameRulesChangedPacket::~GameRulesChangedPacket()+0x38>
+  83db0a:	0152      	lsls	r2, r2, #5
+  83db0c:	e4ce      	b.n	83d4ac <GameRulesChangedPacket::~GameRulesChangedPacket()+0x1c>
+  83db0e:	0152      	lsls	r2, r2, #5
+  83db10:	e59e      	b.n	83d650 <void ReadOnlyBinaryStream::readType<GameRulesChangedPacketData>(GameRulesChangedPacketData&)+0x30>
+  83db12:	0152      	lsls	r2, r2, #5
+  83db14:	e566      	b.n	83d5e4 <GameRulesChangedPacket::getName() const+0xc>
+  83db16:	0152      	lsls	r2, r2, #5

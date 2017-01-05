@@ -1,0 +1,132 @@
+  843894:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  843898:	b081      	sub	sp, #4
+  84389a:	ed2d 8b04 	vpush	{d8-d9}
+  84389e:	b088      	sub	sp, #32
+  8438a0:	ae02      	add	r6, sp, #8
+  8438a2:	4605      	mov	r5, r0
+  8438a4:	4689      	mov	r9, r1
+  8438a6:	4630      	mov	r0, r6
+  8438a8:	f638 e93c 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  8438ac:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  8438b0:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  8438b4:	4648      	mov	r0, r9
+  8438b6:	f637 ef50 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8438ba:	f105 0718 	add.w	r7, r5, #24
+  8438be:	4680      	mov	r8, r0
+  8438c0:	4641      	mov	r1, r8
+  8438c2:	4638      	mov	r0, r7
+  8438c4:	f63a e804 	blx	67d8d0 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  8438c8:	f1b8 0f00 	cmp.w	r8, #0
+  8438cc:	d053      	beq.n	843976 <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  8438ce:	4841      	ldr	r0, [pc, #260]	; (8439d4 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  8438d0:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  8438d4:	4940      	ldr	r1, [pc, #256]	; (8439d8 <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  8438d6:	f106 0410 	add.w	r4, r6, #16
+  8438da:	4478      	add	r0, pc
+  8438dc:	f04f 0b00 	mov.w	fp, #0
+  8438e0:	eb01 0a00 	add.w	sl, r1, r0
+  8438e4:	493e      	ldr	r1, [pc, #248]	; (8439e0 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  8438e6:	5809      	ldr	r1, [r1, r0]
+  8438e8:	9101      	str	r1, [sp, #4]
+  8438ea:	493f      	ldr	r1, [pc, #252]	; (8439e8 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  8438ec:	5808      	ldr	r0, [r1, r0]
+  8438ee:	9000      	str	r0, [sp, #0]
+  8438f0:	e019      	b.n	843926 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  8438f2:	1f0a      	subs	r2, r1, #4
+  8438f4:	9900      	ldr	r1, [sp, #0]
+  8438f6:	b169      	cbz	r1, 843914 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  8438f8:	46bc      	mov	ip, r7
+  8438fa:	f3bf 8f5b 	dmb	ish
+  8438fe:	e852 1f00 	ldrex	r1, [r2]
+  843902:	1e4b      	subs	r3, r1, #1
+  843904:	e842 3700 	strex	r7, r3, [r2]
+  843908:	2f00      	cmp	r7, #0
+  84390a:	d1f8      	bne.n	8438fe <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  84390c:	f3bf 8f5b 	dmb	ish
+  843910:	4667      	mov	r7, ip
+  843912:	e002      	b.n	84391a <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  843914:	6811      	ldr	r1, [r2, #0]
+  843916:	1e4b      	subs	r3, r1, #1
+  843918:	6013      	str	r3, [r2, #0]
+  84391a:	2900      	cmp	r1, #0
+  84391c:	dc27      	bgt.n	84396e <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  84391e:	a907      	add	r1, sp, #28
+  843920:	f29b e854 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  843924:	e023      	b.n	84396e <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  843926:	aa07      	add	r2, sp, #28
+  843928:	4620      	mov	r0, r4
+  84392a:	4651      	mov	r1, sl
+  84392c:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  843930:	f29b e854 	blx	ade9dc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x364>
+  843934:	4630      	mov	r0, r6
+  843936:	4649      	mov	r1, r9
+  843938:	f639 efd0 	blx	67d8dc <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  84393c:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  843940:	4288      	cmp	r0, r1
+  843942:	d00a      	beq.n	84395a <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  843944:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  843948:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  84394c:	4621      	mov	r1, r4
+  84394e:	f29b e836 	blx	ade9bc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x344>
+  843952:	69e8      	ldr	r0, [r5, #28]
+  843954:	3014      	adds	r0, #20
+  843956:	61e8      	str	r0, [r5, #28]
+  843958:	e003      	b.n	843962 <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  84395a:	4638      	mov	r0, r7
+  84395c:	4631      	mov	r1, r6
+  84395e:	f639 efc4 	blx	67d8e8 <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  843962:	9906      	ldr	r1, [sp, #24]
+  843964:	9a01      	ldr	r2, [sp, #4]
+  843966:	f1a1 000c 	sub.w	r0, r1, #12
+  84396a:	4290      	cmp	r0, r2
+  84396c:	d1c1      	bne.n	8438f2 <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  84396e:	f10b 0b01 	add.w	fp, fp, #1
+  843972:	45c3      	cmp	fp, r8
+  843974:	d3d7      	bcc.n	843926 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  843976:	b008      	add	sp, #32
+  843978:	ecbd 8b04 	vpop	{d8-d9}
+  84397c:	b001      	add	sp, #4
+  84397e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  843982:	4a16      	ldr	r2, [pc, #88]	; (8439dc <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  843984:	4604      	mov	r4, r0
+  843986:	4b16      	ldr	r3, [pc, #88]	; (8439e0 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  843988:	447a      	add	r2, pc
+  84398a:	9906      	ldr	r1, [sp, #24]
+  84398c:	f1a1 000c 	sub.w	r0, r1, #12
+  843990:	589a      	ldr	r2, [r3, r2]
+  843992:	4290      	cmp	r0, r2
+  843994:	d016      	beq.n	8439c4 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  843996:	4a13      	ldr	r2, [pc, #76]	; (8439e4 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  843998:	4b13      	ldr	r3, [pc, #76]	; (8439e8 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  84399a:	447a      	add	r2, pc
+  84399c:	589b      	ldr	r3, [r3, r2]
+  84399e:	1f0a      	subs	r2, r1, #4
+  8439a0:	b19b      	cbz	r3, 8439ca <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  8439a2:	f3bf 8f5b 	dmb	ish
+  8439a6:	e852 1f00 	ldrex	r1, [r2]
+  8439aa:	1e4b      	subs	r3, r1, #1
+  8439ac:	e842 3700 	strex	r7, r3, [r2]
+  8439b0:	2f00      	cmp	r7, #0
+  8439b2:	d1f8      	bne.n	8439a6 <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  8439b4:	f3bf 8f5b 	dmb	ish
+  8439b8:	2900      	cmp	r1, #0
+  8439ba:	bfdc      	itt	le
+  8439bc:	f10d 011c 	addle.w	r1, sp, #28
+  8439c0:	f29b e804 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  8439c4:	4620      	mov	r0, r4
+  8439c6:	f635 ec98 	blx	6792f8 <_Unwind_Resume@plt>
+  8439ca:	6811      	ldr	r1, [r2, #0]
+  8439cc:	1e4b      	subs	r3, r1, #1
+  8439ce:	6013      	str	r3, [r2, #0]
+  8439d0:	e7f2      	b.n	8439b8 <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  8439d2:	bf00      	nop
+  8439d4:	86a6      	strh	r6, [r4, #52]	; 0x34
+  8439d6:	0152      	lsls	r2, r2, #5
+  8439d8:	435e      	muls	r6, r3
+  8439da:	ffe7 85f8 	vsli.64	q12, q12, #39	; 0x27
+  8439de:	0152      	lsls	r2, r2, #5
+  8439e0:	8bdc      	ldrh	r4, [r3, #30]
+  8439e2:	ffff 85e6 	vmls.f<illegal width 64>	q12, <illegal reg q15.5>, d22[0]
+  8439e6:	0152      	lsls	r2, r2, #5
+  8439e8:	8be0      	ldrh	r0, [r4, #30]
+  8439ea:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29

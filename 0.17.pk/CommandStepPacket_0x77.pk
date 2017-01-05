@@ -1,0 +1,344 @@
+  840cd4:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+  840cd8:	b0bc      	sub	sp, #240	; 0xf0
+  840cda:	4604      	mov	r4, r0
+  840cdc:	48c2      	ldr	r0, [pc, #776]	; (840fe8 <CommandStepPacket::read(BinaryStream&)+0x314>)
+  840cde:	f8df 830c 	ldr.w	r8, [pc, #780]	; 840fec <CommandStepPacket::read(BinaryStream&)+0x318>
+  840ce2:	ae07      	add	r6, sp, #28
+  840ce4:	4478      	add	r0, pc
+  840ce6:	460d      	mov	r5, r1
+  840ce8:	f858 0000 	ldr.w	r0, [r8, r0]
+  840cec:	6800      	ldr	r0, [r0, #0]
+  840cee:	903b      	str	r0, [sp, #236]	; 0xec
+  840cf0:	4630      	mov	r0, r6
+  840cf2:	f63a ea0e 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  840cf6:	f104 000c 	add.w	r0, r4, #12
+  840cfa:	4631      	mov	r1, r6
+  840cfc:	f29d eeb6 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  840d00:	48bf      	ldr	r0, [pc, #764]	; (841000 <CommandStepPacket::read(BinaryStream&)+0x32c>)
+  840d02:	4fbc      	ldr	r7, [pc, #752]	; (840ff4 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  840d04:	4478      	add	r0, pc
+  840d06:	9907      	ldr	r1, [sp, #28]
+  840d08:	583a      	ldr	r2, [r7, r0]
+  840d0a:	f1a1 000c 	sub.w	r0, r1, #12
+  840d0e:	4290      	cmp	r0, r2
+  840d10:	d177      	bne.n	840e02 <CommandStepPacket::read(BinaryStream&)+0x12e>
+  840d12:	ae06      	add	r6, sp, #24
+  840d14:	4629      	mov	r1, r5
+  840d16:	4630      	mov	r0, r6
+  840d18:	f63a e9fa 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  840d1c:	f104 0010 	add.w	r0, r4, #16
+  840d20:	4631      	mov	r1, r6
+  840d22:	f29d eea4 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  840d26:	48ba      	ldr	r0, [pc, #744]	; (841010 <CommandStepPacket::read(BinaryStream&)+0x33c>)
+  840d28:	9906      	ldr	r1, [sp, #24]
+  840d2a:	4478      	add	r0, pc
+  840d2c:	583a      	ldr	r2, [r7, r0]
+  840d2e:	f1a1 000c 	sub.w	r0, r1, #12
+  840d32:	4290      	cmp	r0, r2
+  840d34:	d178      	bne.n	840e28 <CommandStepPacket::read(BinaryStream&)+0x154>
+  840d36:	4628      	mov	r0, r5
+  840d38:	f63a ed0e 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  840d3c:	7520      	strb	r0, [r4, #20]
+  840d3e:	4628      	mov	r0, r5
+  840d40:	f63a ed0a 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  840d44:	7560      	strb	r0, [r4, #21]
+  840d46:	4628      	mov	r0, r5
+  840d48:	f63a ee7a 	blx	67ba40 <ReadOnlyBinaryStream::getBool()@plt>
+  840d4c:	75a0      	strb	r0, [r4, #22]
+  840d4e:	4628      	mov	r0, r5
+  840d50:	f63c ec26 	blx	67d5a0 <ReadOnlyBinaryStream::getUnsignedVarInt64()@plt>
+  840d54:	e9cd 0102 	strd	r0, r1, [sp, #8]
+  840d58:	f64f 70ff 	movw	r0, #65535	; 0xffff
+  840d5c:	f8ad 0010 	strh.w	r0, [sp, #16]
+  840d60:	a814      	add	r0, sp, #80	; 0x50
+  840d62:	a902      	add	r1, sp, #8
+  840d64:	f63a ed28 	blx	67b7b8 <NetworkIdentifier::NetworkIdentifier(RakNet::RakNetGUID const&)@plt>
+  840d68:	e9dd 1214 	ldrd	r1, r2, [sp, #80]	; 0x50
+  840d6c:	e9c4 1206 	strd	r1, r2, [r4, #24]
+  840d70:	f104 0228 	add.w	r2, r4, #40	; 0x28
+  840d74:	f8bd 1058 	ldrh.w	r1, [sp, #88]	; 0x58
+  840d78:	8421      	strh	r1, [r4, #32]
+  840d7a:	f100 0110 	add.w	r1, r0, #16
+  840d7e:	4610      	mov	r0, r2
+  840d80:	2284      	movs	r2, #132	; 0x84
+  840d82:	f63a e846 	blx	67ae10 <__aeabi_memcpy8@plt>
+  840d86:	ae01      	add	r6, sp, #4
+  840d88:	4629      	mov	r1, r5
+  840d8a:	4630      	mov	r0, r6
+  840d8c:	f63a e9c0 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  840d90:	f104 00d8 	add.w	r0, r4, #216	; 0xd8
+  840d94:	4631      	mov	r1, r6
+  840d96:	f29d ee6a 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  840d9a:	48a1      	ldr	r0, [pc, #644]	; (841020 <CommandStepPacket::read(BinaryStream&)+0x34c>)
+  840d9c:	9901      	ldr	r1, [sp, #4]
+  840d9e:	4478      	add	r0, pc
+  840da0:	583a      	ldr	r2, [r7, r0]
+  840da2:	f1a1 000c 	sub.w	r0, r1, #12
+  840da6:	4290      	cmp	r0, r2
+  840da8:	d150      	bne.n	840e4c <CommandStepPacket::read(BinaryStream&)+0x178>
+  840daa:	466e      	mov	r6, sp
+  840dac:	4629      	mov	r1, r5
+  840dae:	4630      	mov	r0, r6
+  840db0:	f63a e9ae 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  840db4:	f104 00dc 	add.w	r0, r4, #220	; 0xdc
+  840db8:	4631      	mov	r1, r6
+  840dba:	f29d ee58 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  840dbe:	489c      	ldr	r0, [pc, #624]	; (841030 <CommandStepPacket::read(BinaryStream&)+0x35c>)
+  840dc0:	9900      	ldr	r1, [sp, #0]
+  840dc2:	4478      	add	r0, pc
+  840dc4:	583a      	ldr	r2, [r7, r0]
+  840dc6:	f1a1 000c 	sub.w	r0, r1, #12
+  840dca:	4290      	cmp	r0, r2
+  840dcc:	d150      	bne.n	840e70 <CommandStepPacket::read(BinaryStream&)+0x19c>
+  840dce:	ae08      	add	r6, sp, #32
+  840dd0:	4629      	mov	r1, r5
+  840dd2:	4630      	mov	r0, r6
+  840dd4:	f63c ebea 	blx	67d5ac <CommandOriginData ReadOnlyBinaryStream::getType<CommandOriginData>()@plt>
+  840dd8:	f104 00b0 	add.w	r0, r4, #176	; 0xb0
+  840ddc:	4631      	mov	r1, r6
+  840dde:	f63c ebec 	blx	67d5b8 <CommandOriginData::operator=(CommandOriginData const&)@plt>
+  840de2:	a808      	add	r0, sp, #32
+  840de4:	f63a e988 	blx	67b0f8 <CommandOriginData::~CommandOriginData()@plt>
+  840de8:	4893      	ldr	r0, [pc, #588]	; (841038 <CommandStepPacket::read(BinaryStream&)+0x364>)
+  840dea:	993b      	ldr	r1, [sp, #236]	; 0xec
+  840dec:	4478      	add	r0, pc
+  840dee:	f858 0000 	ldr.w	r0, [r8, r0]
+  840df2:	6800      	ldr	r0, [r0, #0]
+  840df4:	1a40      	subs	r0, r0, r1
+  840df6:	bf04      	itt	eq
+  840df8:	b03c      	addeq	sp, #240	; 0xf0
+  840dfa:	e8bd 81f0 	ldmiaeq.w	sp!, {r4, r5, r6, r7, r8, pc}
+  840dfe:	f639 efc6 	blx	67ad8c <__stack_chk_fail@plt>
+  840e02:	4a80      	ldr	r2, [pc, #512]	; (841004 <CommandStepPacket::read(BinaryStream&)+0x330>)
+  840e04:	4b7d      	ldr	r3, [pc, #500]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840e06:	447a      	add	r2, pc
+  840e08:	589b      	ldr	r3, [r3, r2]
+  840e0a:	1f0a      	subs	r2, r1, #4
+  840e0c:	2b00      	cmp	r3, #0
+  840e0e:	d041      	beq.n	840e94 <CommandStepPacket::read(BinaryStream&)+0x1c0>
+  840e10:	f3bf 8f5b 	dmb	ish
+  840e14:	e852 1f00 	ldrex	r1, [r2]
+  840e18:	1e4b      	subs	r3, r1, #1
+  840e1a:	e842 3600 	strex	r6, r3, [r2]
+  840e1e:	2e00      	cmp	r6, #0
+  840e20:	d1f8      	bne.n	840e14 <CommandStepPacket::read(BinaryStream&)+0x140>
+  840e22:	f3bf 8f5b 	dmb	ish
+  840e26:	e038      	b.n	840e9a <CommandStepPacket::read(BinaryStream&)+0x1c6>
+  840e28:	4a7a      	ldr	r2, [pc, #488]	; (841014 <CommandStepPacket::read(BinaryStream&)+0x340>)
+  840e2a:	4b74      	ldr	r3, [pc, #464]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840e2c:	447a      	add	r2, pc
+  840e2e:	589b      	ldr	r3, [r3, r2]
+  840e30:	1f0a      	subs	r2, r1, #4
+  840e32:	b3cb      	cbz	r3, 840ea8 <CommandStepPacket::read(BinaryStream&)+0x1d4>
+  840e34:	f3bf 8f5b 	dmb	ish
+  840e38:	e852 1f00 	ldrex	r1, [r2]
+  840e3c:	1e4b      	subs	r3, r1, #1
+  840e3e:	e842 3600 	strex	r6, r3, [r2]
+  840e42:	2e00      	cmp	r6, #0
+  840e44:	d1f8      	bne.n	840e38 <CommandStepPacket::read(BinaryStream&)+0x164>
+  840e46:	f3bf 8f5b 	dmb	ish
+  840e4a:	e030      	b.n	840eae <CommandStepPacket::read(BinaryStream&)+0x1da>
+  840e4c:	4a75      	ldr	r2, [pc, #468]	; (841024 <CommandStepPacket::read(BinaryStream&)+0x350>)
+  840e4e:	4b6b      	ldr	r3, [pc, #428]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840e50:	447a      	add	r2, pc
+  840e52:	589b      	ldr	r3, [r3, r2]
+  840e54:	1f0a      	subs	r2, r1, #4
+  840e56:	b38b      	cbz	r3, 840ebc <CommandStepPacket::read(BinaryStream&)+0x1e8>
+  840e58:	f3bf 8f5b 	dmb	ish
+  840e5c:	e852 1f00 	ldrex	r1, [r2]
+  840e60:	1e4b      	subs	r3, r1, #1
+  840e62:	e842 3600 	strex	r6, r3, [r2]
+  840e66:	2e00      	cmp	r6, #0
+  840e68:	d1f8      	bne.n	840e5c <CommandStepPacket::read(BinaryStream&)+0x188>
+  840e6a:	f3bf 8f5b 	dmb	ish
+  840e6e:	e028      	b.n	840ec2 <CommandStepPacket::read(BinaryStream&)+0x1ee>
+  840e70:	4a70      	ldr	r2, [pc, #448]	; (841034 <CommandStepPacket::read(BinaryStream&)+0x360>)
+  840e72:	4b62      	ldr	r3, [pc, #392]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840e74:	447a      	add	r2, pc
+  840e76:	589b      	ldr	r3, [r3, r2]
+  840e78:	1f0a      	subs	r2, r1, #4
+  840e7a:	b34b      	cbz	r3, 840ed0 <CommandStepPacket::read(BinaryStream&)+0x1fc>
+  840e7c:	f3bf 8f5b 	dmb	ish
+  840e80:	e852 1f00 	ldrex	r1, [r2]
+  840e84:	1e4b      	subs	r3, r1, #1
+  840e86:	e842 3700 	strex	r7, r3, [r2]
+  840e8a:	2f00      	cmp	r7, #0
+  840e8c:	d1f8      	bne.n	840e80 <CommandStepPacket::read(BinaryStream&)+0x1ac>
+  840e8e:	f3bf 8f5b 	dmb	ish
+  840e92:	e020      	b.n	840ed6 <CommandStepPacket::read(BinaryStream&)+0x202>
+  840e94:	6811      	ldr	r1, [r2, #0]
+  840e96:	1e4b      	subs	r3, r1, #1
+  840e98:	6013      	str	r3, [r2, #0]
+  840e9a:	2900      	cmp	r1, #0
+  840e9c:	f73f af39 	bgt.w	840d12 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  840ea0:	a913      	add	r1, sp, #76	; 0x4c
+  840ea2:	f29d ed94 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  840ea6:	e734      	b.n	840d12 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  840ea8:	6811      	ldr	r1, [r2, #0]
+  840eaa:	1e4b      	subs	r3, r1, #1
+  840eac:	6013      	str	r3, [r2, #0]
+  840eae:	2900      	cmp	r1, #0
+  840eb0:	f73f af41 	bgt.w	840d36 <CommandStepPacket::read(BinaryStream&)+0x62>
+  840eb4:	a913      	add	r1, sp, #76	; 0x4c
+  840eb6:	f29d ed8a 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  840eba:	e73c      	b.n	840d36 <CommandStepPacket::read(BinaryStream&)+0x62>
+  840ebc:	6811      	ldr	r1, [r2, #0]
+  840ebe:	1e4b      	subs	r3, r1, #1
+  840ec0:	6013      	str	r3, [r2, #0]
+  840ec2:	2900      	cmp	r1, #0
+  840ec4:	f73f af71 	bgt.w	840daa <CommandStepPacket::read(BinaryStream&)+0xd6>
+  840ec8:	a913      	add	r1, sp, #76	; 0x4c
+  840eca:	f29d ed80 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  840ece:	e76c      	b.n	840daa <CommandStepPacket::read(BinaryStream&)+0xd6>
+  840ed0:	6811      	ldr	r1, [r2, #0]
+  840ed2:	1e4b      	subs	r3, r1, #1
+  840ed4:	6013      	str	r3, [r2, #0]
+  840ed6:	2900      	cmp	r1, #0
+  840ed8:	f73f af79 	bgt.w	840dce <CommandStepPacket::read(BinaryStream&)+0xfa>
+  840edc:	a913      	add	r1, sp, #76	; 0x4c
+  840ede:	f29d ed76 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  840ee2:	e774      	b.n	840dce <CommandStepPacket::read(BinaryStream&)+0xfa>
+  840ee4:	4a42      	ldr	r2, [pc, #264]	; (840ff0 <CommandStepPacket::read(BinaryStream&)+0x31c>)
+  840ee6:	4604      	mov	r4, r0
+  840ee8:	4b42      	ldr	r3, [pc, #264]	; (840ff4 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  840eea:	447a      	add	r2, pc
+  840eec:	9907      	ldr	r1, [sp, #28]
+  840eee:	f1a1 000c 	sub.w	r0, r1, #12
+  840ef2:	589a      	ldr	r2, [r3, r2]
+  840ef4:	4290      	cmp	r0, r2
+  840ef6:	d069      	beq.n	840fcc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  840ef8:	4a3f      	ldr	r2, [pc, #252]	; (840ff8 <CommandStepPacket::read(BinaryStream&)+0x324>)
+  840efa:	4b40      	ldr	r3, [pc, #256]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840efc:	447a      	add	r2, pc
+  840efe:	589b      	ldr	r3, [r3, r2]
+  840f00:	1f0a      	subs	r2, r1, #4
+  840f02:	2b00      	cmp	r3, #0
+  840f04:	d06c      	beq.n	840fe0 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  840f06:	f3bf 8f5b 	dmb	ish
+  840f0a:	e852 1f00 	ldrex	r1, [r2]
+  840f0e:	1e4b      	subs	r3, r1, #1
+  840f10:	e842 3700 	strex	r7, r3, [r2]
+  840f14:	2f00      	cmp	r7, #0
+  840f16:	d1f8      	bne.n	840f0a <CommandStepPacket::read(BinaryStream&)+0x236>
+  840f18:	f3bf 8f5b 	dmb	ish
+  840f1c:	e050      	b.n	840fc0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  840f1e:	4a3a      	ldr	r2, [pc, #232]	; (841008 <CommandStepPacket::read(BinaryStream&)+0x334>)
+  840f20:	4604      	mov	r4, r0
+  840f22:	9906      	ldr	r1, [sp, #24]
+  840f24:	447a      	add	r2, pc
+  840f26:	f1a1 000c 	sub.w	r0, r1, #12
+  840f2a:	58ba      	ldr	r2, [r7, r2]
+  840f2c:	4290      	cmp	r0, r2
+  840f2e:	d04d      	beq.n	840fcc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  840f30:	4a36      	ldr	r2, [pc, #216]	; (84100c <CommandStepPacket::read(BinaryStream&)+0x338>)
+  840f32:	4b32      	ldr	r3, [pc, #200]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840f34:	447a      	add	r2, pc
+  840f36:	589b      	ldr	r3, [r3, r2]
+  840f38:	1f0a      	subs	r2, r1, #4
+  840f3a:	2b00      	cmp	r3, #0
+  840f3c:	d050      	beq.n	840fe0 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  840f3e:	f3bf 8f5b 	dmb	ish
+  840f42:	e852 1f00 	ldrex	r1, [r2]
+  840f46:	1e4b      	subs	r3, r1, #1
+  840f48:	e842 3700 	strex	r7, r3, [r2]
+  840f4c:	2f00      	cmp	r7, #0
+  840f4e:	d1f8      	bne.n	840f42 <CommandStepPacket::read(BinaryStream&)+0x26e>
+  840f50:	f3bf 8f5b 	dmb	ish
+  840f54:	e034      	b.n	840fc0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  840f56:	4a30      	ldr	r2, [pc, #192]	; (841018 <CommandStepPacket::read(BinaryStream&)+0x344>)
+  840f58:	4604      	mov	r4, r0
+  840f5a:	9901      	ldr	r1, [sp, #4]
+  840f5c:	447a      	add	r2, pc
+  840f5e:	f1a1 000c 	sub.w	r0, r1, #12
+  840f62:	58ba      	ldr	r2, [r7, r2]
+  840f64:	4290      	cmp	r0, r2
+  840f66:	d031      	beq.n	840fcc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  840f68:	4a2c      	ldr	r2, [pc, #176]	; (84101c <CommandStepPacket::read(BinaryStream&)+0x348>)
+  840f6a:	4b24      	ldr	r3, [pc, #144]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840f6c:	447a      	add	r2, pc
+  840f6e:	589b      	ldr	r3, [r3, r2]
+  840f70:	1f0a      	subs	r2, r1, #4
+  840f72:	b3ab      	cbz	r3, 840fe0 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  840f74:	f3bf 8f5b 	dmb	ish
+  840f78:	e852 1f00 	ldrex	r1, [r2]
+  840f7c:	1e4b      	subs	r3, r1, #1
+  840f7e:	e842 3700 	strex	r7, r3, [r2]
+  840f82:	2f00      	cmp	r7, #0
+  840f84:	d1f8      	bne.n	840f78 <CommandStepPacket::read(BinaryStream&)+0x2a4>
+  840f86:	f3bf 8f5b 	dmb	ish
+  840f8a:	e019      	b.n	840fc0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  840f8c:	4a26      	ldr	r2, [pc, #152]	; (841028 <CommandStepPacket::read(BinaryStream&)+0x354>)
+  840f8e:	4604      	mov	r4, r0
+  840f90:	9900      	ldr	r1, [sp, #0]
+  840f92:	447a      	add	r2, pc
+  840f94:	f1a1 000c 	sub.w	r0, r1, #12
+  840f98:	58ba      	ldr	r2, [r7, r2]
+  840f9a:	4290      	cmp	r0, r2
+  840f9c:	d016      	beq.n	840fcc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  840f9e:	4a23      	ldr	r2, [pc, #140]	; (84102c <CommandStepPacket::read(BinaryStream&)+0x358>)
+  840fa0:	4b16      	ldr	r3, [pc, #88]	; (840ffc <CommandStepPacket::read(BinaryStream&)+0x328>)
+  840fa2:	447a      	add	r2, pc
+  840fa4:	589b      	ldr	r3, [r3, r2]
+  840fa6:	1f0a      	subs	r2, r1, #4
+  840fa8:	b1d3      	cbz	r3, 840fe0 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  840faa:	f3bf 8f5b 	dmb	ish
+  840fae:	e852 1f00 	ldrex	r1, [r2]
+  840fb2:	1e4b      	subs	r3, r1, #1
+  840fb4:	e842 3700 	strex	r7, r3, [r2]
+  840fb8:	2f00      	cmp	r7, #0
+  840fba:	d1f8      	bne.n	840fae <CommandStepPacket::read(BinaryStream&)+0x2da>
+  840fbc:	f3bf 8f5b 	dmb	ish
+  840fc0:	2900      	cmp	r1, #0
+  840fc2:	bfdc      	itt	le
+  840fc4:	f10d 014c 	addle.w	r1, sp, #76	; 0x4c
+  840fc8:	f29d ed00 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  840fcc:	4620      	mov	r0, r4
+  840fce:	f638 e994 	blx	6792f8 <_Unwind_Resume@plt>
+  840fd2:	4604      	mov	r4, r0
+  840fd4:	a808      	add	r0, sp, #32
+  840fd6:	f63a e890 	blx	67b0f8 <CommandOriginData::~CommandOriginData()@plt>
+  840fda:	4620      	mov	r0, r4
+  840fdc:	f638 e98c 	blx	6792f8 <_Unwind_Resume@plt>
+  840fe0:	6811      	ldr	r1, [r2, #0]
+  840fe2:	1e4b      	subs	r3, r1, #1
+  840fe4:	6013      	str	r3, [r2, #0]
+  840fe6:	e7eb      	b.n	840fc0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  840fe8:	b29c      	uxth	r4, r3
+  840fea:	0152      	lsls	r2, r2, #5
+  840fec:	8d20      	ldrh	r0, [r4, #40]	; 0x28
+  840fee:	ffff b096 	vshr.u64	d27, d6, #1
+  840ff2:	0152      	lsls	r2, r2, #5
+  840ff4:	8bdc      	ldrh	r4, [r3, #30]
+  840ff6:	ffff b084 	vaddl.u<illegal width 64>	<illegal reg q13.5>, d31, d4
+  840ffa:	0152      	lsls	r2, r2, #5
+  840ffc:	8be0      	ldrh	r0, [r4, #30]
+  840ffe:	ffff b27c 	vrshr.u32	<illegal reg q13.5>, q14, #1
+  841002:	0152      	lsls	r2, r2, #5
+  841004:	b17a      	cbz	r2, 841026 <CommandStepPacket::read(BinaryStream&)+0x352>
+  841006:	0152      	lsls	r2, r2, #5
+  841008:	b05c      	add	sp, #368	; 0x170
+  84100a:	0152      	lsls	r2, r2, #5
+  84100c:	b04c      	add	sp, #304	; 0x130
+  84100e:	0152      	lsls	r2, r2, #5
+  841010:	b256      	sxtb	r6, r2
+  841012:	0152      	lsls	r2, r2, #5
+  841014:	b154      	cbz	r4, 84102c <CommandStepPacket::read(BinaryStream&)+0x358>
+  841016:	0152      	lsls	r2, r2, #5
+  841018:	b024      	add	sp, #144	; 0x90
+  84101a:	0152      	lsls	r2, r2, #5
+  84101c:	b014      	add	sp, #80	; 0x50
+  84101e:	0152      	lsls	r2, r2, #5
+  841020:	b1e2      	cbz	r2, 84105c <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x12>
+  841022:	0152      	lsls	r2, r2, #5
+  841024:	b130      	cbz	r0, 841034 <CommandStepPacket::read(BinaryStream&)+0x360>
+  841026:	0152      	lsls	r2, r2, #5
+  841028:	afee      	add	r7, sp, #952	; 0x3b8
+  84102a:	0152      	lsls	r2, r2, #5
+  84102c:	afde      	add	r7, sp, #888	; 0x378
+  84102e:	0152      	lsls	r2, r2, #5
+  841030:	b1be      	cbz	r6, 841062 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x18>
+  841032:	0152      	lsls	r2, r2, #5
+  841034:	b10c      	cbz	r4, 84103a <CommandStepPacket::read(BinaryStream&)+0x366>
+  841036:	0152      	lsls	r2, r2, #5
+  841038:	b194      	cbz	r4, 841060 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x16>
+  84103a:	0152      	lsls	r2, r2, #5

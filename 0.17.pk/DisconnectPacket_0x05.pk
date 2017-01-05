@@ -1,0 +1,90 @@
+  8378fc:	b570      	push	{r4, r5, r6, lr}
+  8378fe:	b084      	sub	sp, #16
+  837900:	460d      	mov	r5, r1
+  837902:	4604      	mov	r4, r0
+  837904:	4628      	mov	r0, r5
+  837906:	f644 e89c 	blx	67ba40 <ReadOnlyBinaryStream::getBool()@plt>
+  83790a:	7320      	strb	r0, [r4, #12]
+  83790c:	b990      	cbnz	r0, 837934 <DisconnectPacket::read(BinaryStream&)+0x38>
+  83790e:	ae01      	add	r6, sp, #4
+  837910:	4629      	mov	r1, r5
+  837912:	4630      	mov	r0, r6
+  837914:	f643 ebfc 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  837918:	f104 0010 	add.w	r0, r4, #16
+  83791c:	4631      	mov	r1, r6
+  83791e:	f2a7 e8a6 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  837922:	482b      	ldr	r0, [pc, #172]	; (8379d0 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  837924:	4a27      	ldr	r2, [pc, #156]	; (8379c4 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  837926:	4478      	add	r0, pc
+  837928:	9901      	ldr	r1, [sp, #4]
+  83792a:	5812      	ldr	r2, [r2, r0]
+  83792c:	f1a1 000c 	sub.w	r0, r1, #12
+  837930:	4290      	cmp	r0, r2
+  837932:	d101      	bne.n	837938 <DisconnectPacket::read(BinaryStream&)+0x3c>
+  837934:	b004      	add	sp, #16
+  837936:	bd70      	pop	{r4, r5, r6, pc}
+  837938:	4a26      	ldr	r2, [pc, #152]	; (8379d4 <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  83793a:	4b24      	ldr	r3, [pc, #144]	; (8379cc <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  83793c:	447a      	add	r2, pc
+  83793e:	589b      	ldr	r3, [r3, r2]
+  837940:	1f0a      	subs	r2, r1, #4
+  837942:	b15b      	cbz	r3, 83795c <DisconnectPacket::read(BinaryStream&)+0x60>
+  837944:	f3bf 8f5b 	dmb	ish
+  837948:	e852 1f00 	ldrex	r1, [r2]
+  83794c:	1e4b      	subs	r3, r1, #1
+  83794e:	e842 3600 	strex	r6, r3, [r2]
+  837952:	2e00      	cmp	r6, #0
+  837954:	d1f8      	bne.n	837948 <DisconnectPacket::read(BinaryStream&)+0x4c>
+  837956:	f3bf 8f5b 	dmb	ish
+  83795a:	e002      	b.n	837962 <DisconnectPacket::read(BinaryStream&)+0x66>
+  83795c:	6811      	ldr	r1, [r2, #0]
+  83795e:	1e4b      	subs	r3, r1, #1
+  837960:	6013      	str	r3, [r2, #0]
+  837962:	2900      	cmp	r1, #0
+  837964:	dce6      	bgt.n	837934 <DisconnectPacket::read(BinaryStream&)+0x38>
+  837966:	a902      	add	r1, sp, #8
+  837968:	f2a7 e830 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83796c:	e7e2      	b.n	837934 <DisconnectPacket::read(BinaryStream&)+0x38>
+  83796e:	4a14      	ldr	r2, [pc, #80]	; (8379c0 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  837970:	4604      	mov	r4, r0
+  837972:	4b14      	ldr	r3, [pc, #80]	; (8379c4 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  837974:	447a      	add	r2, pc
+  837976:	9901      	ldr	r1, [sp, #4]
+  837978:	f1a1 000c 	sub.w	r0, r1, #12
+  83797c:	589a      	ldr	r2, [r3, r2]
+  83797e:	4290      	cmp	r0, r2
+  837980:	d016      	beq.n	8379b0 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  837982:	4a11      	ldr	r2, [pc, #68]	; (8379c8 <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  837984:	4b11      	ldr	r3, [pc, #68]	; (8379cc <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  837986:	447a      	add	r2, pc
+  837988:	589b      	ldr	r3, [r3, r2]
+  83798a:	1f0a      	subs	r2, r1, #4
+  83798c:	b19b      	cbz	r3, 8379b6 <DisconnectPacket::read(BinaryStream&)+0xba>
+  83798e:	f3bf 8f5b 	dmb	ish
+  837992:	e852 1f00 	ldrex	r1, [r2]
+  837996:	1e4b      	subs	r3, r1, #1
+  837998:	e842 3600 	strex	r6, r3, [r2]
+  83799c:	2e00      	cmp	r6, #0
+  83799e:	d1f8      	bne.n	837992 <DisconnectPacket::read(BinaryStream&)+0x96>
+  8379a0:	f3bf 8f5b 	dmb	ish
+  8379a4:	2900      	cmp	r1, #0
+  8379a6:	bfdc      	itt	le
+  8379a8:	f10d 010c 	addle.w	r1, sp, #12
+  8379ac:	f2a7 e80e 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  8379b0:	4620      	mov	r0, r4
+  8379b2:	f641 eca2 	blx	6792f8 <_Unwind_Resume@plt>
+  8379b6:	6811      	ldr	r1, [r2, #0]
+  8379b8:	1e4b      	subs	r3, r1, #1
+  8379ba:	6013      	str	r3, [r2, #0]
+  8379bc:	e7f2      	b.n	8379a4 <DisconnectPacket::read(BinaryStream&)+0xa8>
+  8379be:	bf00      	nop
+  8379c0:	460c      	mov	r4, r1
+  8379c2:	0153      	lsls	r3, r2, #5
+  8379c4:	8bdc      	ldrh	r4, [r3, #30]
+  8379c6:	ffff 45fa 	vsli.64	q10, q13, #63	; 0x3f
+  8379ca:	0153      	lsls	r3, r2, #5
+  8379cc:	8be0      	ldrh	r0, [r4, #30]
+  8379ce:	ffff 465a 	vqshlu.s32	q10, q5, #31
+  8379d2:	0153      	lsls	r3, r2, #5
+  8379d4:	4644      	mov	r4, r8
+  8379d6:	0153      	lsls	r3, r2, #5

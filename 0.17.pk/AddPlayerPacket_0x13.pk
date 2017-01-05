@@ -1,0 +1,151 @@
+  839350:	b570      	push	{r4, r5, r6, lr}
+  839352:	b08c      	sub	sp, #48	; 0x30
+  839354:	ae02      	add	r6, sp, #8
+  839356:	4605      	mov	r5, r0
+  839358:	460c      	mov	r4, r1
+  83935a:	4630      	mov	r0, r6
+  83935c:	f642 ec84 	blx	67bc68 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  839360:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  839364:	f105 0010 	add.w	r0, r5, #16
+  839368:	ae01      	add	r6, sp, #4
+  83936a:	4621      	mov	r1, r4
+  83936c:	f940 0acf 	vst1.64	{d16-d17}, [r0]
+  839370:	4630      	mov	r0, r6
+  839372:	f641 eece 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  839376:	f105 000c 	add.w	r0, r5, #12
+  83937a:	4631      	mov	r1, r6
+  83937c:	f2a5 eb76 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  839380:	4851      	ldr	r0, [pc, #324]	; (8394c8 <AddPlayerPacket::read(BinaryStream&)+0x178>)
+  839382:	4a4e      	ldr	r2, [pc, #312]	; (8394bc <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  839384:	4478      	add	r0, pc
+  839386:	9901      	ldr	r1, [sp, #4]
+  839388:	5812      	ldr	r2, [r2, r0]
+  83938a:	f1a1 000c 	sub.w	r0, r1, #12
+  83938e:	4290      	cmp	r0, r2
+  839390:	d145      	bne.n	83941e <AddPlayerPacket::read(BinaryStream&)+0xce>
+  839392:	a806      	add	r0, sp, #24
+  839394:	4621      	mov	r1, r4
+  839396:	f642 ebc0 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  83939a:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  83939e:	e9c5 0108 	strd	r0, r1, [r5, #32]
+  8393a2:	a806      	add	r0, sp, #24
+  8393a4:	4621      	mov	r1, r4
+  8393a6:	f642 ebbe 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  8393aa:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  8393ae:	e9c5 010a 	strd	r0, r1, [r5, #40]	; 0x28
+  8393b2:	a806      	add	r0, sp, #24
+  8393b4:	4621      	mov	r1, r4
+  8393b6:	f642 ebbc 	blx	67bb30 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8393ba:	9806      	ldr	r0, [sp, #24]
+  8393bc:	4621      	mov	r1, r4
+  8393be:	6328      	str	r0, [r5, #48]	; 0x30
+  8393c0:	9807      	ldr	r0, [sp, #28]
+  8393c2:	6368      	str	r0, [r5, #52]	; 0x34
+  8393c4:	9808      	ldr	r0, [sp, #32]
+  8393c6:	63a8      	str	r0, [r5, #56]	; 0x38
+  8393c8:	a806      	add	r0, sp, #24
+  8393ca:	f642 ebb2 	blx	67bb30 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8393ce:	9806      	ldr	r0, [sp, #24]
+  8393d0:	4621      	mov	r1, r4
+  8393d2:	63e8      	str	r0, [r5, #60]	; 0x3c
+  8393d4:	9807      	ldr	r0, [sp, #28]
+  8393d6:	6428      	str	r0, [r5, #64]	; 0x40
+  8393d8:	9808      	ldr	r0, [sp, #32]
+  8393da:	6468      	str	r0, [r5, #68]	; 0x44
+  8393dc:	a806      	add	r0, sp, #24
+  8393de:	f642 ebae 	blx	67bb3c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  8393e2:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  8393e6:	e9c5 0112 	strd	r0, r1, [r5, #72]	; 0x48
+  8393ea:	4620      	mov	r0, r4
+  8393ec:	f642 ec00 	blx	67bbf0 <ReadOnlyBinaryStream::getFloat()@plt>
+  8393f0:	ae06      	add	r6, sp, #24
+  8393f2:	6528      	str	r0, [r5, #80]	; 0x50
+  8393f4:	4621      	mov	r1, r4
+  8393f6:	4630      	mov	r0, r6
+  8393f8:	f642 ec24 	blx	67bc44 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  8393fc:	f105 0054 	add.w	r0, r5, #84	; 0x54
+  839400:	4631      	mov	r1, r6
+  839402:	f641 ef10 	blx	67b224 <ItemInstance::operator=(ItemInstance const&)@plt>
+  839406:	9808      	ldr	r0, [sp, #32]
+  839408:	b110      	cbz	r0, 839410 <AddPlayerPacket::read(BinaryStream&)+0xc0>
+  83940a:	6801      	ldr	r1, [r0, #0]
+  83940c:	6849      	ldr	r1, [r1, #4]
+  83940e:	4788      	blx	r1
+  839410:	f105 0168 	add.w	r1, r5, #104	; 0x68
+  839414:	4620      	mov	r0, r4
+  839416:	f642 ebf8 	blx	67bc08 <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  83941a:	b00c      	add	sp, #48	; 0x30
+  83941c:	bd70      	pop	{r4, r5, r6, pc}
+  83941e:	4a2b      	ldr	r2, [pc, #172]	; (8394cc <AddPlayerPacket::read(BinaryStream&)+0x17c>)
+  839420:	4b28      	ldr	r3, [pc, #160]	; (8394c4 <AddPlayerPacket::read(BinaryStream&)+0x174>)
+  839422:	447a      	add	r2, pc
+  839424:	589b      	ldr	r3, [r3, r2]
+  839426:	1f0a      	subs	r2, r1, #4
+  839428:	b15b      	cbz	r3, 839442 <AddPlayerPacket::read(BinaryStream&)+0xf2>
+  83942a:	f3bf 8f5b 	dmb	ish
+  83942e:	e852 1f00 	ldrex	r1, [r2]
+  839432:	1e4b      	subs	r3, r1, #1
+  839434:	e842 3600 	strex	r6, r3, [r2]
+  839438:	2e00      	cmp	r6, #0
+  83943a:	d1f8      	bne.n	83942e <AddPlayerPacket::read(BinaryStream&)+0xde>
+  83943c:	f3bf 8f5b 	dmb	ish
+  839440:	e002      	b.n	839448 <AddPlayerPacket::read(BinaryStream&)+0xf8>
+  839442:	6811      	ldr	r1, [r2, #0]
+  839444:	1e4b      	subs	r3, r1, #1
+  839446:	6013      	str	r3, [r2, #0]
+  839448:	2900      	cmp	r1, #0
+  83944a:	dca2      	bgt.n	839392 <AddPlayerPacket::read(BinaryStream&)+0x42>
+  83944c:	a902      	add	r1, sp, #8
+  83944e:	f2a5 eabe 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  839452:	e79e      	b.n	839392 <AddPlayerPacket::read(BinaryStream&)+0x42>
+  839454:	4a18      	ldr	r2, [pc, #96]	; (8394b8 <AddPlayerPacket::read(BinaryStream&)+0x168>)
+  839456:	4604      	mov	r4, r0
+  839458:	4b18      	ldr	r3, [pc, #96]	; (8394bc <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  83945a:	447a      	add	r2, pc
+  83945c:	9901      	ldr	r1, [sp, #4]
+  83945e:	f1a1 000c 	sub.w	r0, r1, #12
+  839462:	589a      	ldr	r2, [r3, r2]
+  839464:	4290      	cmp	r0, r2
+  839466:	d01a      	beq.n	83949e <AddPlayerPacket::read(BinaryStream&)+0x14e>
+  839468:	4a15      	ldr	r2, [pc, #84]	; (8394c0 <AddPlayerPacket::read(BinaryStream&)+0x170>)
+  83946a:	4b16      	ldr	r3, [pc, #88]	; (8394c4 <AddPlayerPacket::read(BinaryStream&)+0x174>)
+  83946c:	447a      	add	r2, pc
+  83946e:	589b      	ldr	r3, [r3, r2]
+  839470:	1f0a      	subs	r2, r1, #4
+  839472:	b1eb      	cbz	r3, 8394b0 <AddPlayerPacket::read(BinaryStream&)+0x160>
+  839474:	f3bf 8f5b 	dmb	ish
+  839478:	e852 1f00 	ldrex	r1, [r2]
+  83947c:	1e4b      	subs	r3, r1, #1
+  83947e:	e842 3600 	strex	r6, r3, [r2]
+  839482:	2e00      	cmp	r6, #0
+  839484:	d1f8      	bne.n	839478 <AddPlayerPacket::read(BinaryStream&)+0x128>
+  839486:	f3bf 8f5b 	dmb	ish
+  83948a:	2900      	cmp	r1, #0
+  83948c:	bfdc      	itt	le
+  83948e:	f10d 0108 	addle.w	r1, sp, #8
+  839492:	f2a5 ea9c 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  839496:	e002      	b.n	83949e <AddPlayerPacket::read(BinaryStream&)+0x14e>
+  839498:	4604      	mov	r4, r0
+  83949a:	9808      	ldr	r0, [sp, #32]
+  83949c:	b910      	cbnz	r0, 8394a4 <AddPlayerPacket::read(BinaryStream&)+0x154>
+  83949e:	4620      	mov	r0, r4
+  8394a0:	f63f ef2a 	blx	6792f8 <_Unwind_Resume@plt>
+  8394a4:	6801      	ldr	r1, [r0, #0]
+  8394a6:	6849      	ldr	r1, [r1, #4]
+  8394a8:	4788      	blx	r1
+  8394aa:	4620      	mov	r0, r4
+  8394ac:	f63f ef24 	blx	6792f8 <_Unwind_Resume@plt>
+  8394b0:	6811      	ldr	r1, [r2, #0]
+  8394b2:	1e4b      	subs	r3, r1, #1
+  8394b4:	6013      	str	r3, [r2, #0]
+  8394b6:	e7e8      	b.n	83948a <AddPlayerPacket::read(BinaryStream&)+0x13a>
+  8394b8:	2b26      	cmp	r3, #38	; 0x26
+  8394ba:	0153      	lsls	r3, r2, #5
+  8394bc:	8bdc      	ldrh	r4, [r3, #30]
+  8394be:	ffff 2b14 			; <UNDEFINED> instruction: 0xffff2b14
+  8394c2:	0153      	lsls	r3, r2, #5
+  8394c4:	8be0      	ldrh	r0, [r4, #30]
+  8394c6:	ffff 2bfc 			; <UNDEFINED> instruction: 0xffff2bfc
+  8394ca:	0153      	lsls	r3, r2, #5
+  8394cc:	2b5e      	cmp	r3, #94	; 0x5e
+  8394ce:	0153      	lsls	r3, r2, #5

@@ -1,0 +1,23 @@
+  8397d6:	b5b0      	push	{r4, r5, r7, lr}
+  8397d8:	b084      	sub	sp, #16
+  8397da:	4605      	mov	r5, r0
+  8397dc:	a801      	add	r0, sp, #4
+  8397de:	460c      	mov	r4, r1
+  8397e0:	f642 ea5a 	blx	67bc98 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  8397e4:	9801      	ldr	r0, [sp, #4]
+  8397e6:	60e8      	str	r0, [r5, #12]
+  8397e8:	9802      	ldr	r0, [sp, #8]
+  8397ea:	6128      	str	r0, [r5, #16]
+  8397ec:	9803      	ldr	r0, [sp, #12]
+  8397ee:	6168      	str	r0, [r5, #20]
+  8397f0:	4620      	mov	r0, r4
+  8397f2:	f641 efb2 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8397f6:	7628      	strb	r0, [r5, #24]
+  8397f8:	4620      	mov	r0, r4
+  8397fa:	f641 efae 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8397fe:	f000 010f 	and.w	r1, r0, #15
+  839802:	0900      	lsrs	r0, r0, #4
+  839804:	7669      	strb	r1, [r5, #25]
+  839806:	76a8      	strb	r0, [r5, #26]
+  839808:	b004      	add	sp, #16
+  83980a:	bdb0      	pop	{r4, r5, r7, pc}

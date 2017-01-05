@@ -1,0 +1,83 @@
+  83e5a0:	b5b0      	push	{r4, r5, r7, lr}
+  83e5a2:	b084      	sub	sp, #16
+  83e5a4:	ad01      	add	r5, sp, #4
+  83e5a6:	4604      	mov	r4, r0
+  83e5a8:	4628      	mov	r0, r5
+  83e5aa:	f63c edb2 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83e5ae:	f104 000c 	add.w	r0, r4, #12
+  83e5b2:	4629      	mov	r1, r5
+  83e5b4:	f2a0 ea5a 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83e5b8:	482a      	ldr	r0, [pc, #168]	; (83e664 <BatchPacket::read(BinaryStream&)+0xc4>)
+  83e5ba:	4a27      	ldr	r2, [pc, #156]	; (83e658 <BatchPacket::read(BinaryStream&)+0xb8>)
+  83e5bc:	4478      	add	r0, pc
+  83e5be:	9901      	ldr	r1, [sp, #4]
+  83e5c0:	5812      	ldr	r2, [r2, r0]
+  83e5c2:	f1a1 000c 	sub.w	r0, r1, #12
+  83e5c6:	4290      	cmp	r0, r2
+  83e5c8:	d101      	bne.n	83e5ce <BatchPacket::read(BinaryStream&)+0x2e>
+  83e5ca:	b004      	add	sp, #16
+  83e5cc:	bdb0      	pop	{r4, r5, r7, pc}
+  83e5ce:	4a26      	ldr	r2, [pc, #152]	; (83e668 <BatchPacket::read(BinaryStream&)+0xc8>)
+  83e5d0:	4b23      	ldr	r3, [pc, #140]	; (83e660 <BatchPacket::read(BinaryStream&)+0xc0>)
+  83e5d2:	447a      	add	r2, pc
+  83e5d4:	589b      	ldr	r3, [r3, r2]
+  83e5d6:	1f0a      	subs	r2, r1, #4
+  83e5d8:	b15b      	cbz	r3, 83e5f2 <BatchPacket::read(BinaryStream&)+0x52>
+  83e5da:	f3bf 8f5b 	dmb	ish
+  83e5de:	e852 1f00 	ldrex	r1, [r2]
+  83e5e2:	1e4b      	subs	r3, r1, #1
+  83e5e4:	e842 3500 	strex	r5, r3, [r2]
+  83e5e8:	2d00      	cmp	r5, #0
+  83e5ea:	d1f8      	bne.n	83e5de <BatchPacket::read(BinaryStream&)+0x3e>
+  83e5ec:	f3bf 8f5b 	dmb	ish
+  83e5f0:	e002      	b.n	83e5f8 <BatchPacket::read(BinaryStream&)+0x58>
+  83e5f2:	6811      	ldr	r1, [r2, #0]
+  83e5f4:	1e4b      	subs	r3, r1, #1
+  83e5f6:	6013      	str	r3, [r2, #0]
+  83e5f8:	2900      	cmp	r1, #0
+  83e5fa:	dce6      	bgt.n	83e5ca <BatchPacket::read(BinaryStream&)+0x2a>
+  83e5fc:	a902      	add	r1, sp, #8
+  83e5fe:	f2a0 e9e6 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83e602:	e7e2      	b.n	83e5ca <BatchPacket::read(BinaryStream&)+0x2a>
+  83e604:	4a13      	ldr	r2, [pc, #76]	; (83e654 <BatchPacket::read(BinaryStream&)+0xb4>)
+  83e606:	4604      	mov	r4, r0
+  83e608:	4b13      	ldr	r3, [pc, #76]	; (83e658 <BatchPacket::read(BinaryStream&)+0xb8>)
+  83e60a:	447a      	add	r2, pc
+  83e60c:	9901      	ldr	r1, [sp, #4]
+  83e60e:	f1a1 000c 	sub.w	r0, r1, #12
+  83e612:	589a      	ldr	r2, [r3, r2]
+  83e614:	4290      	cmp	r0, r2
+  83e616:	d016      	beq.n	83e646 <BatchPacket::read(BinaryStream&)+0xa6>
+  83e618:	4a10      	ldr	r2, [pc, #64]	; (83e65c <BatchPacket::read(BinaryStream&)+0xbc>)
+  83e61a:	4b11      	ldr	r3, [pc, #68]	; (83e660 <BatchPacket::read(BinaryStream&)+0xc0>)
+  83e61c:	447a      	add	r2, pc
+  83e61e:	589b      	ldr	r3, [r3, r2]
+  83e620:	1f0a      	subs	r2, r1, #4
+  83e622:	b19b      	cbz	r3, 83e64c <BatchPacket::read(BinaryStream&)+0xac>
+  83e624:	f3bf 8f5b 	dmb	ish
+  83e628:	e852 1f00 	ldrex	r1, [r2]
+  83e62c:	1e4b      	subs	r3, r1, #1
+  83e62e:	e842 3500 	strex	r5, r3, [r2]
+  83e632:	2d00      	cmp	r5, #0
+  83e634:	d1f8      	bne.n	83e628 <BatchPacket::read(BinaryStream&)+0x88>
+  83e636:	f3bf 8f5b 	dmb	ish
+  83e63a:	2900      	cmp	r1, #0
+  83e63c:	bfdc      	itt	le
+  83e63e:	f10d 010c 	addle.w	r1, sp, #12
+  83e642:	f2a0 e9c4 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83e646:	4620      	mov	r0, r4
+  83e648:	f63a ee56 	blx	6792f8 <_Unwind_Resume@plt>
+  83e64c:	6811      	ldr	r1, [r2, #0]
+  83e64e:	1e4b      	subs	r3, r1, #1
+  83e650:	6013      	str	r3, [r2, #0]
+  83e652:	e7f2      	b.n	83e63a <BatchPacket::read(BinaryStream&)+0x9a>
+  83e654:	d976      	bls.n	83e744 <BatchPacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0xd8>
+  83e656:	0152      	lsls	r2, r2, #5
+  83e658:	8bdc      	ldrh	r4, [r3, #30]
+  83e65a:	ffff d964 	vtbx.8	d29, {d15-d16}, d20
+  83e65e:	0152      	lsls	r2, r2, #5
+  83e660:	8be0      	ldrh	r0, [r4, #30]
+  83e662:	ffff d9c4 	vtbx.8	d29, {d31-<overflow reg d32}, d4
+  83e666:	0152      	lsls	r2, r2, #5
+  83e668:	d9ae      	bls.n	83e5c8 <BatchPacket::read(BinaryStream&)+0x28>
+  83e66a:	0152      	lsls	r2, r2, #5

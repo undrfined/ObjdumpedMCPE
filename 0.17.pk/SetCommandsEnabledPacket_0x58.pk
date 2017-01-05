@@ -1,0 +1,6 @@
+  83bb02:	b510      	push	{r4, lr}
+  83bb04:	4604      	mov	r4, r0
+  83bb06:	4608      	mov	r0, r1
+  83bb08:	f63f ef9a 	blx	67ba40 <ReadOnlyBinaryStream::getBool()@plt>
+  83bb0c:	7320      	strb	r0, [r4, #12]
+  83bb0e:	bd10      	pop	{r4, pc}

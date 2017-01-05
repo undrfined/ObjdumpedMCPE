@@ -1,0 +1,49 @@
+  83b5c4:	b5b0      	push	{r4, r5, r7, lr}
+  83b5c6:	b084      	sub	sp, #16
+  83b5c8:	4604      	mov	r4, r0
+  83b5ca:	a801      	add	r0, sp, #4
+  83b5cc:	460d      	mov	r5, r1
+  83b5ce:	f640 eb64 	blx	67bc98 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  83b5d2:	4816      	ldr	r0, [pc, #88]	; (83b62c <BlockEntityDataPacket::read(BinaryStream&)+0x68>)
+  83b5d4:	9a01      	ldr	r2, [sp, #4]
+  83b5d6:	4916      	ldr	r1, [pc, #88]	; (83b630 <BlockEntityDataPacket::read(BinaryStream&)+0x6c>)
+  83b5d8:	4478      	add	r0, pc
+  83b5da:	60e2      	str	r2, [r4, #12]
+  83b5dc:	9a02      	ldr	r2, [sp, #8]
+  83b5de:	5808      	ldr	r0, [r1, r0]
+  83b5e0:	6122      	str	r2, [r4, #16]
+  83b5e2:	9903      	ldr	r1, [sp, #12]
+  83b5e4:	3008      	adds	r0, #8
+  83b5e6:	6161      	str	r1, [r4, #20]
+  83b5e8:	e9cd 0501 	strd	r0, r5, [sp, #4]
+  83b5ec:	a901      	add	r1, sp, #4
+  83b5ee:	4668      	mov	r0, sp
+  83b5f0:	f640 eb82 	blx	67bcf8 <NbtIo::read(IDataInput&)@plt>
+  83b5f4:	9d00      	ldr	r5, [sp, #0]
+  83b5f6:	f104 0018 	add.w	r0, r4, #24
+  83b5fa:	4629      	mov	r1, r5
+  83b5fc:	f640 eb82 	blx	67bd04 <CompoundTag::operator=(CompoundTag&&)@plt>
+  83b600:	b11d      	cbz	r5, 83b60a <BlockEntityDataPacket::read(BinaryStream&)+0x46>
+  83b602:	6828      	ldr	r0, [r5, #0]
+  83b604:	6841      	ldr	r1, [r0, #4]
+  83b606:	4628      	mov	r0, r5
+  83b608:	4788      	blx	r1
+  83b60a:	b004      	add	sp, #16
+  83b60c:	bdb0      	pop	{r4, r5, r7, pc}
+  83b60e:	4604      	mov	r4, r0
+  83b610:	f63d ee72 	blx	6792f8 <_Unwind_Resume@plt>
+  83b614:	4604      	mov	r4, r0
+  83b616:	b11d      	cbz	r5, 83b620 <BlockEntityDataPacket::read(BinaryStream&)+0x5c>
+  83b618:	6828      	ldr	r0, [r5, #0]
+  83b61a:	6841      	ldr	r1, [r0, #4]
+  83b61c:	4628      	mov	r0, r5
+  83b61e:	4788      	blx	r1
+  83b620:	2000      	movs	r0, #0
+  83b622:	9000      	str	r0, [sp, #0]
+  83b624:	4620      	mov	r0, r4
+  83b626:	f63d ee68 	blx	6792f8 <_Unwind_Resume@plt>
+  83b62a:	bf00      	nop
+  83b62c:	09a8      	lsrs	r0, r5, #6
+  83b62e:	0153      	lsls	r3, r2, #5
+  83b630:	8d40      	ldrh	r0, [r0, #42]	; 0x2a
+  83b632:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

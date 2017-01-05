@@ -1,0 +1,158 @@
+  8359ec:	b5f0      	push	{r4, r5, r6, r7, lr}
+  8359ee:	b087      	sub	sp, #28
+  8359f0:	ae02      	add	r6, sp, #8
+  8359f2:	4604      	mov	r4, r0
+  8359f4:	460d      	mov	r5, r1
+  8359f6:	4630      	mov	r0, r6
+  8359f8:	f645 eb8a 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  8359fc:	f104 000c 	add.w	r0, r4, #12
+  835a00:	4631      	mov	r1, r6
+  835a02:	f2a9 e834 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  835a06:	4852      	ldr	r0, [pc, #328]	; (835b50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  835a08:	4f4e      	ldr	r7, [pc, #312]	; (835b44 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  835a0a:	4478      	add	r0, pc
+  835a0c:	9902      	ldr	r1, [sp, #8]
+  835a0e:	583a      	ldr	r2, [r7, r0]
+  835a10:	f1a1 000c 	sub.w	r0, r1, #12
+  835a14:	4290      	cmp	r0, r2
+  835a16:	d113      	bne.n	835a40 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  835a18:	ae01      	add	r6, sp, #4
+  835a1a:	4629      	mov	r1, r5
+  835a1c:	4630      	mov	r0, r6
+  835a1e:	f645 eb78 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  835a22:	f104 0010 	add.w	r0, r4, #16
+  835a26:	4631      	mov	r1, r6
+  835a28:	f2a9 e820 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  835a2c:	484c      	ldr	r0, [pc, #304]	; (835b60 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  835a2e:	9901      	ldr	r1, [sp, #4]
+  835a30:	4478      	add	r0, pc
+  835a32:	583a      	ldr	r2, [r7, r0]
+  835a34:	f1a1 000c 	sub.w	r0, r1, #12
+  835a38:	4290      	cmp	r0, r2
+  835a3a:	d113      	bne.n	835a64 <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  835a3c:	b007      	add	sp, #28
+  835a3e:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  835a40:	4a44      	ldr	r2, [pc, #272]	; (835b54 <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  835a42:	4b42      	ldr	r3, [pc, #264]	; (835b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  835a44:	447a      	add	r2, pc
+  835a46:	589b      	ldr	r3, [r3, r2]
+  835a48:	1f0a      	subs	r2, r1, #4
+  835a4a:	b1eb      	cbz	r3, 835a88 <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  835a4c:	f3bf 8f5b 	dmb	ish
+  835a50:	e852 1f00 	ldrex	r1, [r2]
+  835a54:	1e4b      	subs	r3, r1, #1
+  835a56:	e842 3600 	strex	r6, r3, [r2]
+  835a5a:	2e00      	cmp	r6, #0
+  835a5c:	d1f8      	bne.n	835a50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  835a5e:	f3bf 8f5b 	dmb	ish
+  835a62:	e014      	b.n	835a8e <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  835a64:	4a3f      	ldr	r2, [pc, #252]	; (835b64 <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  835a66:	4b39      	ldr	r3, [pc, #228]	; (835b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  835a68:	447a      	add	r2, pc
+  835a6a:	589b      	ldr	r3, [r3, r2]
+  835a6c:	1f0a      	subs	r2, r1, #4
+  835a6e:	b1a3      	cbz	r3, 835a9a <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  835a70:	f3bf 8f5b 	dmb	ish
+  835a74:	e852 1f00 	ldrex	r1, [r2]
+  835a78:	1e4b      	subs	r3, r1, #1
+  835a7a:	e842 3700 	strex	r7, r3, [r2]
+  835a7e:	2f00      	cmp	r7, #0
+  835a80:	d1f8      	bne.n	835a74 <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  835a82:	f3bf 8f5b 	dmb	ish
+  835a86:	e00b      	b.n	835aa0 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  835a88:	6811      	ldr	r1, [r2, #0]
+  835a8a:	1e4b      	subs	r3, r1, #1
+  835a8c:	6013      	str	r3, [r2, #0]
+  835a8e:	2900      	cmp	r1, #0
+  835a90:	dcc2      	bgt.n	835a18 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  835a92:	a903      	add	r1, sp, #12
+  835a94:	f2a8 ef9a 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  835a98:	e7be      	b.n	835a18 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  835a9a:	6811      	ldr	r1, [r2, #0]
+  835a9c:	1e4b      	subs	r3, r1, #1
+  835a9e:	6013      	str	r3, [r2, #0]
+  835aa0:	2900      	cmp	r1, #0
+  835aa2:	dccb      	bgt.n	835a3c <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  835aa4:	a904      	add	r1, sp, #16
+  835aa6:	f2a8 ef92 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  835aaa:	e7c7      	b.n	835a3c <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  835aac:	4a24      	ldr	r2, [pc, #144]	; (835b40 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  835aae:	4604      	mov	r4, r0
+  835ab0:	4b24      	ldr	r3, [pc, #144]	; (835b44 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  835ab2:	447a      	add	r2, pc
+  835ab4:	9902      	ldr	r1, [sp, #8]
+  835ab6:	f1a1 000c 	sub.w	r0, r1, #12
+  835aba:	589a      	ldr	r2, [r3, r2]
+  835abc:	4290      	cmp	r0, r2
+  835abe:	d033      	beq.n	835b28 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  835ac0:	4a21      	ldr	r2, [pc, #132]	; (835b48 <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  835ac2:	4b22      	ldr	r3, [pc, #136]	; (835b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  835ac4:	447a      	add	r2, pc
+  835ac6:	589b      	ldr	r3, [r3, r2]
+  835ac8:	1f0a      	subs	r2, r1, #4
+  835aca:	b383      	cbz	r3, 835b2e <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  835acc:	f3bf 8f5b 	dmb	ish
+  835ad0:	e852 1f00 	ldrex	r1, [r2]
+  835ad4:	1e4b      	subs	r3, r1, #1
+  835ad6:	e842 3700 	strex	r7, r3, [r2]
+  835ada:	2f00      	cmp	r7, #0
+  835adc:	d1f8      	bne.n	835ad0 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  835ade:	f3bf 8f5b 	dmb	ish
+  835ae2:	2900      	cmp	r1, #0
+  835ae4:	dc20      	bgt.n	835b28 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  835ae6:	a905      	add	r1, sp, #20
+  835ae8:	e01c      	b.n	835b24 <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  835aea:	4a1b      	ldr	r2, [pc, #108]	; (835b58 <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  835aec:	4604      	mov	r4, r0
+  835aee:	9901      	ldr	r1, [sp, #4]
+  835af0:	447a      	add	r2, pc
+  835af2:	f1a1 000c 	sub.w	r0, r1, #12
+  835af6:	58ba      	ldr	r2, [r7, r2]
+  835af8:	4290      	cmp	r0, r2
+  835afa:	d015      	beq.n	835b28 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  835afc:	4a17      	ldr	r2, [pc, #92]	; (835b5c <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  835afe:	4b13      	ldr	r3, [pc, #76]	; (835b4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  835b00:	447a      	add	r2, pc
+  835b02:	589b      	ldr	r3, [r3, r2]
+  835b04:	1f0a      	subs	r2, r1, #4
+  835b06:	b1b3      	cbz	r3, 835b36 <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  835b08:	f3bf 8f5b 	dmb	ish
+  835b0c:	e852 1f00 	ldrex	r1, [r2]
+  835b10:	1e4b      	subs	r3, r1, #1
+  835b12:	e842 3700 	strex	r7, r3, [r2]
+  835b16:	2f00      	cmp	r7, #0
+  835b18:	d1f8      	bne.n	835b0c <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  835b1a:	f3bf 8f5b 	dmb	ish
+  835b1e:	2900      	cmp	r1, #0
+  835b20:	dc02      	bgt.n	835b28 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  835b22:	a906      	add	r1, sp, #24
+  835b24:	f2a8 ef52 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  835b28:	4620      	mov	r0, r4
+  835b2a:	f643 ebe6 	blx	6792f8 <_Unwind_Resume@plt>
+  835b2e:	6811      	ldr	r1, [r2, #0]
+  835b30:	1e4b      	subs	r3, r1, #1
+  835b32:	6013      	str	r3, [r2, #0]
+  835b34:	e7d5      	b.n	835ae2 <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  835b36:	6811      	ldr	r1, [r2, #0]
+  835b38:	1e4b      	subs	r3, r1, #1
+  835b3a:	6013      	str	r3, [r2, #0]
+  835b3c:	e7ef      	b.n	835b1e <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  835b3e:	bf00      	nop
+  835b40:	64ce      	str	r6, [r1, #76]	; 0x4c
+  835b42:	0153      	lsls	r3, r2, #5
+  835b44:	8bdc      	ldrh	r4, [r3, #30]
+  835b46:	ffff 64bc 	vsri.64	d22, d28, #1
+  835b4a:	0153      	lsls	r3, r2, #5
+  835b4c:	8be0      	ldrh	r0, [r4, #30]
+  835b4e:	ffff 6576 	vsli.32	q11, q11, #31
+  835b52:	0153      	lsls	r3, r2, #5
+  835b54:	653c      	str	r4, [r7, #80]	; 0x50
+  835b56:	0153      	lsls	r3, r2, #5
+  835b58:	6490      	str	r0, [r2, #72]	; 0x48
+  835b5a:	0153      	lsls	r3, r2, #5
+  835b5c:	6480      	str	r0, [r0, #72]	; 0x48
+  835b5e:	0153      	lsls	r3, r2, #5
+  835b60:	6550      	str	r0, [r2, #84]	; 0x54
+  835b62:	0153      	lsls	r3, r2, #5
+  835b64:	6518      	str	r0, [r3, #80]	; 0x50
+  835b66:	0153      	lsls	r3, r2, #5

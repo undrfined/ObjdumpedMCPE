@@ -1,0 +1,107 @@
+  83b324:	b570      	push	{r4, r5, r6, lr}
+  83b326:	b086      	sub	sp, #24
+  83b328:	4604      	mov	r4, r0
+  83b32a:	a802      	add	r0, sp, #8
+  83b32c:	460d      	mov	r5, r1
+  83b32e:	f640 ebf4 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  83b332:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  83b336:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  83b33a:	a802      	add	r0, sp, #8
+  83b33c:	4629      	mov	r1, r5
+  83b33e:	f640 ebf2 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  83b342:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  83b346:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  83b34a:	a802      	add	r0, sp, #8
+  83b34c:	4629      	mov	r1, r5
+  83b34e:	f640 eca4 	blx	67bc98 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  83b352:	9802      	ldr	r0, [sp, #8]
+  83b354:	6220      	str	r0, [r4, #32]
+  83b356:	9803      	ldr	r0, [sp, #12]
+  83b358:	6260      	str	r0, [r4, #36]	; 0x24
+  83b35a:	9804      	ldr	r0, [sp, #16]
+  83b35c:	62a0      	str	r0, [r4, #40]	; 0x28
+  83b35e:	4628      	mov	r0, r5
+  83b360:	f640 ebb0 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  83b364:	ae01      	add	r6, sp, #4
+  83b366:	62e0      	str	r0, [r4, #44]	; 0x2c
+  83b368:	4629      	mov	r1, r5
+  83b36a:	4630      	mov	r0, r6
+  83b36c:	f63f eed0 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83b370:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  83b374:	4631      	mov	r1, r6
+  83b376:	f2a3 eb7a 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83b37a:	482b      	ldr	r0, [pc, #172]	; (83b428 <AddPaintingPacket::read(BinaryStream&)+0x104>)
+  83b37c:	4a27      	ldr	r2, [pc, #156]	; (83b41c <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  83b37e:	4478      	add	r0, pc
+  83b380:	9901      	ldr	r1, [sp, #4]
+  83b382:	5812      	ldr	r2, [r2, r0]
+  83b384:	f1a1 000c 	sub.w	r0, r1, #12
+  83b388:	4290      	cmp	r0, r2
+  83b38a:	d101      	bne.n	83b390 <AddPaintingPacket::read(BinaryStream&)+0x6c>
+  83b38c:	b006      	add	sp, #24
+  83b38e:	bd70      	pop	{r4, r5, r6, pc}
+  83b390:	4a26      	ldr	r2, [pc, #152]	; (83b42c <AddPaintingPacket::read(BinaryStream&)+0x108>)
+  83b392:	4b24      	ldr	r3, [pc, #144]	; (83b424 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  83b394:	447a      	add	r2, pc
+  83b396:	589b      	ldr	r3, [r3, r2]
+  83b398:	1f0a      	subs	r2, r1, #4
+  83b39a:	b15b      	cbz	r3, 83b3b4 <AddPaintingPacket::read(BinaryStream&)+0x90>
+  83b39c:	f3bf 8f5b 	dmb	ish
+  83b3a0:	e852 1f00 	ldrex	r1, [r2]
+  83b3a4:	1e4b      	subs	r3, r1, #1
+  83b3a6:	e842 3600 	strex	r6, r3, [r2]
+  83b3aa:	2e00      	cmp	r6, #0
+  83b3ac:	d1f8      	bne.n	83b3a0 <AddPaintingPacket::read(BinaryStream&)+0x7c>
+  83b3ae:	f3bf 8f5b 	dmb	ish
+  83b3b2:	e002      	b.n	83b3ba <AddPaintingPacket::read(BinaryStream&)+0x96>
+  83b3b4:	6811      	ldr	r1, [r2, #0]
+  83b3b6:	1e4b      	subs	r3, r1, #1
+  83b3b8:	6013      	str	r3, [r2, #0]
+  83b3ba:	2900      	cmp	r1, #0
+  83b3bc:	dce6      	bgt.n	83b38c <AddPaintingPacket::read(BinaryStream&)+0x68>
+  83b3be:	a902      	add	r1, sp, #8
+  83b3c0:	f2a3 eb04 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83b3c4:	e7e2      	b.n	83b38c <AddPaintingPacket::read(BinaryStream&)+0x68>
+  83b3c6:	4a14      	ldr	r2, [pc, #80]	; (83b418 <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+  83b3c8:	4604      	mov	r4, r0
+  83b3ca:	4b14      	ldr	r3, [pc, #80]	; (83b41c <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  83b3cc:	447a      	add	r2, pc
+  83b3ce:	9901      	ldr	r1, [sp, #4]
+  83b3d0:	f1a1 000c 	sub.w	r0, r1, #12
+  83b3d4:	589a      	ldr	r2, [r3, r2]
+  83b3d6:	4290      	cmp	r0, r2
+  83b3d8:	d016      	beq.n	83b408 <AddPaintingPacket::read(BinaryStream&)+0xe4>
+  83b3da:	4a11      	ldr	r2, [pc, #68]	; (83b420 <AddPaintingPacket::read(BinaryStream&)+0xfc>)
+  83b3dc:	4b11      	ldr	r3, [pc, #68]	; (83b424 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  83b3de:	447a      	add	r2, pc
+  83b3e0:	589b      	ldr	r3, [r3, r2]
+  83b3e2:	1f0a      	subs	r2, r1, #4
+  83b3e4:	b19b      	cbz	r3, 83b40e <AddPaintingPacket::read(BinaryStream&)+0xea>
+  83b3e6:	f3bf 8f5b 	dmb	ish
+  83b3ea:	e852 1f00 	ldrex	r1, [r2]
+  83b3ee:	1e4b      	subs	r3, r1, #1
+  83b3f0:	e842 3600 	strex	r6, r3, [r2]
+  83b3f4:	2e00      	cmp	r6, #0
+  83b3f6:	d1f8      	bne.n	83b3ea <AddPaintingPacket::read(BinaryStream&)+0xc6>
+  83b3f8:	f3bf 8f5b 	dmb	ish
+  83b3fc:	2900      	cmp	r1, #0
+  83b3fe:	bfdc      	itt	le
+  83b400:	f10d 0108 	addle.w	r1, sp, #8
+  83b404:	f2a3 eae2 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83b408:	4620      	mov	r0, r4
+  83b40a:	f63d ef76 	blx	6792f8 <_Unwind_Resume@plt>
+  83b40e:	6811      	ldr	r1, [r2, #0]
+  83b410:	1e4b      	subs	r3, r1, #1
+  83b412:	6013      	str	r3, [r2, #0]
+  83b414:	e7f2      	b.n	83b3fc <AddPaintingPacket::read(BinaryStream&)+0xd8>
+  83b416:	bf00      	nop
+  83b418:	0bb4      	lsrs	r4, r6, #14
+  83b41a:	0153      	lsls	r3, r2, #5
+  83b41c:	8bdc      	ldrh	r4, [r3, #30]
+  83b41e:	ffff 0ba2 	vtbl.8	d16, {d31-<overflow reg d34}, d18
+  83b422:	0153      	lsls	r3, r2, #5
+  83b424:	8be0      	ldrh	r0, [r4, #30]
+  83b426:	ffff 0c02 	vdup.8	d16, d2[7]
+  83b42a:	0153      	lsls	r3, r2, #5
+  83b42c:	0bec      	lsrs	r4, r5, #15
+  83b42e:	0153      	lsls	r3, r2, #5

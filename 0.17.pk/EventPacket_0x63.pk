@@ -1,0 +1,222 @@
+  8429f4:	b5f0      	push	{r4, r5, r6, r7, lr}
+  8429f6:	b085      	sub	sp, #20
+  8429f8:	4604      	mov	r4, r0
+  8429fa:	a802      	add	r0, sp, #8
+  8429fc:	460d      	mov	r5, r1
+  8429fe:	f639 e88c 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  842a02:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  842a06:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  842a0a:	4628      	mov	r0, r5
+  842a0c:	f639 e85a 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a10:	61a0      	str	r0, [r4, #24]
+  842a12:	4628      	mov	r0, r5
+  842a14:	f638 efe4 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  842a18:	7720      	strb	r0, [r4, #28]
+  842a1a:	69a0      	ldr	r0, [r4, #24]
+  842a1c:	2808      	cmp	r0, #8
+  842a1e:	d81a      	bhi.n	842a56 <EventPacket::read(BinaryStream&)+0x62>
+  842a20:	e8df f000 	tbb	[pc, r0]
+  842a24:	1005      	asrs	r5, r0, #32
+  842a26:	0b05      	lsrs	r5, r0, #12
+  842a28:	261b      	movs	r6, #27
+  842a2a:	340b      	adds	r4, #11
+  842a2c:	0043      	lsls	r3, r0, #1
+  842a2e:	4628      	mov	r0, r5
+  842a30:	f639 e848 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a34:	6220      	str	r0, [r4, #32]
+  842a36:	b005      	add	sp, #20
+  842a38:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  842a3a:	4628      	mov	r0, r5
+  842a3c:	f639 e842 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a40:	6220      	str	r0, [r4, #32]
+  842a42:	e05c      	b.n	842afe <EventPacket::read(BinaryStream&)+0x10a>
+  842a44:	4628      	mov	r0, r5
+  842a46:	f639 e83e 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a4a:	62a0      	str	r0, [r4, #40]	; 0x28
+  842a4c:	4628      	mov	r0, r5
+  842a4e:	f63a eeb0 	blx	67d7b0 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  842a52:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  842a56:	b005      	add	sp, #20
+  842a58:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  842a5a:	4628      	mov	r0, r5
+  842a5c:	f63a eea8 	blx	67d7b0 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  842a60:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  842a64:	4628      	mov	r0, r5
+  842a66:	f63a eea4 	blx	67d7b0 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  842a6a:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+  842a6e:	e016      	b.n	842a9e <EventPacket::read(BinaryStream&)+0xaa>
+  842a70:	4628      	mov	r0, r5
+  842a72:	f638 ee72 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  842a76:	6260      	str	r0, [r4, #36]	; 0x24
+  842a78:	4628      	mov	r0, r5
+  842a7a:	f639 e824 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a7e:	8420      	strh	r0, [r4, #32]
+  842a80:	4628      	mov	r0, r5
+  842a82:	f639 e820 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a86:	8520      	strh	r0, [r4, #40]	; 0x28
+  842a88:	b005      	add	sp, #20
+  842a8a:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  842a8c:	4628      	mov	r0, r5
+  842a8e:	f63a ee90 	blx	67d7b0 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  842a92:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+  842a96:	4628      	mov	r0, r5
+  842a98:	f639 e814 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842a9c:	6220      	str	r0, [r4, #32]
+  842a9e:	4628      	mov	r0, r5
+  842aa0:	f639 e810 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842aa4:	6320      	str	r0, [r4, #48]	; 0x30
+  842aa6:	b005      	add	sp, #20
+  842aa8:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  842aaa:	ae01      	add	r6, sp, #4
+  842aac:	4629      	mov	r1, r5
+  842aae:	4630      	mov	r0, r6
+  842ab0:	f638 eb2e 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  842ab4:	f104 0038 	add.w	r0, r4, #56	; 0x38
+  842ab8:	4631      	mov	r1, r6
+  842aba:	f29b efd8 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  842abe:	4853      	ldr	r0, [pc, #332]	; (842c0c <EventPacket::read(BinaryStream&)+0x218>)
+  842ac0:	4f4f      	ldr	r7, [pc, #316]	; (842c00 <EventPacket::read(BinaryStream&)+0x20c>)
+  842ac2:	4478      	add	r0, pc
+  842ac4:	9901      	ldr	r1, [sp, #4]
+  842ac6:	583a      	ldr	r2, [r7, r0]
+  842ac8:	f1a1 000c 	sub.w	r0, r1, #12
+  842acc:	4290      	cmp	r0, r2
+  842ace:	d11c      	bne.n	842b0a <EventPacket::read(BinaryStream&)+0x116>
+  842ad0:	4628      	mov	r0, r5
+  842ad2:	f638 efb6 	blx	67ba40 <ReadOnlyBinaryStream::getBool()@plt>
+  842ad6:	466e      	mov	r6, sp
+  842ad8:	f884 0020 	strb.w	r0, [r4, #32]
+  842adc:	4630      	mov	r0, r6
+  842ade:	4629      	mov	r1, r5
+  842ae0:	f638 eb16 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  842ae4:	f104 003c 	add.w	r0, r4, #60	; 0x3c
+  842ae8:	4631      	mov	r1, r6
+  842aea:	f29b efc0 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  842aee:	484b      	ldr	r0, [pc, #300]	; (842c1c <EventPacket::read(BinaryStream&)+0x228>)
+  842af0:	9900      	ldr	r1, [sp, #0]
+  842af2:	4478      	add	r0, pc
+  842af4:	583a      	ldr	r2, [r7, r0]
+  842af6:	f1a1 000c 	sub.w	r0, r1, #12
+  842afa:	4290      	cmp	r0, r2
+  842afc:	d117      	bne.n	842b2e <EventPacket::read(BinaryStream&)+0x13a>
+  842afe:	4628      	mov	r0, r5
+  842b00:	f638 efe0 	blx	67bac4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  842b04:	6260      	str	r0, [r4, #36]	; 0x24
+  842b06:	b005      	add	sp, #20
+  842b08:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  842b0a:	4a41      	ldr	r2, [pc, #260]	; (842c10 <EventPacket::read(BinaryStream&)+0x21c>)
+  842b0c:	4b3e      	ldr	r3, [pc, #248]	; (842c08 <EventPacket::read(BinaryStream&)+0x214>)
+  842b0e:	447a      	add	r2, pc
+  842b10:	589b      	ldr	r3, [r3, r2]
+  842b12:	1f0a      	subs	r2, r1, #4
+  842b14:	b1eb      	cbz	r3, 842b52 <EventPacket::read(BinaryStream&)+0x15e>
+  842b16:	f3bf 8f5b 	dmb	ish
+  842b1a:	e852 1f00 	ldrex	r1, [r2]
+  842b1e:	1e4b      	subs	r3, r1, #1
+  842b20:	e842 3600 	strex	r6, r3, [r2]
+  842b24:	2e00      	cmp	r6, #0
+  842b26:	d1f8      	bne.n	842b1a <EventPacket::read(BinaryStream&)+0x126>
+  842b28:	f3bf 8f5b 	dmb	ish
+  842b2c:	e014      	b.n	842b58 <EventPacket::read(BinaryStream&)+0x164>
+  842b2e:	4a3c      	ldr	r2, [pc, #240]	; (842c20 <EventPacket::read(BinaryStream&)+0x22c>)
+  842b30:	4b35      	ldr	r3, [pc, #212]	; (842c08 <EventPacket::read(BinaryStream&)+0x214>)
+  842b32:	447a      	add	r2, pc
+  842b34:	589b      	ldr	r3, [r3, r2]
+  842b36:	1f0a      	subs	r2, r1, #4
+  842b38:	b1a3      	cbz	r3, 842b64 <EventPacket::read(BinaryStream&)+0x170>
+  842b3a:	f3bf 8f5b 	dmb	ish
+  842b3e:	e852 1f00 	ldrex	r1, [r2]
+  842b42:	1e4b      	subs	r3, r1, #1
+  842b44:	e842 3700 	strex	r7, r3, [r2]
+  842b48:	2f00      	cmp	r7, #0
+  842b4a:	d1f8      	bne.n	842b3e <EventPacket::read(BinaryStream&)+0x14a>
+  842b4c:	f3bf 8f5b 	dmb	ish
+  842b50:	e00b      	b.n	842b6a <EventPacket::read(BinaryStream&)+0x176>
+  842b52:	6811      	ldr	r1, [r2, #0]
+  842b54:	1e4b      	subs	r3, r1, #1
+  842b56:	6013      	str	r3, [r2, #0]
+  842b58:	2900      	cmp	r1, #0
+  842b5a:	dcb9      	bgt.n	842ad0 <EventPacket::read(BinaryStream&)+0xdc>
+  842b5c:	a902      	add	r1, sp, #8
+  842b5e:	f29b ef36 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  842b62:	e7b5      	b.n	842ad0 <EventPacket::read(BinaryStream&)+0xdc>
+  842b64:	6811      	ldr	r1, [r2, #0]
+  842b66:	1e4b      	subs	r3, r1, #1
+  842b68:	6013      	str	r3, [r2, #0]
+  842b6a:	2900      	cmp	r1, #0
+  842b6c:	dcc7      	bgt.n	842afe <EventPacket::read(BinaryStream&)+0x10a>
+  842b6e:	a902      	add	r1, sp, #8
+  842b70:	f29b ef2c 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  842b74:	e7c3      	b.n	842afe <EventPacket::read(BinaryStream&)+0x10a>
+  842b76:	4a21      	ldr	r2, [pc, #132]	; (842bfc <EventPacket::read(BinaryStream&)+0x208>)
+  842b78:	4604      	mov	r4, r0
+  842b7a:	4b21      	ldr	r3, [pc, #132]	; (842c00 <EventPacket::read(BinaryStream&)+0x20c>)
+  842b7c:	447a      	add	r2, pc
+  842b7e:	9901      	ldr	r1, [sp, #4]
+  842b80:	f1a1 000c 	sub.w	r0, r1, #12
+  842b84:	589a      	ldr	r2, [r3, r2]
+  842b86:	4290      	cmp	r0, r2
+  842b88:	d031      	beq.n	842bee <EventPacket::read(BinaryStream&)+0x1fa>
+  842b8a:	4a1e      	ldr	r2, [pc, #120]	; (842c04 <EventPacket::read(BinaryStream&)+0x210>)
+  842b8c:	4b1e      	ldr	r3, [pc, #120]	; (842c08 <EventPacket::read(BinaryStream&)+0x214>)
+  842b8e:	447a      	add	r2, pc
+  842b90:	589b      	ldr	r3, [r3, r2]
+  842b92:	1f0a      	subs	r2, r1, #4
+  842b94:	b373      	cbz	r3, 842bf4 <EventPacket::read(BinaryStream&)+0x200>
+  842b96:	f3bf 8f5b 	dmb	ish
+  842b9a:	e852 1f00 	ldrex	r1, [r2]
+  842b9e:	1e4b      	subs	r3, r1, #1
+  842ba0:	e842 3700 	strex	r7, r3, [r2]
+  842ba4:	2f00      	cmp	r7, #0
+  842ba6:	d1f8      	bne.n	842b9a <EventPacket::read(BinaryStream&)+0x1a6>
+  842ba8:	f3bf 8f5b 	dmb	ish
+  842bac:	e019      	b.n	842be2 <EventPacket::read(BinaryStream&)+0x1ee>
+  842bae:	4a19      	ldr	r2, [pc, #100]	; (842c14 <EventPacket::read(BinaryStream&)+0x220>)
+  842bb0:	4604      	mov	r4, r0
+  842bb2:	9900      	ldr	r1, [sp, #0]
+  842bb4:	447a      	add	r2, pc
+  842bb6:	f1a1 000c 	sub.w	r0, r1, #12
+  842bba:	58ba      	ldr	r2, [r7, r2]
+  842bbc:	4290      	cmp	r0, r2
+  842bbe:	d016      	beq.n	842bee <EventPacket::read(BinaryStream&)+0x1fa>
+  842bc0:	4a15      	ldr	r2, [pc, #84]	; (842c18 <EventPacket::read(BinaryStream&)+0x224>)
+  842bc2:	4b11      	ldr	r3, [pc, #68]	; (842c08 <EventPacket::read(BinaryStream&)+0x214>)
+  842bc4:	447a      	add	r2, pc
+  842bc6:	589b      	ldr	r3, [r3, r2]
+  842bc8:	1f0a      	subs	r2, r1, #4
+  842bca:	b19b      	cbz	r3, 842bf4 <EventPacket::read(BinaryStream&)+0x200>
+  842bcc:	f3bf 8f5b 	dmb	ish
+  842bd0:	e852 1f00 	ldrex	r1, [r2]
+  842bd4:	1e4b      	subs	r3, r1, #1
+  842bd6:	e842 3700 	strex	r7, r3, [r2]
+  842bda:	2f00      	cmp	r7, #0
+  842bdc:	d1f8      	bne.n	842bd0 <EventPacket::read(BinaryStream&)+0x1dc>
+  842bde:	f3bf 8f5b 	dmb	ish
+  842be2:	2900      	cmp	r1, #0
+  842be4:	bfdc      	itt	le
+  842be6:	f10d 0108 	addle.w	r1, sp, #8
+  842bea:	f29b eef0 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  842bee:	4620      	mov	r0, r4
+  842bf0:	f636 eb82 	blx	6792f8 <_Unwind_Resume@plt>
+  842bf4:	6811      	ldr	r1, [r2, #0]
+  842bf6:	1e4b      	subs	r3, r1, #1
+  842bf8:	6013      	str	r3, [r2, #0]
+  842bfa:	e7f2      	b.n	842be2 <EventPacket::read(BinaryStream&)+0x1ee>
+  842bfc:	9404      	str	r4, [sp, #16]
+  842bfe:	0152      	lsls	r2, r2, #5
+  842c00:	8bdc      	ldrh	r4, [r3, #30]
+  842c02:	ffff 93f2 	vrsra.u64	<illegal reg q12.5>, q9, #1
+  842c06:	0152      	lsls	r2, r2, #5
+  842c08:	8be0      	ldrh	r0, [r4, #30]
+  842c0a:	ffff 94be 	vsri.64	d25, d30, #1
+  842c0e:	0152      	lsls	r2, r2, #5
+  842c10:	9472      	str	r4, [sp, #456]	; 0x1c8
+  842c12:	0152      	lsls	r2, r2, #5
+  842c14:	93cc      	str	r3, [sp, #816]	; 0x330
+  842c16:	0152      	lsls	r2, r2, #5
+  842c18:	93bc      	str	r3, [sp, #752]	; 0x2f0
+  842c1a:	0152      	lsls	r2, r2, #5
+  842c1c:	948e      	str	r4, [sp, #568]	; 0x238
+  842c1e:	0152      	lsls	r2, r2, #5
+  842c20:	944e      	str	r4, [sp, #312]	; 0x138
+  842c22:	0152      	lsls	r2, r2, #5

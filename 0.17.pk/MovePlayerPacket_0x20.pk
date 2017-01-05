@@ -1,0 +1,33 @@
+  8395bc:	b5b0      	push	{r4, r5, r7, lr}
+  8395be:	b084      	sub	sp, #16
+  8395c0:	4604      	mov	r4, r0
+  8395c2:	4668      	mov	r0, sp
+  8395c4:	460d      	mov	r5, r1
+  8395c6:	f642 eaae 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  8395ca:	e9dd 0100 	ldrd	r0, r1, [sp]
+  8395ce:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  8395d2:	4668      	mov	r0, sp
+  8395d4:	4629      	mov	r1, r5
+  8395d6:	f642 eaac 	blx	67bb30 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8395da:	9800      	ldr	r0, [sp, #0]
+  8395dc:	4629      	mov	r1, r5
+  8395de:	61a0      	str	r0, [r4, #24]
+  8395e0:	9801      	ldr	r0, [sp, #4]
+  8395e2:	61e0      	str	r0, [r4, #28]
+  8395e4:	9802      	ldr	r0, [sp, #8]
+  8395e6:	6220      	str	r0, [r4, #32]
+  8395e8:	4668      	mov	r0, sp
+  8395ea:	f642 eaa8 	blx	67bb3c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  8395ee:	e9dd 0100 	ldrd	r0, r1, [sp]
+  8395f2:	e9c4 0109 	strd	r0, r1, [r4, #36]	; 0x24
+  8395f6:	4628      	mov	r0, r5
+  8395f8:	f642 eafa 	blx	67bbf0 <ReadOnlyBinaryStream::getFloat()@plt>
+  8395fc:	62e0      	str	r0, [r4, #44]	; 0x2c
+  8395fe:	4628      	mov	r0, r5
+  839600:	f642 e9ee 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  839604:	f884 0030 	strb.w	r0, [r4, #48]	; 0x30
+  839608:	4628      	mov	r0, r5
+  83960a:	f642 ea1a 	blx	67ba40 <ReadOnlyBinaryStream::getBool()@plt>
+  83960e:	f884 0031 	strb.w	r0, [r4, #49]	; 0x31
+  839612:	b004      	add	sp, #16
+  839614:	bdb0      	pop	{r4, r5, r7, pc}

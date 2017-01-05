@@ -1,0 +1,116 @@
+  83dcac:	b5f0      	push	{r4, r5, r6, r7, lr}
+  83dcae:	b083      	sub	sp, #12
+  83dcb0:	466e      	mov	r6, sp
+  83dcb2:	4605      	mov	r5, r0
+  83dcb4:	4630      	mov	r0, r6
+  83dcb6:	460c      	mov	r4, r1
+  83dcb8:	f63d ea2a 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83dcbc:	f105 000c 	add.w	r0, r5, #12
+  83dcc0:	4631      	mov	r1, r6
+  83dcc2:	f2a0 eed4 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83dcc6:	483e      	ldr	r0, [pc, #248]	; (83ddc0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  83dcc8:	4a3a      	ldr	r2, [pc, #232]	; (83ddb4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  83dcca:	4478      	add	r0, pc
+  83dccc:	9900      	ldr	r1, [sp, #0]
+  83dcce:	5812      	ldr	r2, [r2, r0]
+  83dcd0:	f1a1 000c 	sub.w	r0, r1, #12
+  83dcd4:	4290      	cmp	r0, r2
+  83dcd6:	d128      	bne.n	83dd2a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  83dcd8:	4620      	mov	r0, r4
+  83dcda:	f63e e868 	blx	67bdac <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  83dcde:	6128      	str	r0, [r5, #16]
+  83dce0:	4620      	mov	r0, r4
+  83dce2:	f63d eec0 	blx	67ba64 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  83dce6:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  83dcea:	4620      	mov	r0, r4
+  83dcec:	f63e e85e 	blx	67bdac <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  83dcf0:	462f      	mov	r7, r5
+  83dcf2:	4606      	mov	r6, r0
+  83dcf4:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  83dcf8:	6879      	ldr	r1, [r7, #4]
+  83dcfa:	1a09      	subs	r1, r1, r0
+  83dcfc:	428e      	cmp	r6, r1
+  83dcfe:	d904      	bls.n	83dd0a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  83dd00:	1a71      	subs	r1, r6, r1
+  83dd02:	4638      	mov	r0, r7
+  83dd04:	f63e e858 	blx	67bdb8 <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  83dd08:	e002      	b.n	83dd10 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  83dd0a:	bf3c      	itt	cc
+  83dd0c:	4430      	addcc	r0, r6
+  83dd0e:	6268      	strcc	r0, [r5, #36]	; 0x24
+  83dd10:	2e01      	cmp	r6, #1
+  83dd12:	db08      	blt.n	83dd26 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  83dd14:	2500      	movs	r5, #0
+  83dd16:	4620      	mov	r0, r4
+  83dd18:	f63d ee62 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  83dd1c:	6839      	ldr	r1, [r7, #0]
+  83dd1e:	5548      	strb	r0, [r1, r5]
+  83dd20:	3501      	adds	r5, #1
+  83dd22:	42ae      	cmp	r6, r5
+  83dd24:	d1f7      	bne.n	83dd16 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  83dd26:	b003      	add	sp, #12
+  83dd28:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  83dd2a:	4a26      	ldr	r2, [pc, #152]	; (83ddc4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  83dd2c:	4b23      	ldr	r3, [pc, #140]	; (83ddbc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  83dd2e:	447a      	add	r2, pc
+  83dd30:	589b      	ldr	r3, [r3, r2]
+  83dd32:	1f0a      	subs	r2, r1, #4
+  83dd34:	b15b      	cbz	r3, 83dd4e <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  83dd36:	f3bf 8f5b 	dmb	ish
+  83dd3a:	e852 1f00 	ldrex	r1, [r2]
+  83dd3e:	1e4b      	subs	r3, r1, #1
+  83dd40:	e842 3700 	strex	r7, r3, [r2]
+  83dd44:	2f00      	cmp	r7, #0
+  83dd46:	d1f8      	bne.n	83dd3a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  83dd48:	f3bf 8f5b 	dmb	ish
+  83dd4c:	e002      	b.n	83dd54 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  83dd4e:	6811      	ldr	r1, [r2, #0]
+  83dd50:	1e4b      	subs	r3, r1, #1
+  83dd52:	6013      	str	r3, [r2, #0]
+  83dd54:	2900      	cmp	r1, #0
+  83dd56:	dcbf      	bgt.n	83dcd8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  83dd58:	a901      	add	r1, sp, #4
+  83dd5a:	f2a0 ee38 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83dd5e:	e7bb      	b.n	83dcd8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  83dd60:	4a13      	ldr	r2, [pc, #76]	; (83ddb0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  83dd62:	4604      	mov	r4, r0
+  83dd64:	4b13      	ldr	r3, [pc, #76]	; (83ddb4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  83dd66:	447a      	add	r2, pc
+  83dd68:	9900      	ldr	r1, [sp, #0]
+  83dd6a:	f1a1 000c 	sub.w	r0, r1, #12
+  83dd6e:	589a      	ldr	r2, [r3, r2]
+  83dd70:	4290      	cmp	r0, r2
+  83dd72:	d016      	beq.n	83dda2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  83dd74:	4a10      	ldr	r2, [pc, #64]	; (83ddb8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  83dd76:	4b11      	ldr	r3, [pc, #68]	; (83ddbc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  83dd78:	447a      	add	r2, pc
+  83dd7a:	589b      	ldr	r3, [r3, r2]
+  83dd7c:	1f0a      	subs	r2, r1, #4
+  83dd7e:	b19b      	cbz	r3, 83dda8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  83dd80:	f3bf 8f5b 	dmb	ish
+  83dd84:	e852 1f00 	ldrex	r1, [r2]
+  83dd88:	1e4b      	subs	r3, r1, #1
+  83dd8a:	e842 3700 	strex	r7, r3, [r2]
+  83dd8e:	2f00      	cmp	r7, #0
+  83dd90:	d1f8      	bne.n	83dd84 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  83dd92:	f3bf 8f5b 	dmb	ish
+  83dd96:	2900      	cmp	r1, #0
+  83dd98:	bfdc      	itt	le
+  83dd9a:	f10d 0108 	addle.w	r1, sp, #8
+  83dd9e:	f2a0 ee16 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83dda2:	4620      	mov	r0, r4
+  83dda4:	f63b eaa8 	blx	6792f8 <_Unwind_Resume@plt>
+  83dda8:	6811      	ldr	r1, [r2, #0]
+  83ddaa:	1e4b      	subs	r3, r1, #1
+  83ddac:	6013      	str	r3, [r2, #0]
+  83ddae:	e7f2      	b.n	83dd96 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  83ddb0:	e21a      	b.n	83e1e8 <AvailableCommandsPacket::read(BinaryStream&)+0x134>
+  83ddb2:	0152      	lsls	r2, r2, #5
+  83ddb4:	8bdc      	ldrh	r4, [r3, #30]
+  83ddb6:	ffff e208 	vsubl.u<illegal width 64>	q15, d15, d8
+  83ddba:	0152      	lsls	r2, r2, #5
+  83ddbc:	8be0      	ldrh	r0, [r4, #30]
+  83ddbe:	ffff e2b6 	vrshr.u64	d30, d22, #1
+  83ddc2:	0152      	lsls	r2, r2, #5
+  83ddc4:	e252      	b.n	83e26c <AvailableCommandsPacket::~AvailableCommandsPacket()+0x2c>
+  83ddc6:	0152      	lsls	r2, r2, #5

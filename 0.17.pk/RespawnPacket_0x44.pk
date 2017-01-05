@@ -1,0 +1,13 @@
+  8396a4:	b510      	push	{r4, lr}
+  8396a6:	b084      	sub	sp, #16
+  8396a8:	4604      	mov	r4, r0
+  8396aa:	a801      	add	r0, sp, #4
+  8396ac:	f642 ea40 	blx	67bb30 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8396b0:	9801      	ldr	r0, [sp, #4]
+  8396b2:	60e0      	str	r0, [r4, #12]
+  8396b4:	9802      	ldr	r0, [sp, #8]
+  8396b6:	6120      	str	r0, [r4, #16]
+  8396b8:	9803      	ldr	r0, [sp, #12]
+  8396ba:	6160      	str	r0, [r4, #20]
+  8396bc:	b004      	add	sp, #16
+  8396be:	bd10      	pop	{r4, pc}

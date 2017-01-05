@@ -1,0 +1,187 @@
+  83d0e4:	b570      	push	{r4, r5, r6, lr}
+  83d0e6:	b084      	sub	sp, #16
+  83d0e8:	4604      	mov	r4, r0
+  83d0ea:	a802      	add	r0, sp, #8
+  83d0ec:	460d      	mov	r5, r1
+  83d0ee:	f63e ed14 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  83d0f2:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  83d0f6:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  83d0fa:	4628      	mov	r0, r5
+  83d0fc:	f63e eb2c 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  83d100:	62a0      	str	r0, [r4, #40]	; 0x28
+  83d102:	2807      	cmp	r0, #7
+  83d104:	d84d      	bhi.n	83d1a2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  83d106:	e8df f000 	tbb	[pc, r0]
+  83d10a:	040d      	lsls	r5, r1, #16
+  83d10c:	044c      	lsls	r4, r1, #17
+  83d10e:	3933      	subs	r1, #51	; 0x33
+  83d110:	2924      	cmp	r1, #36	; 0x24
+  83d112:	a802      	add	r0, sp, #8
+  83d114:	4629      	mov	r1, r5
+  83d116:	f63e ed00 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  83d11a:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  83d11e:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  83d122:	e03e      	b.n	83d1a2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  83d124:	ae01      	add	r6, sp, #4
+  83d126:	4629      	mov	r1, r5
+  83d128:	4630      	mov	r0, r6
+  83d12a:	f63d eff2 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83d12e:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  83d132:	4631      	mov	r1, r6
+  83d134:	f2a1 ec9a 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83d138:	4860      	ldr	r0, [pc, #384]	; (83d2bc <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  83d13a:	4a59      	ldr	r2, [pc, #356]	; (83d2a0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  83d13c:	4478      	add	r0, pc
+  83d13e:	9901      	ldr	r1, [sp, #4]
+  83d140:	5812      	ldr	r2, [r2, r0]
+  83d142:	f1a1 000c 	sub.w	r0, r1, #12
+  83d146:	4290      	cmp	r0, r2
+  83d148:	d12d      	bne.n	83d1a6 <BossEventPacket::read(BinaryStream&)+0xc2>
+  83d14a:	4628      	mov	r0, r5
+  83d14c:	f63e ed50 	blx	67bbf0 <ReadOnlyBinaryStream::getFloat()@plt>
+  83d150:	6320      	str	r0, [r4, #48]	; 0x30
+  83d152:	4628      	mov	r0, r5
+  83d154:	f63e ec7a 	blx	67ba4c <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  83d158:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  83d15c:	4628      	mov	r0, r5
+  83d15e:	f63e eafc 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  83d162:	6360      	str	r0, [r4, #52]	; 0x34
+  83d164:	4628      	mov	r0, r5
+  83d166:	f63e eaf8 	blx	67b758 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  83d16a:	63a0      	str	r0, [r4, #56]	; 0x38
+  83d16c:	b004      	add	sp, #16
+  83d16e:	bd70      	pop	{r4, r5, r6, pc}
+  83d170:	4628      	mov	r0, r5
+  83d172:	f63e ed3e 	blx	67bbf0 <ReadOnlyBinaryStream::getFloat()@plt>
+  83d176:	6320      	str	r0, [r4, #48]	; 0x30
+  83d178:	b004      	add	sp, #16
+  83d17a:	bd70      	pop	{r4, r5, r6, pc}
+  83d17c:	466e      	mov	r6, sp
+  83d17e:	4629      	mov	r1, r5
+  83d180:	4630      	mov	r0, r6
+  83d182:	f63d efc6 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83d186:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  83d18a:	4631      	mov	r1, r6
+  83d18c:	f2a1 ec6e 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83d190:	4846      	ldr	r0, [pc, #280]	; (83d2ac <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  83d192:	4a43      	ldr	r2, [pc, #268]	; (83d2a0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  83d194:	4478      	add	r0, pc
+  83d196:	9900      	ldr	r1, [sp, #0]
+  83d198:	5812      	ldr	r2, [r2, r0]
+  83d19a:	f1a1 000c 	sub.w	r0, r1, #12
+  83d19e:	4290      	cmp	r0, r2
+  83d1a0:	d113      	bne.n	83d1ca <BossEventPacket::read(BinaryStream&)+0xe6>
+  83d1a2:	b004      	add	sp, #16
+  83d1a4:	bd70      	pop	{r4, r5, r6, pc}
+  83d1a6:	4a46      	ldr	r2, [pc, #280]	; (83d2c0 <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  83d1a8:	4b3f      	ldr	r3, [pc, #252]	; (83d2a8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  83d1aa:	447a      	add	r2, pc
+  83d1ac:	589b      	ldr	r3, [r3, r2]
+  83d1ae:	1f0a      	subs	r2, r1, #4
+  83d1b0:	b1eb      	cbz	r3, 83d1ee <BossEventPacket::read(BinaryStream&)+0x10a>
+  83d1b2:	f3bf 8f5b 	dmb	ish
+  83d1b6:	e852 1f00 	ldrex	r1, [r2]
+  83d1ba:	1e4b      	subs	r3, r1, #1
+  83d1bc:	e842 3600 	strex	r6, r3, [r2]
+  83d1c0:	2e00      	cmp	r6, #0
+  83d1c2:	d1f8      	bne.n	83d1b6 <BossEventPacket::read(BinaryStream&)+0xd2>
+  83d1c4:	f3bf 8f5b 	dmb	ish
+  83d1c8:	e014      	b.n	83d1f4 <BossEventPacket::read(BinaryStream&)+0x110>
+  83d1ca:	4a39      	ldr	r2, [pc, #228]	; (83d2b0 <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  83d1cc:	4b36      	ldr	r3, [pc, #216]	; (83d2a8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  83d1ce:	447a      	add	r2, pc
+  83d1d0:	589b      	ldr	r3, [r3, r2]
+  83d1d2:	1f0a      	subs	r2, r1, #4
+  83d1d4:	b1a3      	cbz	r3, 83d200 <BossEventPacket::read(BinaryStream&)+0x11c>
+  83d1d6:	f3bf 8f5b 	dmb	ish
+  83d1da:	e852 1f00 	ldrex	r1, [r2]
+  83d1de:	1e4b      	subs	r3, r1, #1
+  83d1e0:	e842 3600 	strex	r6, r3, [r2]
+  83d1e4:	2e00      	cmp	r6, #0
+  83d1e6:	d1f8      	bne.n	83d1da <BossEventPacket::read(BinaryStream&)+0xf6>
+  83d1e8:	f3bf 8f5b 	dmb	ish
+  83d1ec:	e00b      	b.n	83d206 <BossEventPacket::read(BinaryStream&)+0x122>
+  83d1ee:	6811      	ldr	r1, [r2, #0]
+  83d1f0:	1e4b      	subs	r3, r1, #1
+  83d1f2:	6013      	str	r3, [r2, #0]
+  83d1f4:	2900      	cmp	r1, #0
+  83d1f6:	dca8      	bgt.n	83d14a <BossEventPacket::read(BinaryStream&)+0x66>
+  83d1f8:	a902      	add	r1, sp, #8
+  83d1fa:	f2a1 ebe8 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83d1fe:	e7a4      	b.n	83d14a <BossEventPacket::read(BinaryStream&)+0x66>
+  83d200:	6811      	ldr	r1, [r2, #0]
+  83d202:	1e4b      	subs	r3, r1, #1
+  83d204:	6013      	str	r3, [r2, #0]
+  83d206:	2900      	cmp	r1, #0
+  83d208:	dccb      	bgt.n	83d1a2 <BossEventPacket::read(BinaryStream&)+0xbe>
+  83d20a:	a902      	add	r1, sp, #8
+  83d20c:	f2a1 ebde 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83d210:	b004      	add	sp, #16
+  83d212:	bd70      	pop	{r4, r5, r6, pc}
+  83d214:	4a27      	ldr	r2, [pc, #156]	; (83d2b4 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  83d216:	4604      	mov	r4, r0
+  83d218:	4b21      	ldr	r3, [pc, #132]	; (83d2a0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  83d21a:	447a      	add	r2, pc
+  83d21c:	9901      	ldr	r1, [sp, #4]
+  83d21e:	f1a1 000c 	sub.w	r0, r1, #12
+  83d222:	589a      	ldr	r2, [r3, r2]
+  83d224:	4290      	cmp	r0, r2
+  83d226:	d032      	beq.n	83d28e <BossEventPacket::read(BinaryStream&)+0x1aa>
+  83d228:	4a23      	ldr	r2, [pc, #140]	; (83d2b8 <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  83d22a:	4b1f      	ldr	r3, [pc, #124]	; (83d2a8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  83d22c:	447a      	add	r2, pc
+  83d22e:	589b      	ldr	r3, [r3, r2]
+  83d230:	1f0a      	subs	r2, r1, #4
+  83d232:	b37b      	cbz	r3, 83d294 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  83d234:	f3bf 8f5b 	dmb	ish
+  83d238:	e852 1f00 	ldrex	r1, [r2]
+  83d23c:	1e4b      	subs	r3, r1, #1
+  83d23e:	e842 3600 	strex	r6, r3, [r2]
+  83d242:	2e00      	cmp	r6, #0
+  83d244:	d1f8      	bne.n	83d238 <BossEventPacket::read(BinaryStream&)+0x154>
+  83d246:	f3bf 8f5b 	dmb	ish
+  83d24a:	e01a      	b.n	83d282 <BossEventPacket::read(BinaryStream&)+0x19e>
+  83d24c:	4a13      	ldr	r2, [pc, #76]	; (83d29c <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  83d24e:	4604      	mov	r4, r0
+  83d250:	4b13      	ldr	r3, [pc, #76]	; (83d2a0 <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  83d252:	447a      	add	r2, pc
+  83d254:	9900      	ldr	r1, [sp, #0]
+  83d256:	f1a1 000c 	sub.w	r0, r1, #12
+  83d25a:	589a      	ldr	r2, [r3, r2]
+  83d25c:	4290      	cmp	r0, r2
+  83d25e:	d016      	beq.n	83d28e <BossEventPacket::read(BinaryStream&)+0x1aa>
+  83d260:	4a10      	ldr	r2, [pc, #64]	; (83d2a4 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  83d262:	4b11      	ldr	r3, [pc, #68]	; (83d2a8 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  83d264:	447a      	add	r2, pc
+  83d266:	589b      	ldr	r3, [r3, r2]
+  83d268:	1f0a      	subs	r2, r1, #4
+  83d26a:	b19b      	cbz	r3, 83d294 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  83d26c:	f3bf 8f5b 	dmb	ish
+  83d270:	e852 1f00 	ldrex	r1, [r2]
+  83d274:	1e4b      	subs	r3, r1, #1
+  83d276:	e842 3600 	strex	r6, r3, [r2]
+  83d27a:	2e00      	cmp	r6, #0
+  83d27c:	d1f8      	bne.n	83d270 <BossEventPacket::read(BinaryStream&)+0x18c>
+  83d27e:	f3bf 8f5b 	dmb	ish
+  83d282:	2900      	cmp	r1, #0
+  83d284:	bfdc      	itt	le
+  83d286:	f10d 0108 	addle.w	r1, sp, #8
+  83d28a:	f2a1 eba0 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83d28e:	4620      	mov	r0, r4
+  83d290:	f63c e832 	blx	6792f8 <_Unwind_Resume@plt>
+  83d294:	6811      	ldr	r1, [r2, #0]
+  83d296:	1e4b      	subs	r3, r1, #1
+  83d298:	6013      	str	r3, [r2, #0]
+  83d29a:	e7f2      	b.n	83d282 <BossEventPacket::read(BinaryStream&)+0x19e>
+  83d29c:	ed2e 0152 	stfs	f0, [lr, #-328]!	; 0xfffffeb8
+  83d2a0:	8bdc      	ldrh	r4, [r3, #30]
+  83d2a2:	ffff ed1c 			; <UNDEFINED> instruction: 0xffffed1c
+  83d2a6:	0152      	lsls	r2, r2, #5
+  83d2a8:	8be0      	ldrh	r0, [r4, #30]
+  83d2aa:	ffff edec 	vqrdmulh.s<illegal width 64>	q15, <illegal reg q15.5>, d28[0]
+  83d2ae:	0152      	lsls	r2, r2, #5
+  83d2b0:	edb2 0152 	ldfs	f0, [r2, #328]!	; 0x148
+  83d2b4:	ed66 0152 	stfe	f0, [r6, #-328]!	; 0xfffffeb8
+  83d2b8:	ed54 0152 	ldfe	f0, [r4, #-328]	; 0xfffffeb8
+  83d2bc:	ee44 0152 	mcr	1, 2, r0, cr4, cr2, {2}
+  83d2c0:	edd6 0152 	ldfe	f0, [r6, #328]	; 0x148

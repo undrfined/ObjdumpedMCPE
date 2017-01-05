@@ -1,0 +1,4 @@
+  83d604:	f100 020c 	add.w	r2, r0, #12
+  83d608:	4608      	mov	r0, r1
+  83d60a:	4611      	mov	r1, r2
+  83d60c:	f2a1 bdc6 	b.w	adf19c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0xb24>

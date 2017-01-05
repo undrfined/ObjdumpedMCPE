@@ -1,0 +1,39 @@
+  839e68:	b570      	push	{r4, r5, r6, lr}
+  839e6a:	b086      	sub	sp, #24
+  839e6c:	4604      	mov	r4, r0
+  839e6e:	4668      	mov	r0, sp
+  839e70:	460d      	mov	r5, r1
+  839e72:	f641 ee58 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  839e76:	e9dd 0100 	ldrd	r0, r1, [sp]
+  839e7a:	466e      	mov	r6, sp
+  839e7c:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  839e80:	4630      	mov	r0, r6
+  839e82:	4629      	mov	r1, r5
+  839e84:	f641 eede 	blx	67bc44 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  839e88:	f104 0018 	add.w	r0, r4, #24
+  839e8c:	4631      	mov	r1, r6
+  839e8e:	f641 e9ca 	blx	67b224 <ItemInstance::operator=(ItemInstance const&)@plt>
+  839e92:	9802      	ldr	r0, [sp, #8]
+  839e94:	b110      	cbz	r0, 839e9c <MobEquipmentPacket::read(BinaryStream&)+0x34>
+  839e96:	6801      	ldr	r1, [r0, #0]
+  839e98:	6849      	ldr	r1, [r1, #4]
+  839e9a:	4788      	blx	r1
+  839e9c:	4628      	mov	r0, r5
+  839e9e:	f641 eda0 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  839ea2:	f884 002c 	strb.w	r0, [r4, #44]	; 0x2c
+  839ea6:	4628      	mov	r0, r5
+  839ea8:	f641 ed9a 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  839eac:	f884 002d 	strb.w	r0, [r4, #45]	; 0x2d
+  839eb0:	4628      	mov	r0, r5
+  839eb2:	f641 ed96 	blx	67b9e0 <ReadOnlyBinaryStream::getByte()@plt>
+  839eb6:	f884 002f 	strb.w	r0, [r4, #47]	; 0x2f
+  839eba:	b006      	add	sp, #24
+  839ebc:	bd70      	pop	{r4, r5, r6, pc}
+  839ebe:	4604      	mov	r4, r0
+  839ec0:	9802      	ldr	r0, [sp, #8]
+  839ec2:	b110      	cbz	r0, 839eca <MobEquipmentPacket::read(BinaryStream&)+0x62>
+  839ec4:	6801      	ldr	r1, [r0, #0]
+  839ec6:	6849      	ldr	r1, [r1, #4]
+  839ec8:	4788      	blx	r1
+  839eca:	4620      	mov	r0, r4
+  839ecc:	f63f ea14 	blx	6792f8 <_Unwind_Resume@plt>

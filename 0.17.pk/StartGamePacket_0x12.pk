@@ -1,0 +1,205 @@
+  8382a8:	b5f0      	push	{r4, r5, r6, r7, lr}
+  8382aa:	b099      	sub	sp, #100	; 0x64
+  8382ac:	4604      	mov	r4, r0
+  8382ae:	a802      	add	r0, sp, #8
+  8382b0:	460d      	mov	r5, r1
+  8382b2:	f643 ec32 	blx	67bb18 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  8382b6:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  8382ba:	e9c4 011a 	strd	r0, r1, [r4, #104]	; 0x68
+  8382be:	a802      	add	r0, sp, #8
+  8382c0:	4629      	mov	r1, r5
+  8382c2:	f643 ec30 	blx	67bb24 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  8382c6:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  8382ca:	e9c4 011c 	strd	r0, r1, [r4, #112]	; 0x70
+  8382ce:	a802      	add	r0, sp, #8
+  8382d0:	4629      	mov	r1, r5
+  8382d2:	f643 ec2e 	blx	67bb30 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8382d6:	9802      	ldr	r0, [sp, #8]
+  8382d8:	ae02      	add	r6, sp, #8
+  8382da:	67a0      	str	r0, [r4, #120]	; 0x78
+  8382dc:	4629      	mov	r1, r5
+  8382de:	9803      	ldr	r0, [sp, #12]
+  8382e0:	67e0      	str	r0, [r4, #124]	; 0x7c
+  8382e2:	9804      	ldr	r0, [sp, #16]
+  8382e4:	f8c4 0080 	str.w	r0, [r4, #128]	; 0x80
+  8382e8:	4630      	mov	r0, r6
+  8382ea:	f643 ec28 	blx	67bb3c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  8382ee:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  8382f2:	e9c4 0121 	strd	r0, r1, [r4, #132]	; 0x84
+  8382f6:	4630      	mov	r0, r6
+  8382f8:	4629      	mov	r1, r5
+  8382fa:	f643 ec26 	blx	67bb48 <LevelSettings ReadOnlyBinaryStream::getType<LevelSettings>()@plt>
+  8382fe:	4630      	mov	r0, r6
+  838300:	f106 0120 	add.w	r1, r6, #32
+  838304:	f960 0acd 	vld1.64	{d16-d17}, [r0]!
+  838308:	f960 4acf 	vld1.64	{d20-d21}, [r0]
+  83830c:	f8bd 0038 	ldrh.w	r0, [sp, #56]	; 0x38
+  838310:	f961 2acf 	vld1.64	{d18-d19}, [r1]
+  838314:	f106 0140 	add.w	r1, r6, #64	; 0x40
+  838318:	87a0      	strh	r0, [r4, #60]	; 0x3c
+  83831a:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  83831e:	f940 2a8f 	vst1.32	{d18-d19}, [r0]
+  838322:	f104 000c 	add.w	r0, r4, #12
+  838326:	f940 0a8f 	vst1.32	{d16-d17}, [r0]
+  83832a:	f104 001c 	add.w	r0, r4, #28
+  83832e:	f940 4a8f 	vst1.32	{d20-d21}, [r0]
+  838332:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  838334:	6420      	str	r0, [r4, #64]	; 0x40
+  838336:	9810      	ldr	r0, [sp, #64]	; 0x40
+  838338:	6460      	str	r0, [r4, #68]	; 0x44
+  83833a:	9811      	ldr	r0, [sp, #68]	; 0x44
+  83833c:	64a0      	str	r0, [r4, #72]	; 0x48
+  83833e:	f104 004c 	add.w	r0, r4, #76	; 0x4c
+  838342:	f643 ec08 	blx	67bb54 <std::vector<PackIdVersion, std::allocator<PackIdVersion> >::_M_move_assign(std::vector<PackIdVersion, std::allocator<PackIdVersion> >&&, std::integral_constant<bool, true>)@plt>
+  838346:	f104 0058 	add.w	r0, r4, #88	; 0x58
+  83834a:	f106 014c 	add.w	r1, r6, #76	; 0x4c
+  83834e:	f643 ec02 	blx	67bb54 <std::vector<PackIdVersion, std::allocator<PackIdVersion> >::_M_move_assign(std::vector<PackIdVersion, std::allocator<PackIdVersion> >&&, std::integral_constant<bool, true>)@plt>
+  838352:	4630      	mov	r0, r6
+  838354:	f642 eeb2 	blx	67b0bc <LevelSettings::~LevelSettings()@plt>
+  838358:	ae01      	add	r6, sp, #4
+  83835a:	4629      	mov	r1, r5
+  83835c:	4630      	mov	r0, r6
+  83835e:	f642 eed8 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  838362:	f104 008c 	add.w	r0, r4, #140	; 0x8c
+  838366:	4631      	mov	r1, r6
+  838368:	f2a6 eb80 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83836c:	484e      	ldr	r0, [pc, #312]	; (8384a8 <StartGamePacket::read(BinaryStream&)+0x200>)
+  83836e:	4f4b      	ldr	r7, [pc, #300]	; (83849c <StartGamePacket::read(BinaryStream&)+0x1f4>)
+  838370:	4478      	add	r0, pc
+  838372:	9901      	ldr	r1, [sp, #4]
+  838374:	583a      	ldr	r2, [r7, r0]
+  838376:	f1a1 000c 	sub.w	r0, r1, #12
+  83837a:	4290      	cmp	r0, r2
+  83837c:	d113      	bne.n	8383a6 <StartGamePacket::read(BinaryStream&)+0xfe>
+  83837e:	466e      	mov	r6, sp
+  838380:	4629      	mov	r1, r5
+  838382:	4630      	mov	r0, r6
+  838384:	f642 eec4 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  838388:	f104 0090 	add.w	r0, r4, #144	; 0x90
+  83838c:	4631      	mov	r1, r6
+  83838e:	f2a6 eb6e 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  838392:	4849      	ldr	r0, [pc, #292]	; (8384b8 <StartGamePacket::read(BinaryStream&)+0x210>)
+  838394:	9900      	ldr	r1, [sp, #0]
+  838396:	4478      	add	r0, pc
+  838398:	583a      	ldr	r2, [r7, r0]
+  83839a:	f1a1 000c 	sub.w	r0, r1, #12
+  83839e:	4290      	cmp	r0, r2
+  8383a0:	d113      	bne.n	8383ca <StartGamePacket::read(BinaryStream&)+0x122>
+  8383a2:	b019      	add	sp, #100	; 0x64
+  8383a4:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  8383a6:	4a41      	ldr	r2, [pc, #260]	; (8384ac <StartGamePacket::read(BinaryStream&)+0x204>)
+  8383a8:	4b3e      	ldr	r3, [pc, #248]	; (8384a4 <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  8383aa:	447a      	add	r2, pc
+  8383ac:	589b      	ldr	r3, [r3, r2]
+  8383ae:	1f0a      	subs	r2, r1, #4
+  8383b0:	b1eb      	cbz	r3, 8383ee <StartGamePacket::read(BinaryStream&)+0x146>
+  8383b2:	f3bf 8f5b 	dmb	ish
+  8383b6:	e852 1f00 	ldrex	r1, [r2]
+  8383ba:	1e4b      	subs	r3, r1, #1
+  8383bc:	e842 3600 	strex	r6, r3, [r2]
+  8383c0:	2e00      	cmp	r6, #0
+  8383c2:	d1f8      	bne.n	8383b6 <StartGamePacket::read(BinaryStream&)+0x10e>
+  8383c4:	f3bf 8f5b 	dmb	ish
+  8383c8:	e014      	b.n	8383f4 <StartGamePacket::read(BinaryStream&)+0x14c>
+  8383ca:	4a3c      	ldr	r2, [pc, #240]	; (8384bc <StartGamePacket::read(BinaryStream&)+0x214>)
+  8383cc:	4b35      	ldr	r3, [pc, #212]	; (8384a4 <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  8383ce:	447a      	add	r2, pc
+  8383d0:	589b      	ldr	r3, [r3, r2]
+  8383d2:	1f0a      	subs	r2, r1, #4
+  8383d4:	b1a3      	cbz	r3, 838400 <StartGamePacket::read(BinaryStream&)+0x158>
+  8383d6:	f3bf 8f5b 	dmb	ish
+  8383da:	e852 1f00 	ldrex	r1, [r2]
+  8383de:	1e4b      	subs	r3, r1, #1
+  8383e0:	e842 3700 	strex	r7, r3, [r2]
+  8383e4:	2f00      	cmp	r7, #0
+  8383e6:	d1f8      	bne.n	8383da <StartGamePacket::read(BinaryStream&)+0x132>
+  8383e8:	f3bf 8f5b 	dmb	ish
+  8383ec:	e00b      	b.n	838406 <StartGamePacket::read(BinaryStream&)+0x15e>
+  8383ee:	6811      	ldr	r1, [r2, #0]
+  8383f0:	1e4b      	subs	r3, r1, #1
+  8383f2:	6013      	str	r3, [r2, #0]
+  8383f4:	2900      	cmp	r1, #0
+  8383f6:	dcc2      	bgt.n	83837e <StartGamePacket::read(BinaryStream&)+0xd6>
+  8383f8:	a902      	add	r1, sp, #8
+  8383fa:	f2a6 eae8 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  8383fe:	e7be      	b.n	83837e <StartGamePacket::read(BinaryStream&)+0xd6>
+  838400:	6811      	ldr	r1, [r2, #0]
+  838402:	1e4b      	subs	r3, r1, #1
+  838404:	6013      	str	r3, [r2, #0]
+  838406:	2900      	cmp	r1, #0
+  838408:	dccb      	bgt.n	8383a2 <StartGamePacket::read(BinaryStream&)+0xfa>
+  83840a:	a902      	add	r1, sp, #8
+  83840c:	f2a6 eade 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  838410:	e7c7      	b.n	8383a2 <StartGamePacket::read(BinaryStream&)+0xfa>
+  838412:	4a21      	ldr	r2, [pc, #132]	; (838498 <StartGamePacket::read(BinaryStream&)+0x1f0>)
+  838414:	4604      	mov	r4, r0
+  838416:	4b21      	ldr	r3, [pc, #132]	; (83849c <StartGamePacket::read(BinaryStream&)+0x1f4>)
+  838418:	447a      	add	r2, pc
+  83841a:	9901      	ldr	r1, [sp, #4]
+  83841c:	f1a1 000c 	sub.w	r0, r1, #12
+  838420:	589a      	ldr	r2, [r3, r2]
+  838422:	4290      	cmp	r0, r2
+  838424:	d031      	beq.n	83848a <StartGamePacket::read(BinaryStream&)+0x1e2>
+  838426:	4a1e      	ldr	r2, [pc, #120]	; (8384a0 <StartGamePacket::read(BinaryStream&)+0x1f8>)
+  838428:	4b1e      	ldr	r3, [pc, #120]	; (8384a4 <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  83842a:	447a      	add	r2, pc
+  83842c:	589b      	ldr	r3, [r3, r2]
+  83842e:	1f0a      	subs	r2, r1, #4
+  838430:	b373      	cbz	r3, 838490 <StartGamePacket::read(BinaryStream&)+0x1e8>
+  838432:	f3bf 8f5b 	dmb	ish
+  838436:	e852 1f00 	ldrex	r1, [r2]
+  83843a:	1e4b      	subs	r3, r1, #1
+  83843c:	e842 3700 	strex	r7, r3, [r2]
+  838440:	2f00      	cmp	r7, #0
+  838442:	d1f8      	bne.n	838436 <StartGamePacket::read(BinaryStream&)+0x18e>
+  838444:	f3bf 8f5b 	dmb	ish
+  838448:	e019      	b.n	83847e <StartGamePacket::read(BinaryStream&)+0x1d6>
+  83844a:	4a19      	ldr	r2, [pc, #100]	; (8384b0 <StartGamePacket::read(BinaryStream&)+0x208>)
+  83844c:	4604      	mov	r4, r0
+  83844e:	9900      	ldr	r1, [sp, #0]
+  838450:	447a      	add	r2, pc
+  838452:	f1a1 000c 	sub.w	r0, r1, #12
+  838456:	58ba      	ldr	r2, [r7, r2]
+  838458:	4290      	cmp	r0, r2
+  83845a:	d016      	beq.n	83848a <StartGamePacket::read(BinaryStream&)+0x1e2>
+  83845c:	4a15      	ldr	r2, [pc, #84]	; (8384b4 <StartGamePacket::read(BinaryStream&)+0x20c>)
+  83845e:	4b11      	ldr	r3, [pc, #68]	; (8384a4 <StartGamePacket::read(BinaryStream&)+0x1fc>)
+  838460:	447a      	add	r2, pc
+  838462:	589b      	ldr	r3, [r3, r2]
+  838464:	1f0a      	subs	r2, r1, #4
+  838466:	b19b      	cbz	r3, 838490 <StartGamePacket::read(BinaryStream&)+0x1e8>
+  838468:	f3bf 8f5b 	dmb	ish
+  83846c:	e852 1f00 	ldrex	r1, [r2]
+  838470:	1e4b      	subs	r3, r1, #1
+  838472:	e842 3700 	strex	r7, r3, [r2]
+  838476:	2f00      	cmp	r7, #0
+  838478:	d1f8      	bne.n	83846c <StartGamePacket::read(BinaryStream&)+0x1c4>
+  83847a:	f3bf 8f5b 	dmb	ish
+  83847e:	2900      	cmp	r1, #0
+  838480:	bfdc      	itt	le
+  838482:	f10d 0108 	addle.w	r1, sp, #8
+  838486:	f2a6 eaa2 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83848a:	4620      	mov	r0, r4
+  83848c:	f640 ef34 	blx	6792f8 <_Unwind_Resume@plt>
+  838490:	6811      	ldr	r1, [r2, #0]
+  838492:	1e4b      	subs	r3, r1, #1
+  838494:	6013      	str	r3, [r2, #0]
+  838496:	e7f2      	b.n	83847e <StartGamePacket::read(BinaryStream&)+0x1d6>
+  838498:	3b68      	subs	r3, #104	; 0x68
+  83849a:	0153      	lsls	r3, r2, #5
+  83849c:	8bdc      	ldrh	r4, [r3, #30]
+  83849e:	ffff 3b56 			; <UNDEFINED> instruction: 0xffff3b56
+  8384a2:	0153      	lsls	r3, r2, #5
+  8384a4:	8be0      	ldrh	r0, [r4, #30]
+  8384a6:	ffff 3c10 			; <UNDEFINED> instruction: 0xffff3c10
+  8384aa:	0153      	lsls	r3, r2, #5
+  8384ac:	3bd6      	subs	r3, #214	; 0xd6
+  8384ae:	0153      	lsls	r3, r2, #5
+  8384b0:	3b30      	subs	r3, #48	; 0x30
+  8384b2:	0153      	lsls	r3, r2, #5
+  8384b4:	3b20      	subs	r3, #32
+  8384b6:	0153      	lsls	r3, r2, #5
+  8384b8:	3bea      	subs	r3, #234	; 0xea
+  8384ba:	0153      	lsls	r3, r2, #5
+  8384bc:	3bb2      	subs	r3, #178	; 0xb2
+  8384be:	0153      	lsls	r3, r2, #5

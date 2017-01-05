@@ -1,0 +1,92 @@
+  83b9e0:	b570      	push	{r4, r5, r6, lr}
+  83b9e2:	b086      	sub	sp, #24
+  83b9e4:	4605      	mov	r5, r0
+  83b9e6:	a802      	add	r0, sp, #8
+  83b9e8:	460c      	mov	r4, r1
+  83b9ea:	f640 e998 	blx	67bd1c <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  83b9ee:	9802      	ldr	r0, [sp, #8]
+  83b9f0:	ae01      	add	r6, sp, #4
+  83b9f2:	60e8      	str	r0, [r5, #12]
+  83b9f4:	4621      	mov	r1, r4
+  83b9f6:	9803      	ldr	r0, [sp, #12]
+  83b9f8:	6128      	str	r0, [r5, #16]
+  83b9fa:	4630      	mov	r0, r6
+  83b9fc:	f63f eb88 	blx	67b110 <ReadOnlyBinaryStream::getString()@plt>
+  83ba00:	f105 0014 	add.w	r0, r5, #20
+  83ba04:	4631      	mov	r1, r6
+  83ba06:	f2a3 e832 	blx	adea6c <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x3f4>
+  83ba0a:	482b      	ldr	r0, [pc, #172]	; (83bab8 <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  83ba0c:	4a27      	ldr	r2, [pc, #156]	; (83baac <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  83ba0e:	4478      	add	r0, pc
+  83ba10:	9901      	ldr	r1, [sp, #4]
+  83ba12:	5812      	ldr	r2, [r2, r0]
+  83ba14:	f1a1 000c 	sub.w	r0, r1, #12
+  83ba18:	4290      	cmp	r0, r2
+  83ba1a:	d101      	bne.n	83ba20 <FullChunkDataPacket::read(BinaryStream&)+0x40>
+  83ba1c:	b006      	add	sp, #24
+  83ba1e:	bd70      	pop	{r4, r5, r6, pc}
+  83ba20:	4a26      	ldr	r2, [pc, #152]	; (83babc <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  83ba22:	4b24      	ldr	r3, [pc, #144]	; (83bab4 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  83ba24:	447a      	add	r2, pc
+  83ba26:	589b      	ldr	r3, [r3, r2]
+  83ba28:	1f0a      	subs	r2, r1, #4
+  83ba2a:	b15b      	cbz	r3, 83ba44 <FullChunkDataPacket::read(BinaryStream&)+0x64>
+  83ba2c:	f3bf 8f5b 	dmb	ish
+  83ba30:	e852 1f00 	ldrex	r1, [r2]
+  83ba34:	1e4b      	subs	r3, r1, #1
+  83ba36:	e842 3600 	strex	r6, r3, [r2]
+  83ba3a:	2e00      	cmp	r6, #0
+  83ba3c:	d1f8      	bne.n	83ba30 <FullChunkDataPacket::read(BinaryStream&)+0x50>
+  83ba3e:	f3bf 8f5b 	dmb	ish
+  83ba42:	e002      	b.n	83ba4a <FullChunkDataPacket::read(BinaryStream&)+0x6a>
+  83ba44:	6811      	ldr	r1, [r2, #0]
+  83ba46:	1e4b      	subs	r3, r1, #1
+  83ba48:	6013      	str	r3, [r2, #0]
+  83ba4a:	2900      	cmp	r1, #0
+  83ba4c:	dce6      	bgt.n	83ba1c <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  83ba4e:	a904      	add	r1, sp, #16
+  83ba50:	f2a2 efbc 	blx	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83ba54:	e7e2      	b.n	83ba1c <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  83ba56:	4a14      	ldr	r2, [pc, #80]	; (83baa8 <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+  83ba58:	4604      	mov	r4, r0
+  83ba5a:	4b14      	ldr	r3, [pc, #80]	; (83baac <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  83ba5c:	447a      	add	r2, pc
+  83ba5e:	9901      	ldr	r1, [sp, #4]
+  83ba60:	f1a1 000c 	sub.w	r0, r1, #12
+  83ba64:	589a      	ldr	r2, [r3, r2]
+  83ba66:	4290      	cmp	r0, r2
+  83ba68:	d016      	beq.n	83ba98 <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+  83ba6a:	4a11      	ldr	r2, [pc, #68]	; (83bab0 <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  83ba6c:	4b11      	ldr	r3, [pc, #68]	; (83bab4 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  83ba6e:	447a      	add	r2, pc
+  83ba70:	589b      	ldr	r3, [r3, r2]
+  83ba72:	1f0a      	subs	r2, r1, #4
+  83ba74:	b19b      	cbz	r3, 83ba9e <FullChunkDataPacket::read(BinaryStream&)+0xbe>
+  83ba76:	f3bf 8f5b 	dmb	ish
+  83ba7a:	e852 1f00 	ldrex	r1, [r2]
+  83ba7e:	1e4b      	subs	r3, r1, #1
+  83ba80:	e842 3600 	strex	r6, r3, [r2]
+  83ba84:	2e00      	cmp	r6, #0
+  83ba86:	d1f8      	bne.n	83ba7a <FullChunkDataPacket::read(BinaryStream&)+0x9a>
+  83ba88:	f3bf 8f5b 	dmb	ish
+  83ba8c:	2900      	cmp	r1, #0
+  83ba8e:	bfdc      	itt	le
+  83ba90:	f10d 0114 	addle.w	r1, sp, #20
+  83ba94:	f2a2 ef9a 	blxle	ade9cc <EntityLegacySaveConverter::convertSkeleton(Entity&, CompoundTag const&)+0x354>
+  83ba98:	4620      	mov	r0, r4
+  83ba9a:	f63d ec2e 	blx	6792f8 <_Unwind_Resume@plt>
+  83ba9e:	6811      	ldr	r1, [r2, #0]
+  83baa0:	1e4b      	subs	r3, r1, #1
+  83baa2:	6013      	str	r3, [r2, #0]
+  83baa4:	e7f2      	b.n	83ba8c <FullChunkDataPacket::read(BinaryStream&)+0xac>
+  83baa6:	bf00      	nop
+  83baa8:	0524      	lsls	r4, r4, #20
+  83baaa:	0153      	lsls	r3, r2, #5
+  83baac:	8bdc      	ldrh	r4, [r3, #30]
+  83baae:	ffff 0512 	vsli.32	d16, d2, #31
+  83bab2:	0153      	lsls	r3, r2, #5
+  83bab4:	8be0      	ldrh	r0, [r4, #30]
+  83bab6:	ffff 0572 	vsli.32	q8, q9, #31
+  83baba:	0153      	lsls	r3, r2, #5
+  83babc:	055c      	lsls	r4, r3, #21
+  83babe:	0153      	lsls	r3, r2, #5
