@@ -1,0 +1,4 @@
+  87c430:	f100 020c 	add.w	r2, r0, #12
+  87c434:	4608      	mov	r0, r1
+  87c436:	4611      	mov	r1, r2
+  87c438:	f279 bb06 	b.w	af5a48 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x9de>

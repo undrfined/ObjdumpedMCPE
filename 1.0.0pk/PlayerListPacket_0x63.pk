@@ -1,0 +1,373 @@
+  87ac04:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  87ac08:	b081      	sub	sp, #4
+  87ac0a:	ed2d ab08 	vpush	{d10-d13}
+  87ac0e:	ed2d 8b02 	vpush	{d8}
+  87ac12:	b0a2      	sub	sp, #136	; 0x88
+  87ac14:	460c      	mov	r4, r1
+  87ac16:	4605      	mov	r5, r0
+  87ac18:	4620      	mov	r0, r4
+  87ac1a:	f615 ef4a 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  87ac1e:	7628      	strb	r0, [r5, #24]
+  87ac20:	4620      	mov	r0, r4
+  87ac22:	f615 ee02 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87ac26:	4606      	mov	r6, r0
+  87ac28:	7e28      	ldrb	r0, [r5, #24]
+  87ac2a:	bb00      	cbnz	r0, 87ac6e <PlayerListPacket::read(BinaryStream&)+0x6a>
+  87ac2c:	2e00      	cmp	r6, #0
+  87ac2e:	f000 8141 	beq.w	87aeb4 <PlayerListPacket::read(BinaryStream&)+0x2b0>
+  87ac32:	f105 000c 	add.w	r0, r5, #12
+  87ac36:	f10d 0940 	add.w	r9, sp, #64	; 0x40
+  87ac3a:	9002      	str	r0, [sp, #8]
+  87ac3c:	f109 0018 	add.w	r0, r9, #24
+  87ac40:	9003      	str	r0, [sp, #12]
+  87ac42:	ef80 8010 	vmov.i32	d8, #0	; 0x00000000
+  87ac46:	f8df 0374 	ldr.w	r0, [pc, #884]	; 87afbc <PlayerListPacket::read(BinaryStream&)+0x3b8>
+  87ac4a:	ef80 a050 	vmov.i32	q5, #0	; 0x00000000
+  87ac4e:	4fd5      	ldr	r7, [pc, #852]	; (87afa4 <PlayerListPacket::read(BinaryStream&)+0x3a0>)
+  87ac50:	f109 0b08 	add.w	fp, r9, #8
+  87ac54:	4478      	add	r0, pc
+  87ac56:	f04f 38ff 	mov.w	r8, #4294967295
+  87ac5a:	f857 a000 	ldr.w	sl, [r7, r0]
+  87ac5e:	f10a 010c 	add.w	r1, sl, #12
+  87ac62:	ec41 1b1c 	vmov	d12, r1, r1
+  87ac66:	49d2      	ldr	r1, [pc, #840]	; (87afb0 <PlayerListPacket::read(BinaryStream&)+0x3ac>)
+  87ac68:	5808      	ldr	r0, [r1, r0]
+  87ac6a:	9001      	str	r0, [sp, #4]
+  87ac6c:	e057      	b.n	87ad1e <PlayerListPacket::read(BinaryStream&)+0x11a>
+  87ac6e:	2801      	cmp	r0, #1
+  87ac70:	f040 8120 	bne.w	87aeb4 <PlayerListPacket::read(BinaryStream&)+0x2b0>
+  87ac74:	2e00      	cmp	r6, #0
+  87ac76:	f000 811d 	beq.w	87aeb4 <PlayerListPacket::read(BinaryStream&)+0x2b0>
+  87ac7a:	f105 000c 	add.w	r0, r5, #12
+  87ac7e:	9002      	str	r0, [sp, #8]
+  87ac80:	a804      	add	r0, sp, #16
+  87ac82:	4fc8      	ldr	r7, [pc, #800]	; (87afa4 <PlayerListPacket::read(BinaryStream&)+0x3a0>)
+  87ac84:	f100 0118 	add.w	r1, r0, #24
+  87ac88:	f100 0b08 	add.w	fp, r0, #8
+  87ac8c:	48c4      	ldr	r0, [pc, #784]	; (87afa0 <PlayerListPacket::read(BinaryStream&)+0x39c>)
+  87ac8e:	ef80 8010 	vmov.i32	d8, #0	; 0x00000000
+  87ac92:	9103      	str	r1, [sp, #12]
+  87ac94:	ef80 a050 	vmov.i32	q5, #0	; 0x00000000
+  87ac98:	4478      	add	r0, pc
+  87ac9a:	f10d 0a70 	add.w	sl, sp, #112	; 0x70
+  87ac9e:	f04f 39ff 	mov.w	r9, #4294967295
+  87aca2:	f857 8000 	ldr.w	r8, [r7, r0]
+  87aca6:	f108 010c 	add.w	r1, r8, #12
+  87acaa:	ec41 1b1c 	vmov	d12, r1, r1
+  87acae:	49c0      	ldr	r1, [pc, #768]	; (87afb0 <PlayerListPacket::read(BinaryStream&)+0x3ac>)
+  87acb0:	5808      	ldr	r0, [r1, r0]
+  87acb2:	9001      	str	r0, [sp, #4]
+  87acb4:	e0c7      	b.n	87ae46 <PlayerListPacket::read(BinaryStream&)+0x242>
+  87acb6:	1f0a      	subs	r2, r1, #4
+  87acb8:	9901      	ldr	r1, [sp, #4]
+  87acba:	b1f1      	cbz	r1, 87acfa <PlayerListPacket::read(BinaryStream&)+0xf6>
+  87acbc:	46bc      	mov	ip, r7
+  87acbe:	f3bf 8f5b 	dmb	ish
+  87acc2:	e852 1f00 	ldrex	r1, [r2]
+  87acc6:	1e4b      	subs	r3, r1, #1
+  87acc8:	e842 3700 	strex	r7, r3, [r2]
+  87accc:	2f00      	cmp	r7, #0
+  87acce:	d1f8      	bne.n	87acc2 <PlayerListPacket::read(BinaryStream&)+0xbe>
+  87acd0:	f3bf 8f5b 	dmb	ish
+  87acd4:	4667      	mov	r7, ip
+  87acd6:	e013      	b.n	87ad00 <PlayerListPacket::read(BinaryStream&)+0xfc>
+  87acd8:	1f0a      	subs	r2, r1, #4
+  87acda:	9901      	ldr	r1, [sp, #4]
+  87acdc:	b1b1      	cbz	r1, 87ad0c <PlayerListPacket::read(BinaryStream&)+0x108>
+  87acde:	46bc      	mov	ip, r7
+  87ace0:	f3bf 8f5b 	dmb	ish
+  87ace4:	e852 1f00 	ldrex	r1, [r2]
+  87ace8:	1e4b      	subs	r3, r1, #1
+  87acea:	e842 3700 	strex	r7, r3, [r2]
+  87acee:	2f00      	cmp	r7, #0
+  87acf0:	d1f8      	bne.n	87ace4 <PlayerListPacket::read(BinaryStream&)+0xe0>
+  87acf2:	f3bf 8f5b 	dmb	ish
+  87acf6:	4667      	mov	r7, ip
+  87acf8:	e00b      	b.n	87ad12 <PlayerListPacket::read(BinaryStream&)+0x10e>
+  87acfa:	6811      	ldr	r1, [r2, #0]
+  87acfc:	1e4b      	subs	r3, r1, #1
+  87acfe:	6013      	str	r3, [r2, #0]
+  87ad00:	2900      	cmp	r1, #0
+  87ad02:	dc38      	bgt.n	87ad76 <PlayerListPacket::read(BinaryStream&)+0x172>
+  87ad04:	a921      	add	r1, sp, #132	; 0x84
+  87ad06:	f27a eaa8 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ad0a:	e034      	b.n	87ad76 <PlayerListPacket::read(BinaryStream&)+0x172>
+  87ad0c:	6811      	ldr	r1, [r2, #0]
+  87ad0e:	1e4b      	subs	r3, r1, #1
+  87ad10:	6013      	str	r3, [r2, #0]
+  87ad12:	2900      	cmp	r1, #0
+  87ad14:	dc34      	bgt.n	87ad80 <PlayerListPacket::read(BinaryStream&)+0x17c>
+  87ad16:	a921      	add	r1, sp, #132	; 0x84
+  87ad18:	f27a ea9e 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ad1c:	e030      	b.n	87ad80 <PlayerListPacket::read(BinaryStream&)+0x17c>
+  87ad1e:	eef0 ca4c 	vmov.f32	s25, s24
+  87ad22:	e9cd 8810 	strd	r8, r8, [sp, #64]	; 0x40
+  87ad26:	eeb0 da48 	vmov.f32	s26, s16
+  87ad2a:	9803      	ldr	r0, [sp, #12]
+  87ad2c:	eef0 da48 	vmov.f32	s27, s16
+  87ad30:	f90b aacf 	vst1.64	{d10-d11}, [fp]
+  87ad34:	f900 cacf 	vst1.64	{d12-d13}, [r0]
+  87ad38:	2000      	movs	r0, #0
+  87ad3a:	901a      	str	r0, [sp, #104]	; 0x68
+  87ad3c:	4648      	mov	r0, r9
+  87ad3e:	4621      	mov	r1, r4
+  87ad40:	f616 e866 	blx	690e10 <PlayerListEntry::read(BinaryStream&)@plt>
+  87ad44:	e9d5 0104 	ldrd	r0, r1, [r5, #16]
+  87ad48:	4288      	cmp	r0, r1
+  87ad4a:	d006      	beq.n	87ad5a <PlayerListPacket::read(BinaryStream&)+0x156>
+  87ad4c:	4649      	mov	r1, r9
+  87ad4e:	f616 e866 	blx	690e1c <PlayerListEntry::PlayerListEntry(PlayerListEntry const&)@plt>
+  87ad52:	6928      	ldr	r0, [r5, #16]
+  87ad54:	3030      	adds	r0, #48	; 0x30
+  87ad56:	6128      	str	r0, [r5, #16]
+  87ad58:	e003      	b.n	87ad62 <PlayerListPacket::read(BinaryStream&)+0x15e>
+  87ad5a:	9802      	ldr	r0, [sp, #8]
+  87ad5c:	4649      	mov	r1, r9
+  87ad5e:	f616 e864 	blx	690e28 <void std::vector<PlayerListEntry, std::allocator<PlayerListEntry> >::_M_emplace_back_aux<PlayerListEntry&>(PlayerListEntry&)@plt>
+  87ad62:	9818      	ldr	r0, [sp, #96]	; 0x60
+  87ad64:	2800      	cmp	r0, #0
+  87ad66:	bf18      	it	ne
+  87ad68:	f613 e9f6 	blxne	68e158 <operator delete(void*)@plt>
+  87ad6c:	9917      	ldr	r1, [sp, #92]	; 0x5c
+  87ad6e:	f1a1 000c 	sub.w	r0, r1, #12
+  87ad72:	4550      	cmp	r0, sl
+  87ad74:	d19f      	bne.n	87acb6 <PlayerListPacket::read(BinaryStream&)+0xb2>
+  87ad76:	9916      	ldr	r1, [sp, #88]	; 0x58
+  87ad78:	f1a1 000c 	sub.w	r0, r1, #12
+  87ad7c:	4550      	cmp	r0, sl
+  87ad7e:	d1ab      	bne.n	87acd8 <PlayerListPacket::read(BinaryStream&)+0xd4>
+  87ad80:	3e01      	subs	r6, #1
+  87ad82:	d1cc      	bne.n	87ad1e <PlayerListPacket::read(BinaryStream&)+0x11a>
+  87ad84:	e096      	b.n	87aeb4 <PlayerListPacket::read(BinaryStream&)+0x2b0>
+  87ad86:	4604      	mov	r4, r0
+  87ad88:	9818      	ldr	r0, [sp, #96]	; 0x60
+  87ad8a:	2800      	cmp	r0, #0
+  87ad8c:	bf18      	it	ne
+  87ad8e:	f613 e9e4 	blxne	68e158 <operator delete(void*)@plt>
+  87ad92:	488b      	ldr	r0, [pc, #556]	; (87afc0 <PlayerListPacket::read(BinaryStream&)+0x3bc>)
+  87ad94:	9917      	ldr	r1, [sp, #92]	; 0x5c
+  87ad96:	4478      	add	r0, pc
+  87ad98:	4d85      	ldr	r5, [pc, #532]	; (87afb0 <PlayerListPacket::read(BinaryStream&)+0x3ac>)
+  87ad9a:	583a      	ldr	r2, [r7, r0]
+  87ad9c:	f1a1 000c 	sub.w	r0, r1, #12
+  87ada0:	4290      	cmp	r0, r2
+  87ada2:	f040 80c0 	bne.w	87af26 <PlayerListPacket::read(BinaryStream&)+0x322>
+  87ada6:	4888      	ldr	r0, [pc, #544]	; (87afc8 <PlayerListPacket::read(BinaryStream&)+0x3c4>)
+  87ada8:	9916      	ldr	r1, [sp, #88]	; 0x58
+  87adaa:	4478      	add	r0, pc
+  87adac:	583a      	ldr	r2, [r7, r0]
+  87adae:	f1a1 000c 	sub.w	r0, r1, #12
+  87adb2:	4290      	cmp	r0, r2
+  87adb4:	f000 80b4 	beq.w	87af20 <PlayerListPacket::read(BinaryStream&)+0x31c>
+  87adb8:	4a84      	ldr	r2, [pc, #528]	; (87afcc <PlayerListPacket::read(BinaryStream&)+0x3c8>)
+  87adba:	447a      	add	r2, pc
+  87adbc:	58ab      	ldr	r3, [r5, r2]
+  87adbe:	1f0a      	subs	r2, r1, #4
+  87adc0:	2b00      	cmp	r3, #0
+  87adc2:	f000 80e9 	beq.w	87af98 <PlayerListPacket::read(BinaryStream&)+0x394>
+  87adc6:	f3bf 8f5b 	dmb	ish
+  87adca:	e852 1f00 	ldrex	r1, [r2]
+  87adce:	1e4b      	subs	r3, r1, #1
+  87add0:	e842 3700 	strex	r7, r3, [r2]
+  87add4:	2f00      	cmp	r7, #0
+  87add6:	d1f8      	bne.n	87adca <PlayerListPacket::read(BinaryStream&)+0x1c6>
+  87add8:	f3bf 8f5b 	dmb	ish
+  87addc:	e09a      	b.n	87af14 <PlayerListPacket::read(BinaryStream&)+0x310>
+  87adde:	1f0a      	subs	r2, r1, #4
+  87ade0:	9901      	ldr	r1, [sp, #4]
+  87ade2:	b1f1      	cbz	r1, 87ae22 <PlayerListPacket::read(BinaryStream&)+0x21e>
+  87ade4:	46bc      	mov	ip, r7
+  87ade6:	f3bf 8f5b 	dmb	ish
+  87adea:	e852 1f00 	ldrex	r1, [r2]
+  87adee:	1e4b      	subs	r3, r1, #1
+  87adf0:	e842 3700 	strex	r7, r3, [r2]
+  87adf4:	2f00      	cmp	r7, #0
+  87adf6:	d1f8      	bne.n	87adea <PlayerListPacket::read(BinaryStream&)+0x1e6>
+  87adf8:	f3bf 8f5b 	dmb	ish
+  87adfc:	4667      	mov	r7, ip
+  87adfe:	e013      	b.n	87ae28 <PlayerListPacket::read(BinaryStream&)+0x224>
+  87ae00:	1f0a      	subs	r2, r1, #4
+  87ae02:	9901      	ldr	r1, [sp, #4]
+  87ae04:	b1b1      	cbz	r1, 87ae34 <PlayerListPacket::read(BinaryStream&)+0x230>
+  87ae06:	46bc      	mov	ip, r7
+  87ae08:	f3bf 8f5b 	dmb	ish
+  87ae0c:	e852 1f00 	ldrex	r1, [r2]
+  87ae10:	1e4b      	subs	r3, r1, #1
+  87ae12:	e842 3700 	strex	r7, r3, [r2]
+  87ae16:	2f00      	cmp	r7, #0
+  87ae18:	d1f8      	bne.n	87ae0c <PlayerListPacket::read(BinaryStream&)+0x208>
+  87ae1a:	f3bf 8f5b 	dmb	ish
+  87ae1e:	4667      	mov	r7, ip
+  87ae20:	e00b      	b.n	87ae3a <PlayerListPacket::read(BinaryStream&)+0x236>
+  87ae22:	6811      	ldr	r1, [r2, #0]
+  87ae24:	1e4b      	subs	r3, r1, #1
+  87ae26:	6013      	str	r3, [r2, #0]
+  87ae28:	2900      	cmp	r1, #0
+  87ae2a:	dc3c      	bgt.n	87aea6 <PlayerListPacket::read(BinaryStream&)+0x2a2>
+  87ae2c:	a921      	add	r1, sp, #132	; 0x84
+  87ae2e:	f27a ea14 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ae32:	e038      	b.n	87aea6 <PlayerListPacket::read(BinaryStream&)+0x2a2>
+  87ae34:	6811      	ldr	r1, [r2, #0]
+  87ae36:	1e4b      	subs	r3, r1, #1
+  87ae38:	6013      	str	r3, [r2, #0]
+  87ae3a:	2900      	cmp	r1, #0
+  87ae3c:	dc38      	bgt.n	87aeb0 <PlayerListPacket::read(BinaryStream&)+0x2ac>
+  87ae3e:	a921      	add	r1, sp, #132	; 0x84
+  87ae40:	f27a ea0a 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ae44:	e034      	b.n	87aeb0 <PlayerListPacket::read(BinaryStream&)+0x2ac>
+  87ae46:	eef0 ca4c 	vmov.f32	s25, s24
+  87ae4a:	e9cd 9904 	strd	r9, r9, [sp, #16]
+  87ae4e:	eeb0 da48 	vmov.f32	s26, s16
+  87ae52:	9803      	ldr	r0, [sp, #12]
+  87ae54:	eef0 da48 	vmov.f32	s27, s16
+  87ae58:	f90b aacf 	vst1.64	{d10-d11}, [fp]
+  87ae5c:	f900 cacf 	vst1.64	{d12-d13}, [r0]
+  87ae60:	2000      	movs	r0, #0
+  87ae62:	900e      	str	r0, [sp, #56]	; 0x38
+  87ae64:	4650      	mov	r0, sl
+  87ae66:	4621      	mov	r1, r4
+  87ae68:	f615 ef66 	blx	690d38 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  87ae6c:	f96a 0acf 	vld1.64	{d16-d17}, [sl]
+  87ae70:	f94b 0acf 	vst1.64	{d16-d17}, [fp]
+  87ae74:	e9d5 0104 	ldrd	r0, r1, [r5, #16]
+  87ae78:	4288      	cmp	r0, r1
+  87ae7a:	d006      	beq.n	87ae8a <PlayerListPacket::read(BinaryStream&)+0x286>
+  87ae7c:	a904      	add	r1, sp, #16
+  87ae7e:	f615 efce 	blx	690e1c <PlayerListEntry::PlayerListEntry(PlayerListEntry const&)@plt>
+  87ae82:	6928      	ldr	r0, [r5, #16]
+  87ae84:	3030      	adds	r0, #48	; 0x30
+  87ae86:	6128      	str	r0, [r5, #16]
+  87ae88:	e003      	b.n	87ae92 <PlayerListPacket::read(BinaryStream&)+0x28e>
+  87ae8a:	9802      	ldr	r0, [sp, #8]
+  87ae8c:	a904      	add	r1, sp, #16
+  87ae8e:	f615 efcc 	blx	690e28 <void std::vector<PlayerListEntry, std::allocator<PlayerListEntry> >::_M_emplace_back_aux<PlayerListEntry&>(PlayerListEntry&)@plt>
+  87ae92:	980c      	ldr	r0, [sp, #48]	; 0x30
+  87ae94:	2800      	cmp	r0, #0
+  87ae96:	bf18      	it	ne
+  87ae98:	f613 e95e 	blxne	68e158 <operator delete(void*)@plt>
+  87ae9c:	990b      	ldr	r1, [sp, #44]	; 0x2c
+  87ae9e:	f1a1 000c 	sub.w	r0, r1, #12
+  87aea2:	4540      	cmp	r0, r8
+  87aea4:	d19b      	bne.n	87adde <PlayerListPacket::read(BinaryStream&)+0x1da>
+  87aea6:	990a      	ldr	r1, [sp, #40]	; 0x28
+  87aea8:	f1a1 000c 	sub.w	r0, r1, #12
+  87aeac:	4540      	cmp	r0, r8
+  87aeae:	d1a7      	bne.n	87ae00 <PlayerListPacket::read(BinaryStream&)+0x1fc>
+  87aeb0:	3e01      	subs	r6, #1
+  87aeb2:	d1c8      	bne.n	87ae46 <PlayerListPacket::read(BinaryStream&)+0x242>
+  87aeb4:	b022      	add	sp, #136	; 0x88
+  87aeb6:	ecbd 8b02 	vpop	{d8}
+  87aeba:	ecbd ab08 	vpop	{d10-d13}
+  87aebe:	b001      	add	sp, #4
+  87aec0:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  87aec4:	4604      	mov	r4, r0
+  87aec6:	980c      	ldr	r0, [sp, #48]	; 0x30
+  87aec8:	2800      	cmp	r0, #0
+  87aeca:	bf18      	it	ne
+  87aecc:	f613 e944 	blxne	68e158 <operator delete(void*)@plt>
+  87aed0:	4835      	ldr	r0, [pc, #212]	; (87afa8 <PlayerListPacket::read(BinaryStream&)+0x3a4>)
+  87aed2:	990b      	ldr	r1, [sp, #44]	; 0x2c
+  87aed4:	4478      	add	r0, pc
+  87aed6:	4d36      	ldr	r5, [pc, #216]	; (87afb0 <PlayerListPacket::read(BinaryStream&)+0x3ac>)
+  87aed8:	583a      	ldr	r2, [r7, r0]
+  87aeda:	f1a1 000c 	sub.w	r0, r1, #12
+  87aede:	4290      	cmp	r0, r2
+  87aee0:	d134      	bne.n	87af4c <PlayerListPacket::read(BinaryStream&)+0x348>
+  87aee2:	4834      	ldr	r0, [pc, #208]	; (87afb4 <PlayerListPacket::read(BinaryStream&)+0x3b0>)
+  87aee4:	990a      	ldr	r1, [sp, #40]	; 0x28
+  87aee6:	4478      	add	r0, pc
+  87aee8:	583a      	ldr	r2, [r7, r0]
+  87aeea:	f1a1 000c 	sub.w	r0, r1, #12
+  87aeee:	4290      	cmp	r0, r2
+  87aef0:	d016      	beq.n	87af20 <PlayerListPacket::read(BinaryStream&)+0x31c>
+  87aef2:	4a31      	ldr	r2, [pc, #196]	; (87afb8 <PlayerListPacket::read(BinaryStream&)+0x3b4>)
+  87aef4:	447a      	add	r2, pc
+  87aef6:	58ab      	ldr	r3, [r5, r2]
+  87aef8:	1f0a      	subs	r2, r1, #4
+  87aefa:	2b00      	cmp	r3, #0
+  87aefc:	d04c      	beq.n	87af98 <PlayerListPacket::read(BinaryStream&)+0x394>
+  87aefe:	f3bf 8f5b 	dmb	ish
+  87af02:	e852 1f00 	ldrex	r1, [r2]
+  87af06:	1e4b      	subs	r3, r1, #1
+  87af08:	e842 3700 	strex	r7, r3, [r2]
+  87af0c:	2f00      	cmp	r7, #0
+  87af0e:	d1f8      	bne.n	87af02 <PlayerListPacket::read(BinaryStream&)+0x2fe>
+  87af10:	f3bf 8f5b 	dmb	ish
+  87af14:	2900      	cmp	r1, #0
+  87af16:	bfdc      	itt	le
+  87af18:	f10d 0184 	addle.w	r1, sp, #132	; 0x84
+  87af1c:	f27a e99c 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87af20:	4620      	mov	r0, r4
+  87af22:	f613 e9ec 	blx	68e2fc <_Unwind_Resume@plt>
+  87af26:	4a27      	ldr	r2, [pc, #156]	; (87afc4 <PlayerListPacket::read(BinaryStream&)+0x3c0>)
+  87af28:	447a      	add	r2, pc
+  87af2a:	58ab      	ldr	r3, [r5, r2]
+  87af2c:	1f0a      	subs	r2, r1, #4
+  87af2e:	b303      	cbz	r3, 87af72 <PlayerListPacket::read(BinaryStream&)+0x36e>
+  87af30:	463e      	mov	r6, r7
+  87af32:	f3bf 8f5b 	dmb	ish
+  87af36:	e852 1f00 	ldrex	r1, [r2]
+  87af3a:	1e4b      	subs	r3, r1, #1
+  87af3c:	e842 3700 	strex	r7, r3, [r2]
+  87af40:	2f00      	cmp	r7, #0
+  87af42:	d1f8      	bne.n	87af36 <PlayerListPacket::read(BinaryStream&)+0x332>
+  87af44:	f3bf 8f5b 	dmb	ish
+  87af48:	4637      	mov	r7, r6
+  87af4a:	e015      	b.n	87af78 <PlayerListPacket::read(BinaryStream&)+0x374>
+  87af4c:	4a17      	ldr	r2, [pc, #92]	; (87afac <PlayerListPacket::read(BinaryStream&)+0x3a8>)
+  87af4e:	447a      	add	r2, pc
+  87af50:	58ab      	ldr	r3, [r5, r2]
+  87af52:	1f0a      	subs	r2, r1, #4
+  87af54:	b1bb      	cbz	r3, 87af86 <PlayerListPacket::read(BinaryStream&)+0x382>
+  87af56:	463e      	mov	r6, r7
+  87af58:	f3bf 8f5b 	dmb	ish
+  87af5c:	e852 1f00 	ldrex	r1, [r2]
+  87af60:	1e4b      	subs	r3, r1, #1
+  87af62:	e842 3700 	strex	r7, r3, [r2]
+  87af66:	2f00      	cmp	r7, #0
+  87af68:	d1f8      	bne.n	87af5c <PlayerListPacket::read(BinaryStream&)+0x358>
+  87af6a:	f3bf 8f5b 	dmb	ish
+  87af6e:	4637      	mov	r7, r6
+  87af70:	e00c      	b.n	87af8c <PlayerListPacket::read(BinaryStream&)+0x388>
+  87af72:	6811      	ldr	r1, [r2, #0]
+  87af74:	1e4b      	subs	r3, r1, #1
+  87af76:	6013      	str	r3, [r2, #0]
+  87af78:	2900      	cmp	r1, #0
+  87af7a:	f73f af14 	bgt.w	87ada6 <PlayerListPacket::read(BinaryStream&)+0x1a2>
+  87af7e:	a921      	add	r1, sp, #132	; 0x84
+  87af80:	f27a e96a 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87af84:	e70f      	b.n	87ada6 <PlayerListPacket::read(BinaryStream&)+0x1a2>
+  87af86:	6811      	ldr	r1, [r2, #0]
+  87af88:	1e4b      	subs	r3, r1, #1
+  87af8a:	6013      	str	r3, [r2, #0]
+  87af8c:	2900      	cmp	r1, #0
+  87af8e:	dca8      	bgt.n	87aee2 <PlayerListPacket::read(BinaryStream&)+0x2de>
+  87af90:	a921      	add	r1, sp, #132	; 0x84
+  87af92:	f27a e962 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87af96:	e7a4      	b.n	87aee2 <PlayerListPacket::read(BinaryStream&)+0x2de>
+  87af98:	6811      	ldr	r1, [r2, #0]
+  87af9a:	1e4b      	subs	r3, r1, #1
+  87af9c:	6013      	str	r3, [r2, #0]
+  87af9e:	e7b9      	b.n	87af14 <PlayerListPacket::read(BinaryStream&)+0x310>
+  87afa0:	2928      	cmp	r1, #40	; 0x28
+  87afa2:	0155      	lsls	r5, r2, #5
+  87afa4:	8ae4      	ldrh	r4, [r4, #22]
+  87afa6:	ffff 26ec 	vcvt.f<illegal width 64>.u<illegal width 64>	q9, q14
+  87afaa:	0155      	lsls	r5, r2, #5
+  87afac:	2672      	movs	r6, #114	; 0x72
+  87afae:	0155      	lsls	r5, r2, #5
+  87afb0:	8ae8      	ldrh	r0, [r5, #22]
+  87afb2:	ffff 26da 	vqshlu.s64	q9, q5, #63	; 0x3f
+  87afb6:	0155      	lsls	r5, r2, #5
+  87afb8:	26cc      	movs	r6, #204	; 0xcc
+  87afba:	0155      	lsls	r5, r2, #5
+  87afbc:	296c      	cmp	r1, #108	; 0x6c
+  87afbe:	0155      	lsls	r5, r2, #5
+  87afc0:	282a      	cmp	r0, #42	; 0x2a
+  87afc2:	0155      	lsls	r5, r2, #5
+  87afc4:	2698      	movs	r6, #152	; 0x98
+  87afc6:	0155      	lsls	r5, r2, #5
+  87afc8:	2816      	cmp	r0, #22
+  87afca:	0155      	lsls	r5, r2, #5
+  87afcc:	2806      	cmp	r0, #6
+  87afce:	0155      	lsls	r5, r2, #5

@@ -1,0 +1,158 @@
+  87477c:	b5f0      	push	{r4, r5, r6, r7, lr}
+  87477e:	b087      	sub	sp, #28
+  874780:	ae02      	add	r6, sp, #8
+  874782:	4604      	mov	r4, r0
+  874784:	460d      	mov	r5, r1
+  874786:	4630      	mov	r0, r6
+  874788:	f61b ed2a 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87478c:	f104 000c 	add.w	r0, r4, #12
+  874790:	4631      	mov	r1, r6
+  874792:	f280 edb2 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  874796:	4852      	ldr	r0, [pc, #328]	; (8748e0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  874798:	4f4e      	ldr	r7, [pc, #312]	; (8748d4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  87479a:	4478      	add	r0, pc
+  87479c:	9902      	ldr	r1, [sp, #8]
+  87479e:	583a      	ldr	r2, [r7, r0]
+  8747a0:	f1a1 000c 	sub.w	r0, r1, #12
+  8747a4:	4290      	cmp	r0, r2
+  8747a6:	d113      	bne.n	8747d0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  8747a8:	ae01      	add	r6, sp, #4
+  8747aa:	4629      	mov	r1, r5
+  8747ac:	4630      	mov	r0, r6
+  8747ae:	f61b ed18 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  8747b2:	f104 0010 	add.w	r0, r4, #16
+  8747b6:	4631      	mov	r1, r6
+  8747b8:	f280 ed9e 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  8747bc:	484c      	ldr	r0, [pc, #304]	; (8748f0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  8747be:	9901      	ldr	r1, [sp, #4]
+  8747c0:	4478      	add	r0, pc
+  8747c2:	583a      	ldr	r2, [r7, r0]
+  8747c4:	f1a1 000c 	sub.w	r0, r1, #12
+  8747c8:	4290      	cmp	r0, r2
+  8747ca:	d113      	bne.n	8747f4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  8747cc:	b007      	add	sp, #28
+  8747ce:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  8747d0:	4a44      	ldr	r2, [pc, #272]	; (8748e4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  8747d2:	4b42      	ldr	r3, [pc, #264]	; (8748dc <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  8747d4:	447a      	add	r2, pc
+  8747d6:	589b      	ldr	r3, [r3, r2]
+  8747d8:	1f0a      	subs	r2, r1, #4
+  8747da:	b1eb      	cbz	r3, 874818 <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  8747dc:	f3bf 8f5b 	dmb	ish
+  8747e0:	e852 1f00 	ldrex	r1, [r2]
+  8747e4:	1e4b      	subs	r3, r1, #1
+  8747e6:	e842 3600 	strex	r6, r3, [r2]
+  8747ea:	2e00      	cmp	r6, #0
+  8747ec:	d1f8      	bne.n	8747e0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  8747ee:	f3bf 8f5b 	dmb	ish
+  8747f2:	e014      	b.n	87481e <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  8747f4:	4a3f      	ldr	r2, [pc, #252]	; (8748f4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  8747f6:	4b39      	ldr	r3, [pc, #228]	; (8748dc <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  8747f8:	447a      	add	r2, pc
+  8747fa:	589b      	ldr	r3, [r3, r2]
+  8747fc:	1f0a      	subs	r2, r1, #4
+  8747fe:	b1a3      	cbz	r3, 87482a <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  874800:	f3bf 8f5b 	dmb	ish
+  874804:	e852 1f00 	ldrex	r1, [r2]
+  874808:	1e4b      	subs	r3, r1, #1
+  87480a:	e842 3700 	strex	r7, r3, [r2]
+  87480e:	2f00      	cmp	r7, #0
+  874810:	d1f8      	bne.n	874804 <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  874812:	f3bf 8f5b 	dmb	ish
+  874816:	e00b      	b.n	874830 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  874818:	6811      	ldr	r1, [r2, #0]
+  87481a:	1e4b      	subs	r3, r1, #1
+  87481c:	6013      	str	r3, [r2, #0]
+  87481e:	2900      	cmp	r1, #0
+  874820:	dcc2      	bgt.n	8747a8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  874822:	a903      	add	r1, sp, #12
+  874824:	f280 ed18 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  874828:	e7be      	b.n	8747a8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  87482a:	6811      	ldr	r1, [r2, #0]
+  87482c:	1e4b      	subs	r3, r1, #1
+  87482e:	6013      	str	r3, [r2, #0]
+  874830:	2900      	cmp	r1, #0
+  874832:	dccb      	bgt.n	8747cc <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  874834:	a904      	add	r1, sp, #16
+  874836:	f280 ed10 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87483a:	e7c7      	b.n	8747cc <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  87483c:	4a24      	ldr	r2, [pc, #144]	; (8748d0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  87483e:	4604      	mov	r4, r0
+  874840:	4b24      	ldr	r3, [pc, #144]	; (8748d4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  874842:	447a      	add	r2, pc
+  874844:	9902      	ldr	r1, [sp, #8]
+  874846:	f1a1 000c 	sub.w	r0, r1, #12
+  87484a:	589a      	ldr	r2, [r3, r2]
+  87484c:	4290      	cmp	r0, r2
+  87484e:	d033      	beq.n	8748b8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  874850:	4a21      	ldr	r2, [pc, #132]	; (8748d8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  874852:	4b22      	ldr	r3, [pc, #136]	; (8748dc <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  874854:	447a      	add	r2, pc
+  874856:	589b      	ldr	r3, [r3, r2]
+  874858:	1f0a      	subs	r2, r1, #4
+  87485a:	b383      	cbz	r3, 8748be <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  87485c:	f3bf 8f5b 	dmb	ish
+  874860:	e852 1f00 	ldrex	r1, [r2]
+  874864:	1e4b      	subs	r3, r1, #1
+  874866:	e842 3700 	strex	r7, r3, [r2]
+  87486a:	2f00      	cmp	r7, #0
+  87486c:	d1f8      	bne.n	874860 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  87486e:	f3bf 8f5b 	dmb	ish
+  874872:	2900      	cmp	r1, #0
+  874874:	dc20      	bgt.n	8748b8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  874876:	a905      	add	r1, sp, #20
+  874878:	e01c      	b.n	8748b4 <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  87487a:	4a1b      	ldr	r2, [pc, #108]	; (8748e8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  87487c:	4604      	mov	r4, r0
+  87487e:	9901      	ldr	r1, [sp, #4]
+  874880:	447a      	add	r2, pc
+  874882:	f1a1 000c 	sub.w	r0, r1, #12
+  874886:	58ba      	ldr	r2, [r7, r2]
+  874888:	4290      	cmp	r0, r2
+  87488a:	d015      	beq.n	8748b8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  87488c:	4a17      	ldr	r2, [pc, #92]	; (8748ec <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  87488e:	4b13      	ldr	r3, [pc, #76]	; (8748dc <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  874890:	447a      	add	r2, pc
+  874892:	589b      	ldr	r3, [r3, r2]
+  874894:	1f0a      	subs	r2, r1, #4
+  874896:	b1b3      	cbz	r3, 8748c6 <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  874898:	f3bf 8f5b 	dmb	ish
+  87489c:	e852 1f00 	ldrex	r1, [r2]
+  8748a0:	1e4b      	subs	r3, r1, #1
+  8748a2:	e842 3700 	strex	r7, r3, [r2]
+  8748a6:	2f00      	cmp	r7, #0
+  8748a8:	d1f8      	bne.n	87489c <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  8748aa:	f3bf 8f5b 	dmb	ish
+  8748ae:	2900      	cmp	r1, #0
+  8748b0:	dc02      	bgt.n	8748b8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  8748b2:	a906      	add	r1, sp, #24
+  8748b4:	f280 ecd0 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  8748b8:	4620      	mov	r0, r4
+  8748ba:	f619 ed20 	blx	68e2fc <_Unwind_Resume@plt>
+  8748be:	6811      	ldr	r1, [r2, #0]
+  8748c0:	1e4b      	subs	r3, r1, #1
+  8748c2:	6013      	str	r3, [r2, #0]
+  8748c4:	e7d5      	b.n	874872 <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  8748c6:	6811      	ldr	r1, [r2, #0]
+  8748c8:	1e4b      	subs	r3, r1, #1
+  8748ca:	6013      	str	r3, [r2, #0]
+  8748cc:	e7ef      	b.n	8748ae <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  8748ce:	bf00      	nop
+  8748d0:	8d7e      	ldrh	r6, [r7, #42]	; 0x2a
+  8748d2:	0155      	lsls	r5, r2, #5
+  8748d4:	8ae4      	ldrh	r4, [r4, #22]
+  8748d6:	ffff 8d6c 	vqrdmulh.s<illegal width 64>	q12, <illegal reg q7.5>, d28[0]
+  8748da:	0155      	lsls	r5, r2, #5
+  8748dc:	8ae8      	ldrh	r0, [r5, #22]
+  8748de:	ffff 8e26 			; <UNDEFINED> instruction: 0xffff8e26
+  8748e2:	0155      	lsls	r5, r2, #5
+  8748e4:	8dec      	ldrh	r4, [r5, #46]	; 0x2e
+  8748e6:	0155      	lsls	r5, r2, #5
+  8748e8:	8d40      	ldrh	r0, [r0, #42]	; 0x2a
+  8748ea:	0155      	lsls	r5, r2, #5
+  8748ec:	8d30      	ldrh	r0, [r6, #40]	; 0x28
+  8748ee:	0155      	lsls	r5, r2, #5
+  8748f0:	8e00      	ldrh	r0, [r0, #48]	; 0x30
+  8748f2:	0155      	lsls	r5, r2, #5
+  8748f4:	8dc8      	ldrh	r0, [r1, #46]	; 0x2e
+  8748f6:	0155      	lsls	r5, r2, #5

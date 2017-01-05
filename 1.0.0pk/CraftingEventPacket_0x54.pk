@@ -1,0 +1,105 @@
+  879eca:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+  879ece:	b08e      	sub	sp, #56	; 0x38
+  879ed0:	460c      	mov	r4, r1
+  879ed2:	4605      	mov	r5, r0
+  879ed4:	4620      	mov	r0, r4
+  879ed6:	f616 edec 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  879eda:	7328      	strb	r0, [r5, #12]
+  879edc:	4620      	mov	r0, r4
+  879ede:	f616 ee5a 	blx	690b94 <ReadOnlyBinaryStream::getVarInt()@plt>
+  879ee2:	ae0a      	add	r6, sp, #40	; 0x28
+  879ee4:	6128      	str	r0, [r5, #16]
+  879ee6:	4621      	mov	r1, r4
+  879ee8:	4630      	mov	r0, r6
+  879eea:	f616 ef26 	blx	690d38 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  879eee:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  879ef2:	f105 0018 	add.w	r0, r5, #24
+  879ef6:	f940 0acf 	vst1.64	{d16-d17}, [r0]
+  879efa:	4620      	mov	r0, r4
+  879efc:	f616 ec94 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  879f00:	4682      	mov	sl, r0
+  879f02:	f1ba 0f00 	cmp.w	sl, #0
+  879f06:	d022      	beq.n	879f4e <CraftingEventPacket::read(BinaryStream&)+0x84>
+  879f08:	f105 0828 	add.w	r8, r5, #40	; 0x28
+  879f0c:	af05      	add	r7, sp, #20
+  879f0e:	f04f 0900 	mov.w	r9, #0
+  879f12:	2600      	movs	r6, #0
+  879f14:	4638      	mov	r0, r7
+  879f16:	4621      	mov	r1, r4
+  879f18:	f616 eefc 	blx	690d14 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  879f1c:	e9d5 010b 	ldrd	r0, r1, [r5, #44]	; 0x2c
+  879f20:	4288      	cmp	r0, r1
+  879f22:	d006      	beq.n	879f32 <CraftingEventPacket::read(BinaryStream&)+0x68>
+  879f24:	4639      	mov	r1, r7
+  879f26:	f616 e8a2 	blx	69006c <ItemInstance::ItemInstance(ItemInstance const&)@plt>
+  879f2a:	6ae8      	ldr	r0, [r5, #44]	; 0x2c
+  879f2c:	3014      	adds	r0, #20
+  879f2e:	62e8      	str	r0, [r5, #44]	; 0x2c
+  879f30:	e003      	b.n	879f3a <CraftingEventPacket::read(BinaryStream&)+0x70>
+  879f32:	4640      	mov	r0, r8
+  879f34:	4639      	mov	r1, r7
+  879f36:	f616 e8a0 	blx	690078 <void std::vector<ItemInstance, std::allocator<ItemInstance> >::_M_emplace_back_aux<ItemInstance>(ItemInstance&&)@plt>
+  879f3a:	9807      	ldr	r0, [sp, #28]
+  879f3c:	b110      	cbz	r0, 879f44 <CraftingEventPacket::read(BinaryStream&)+0x7a>
+  879f3e:	6801      	ldr	r1, [r0, #0]
+  879f40:	6849      	ldr	r1, [r1, #4]
+  879f42:	4788      	blx	r1
+  879f44:	3601      	adds	r6, #1
+  879f46:	f8cd 901c 	str.w	r9, [sp, #28]
+  879f4a:	4556      	cmp	r6, sl
+  879f4c:	d3e2      	bcc.n	879f14 <CraftingEventPacket::read(BinaryStream&)+0x4a>
+  879f4e:	4620      	mov	r0, r4
+  879f50:	f616 ec6a 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  879f54:	4682      	mov	sl, r0
+  879f56:	f1ba 0f00 	cmp.w	sl, #0
+  879f5a:	d022      	beq.n	879fa2 <CraftingEventPacket::read(BinaryStream&)+0xd8>
+  879f5c:	f105 0834 	add.w	r8, r5, #52	; 0x34
+  879f60:	f04f 0900 	mov.w	r9, #0
+  879f64:	466f      	mov	r7, sp
+  879f66:	2600      	movs	r6, #0
+  879f68:	4638      	mov	r0, r7
+  879f6a:	4621      	mov	r1, r4
+  879f6c:	f616 eed2 	blx	690d14 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  879f70:	e9d5 010e 	ldrd	r0, r1, [r5, #56]	; 0x38
+  879f74:	4288      	cmp	r0, r1
+  879f76:	d006      	beq.n	879f86 <CraftingEventPacket::read(BinaryStream&)+0xbc>
+  879f78:	4639      	mov	r1, r7
+  879f7a:	f616 e878 	blx	69006c <ItemInstance::ItemInstance(ItemInstance const&)@plt>
+  879f7e:	6ba8      	ldr	r0, [r5, #56]	; 0x38
+  879f80:	3014      	adds	r0, #20
+  879f82:	63a8      	str	r0, [r5, #56]	; 0x38
+  879f84:	e003      	b.n	879f8e <CraftingEventPacket::read(BinaryStream&)+0xc4>
+  879f86:	4640      	mov	r0, r8
+  879f88:	4639      	mov	r1, r7
+  879f8a:	f616 e876 	blx	690078 <void std::vector<ItemInstance, std::allocator<ItemInstance> >::_M_emplace_back_aux<ItemInstance>(ItemInstance&&)@plt>
+  879f8e:	9802      	ldr	r0, [sp, #8]
+  879f90:	b110      	cbz	r0, 879f98 <CraftingEventPacket::read(BinaryStream&)+0xce>
+  879f92:	6801      	ldr	r1, [r0, #0]
+  879f94:	6849      	ldr	r1, [r1, #4]
+  879f96:	4788      	blx	r1
+  879f98:	3601      	adds	r6, #1
+  879f9a:	f8cd 9008 	str.w	r9, [sp, #8]
+  879f9e:	4556      	cmp	r6, sl
+  879fa0:	d3e2      	bcc.n	879f68 <CraftingEventPacket::read(BinaryStream&)+0x9e>
+  879fa2:	b00e      	add	sp, #56	; 0x38
+  879fa4:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+  879fa8:	4604      	mov	r4, r0
+  879faa:	9807      	ldr	r0, [sp, #28]
+  879fac:	b110      	cbz	r0, 879fb4 <CraftingEventPacket::read(BinaryStream&)+0xea>
+  879fae:	6801      	ldr	r1, [r0, #0]
+  879fb0:	6849      	ldr	r1, [r1, #4]
+  879fb2:	4788      	blx	r1
+  879fb4:	2000      	movs	r0, #0
+  879fb6:	9007      	str	r0, [sp, #28]
+  879fb8:	4620      	mov	r0, r4
+  879fba:	f614 e9a0 	blx	68e2fc <_Unwind_Resume@plt>
+  879fbe:	4604      	mov	r4, r0
+  879fc0:	9802      	ldr	r0, [sp, #8]
+  879fc2:	b110      	cbz	r0, 879fca <CraftingEventPacket::read(BinaryStream&)+0x100>
+  879fc4:	6801      	ldr	r1, [r0, #0]
+  879fc6:	6849      	ldr	r1, [r1, #4]
+  879fc8:	4788      	blx	r1
+  879fca:	2000      	movs	r0, #0
+  879fcc:	9002      	str	r0, [sp, #8]
+  879fce:	4620      	mov	r0, r4
+  879fd0:	f614 e994 	blx	68e2fc <_Unwind_Resume@plt>

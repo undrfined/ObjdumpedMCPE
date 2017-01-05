@@ -1,0 +1,44 @@
+  878bf8:	b570      	push	{r4, r5, r6, lr}
+  878bfa:	b086      	sub	sp, #24
+  878bfc:	4604      	mov	r4, r0
+  878bfe:	4668      	mov	r0, sp
+  878c00:	460d      	mov	r5, r1
+  878c02:	f617 eff8 	blx	690bf4 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  878c06:	e9dd 0100 	ldrd	r0, r1, [sp]
+  878c0a:	466e      	mov	r6, sp
+  878c0c:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  878c10:	4630      	mov	r0, r6
+  878c12:	4629      	mov	r1, r5
+  878c14:	f618 e87e 	blx	690d14 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  878c18:	f104 0018 	add.w	r0, r4, #24
+  878c1c:	4631      	mov	r1, r6
+  878c1e:	f617 eb6a 	blx	6902f4 <ItemInstance::operator=(ItemInstance const&)@plt>
+  878c22:	9802      	ldr	r0, [sp, #8]
+  878c24:	b110      	cbz	r0, 878c2c <MobEquipmentPacket::read(BinaryStream&)+0x34>
+  878c26:	6801      	ldr	r1, [r0, #0]
+  878c28:	6849      	ldr	r1, [r1, #4]
+  878c2a:	4788      	blx	r1
+  878c2c:	4628      	mov	r0, r5
+  878c2e:	f617 ef40 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  878c32:	f884 0036 	strb.w	r0, [r4, #54]	; 0x36
+  878c36:	4628      	mov	r0, r5
+  878c38:	f617 ef3a 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  878c3c:	f884 0037 	strb.w	r0, [r4, #55]	; 0x37
+  878c40:	4628      	mov	r0, r5
+  878c42:	f617 ef36 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  878c46:	f884 0038 	strb.w	r0, [r4, #56]	; 0x38
+  878c4a:	f994 1036 	ldrsb.w	r1, [r4, #54]	; 0x36
+  878c4e:	62e1      	str	r1, [r4, #44]	; 0x2c
+  878c50:	f994 1037 	ldrsb.w	r1, [r4, #55]	; 0x37
+  878c54:	6321      	str	r1, [r4, #48]	; 0x30
+  878c56:	f884 0035 	strb.w	r0, [r4, #53]	; 0x35
+  878c5a:	b006      	add	sp, #24
+  878c5c:	bd70      	pop	{r4, r5, r6, pc}
+  878c5e:	4604      	mov	r4, r0
+  878c60:	9802      	ldr	r0, [sp, #8]
+  878c62:	b110      	cbz	r0, 878c6a <MobEquipmentPacket::read(BinaryStream&)+0x72>
+  878c64:	6801      	ldr	r1, [r0, #0]
+  878c66:	6849      	ldr	r1, [r1, #4]
+  878c68:	4788      	blx	r1
+  878c6a:	4620      	mov	r0, r4
+  878c6c:	f615 eb46 	blx	68e2fc <_Unwind_Resume@plt>

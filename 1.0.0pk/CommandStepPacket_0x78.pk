@@ -1,0 +1,344 @@
+  87fb04:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+  87fb08:	b0bc      	sub	sp, #240	; 0xf0
+  87fb0a:	4604      	mov	r4, r0
+  87fb0c:	48c2      	ldr	r0, [pc, #776]	; (87fe18 <CommandStepPacket::read(BinaryStream&)+0x314>)
+  87fb0e:	f8df 830c 	ldr.w	r8, [pc, #780]	; 87fe1c <CommandStepPacket::read(BinaryStream&)+0x318>
+  87fb12:	ae07      	add	r6, sp, #28
+  87fb14:	4478      	add	r0, pc
+  87fb16:	460d      	mov	r5, r1
+  87fb18:	f858 0000 	ldr.w	r0, [r8, r0]
+  87fb1c:	6800      	ldr	r0, [r0, #0]
+  87fb1e:	903b      	str	r0, [sp, #236]	; 0xec
+  87fb20:	4630      	mov	r0, r6
+  87fb22:	f610 eb5e 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87fb26:	f104 000c 	add.w	r0, r4, #12
+  87fb2a:	4631      	mov	r1, r6
+  87fb2c:	f275 ebe4 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87fb30:	48bf      	ldr	r0, [pc, #764]	; (87fe30 <CommandStepPacket::read(BinaryStream&)+0x32c>)
+  87fb32:	4fbc      	ldr	r7, [pc, #752]	; (87fe24 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  87fb34:	4478      	add	r0, pc
+  87fb36:	9907      	ldr	r1, [sp, #28]
+  87fb38:	583a      	ldr	r2, [r7, r0]
+  87fb3a:	f1a1 000c 	sub.w	r0, r1, #12
+  87fb3e:	4290      	cmp	r0, r2
+  87fb40:	d177      	bne.n	87fc32 <CommandStepPacket::read(BinaryStream&)+0x12e>
+  87fb42:	ae06      	add	r6, sp, #24
+  87fb44:	4629      	mov	r1, r5
+  87fb46:	4630      	mov	r0, r6
+  87fb48:	f610 eb4a 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87fb4c:	f104 0010 	add.w	r0, r4, #16
+  87fb50:	4631      	mov	r1, r6
+  87fb52:	f275 ebd2 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87fb56:	48ba      	ldr	r0, [pc, #744]	; (87fe40 <CommandStepPacket::read(BinaryStream&)+0x33c>)
+  87fb58:	9906      	ldr	r1, [sp, #24]
+  87fb5a:	4478      	add	r0, pc
+  87fb5c:	583a      	ldr	r2, [r7, r0]
+  87fb5e:	f1a1 000c 	sub.w	r0, r1, #12
+  87fb62:	4290      	cmp	r0, r2
+  87fb64:	d178      	bne.n	87fc58 <CommandStepPacket::read(BinaryStream&)+0x154>
+  87fb66:	4628      	mov	r0, r5
+  87fb68:	f610 ee5e 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87fb6c:	7520      	strb	r0, [r4, #20]
+  87fb6e:	4628      	mov	r0, r5
+  87fb70:	f610 ee5a 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87fb74:	7560      	strb	r0, [r4, #21]
+  87fb76:	4628      	mov	r0, r5
+  87fb78:	f610 efca 	blx	690b10 <ReadOnlyBinaryStream::getBool()@plt>
+  87fb7c:	75a0      	strb	r0, [r4, #22]
+  87fb7e:	4628      	mov	r0, r5
+  87fb80:	f612 eda6 	blx	6926d0 <ReadOnlyBinaryStream::getUnsignedVarInt64()@plt>
+  87fb84:	e9cd 0102 	strd	r0, r1, [sp, #8]
+  87fb88:	f64f 70ff 	movw	r0, #65535	; 0xffff
+  87fb8c:	f8ad 0010 	strh.w	r0, [sp, #16]
+  87fb90:	a814      	add	r0, sp, #80	; 0x50
+  87fb92:	a902      	add	r1, sp, #8
+  87fb94:	f610 ee78 	blx	690888 <NetworkIdentifier::NetworkIdentifier(RakNet::RakNetGUID const&)@plt>
+  87fb98:	e9dd 1214 	ldrd	r1, r2, [sp, #80]	; 0x50
+  87fb9c:	e9c4 1206 	strd	r1, r2, [r4, #24]
+  87fba0:	f104 0228 	add.w	r2, r4, #40	; 0x28
+  87fba4:	f8bd 1058 	ldrh.w	r1, [sp, #88]	; 0x58
+  87fba8:	8421      	strh	r1, [r4, #32]
+  87fbaa:	f100 0110 	add.w	r1, r0, #16
+  87fbae:	4610      	mov	r0, r2
+  87fbb0:	2284      	movs	r2, #132	; 0x84
+  87fbb2:	f610 e996 	blx	68fee0 <__aeabi_memcpy8@plt>
+  87fbb6:	ae01      	add	r6, sp, #4
+  87fbb8:	4629      	mov	r1, r5
+  87fbba:	4630      	mov	r0, r6
+  87fbbc:	f610 eb10 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87fbc0:	f104 00d8 	add.w	r0, r4, #216	; 0xd8
+  87fbc4:	4631      	mov	r1, r6
+  87fbc6:	f275 eb98 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87fbca:	48a1      	ldr	r0, [pc, #644]	; (87fe50 <CommandStepPacket::read(BinaryStream&)+0x34c>)
+  87fbcc:	9901      	ldr	r1, [sp, #4]
+  87fbce:	4478      	add	r0, pc
+  87fbd0:	583a      	ldr	r2, [r7, r0]
+  87fbd2:	f1a1 000c 	sub.w	r0, r1, #12
+  87fbd6:	4290      	cmp	r0, r2
+  87fbd8:	d150      	bne.n	87fc7c <CommandStepPacket::read(BinaryStream&)+0x178>
+  87fbda:	466e      	mov	r6, sp
+  87fbdc:	4629      	mov	r1, r5
+  87fbde:	4630      	mov	r0, r6
+  87fbe0:	f610 eafe 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87fbe4:	f104 00dc 	add.w	r0, r4, #220	; 0xdc
+  87fbe8:	4631      	mov	r1, r6
+  87fbea:	f275 eb86 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87fbee:	489c      	ldr	r0, [pc, #624]	; (87fe60 <CommandStepPacket::read(BinaryStream&)+0x35c>)
+  87fbf0:	9900      	ldr	r1, [sp, #0]
+  87fbf2:	4478      	add	r0, pc
+  87fbf4:	583a      	ldr	r2, [r7, r0]
+  87fbf6:	f1a1 000c 	sub.w	r0, r1, #12
+  87fbfa:	4290      	cmp	r0, r2
+  87fbfc:	d150      	bne.n	87fca0 <CommandStepPacket::read(BinaryStream&)+0x19c>
+  87fbfe:	ae08      	add	r6, sp, #32
+  87fc00:	4629      	mov	r1, r5
+  87fc02:	4630      	mov	r0, r6
+  87fc04:	f612 ed6a 	blx	6926dc <CommandOriginData ReadOnlyBinaryStream::getType<CommandOriginData>()@plt>
+  87fc08:	f104 00b0 	add.w	r0, r4, #176	; 0xb0
+  87fc0c:	4631      	mov	r1, r6
+  87fc0e:	f612 ed6c 	blx	6926e8 <CommandOriginData::operator=(CommandOriginData const&)@plt>
+  87fc12:	a808      	add	r0, sp, #32
+  87fc14:	f610 ead8 	blx	6901c8 <CommandOriginData::~CommandOriginData()@plt>
+  87fc18:	4893      	ldr	r0, [pc, #588]	; (87fe68 <CommandStepPacket::read(BinaryStream&)+0x364>)
+  87fc1a:	993b      	ldr	r1, [sp, #236]	; 0xec
+  87fc1c:	4478      	add	r0, pc
+  87fc1e:	f858 0000 	ldr.w	r0, [r8, r0]
+  87fc22:	6800      	ldr	r0, [r0, #0]
+  87fc24:	1a40      	subs	r0, r0, r1
+  87fc26:	bf04      	itt	eq
+  87fc28:	b03c      	addeq	sp, #240	; 0xf0
+  87fc2a:	e8bd 81f0 	ldmiaeq.w	sp!, {r4, r5, r6, r7, r8, pc}
+  87fc2e:	f610 e916 	blx	68fe5c <__stack_chk_fail@plt>
+  87fc32:	4a80      	ldr	r2, [pc, #512]	; (87fe34 <CommandStepPacket::read(BinaryStream&)+0x330>)
+  87fc34:	4b7d      	ldr	r3, [pc, #500]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fc36:	447a      	add	r2, pc
+  87fc38:	589b      	ldr	r3, [r3, r2]
+  87fc3a:	1f0a      	subs	r2, r1, #4
+  87fc3c:	2b00      	cmp	r3, #0
+  87fc3e:	d041      	beq.n	87fcc4 <CommandStepPacket::read(BinaryStream&)+0x1c0>
+  87fc40:	f3bf 8f5b 	dmb	ish
+  87fc44:	e852 1f00 	ldrex	r1, [r2]
+  87fc48:	1e4b      	subs	r3, r1, #1
+  87fc4a:	e842 3600 	strex	r6, r3, [r2]
+  87fc4e:	2e00      	cmp	r6, #0
+  87fc50:	d1f8      	bne.n	87fc44 <CommandStepPacket::read(BinaryStream&)+0x140>
+  87fc52:	f3bf 8f5b 	dmb	ish
+  87fc56:	e038      	b.n	87fcca <CommandStepPacket::read(BinaryStream&)+0x1c6>
+  87fc58:	4a7a      	ldr	r2, [pc, #488]	; (87fe44 <CommandStepPacket::read(BinaryStream&)+0x340>)
+  87fc5a:	4b74      	ldr	r3, [pc, #464]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fc5c:	447a      	add	r2, pc
+  87fc5e:	589b      	ldr	r3, [r3, r2]
+  87fc60:	1f0a      	subs	r2, r1, #4
+  87fc62:	b3cb      	cbz	r3, 87fcd8 <CommandStepPacket::read(BinaryStream&)+0x1d4>
+  87fc64:	f3bf 8f5b 	dmb	ish
+  87fc68:	e852 1f00 	ldrex	r1, [r2]
+  87fc6c:	1e4b      	subs	r3, r1, #1
+  87fc6e:	e842 3600 	strex	r6, r3, [r2]
+  87fc72:	2e00      	cmp	r6, #0
+  87fc74:	d1f8      	bne.n	87fc68 <CommandStepPacket::read(BinaryStream&)+0x164>
+  87fc76:	f3bf 8f5b 	dmb	ish
+  87fc7a:	e030      	b.n	87fcde <CommandStepPacket::read(BinaryStream&)+0x1da>
+  87fc7c:	4a75      	ldr	r2, [pc, #468]	; (87fe54 <CommandStepPacket::read(BinaryStream&)+0x350>)
+  87fc7e:	4b6b      	ldr	r3, [pc, #428]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fc80:	447a      	add	r2, pc
+  87fc82:	589b      	ldr	r3, [r3, r2]
+  87fc84:	1f0a      	subs	r2, r1, #4
+  87fc86:	b38b      	cbz	r3, 87fcec <CommandStepPacket::read(BinaryStream&)+0x1e8>
+  87fc88:	f3bf 8f5b 	dmb	ish
+  87fc8c:	e852 1f00 	ldrex	r1, [r2]
+  87fc90:	1e4b      	subs	r3, r1, #1
+  87fc92:	e842 3600 	strex	r6, r3, [r2]
+  87fc96:	2e00      	cmp	r6, #0
+  87fc98:	d1f8      	bne.n	87fc8c <CommandStepPacket::read(BinaryStream&)+0x188>
+  87fc9a:	f3bf 8f5b 	dmb	ish
+  87fc9e:	e028      	b.n	87fcf2 <CommandStepPacket::read(BinaryStream&)+0x1ee>
+  87fca0:	4a70      	ldr	r2, [pc, #448]	; (87fe64 <CommandStepPacket::read(BinaryStream&)+0x360>)
+  87fca2:	4b62      	ldr	r3, [pc, #392]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fca4:	447a      	add	r2, pc
+  87fca6:	589b      	ldr	r3, [r3, r2]
+  87fca8:	1f0a      	subs	r2, r1, #4
+  87fcaa:	b34b      	cbz	r3, 87fd00 <CommandStepPacket::read(BinaryStream&)+0x1fc>
+  87fcac:	f3bf 8f5b 	dmb	ish
+  87fcb0:	e852 1f00 	ldrex	r1, [r2]
+  87fcb4:	1e4b      	subs	r3, r1, #1
+  87fcb6:	e842 3700 	strex	r7, r3, [r2]
+  87fcba:	2f00      	cmp	r7, #0
+  87fcbc:	d1f8      	bne.n	87fcb0 <CommandStepPacket::read(BinaryStream&)+0x1ac>
+  87fcbe:	f3bf 8f5b 	dmb	ish
+  87fcc2:	e020      	b.n	87fd06 <CommandStepPacket::read(BinaryStream&)+0x202>
+  87fcc4:	6811      	ldr	r1, [r2, #0]
+  87fcc6:	1e4b      	subs	r3, r1, #1
+  87fcc8:	6013      	str	r3, [r2, #0]
+  87fcca:	2900      	cmp	r1, #0
+  87fccc:	f73f af39 	bgt.w	87fb42 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  87fcd0:	a913      	add	r1, sp, #76	; 0x4c
+  87fcd2:	f275 eac2 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87fcd6:	e734      	b.n	87fb42 <CommandStepPacket::read(BinaryStream&)+0x3e>
+  87fcd8:	6811      	ldr	r1, [r2, #0]
+  87fcda:	1e4b      	subs	r3, r1, #1
+  87fcdc:	6013      	str	r3, [r2, #0]
+  87fcde:	2900      	cmp	r1, #0
+  87fce0:	f73f af41 	bgt.w	87fb66 <CommandStepPacket::read(BinaryStream&)+0x62>
+  87fce4:	a913      	add	r1, sp, #76	; 0x4c
+  87fce6:	f275 eab8 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87fcea:	e73c      	b.n	87fb66 <CommandStepPacket::read(BinaryStream&)+0x62>
+  87fcec:	6811      	ldr	r1, [r2, #0]
+  87fcee:	1e4b      	subs	r3, r1, #1
+  87fcf0:	6013      	str	r3, [r2, #0]
+  87fcf2:	2900      	cmp	r1, #0
+  87fcf4:	f73f af71 	bgt.w	87fbda <CommandStepPacket::read(BinaryStream&)+0xd6>
+  87fcf8:	a913      	add	r1, sp, #76	; 0x4c
+  87fcfa:	f275 eaae 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87fcfe:	e76c      	b.n	87fbda <CommandStepPacket::read(BinaryStream&)+0xd6>
+  87fd00:	6811      	ldr	r1, [r2, #0]
+  87fd02:	1e4b      	subs	r3, r1, #1
+  87fd04:	6013      	str	r3, [r2, #0]
+  87fd06:	2900      	cmp	r1, #0
+  87fd08:	f73f af79 	bgt.w	87fbfe <CommandStepPacket::read(BinaryStream&)+0xfa>
+  87fd0c:	a913      	add	r1, sp, #76	; 0x4c
+  87fd0e:	f275 eaa4 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87fd12:	e774      	b.n	87fbfe <CommandStepPacket::read(BinaryStream&)+0xfa>
+  87fd14:	4a42      	ldr	r2, [pc, #264]	; (87fe20 <CommandStepPacket::read(BinaryStream&)+0x31c>)
+  87fd16:	4604      	mov	r4, r0
+  87fd18:	4b42      	ldr	r3, [pc, #264]	; (87fe24 <CommandStepPacket::read(BinaryStream&)+0x320>)
+  87fd1a:	447a      	add	r2, pc
+  87fd1c:	9907      	ldr	r1, [sp, #28]
+  87fd1e:	f1a1 000c 	sub.w	r0, r1, #12
+  87fd22:	589a      	ldr	r2, [r3, r2]
+  87fd24:	4290      	cmp	r0, r2
+  87fd26:	d069      	beq.n	87fdfc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  87fd28:	4a3f      	ldr	r2, [pc, #252]	; (87fe28 <CommandStepPacket::read(BinaryStream&)+0x324>)
+  87fd2a:	4b40      	ldr	r3, [pc, #256]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fd2c:	447a      	add	r2, pc
+  87fd2e:	589b      	ldr	r3, [r3, r2]
+  87fd30:	1f0a      	subs	r2, r1, #4
+  87fd32:	2b00      	cmp	r3, #0
+  87fd34:	d06c      	beq.n	87fe10 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  87fd36:	f3bf 8f5b 	dmb	ish
+  87fd3a:	e852 1f00 	ldrex	r1, [r2]
+  87fd3e:	1e4b      	subs	r3, r1, #1
+  87fd40:	e842 3700 	strex	r7, r3, [r2]
+  87fd44:	2f00      	cmp	r7, #0
+  87fd46:	d1f8      	bne.n	87fd3a <CommandStepPacket::read(BinaryStream&)+0x236>
+  87fd48:	f3bf 8f5b 	dmb	ish
+  87fd4c:	e050      	b.n	87fdf0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  87fd4e:	4a3a      	ldr	r2, [pc, #232]	; (87fe38 <CommandStepPacket::read(BinaryStream&)+0x334>)
+  87fd50:	4604      	mov	r4, r0
+  87fd52:	9906      	ldr	r1, [sp, #24]
+  87fd54:	447a      	add	r2, pc
+  87fd56:	f1a1 000c 	sub.w	r0, r1, #12
+  87fd5a:	58ba      	ldr	r2, [r7, r2]
+  87fd5c:	4290      	cmp	r0, r2
+  87fd5e:	d04d      	beq.n	87fdfc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  87fd60:	4a36      	ldr	r2, [pc, #216]	; (87fe3c <CommandStepPacket::read(BinaryStream&)+0x338>)
+  87fd62:	4b32      	ldr	r3, [pc, #200]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fd64:	447a      	add	r2, pc
+  87fd66:	589b      	ldr	r3, [r3, r2]
+  87fd68:	1f0a      	subs	r2, r1, #4
+  87fd6a:	2b00      	cmp	r3, #0
+  87fd6c:	d050      	beq.n	87fe10 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  87fd6e:	f3bf 8f5b 	dmb	ish
+  87fd72:	e852 1f00 	ldrex	r1, [r2]
+  87fd76:	1e4b      	subs	r3, r1, #1
+  87fd78:	e842 3700 	strex	r7, r3, [r2]
+  87fd7c:	2f00      	cmp	r7, #0
+  87fd7e:	d1f8      	bne.n	87fd72 <CommandStepPacket::read(BinaryStream&)+0x26e>
+  87fd80:	f3bf 8f5b 	dmb	ish
+  87fd84:	e034      	b.n	87fdf0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  87fd86:	4a30      	ldr	r2, [pc, #192]	; (87fe48 <CommandStepPacket::read(BinaryStream&)+0x344>)
+  87fd88:	4604      	mov	r4, r0
+  87fd8a:	9901      	ldr	r1, [sp, #4]
+  87fd8c:	447a      	add	r2, pc
+  87fd8e:	f1a1 000c 	sub.w	r0, r1, #12
+  87fd92:	58ba      	ldr	r2, [r7, r2]
+  87fd94:	4290      	cmp	r0, r2
+  87fd96:	d031      	beq.n	87fdfc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  87fd98:	4a2c      	ldr	r2, [pc, #176]	; (87fe4c <CommandStepPacket::read(BinaryStream&)+0x348>)
+  87fd9a:	4b24      	ldr	r3, [pc, #144]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fd9c:	447a      	add	r2, pc
+  87fd9e:	589b      	ldr	r3, [r3, r2]
+  87fda0:	1f0a      	subs	r2, r1, #4
+  87fda2:	b3ab      	cbz	r3, 87fe10 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  87fda4:	f3bf 8f5b 	dmb	ish
+  87fda8:	e852 1f00 	ldrex	r1, [r2]
+  87fdac:	1e4b      	subs	r3, r1, #1
+  87fdae:	e842 3700 	strex	r7, r3, [r2]
+  87fdb2:	2f00      	cmp	r7, #0
+  87fdb4:	d1f8      	bne.n	87fda8 <CommandStepPacket::read(BinaryStream&)+0x2a4>
+  87fdb6:	f3bf 8f5b 	dmb	ish
+  87fdba:	e019      	b.n	87fdf0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  87fdbc:	4a26      	ldr	r2, [pc, #152]	; (87fe58 <CommandStepPacket::read(BinaryStream&)+0x354>)
+  87fdbe:	4604      	mov	r4, r0
+  87fdc0:	9900      	ldr	r1, [sp, #0]
+  87fdc2:	447a      	add	r2, pc
+  87fdc4:	f1a1 000c 	sub.w	r0, r1, #12
+  87fdc8:	58ba      	ldr	r2, [r7, r2]
+  87fdca:	4290      	cmp	r0, r2
+  87fdcc:	d016      	beq.n	87fdfc <CommandStepPacket::read(BinaryStream&)+0x2f8>
+  87fdce:	4a23      	ldr	r2, [pc, #140]	; (87fe5c <CommandStepPacket::read(BinaryStream&)+0x358>)
+  87fdd0:	4b16      	ldr	r3, [pc, #88]	; (87fe2c <CommandStepPacket::read(BinaryStream&)+0x328>)
+  87fdd2:	447a      	add	r2, pc
+  87fdd4:	589b      	ldr	r3, [r3, r2]
+  87fdd6:	1f0a      	subs	r2, r1, #4
+  87fdd8:	b1d3      	cbz	r3, 87fe10 <CommandStepPacket::read(BinaryStream&)+0x30c>
+  87fdda:	f3bf 8f5b 	dmb	ish
+  87fdde:	e852 1f00 	ldrex	r1, [r2]
+  87fde2:	1e4b      	subs	r3, r1, #1
+  87fde4:	e842 3700 	strex	r7, r3, [r2]
+  87fde8:	2f00      	cmp	r7, #0
+  87fdea:	d1f8      	bne.n	87fdde <CommandStepPacket::read(BinaryStream&)+0x2da>
+  87fdec:	f3bf 8f5b 	dmb	ish
+  87fdf0:	2900      	cmp	r1, #0
+  87fdf2:	bfdc      	itt	le
+  87fdf4:	f10d 014c 	addle.w	r1, sp, #76	; 0x4c
+  87fdf8:	f275 ea2e 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87fdfc:	4620      	mov	r0, r4
+  87fdfe:	f60e ea7e 	blx	68e2fc <_Unwind_Resume@plt>
+  87fe02:	4604      	mov	r4, r0
+  87fe04:	a808      	add	r0, sp, #32
+  87fe06:	f610 e9e0 	blx	6901c8 <CommandOriginData::~CommandOriginData()@plt>
+  87fe0a:	4620      	mov	r0, r4
+  87fe0c:	f60e ea76 	blx	68e2fc <_Unwind_Resume@plt>
+  87fe10:	6811      	ldr	r1, [r2, #0]
+  87fe12:	1e4b      	subs	r3, r1, #1
+  87fe14:	6013      	str	r3, [r2, #0]
+  87fe16:	e7eb      	b.n	87fdf0 <CommandStepPacket::read(BinaryStream&)+0x2ec>
+  87fe18:	daac      	bge.n	87fd74 <CommandStepPacket::read(BinaryStream&)+0x270>
+  87fe1a:	0154      	lsls	r4, r2, #5
+  87fe1c:	8c30      	ldrh	r0, [r6, #32]
+  87fe1e:	ffff d8a6 	vtbl.8	d29, {d31}, d22
+  87fe22:	0154      	lsls	r4, r2, #5
+  87fe24:	8ae4      	ldrh	r4, [r4, #22]
+  87fe26:	ffff d894 			; <UNDEFINED> instruction: 0xffffd894
+  87fe2a:	0154      	lsls	r4, r2, #5
+  87fe2c:	8ae8      	ldrh	r0, [r5, #22]
+  87fe2e:	ffff da8c 	vtbl.8	d29, {d31-<overflow reg d33}, d12
+  87fe32:	0154      	lsls	r4, r2, #5
+  87fe34:	d98a      	bls.n	87fd4c <CommandStepPacket::read(BinaryStream&)+0x248>
+  87fe36:	0154      	lsls	r4, r2, #5
+  87fe38:	d86c      	bhi.n	87ff14 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x9a>
+  87fe3a:	0154      	lsls	r4, r2, #5
+  87fe3c:	d85c      	bhi.n	87fef8 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x7e>
+  87fe3e:	0154      	lsls	r4, r2, #5
+  87fe40:	da66      	bge.n	87ff10 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x96>
+  87fe42:	0154      	lsls	r4, r2, #5
+  87fe44:	d964      	bls.n	87ff10 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x96>
+  87fe46:	0154      	lsls	r4, r2, #5
+  87fe48:	d834      	bhi.n	87feb4 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x3a>
+  87fe4a:	0154      	lsls	r4, r2, #5
+  87fe4c:	d824      	bhi.n	87fe98 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x1e>
+  87fe4e:	0154      	lsls	r4, r2, #5
+  87fe50:	d9f2      	bls.n	87fe38 <CommandStepPacket::read(BinaryStream&)+0x334>
+  87fe52:	0154      	lsls	r4, r2, #5
+  87fe54:	d940      	bls.n	87fed8 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x5e>
+  87fe56:	0154      	lsls	r4, r2, #5
+  87fe58:	d7fe      	bvc.n	87fe58 <CommandStepPacket::read(BinaryStream&)+0x354>
+  87fe5a:	0154      	lsls	r4, r2, #5
+  87fe5c:	d7ee      	bvc.n	87fe3c <CommandStepPacket::read(BinaryStream&)+0x338>
+  87fe5e:	0154      	lsls	r4, r2, #5
+  87fe60:	d9ce      	bls.n	87fe00 <CommandStepPacket::read(BinaryStream&)+0x2fc>
+  87fe62:	0154      	lsls	r4, r2, #5
+  87fe64:	d91c      	bls.n	87fea0 <CommandStepPacket::createCommandContext(CommandContextType, Level&) const+0x26>
+  87fe66:	0154      	lsls	r4, r2, #5
+  87fe68:	d9a4      	bls.n	87fdb4 <CommandStepPacket::read(BinaryStream&)+0x2b0>
+  87fe6a:	0154      	lsls	r4, r2, #5

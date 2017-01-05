@@ -1,0 +1,83 @@
+  87d3cc:	b5b0      	push	{r4, r5, r7, lr}
+  87d3ce:	b084      	sub	sp, #16
+  87d3d0:	ad01      	add	r5, sp, #4
+  87d3d2:	4604      	mov	r4, r0
+  87d3d4:	4628      	mov	r0, r5
+  87d3d6:	f612 ef04 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87d3da:	f104 000c 	add.w	r0, r4, #12
+  87d3de:	4629      	mov	r1, r5
+  87d3e0:	f277 ef8a 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87d3e4:	482a      	ldr	r0, [pc, #168]	; (87d490 <BatchPacket::read(BinaryStream&)+0xc4>)
+  87d3e6:	4a27      	ldr	r2, [pc, #156]	; (87d484 <BatchPacket::read(BinaryStream&)+0xb8>)
+  87d3e8:	4478      	add	r0, pc
+  87d3ea:	9901      	ldr	r1, [sp, #4]
+  87d3ec:	5812      	ldr	r2, [r2, r0]
+  87d3ee:	f1a1 000c 	sub.w	r0, r1, #12
+  87d3f2:	4290      	cmp	r0, r2
+  87d3f4:	d101      	bne.n	87d3fa <BatchPacket::read(BinaryStream&)+0x2e>
+  87d3f6:	b004      	add	sp, #16
+  87d3f8:	bdb0      	pop	{r4, r5, r7, pc}
+  87d3fa:	4a26      	ldr	r2, [pc, #152]	; (87d494 <BatchPacket::read(BinaryStream&)+0xc8>)
+  87d3fc:	4b23      	ldr	r3, [pc, #140]	; (87d48c <BatchPacket::read(BinaryStream&)+0xc0>)
+  87d3fe:	447a      	add	r2, pc
+  87d400:	589b      	ldr	r3, [r3, r2]
+  87d402:	1f0a      	subs	r2, r1, #4
+  87d404:	b15b      	cbz	r3, 87d41e <BatchPacket::read(BinaryStream&)+0x52>
+  87d406:	f3bf 8f5b 	dmb	ish
+  87d40a:	e852 1f00 	ldrex	r1, [r2]
+  87d40e:	1e4b      	subs	r3, r1, #1
+  87d410:	e842 3500 	strex	r5, r3, [r2]
+  87d414:	2d00      	cmp	r5, #0
+  87d416:	d1f8      	bne.n	87d40a <BatchPacket::read(BinaryStream&)+0x3e>
+  87d418:	f3bf 8f5b 	dmb	ish
+  87d41c:	e002      	b.n	87d424 <BatchPacket::read(BinaryStream&)+0x58>
+  87d41e:	6811      	ldr	r1, [r2, #0]
+  87d420:	1e4b      	subs	r3, r1, #1
+  87d422:	6013      	str	r3, [r2, #0]
+  87d424:	2900      	cmp	r1, #0
+  87d426:	dce6      	bgt.n	87d3f6 <BatchPacket::read(BinaryStream&)+0x2a>
+  87d428:	a902      	add	r1, sp, #8
+  87d42a:	f277 ef16 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87d42e:	e7e2      	b.n	87d3f6 <BatchPacket::read(BinaryStream&)+0x2a>
+  87d430:	4a13      	ldr	r2, [pc, #76]	; (87d480 <BatchPacket::read(BinaryStream&)+0xb4>)
+  87d432:	4604      	mov	r4, r0
+  87d434:	4b13      	ldr	r3, [pc, #76]	; (87d484 <BatchPacket::read(BinaryStream&)+0xb8>)
+  87d436:	447a      	add	r2, pc
+  87d438:	9901      	ldr	r1, [sp, #4]
+  87d43a:	f1a1 000c 	sub.w	r0, r1, #12
+  87d43e:	589a      	ldr	r2, [r3, r2]
+  87d440:	4290      	cmp	r0, r2
+  87d442:	d016      	beq.n	87d472 <BatchPacket::read(BinaryStream&)+0xa6>
+  87d444:	4a10      	ldr	r2, [pc, #64]	; (87d488 <BatchPacket::read(BinaryStream&)+0xbc>)
+  87d446:	4b11      	ldr	r3, [pc, #68]	; (87d48c <BatchPacket::read(BinaryStream&)+0xc0>)
+  87d448:	447a      	add	r2, pc
+  87d44a:	589b      	ldr	r3, [r3, r2]
+  87d44c:	1f0a      	subs	r2, r1, #4
+  87d44e:	b19b      	cbz	r3, 87d478 <BatchPacket::read(BinaryStream&)+0xac>
+  87d450:	f3bf 8f5b 	dmb	ish
+  87d454:	e852 1f00 	ldrex	r1, [r2]
+  87d458:	1e4b      	subs	r3, r1, #1
+  87d45a:	e842 3500 	strex	r5, r3, [r2]
+  87d45e:	2d00      	cmp	r5, #0
+  87d460:	d1f8      	bne.n	87d454 <BatchPacket::read(BinaryStream&)+0x88>
+  87d462:	f3bf 8f5b 	dmb	ish
+  87d466:	2900      	cmp	r1, #0
+  87d468:	bfdc      	itt	le
+  87d46a:	f10d 010c 	addle.w	r1, sp, #12
+  87d46e:	f277 eef4 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87d472:	4620      	mov	r0, r4
+  87d474:	f610 ef42 	blx	68e2fc <_Unwind_Resume@plt>
+  87d478:	6811      	ldr	r1, [r2, #0]
+  87d47a:	1e4b      	subs	r3, r1, #1
+  87d47c:	6013      	str	r3, [r2, #0]
+  87d47e:	e7f2      	b.n	87d466 <BatchPacket::read(BinaryStream&)+0x9a>
+  87d480:	018a      	lsls	r2, r1, #6
+  87d482:	0155      	lsls	r5, r2, #5
+  87d484:	8ae4      	ldrh	r4, [r4, #22]
+  87d486:	ffff 0178 	vsra.u32	q8, q12, #1
+  87d48a:	0155      	lsls	r5, r2, #5
+  87d48c:	8ae8      	ldrh	r0, [r5, #22]
+  87d48e:	ffff 01d8 	vsra.u64	q8, q4, #1
+  87d492:	0155      	lsls	r5, r2, #5
+  87d494:	01c2      	lsls	r2, r0, #7
+  87d496:	0155      	lsls	r5, r2, #5

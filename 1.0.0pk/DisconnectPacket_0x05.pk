@@ -1,0 +1,90 @@
+  87668c:	b570      	push	{r4, r5, r6, lr}
+  87668e:	b084      	sub	sp, #16
+  876690:	460d      	mov	r5, r1
+  876692:	4604      	mov	r4, r0
+  876694:	4628      	mov	r0, r5
+  876696:	f61a ea3c 	blx	690b10 <ReadOnlyBinaryStream::getBool()@plt>
+  87669a:	7320      	strb	r0, [r4, #12]
+  87669c:	b990      	cbnz	r0, 8766c4 <DisconnectPacket::read(BinaryStream&)+0x38>
+  87669e:	ae01      	add	r6, sp, #4
+  8766a0:	4629      	mov	r1, r5
+  8766a2:	4630      	mov	r0, r6
+  8766a4:	f619 ed9c 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  8766a8:	f104 0010 	add.w	r0, r4, #16
+  8766ac:	4631      	mov	r1, r6
+  8766ae:	f27e ee24 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  8766b2:	482b      	ldr	r0, [pc, #172]	; (876760 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  8766b4:	4a27      	ldr	r2, [pc, #156]	; (876754 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  8766b6:	4478      	add	r0, pc
+  8766b8:	9901      	ldr	r1, [sp, #4]
+  8766ba:	5812      	ldr	r2, [r2, r0]
+  8766bc:	f1a1 000c 	sub.w	r0, r1, #12
+  8766c0:	4290      	cmp	r0, r2
+  8766c2:	d101      	bne.n	8766c8 <DisconnectPacket::read(BinaryStream&)+0x3c>
+  8766c4:	b004      	add	sp, #16
+  8766c6:	bd70      	pop	{r4, r5, r6, pc}
+  8766c8:	4a26      	ldr	r2, [pc, #152]	; (876764 <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  8766ca:	4b24      	ldr	r3, [pc, #144]	; (87675c <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  8766cc:	447a      	add	r2, pc
+  8766ce:	589b      	ldr	r3, [r3, r2]
+  8766d0:	1f0a      	subs	r2, r1, #4
+  8766d2:	b15b      	cbz	r3, 8766ec <DisconnectPacket::read(BinaryStream&)+0x60>
+  8766d4:	f3bf 8f5b 	dmb	ish
+  8766d8:	e852 1f00 	ldrex	r1, [r2]
+  8766dc:	1e4b      	subs	r3, r1, #1
+  8766de:	e842 3600 	strex	r6, r3, [r2]
+  8766e2:	2e00      	cmp	r6, #0
+  8766e4:	d1f8      	bne.n	8766d8 <DisconnectPacket::read(BinaryStream&)+0x4c>
+  8766e6:	f3bf 8f5b 	dmb	ish
+  8766ea:	e002      	b.n	8766f2 <DisconnectPacket::read(BinaryStream&)+0x66>
+  8766ec:	6811      	ldr	r1, [r2, #0]
+  8766ee:	1e4b      	subs	r3, r1, #1
+  8766f0:	6013      	str	r3, [r2, #0]
+  8766f2:	2900      	cmp	r1, #0
+  8766f4:	dce6      	bgt.n	8766c4 <DisconnectPacket::read(BinaryStream&)+0x38>
+  8766f6:	a902      	add	r1, sp, #8
+  8766f8:	f27e edae 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  8766fc:	e7e2      	b.n	8766c4 <DisconnectPacket::read(BinaryStream&)+0x38>
+  8766fe:	4a14      	ldr	r2, [pc, #80]	; (876750 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  876700:	4604      	mov	r4, r0
+  876702:	4b14      	ldr	r3, [pc, #80]	; (876754 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  876704:	447a      	add	r2, pc
+  876706:	9901      	ldr	r1, [sp, #4]
+  876708:	f1a1 000c 	sub.w	r0, r1, #12
+  87670c:	589a      	ldr	r2, [r3, r2]
+  87670e:	4290      	cmp	r0, r2
+  876710:	d016      	beq.n	876740 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  876712:	4a11      	ldr	r2, [pc, #68]	; (876758 <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  876714:	4b11      	ldr	r3, [pc, #68]	; (87675c <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  876716:	447a      	add	r2, pc
+  876718:	589b      	ldr	r3, [r3, r2]
+  87671a:	1f0a      	subs	r2, r1, #4
+  87671c:	b19b      	cbz	r3, 876746 <DisconnectPacket::read(BinaryStream&)+0xba>
+  87671e:	f3bf 8f5b 	dmb	ish
+  876722:	e852 1f00 	ldrex	r1, [r2]
+  876726:	1e4b      	subs	r3, r1, #1
+  876728:	e842 3600 	strex	r6, r3, [r2]
+  87672c:	2e00      	cmp	r6, #0
+  87672e:	d1f8      	bne.n	876722 <DisconnectPacket::read(BinaryStream&)+0x96>
+  876730:	f3bf 8f5b 	dmb	ish
+  876734:	2900      	cmp	r1, #0
+  876736:	bfdc      	itt	le
+  876738:	f10d 010c 	addle.w	r1, sp, #12
+  87673c:	f27e ed8c 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  876740:	4620      	mov	r0, r4
+  876742:	f617 eddc 	blx	68e2fc <_Unwind_Resume@plt>
+  876746:	6811      	ldr	r1, [r2, #0]
+  876748:	1e4b      	subs	r3, r1, #1
+  87674a:	6013      	str	r3, [r2, #0]
+  87674c:	e7f2      	b.n	876734 <DisconnectPacket::read(BinaryStream&)+0xa8>
+  87674e:	bf00      	nop
+  876750:	6ebc      	ldr	r4, [r7, #104]	; 0x68
+  876752:	0155      	lsls	r5, r2, #5
+  876754:	8ae4      	ldrh	r4, [r4, #22]
+  876756:	ffff 6eaa 			; <UNDEFINED> instruction: 0xffff6eaa
+  87675a:	0155      	lsls	r5, r2, #5
+  87675c:	8ae8      	ldrh	r0, [r5, #22]
+  87675e:	ffff 6f0a 			; <UNDEFINED> instruction: 0xffff6f0a
+  876762:	0155      	lsls	r5, r2, #5
+  876764:	6ef4      	ldr	r4, [r6, #108]	; 0x6c
+  876766:	0155      	lsls	r5, r2, #5

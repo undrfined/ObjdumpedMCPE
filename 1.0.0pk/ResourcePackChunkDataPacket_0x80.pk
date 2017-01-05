@@ -1,0 +1,116 @@
+  87cad8:	b5f0      	push	{r4, r5, r6, r7, lr}
+  87cada:	b083      	sub	sp, #12
+  87cadc:	466e      	mov	r6, sp
+  87cade:	4605      	mov	r5, r0
+  87cae0:	4630      	mov	r0, r6
+  87cae2:	460c      	mov	r4, r1
+  87cae4:	f613 eb7c 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87cae8:	f105 000c 	add.w	r0, r5, #12
+  87caec:	4631      	mov	r1, r6
+  87caee:	f278 ec04 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87caf2:	483e      	ldr	r0, [pc, #248]	; (87cbec <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  87caf4:	4a3a      	ldr	r2, [pc, #232]	; (87cbe0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  87caf6:	4478      	add	r0, pc
+  87caf8:	9900      	ldr	r1, [sp, #0]
+  87cafa:	5812      	ldr	r2, [r2, r0]
+  87cafc:	f1a1 000c 	sub.w	r0, r1, #12
+  87cb00:	4290      	cmp	r0, r2
+  87cb02:	d128      	bne.n	87cb56 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  87cb04:	4620      	mov	r0, r4
+  87cb06:	f614 e9c6 	blx	690e94 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  87cb0a:	6128      	str	r0, [r5, #16]
+  87cb0c:	4620      	mov	r0, r4
+  87cb0e:	f614 e812 	blx	690b34 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  87cb12:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  87cb16:	4620      	mov	r0, r4
+  87cb18:	f614 e9bc 	blx	690e94 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  87cb1c:	462f      	mov	r7, r5
+  87cb1e:	4606      	mov	r6, r0
+  87cb20:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  87cb24:	6879      	ldr	r1, [r7, #4]
+  87cb26:	1a09      	subs	r1, r1, r0
+  87cb28:	428e      	cmp	r6, r1
+  87cb2a:	d904      	bls.n	87cb36 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  87cb2c:	1a71      	subs	r1, r6, r1
+  87cb2e:	4638      	mov	r0, r7
+  87cb30:	f614 e9b6 	blx	690ea0 <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  87cb34:	e002      	b.n	87cb3c <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  87cb36:	bf3c      	itt	cc
+  87cb38:	4430      	addcc	r0, r6
+  87cb3a:	6268      	strcc	r0, [r5, #36]	; 0x24
+  87cb3c:	2e01      	cmp	r6, #1
+  87cb3e:	db08      	blt.n	87cb52 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  87cb40:	2500      	movs	r5, #0
+  87cb42:	4620      	mov	r0, r4
+  87cb44:	f613 efb4 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  87cb48:	6839      	ldr	r1, [r7, #0]
+  87cb4a:	5548      	strb	r0, [r1, r5]
+  87cb4c:	3501      	adds	r5, #1
+  87cb4e:	42ae      	cmp	r6, r5
+  87cb50:	d1f7      	bne.n	87cb42 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  87cb52:	b003      	add	sp, #12
+  87cb54:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  87cb56:	4a26      	ldr	r2, [pc, #152]	; (87cbf0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  87cb58:	4b23      	ldr	r3, [pc, #140]	; (87cbe8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  87cb5a:	447a      	add	r2, pc
+  87cb5c:	589b      	ldr	r3, [r3, r2]
+  87cb5e:	1f0a      	subs	r2, r1, #4
+  87cb60:	b15b      	cbz	r3, 87cb7a <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  87cb62:	f3bf 8f5b 	dmb	ish
+  87cb66:	e852 1f00 	ldrex	r1, [r2]
+  87cb6a:	1e4b      	subs	r3, r1, #1
+  87cb6c:	e842 3700 	strex	r7, r3, [r2]
+  87cb70:	2f00      	cmp	r7, #0
+  87cb72:	d1f8      	bne.n	87cb66 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  87cb74:	f3bf 8f5b 	dmb	ish
+  87cb78:	e002      	b.n	87cb80 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  87cb7a:	6811      	ldr	r1, [r2, #0]
+  87cb7c:	1e4b      	subs	r3, r1, #1
+  87cb7e:	6013      	str	r3, [r2, #0]
+  87cb80:	2900      	cmp	r1, #0
+  87cb82:	dcbf      	bgt.n	87cb04 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  87cb84:	a901      	add	r1, sp, #4
+  87cb86:	f278 eb68 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87cb8a:	e7bb      	b.n	87cb04 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  87cb8c:	4a13      	ldr	r2, [pc, #76]	; (87cbdc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  87cb8e:	4604      	mov	r4, r0
+  87cb90:	4b13      	ldr	r3, [pc, #76]	; (87cbe0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  87cb92:	447a      	add	r2, pc
+  87cb94:	9900      	ldr	r1, [sp, #0]
+  87cb96:	f1a1 000c 	sub.w	r0, r1, #12
+  87cb9a:	589a      	ldr	r2, [r3, r2]
+  87cb9c:	4290      	cmp	r0, r2
+  87cb9e:	d016      	beq.n	87cbce <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  87cba0:	4a10      	ldr	r2, [pc, #64]	; (87cbe4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  87cba2:	4b11      	ldr	r3, [pc, #68]	; (87cbe8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  87cba4:	447a      	add	r2, pc
+  87cba6:	589b      	ldr	r3, [r3, r2]
+  87cba8:	1f0a      	subs	r2, r1, #4
+  87cbaa:	b19b      	cbz	r3, 87cbd4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  87cbac:	f3bf 8f5b 	dmb	ish
+  87cbb0:	e852 1f00 	ldrex	r1, [r2]
+  87cbb4:	1e4b      	subs	r3, r1, #1
+  87cbb6:	e842 3700 	strex	r7, r3, [r2]
+  87cbba:	2f00      	cmp	r7, #0
+  87cbbc:	d1f8      	bne.n	87cbb0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  87cbbe:	f3bf 8f5b 	dmb	ish
+  87cbc2:	2900      	cmp	r1, #0
+  87cbc4:	bfdc      	itt	le
+  87cbc6:	f10d 0108 	addle.w	r1, sp, #8
+  87cbca:	f278 eb46 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87cbce:	4620      	mov	r0, r4
+  87cbd0:	f611 eb94 	blx	68e2fc <_Unwind_Resume@plt>
+  87cbd4:	6811      	ldr	r1, [r2, #0]
+  87cbd6:	1e4b      	subs	r3, r1, #1
+  87cbd8:	6013      	str	r3, [r2, #0]
+  87cbda:	e7f2      	b.n	87cbc2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  87cbdc:	0a2e      	lsrs	r6, r5, #8
+  87cbde:	0155      	lsls	r5, r2, #5
+  87cbe0:	8ae4      	ldrh	r4, [r4, #22]
+  87cbe2:	ffff 0a1c 	vshll.u32	q8, d12, #31
+  87cbe6:	0155      	lsls	r5, r2, #5
+  87cbe8:	8ae8      	ldrh	r0, [r5, #22]
+  87cbea:	ffff 0aca 	vtbx.8	d16, {d31-<overflow reg d33}, d10
+  87cbee:	0155      	lsls	r5, r2, #5
+  87cbf0:	0a66      	lsrs	r6, r4, #9
+  87cbf2:	0155      	lsls	r5, r2, #5

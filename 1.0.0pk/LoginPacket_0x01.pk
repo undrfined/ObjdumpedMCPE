@@ -1,0 +1,204 @@
+  874364:	b570      	push	{r4, r5, r6, lr}
+  874366:	b088      	sub	sp, #32
+  874368:	4604      	mov	r4, r0
+  87436a:	486e      	ldr	r0, [pc, #440]	; (874524 <LoginPacket::read(BinaryStream&)+0x1c0>)
+  87436c:	460d      	mov	r5, r1
+  87436e:	496e      	ldr	r1, [pc, #440]	; (874528 <LoginPacket::read(BinaryStream&)+0x1c4>)
+  874370:	4478      	add	r0, pc
+  874372:	5808      	ldr	r0, [r1, r0]
+  874374:	6806      	ldr	r6, [r0, #0]
+  874376:	4628      	mov	r0, r5
+  874378:	f61c eb94 	blx	690aa4 <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  87437c:	6120      	str	r0, [r4, #16]
+  87437e:	42b0      	cmp	r0, r6
+  874380:	d13a      	bne.n	8743f8 <LoginPacket::read(BinaryStream&)+0x94>
+  874382:	4628      	mov	r0, r5
+  874384:	f61c eb94 	blx	690ab0 <ReadOnlyBinaryStream::getByte()@plt>
+  874388:	ae06      	add	r6, sp, #24
+  87438a:	7320      	strb	r0, [r4, #12]
+  87438c:	4629      	mov	r1, r5
+  87438e:	4630      	mov	r0, r6
+  874390:	f61b ef26 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  874394:	a804      	add	r0, sp, #16
+  874396:	f10d 0217 	add.w	r2, sp, #23
+  87439a:	4631      	mov	r1, r6
+  87439c:	f61c eb8e 	blx	690abc <Util::decompress(std::string const&, bool&)@plt>
+  8743a0:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  8743a4:	b1a8      	cbz	r0, 8743d2 <LoginPacket::read(BinaryStream&)+0x6e>
+  8743a6:	a801      	add	r0, sp, #4
+  8743a8:	a904      	add	r1, sp, #16
+  8743aa:	f61c eb8e 	blx	690ac8 <ConnectionRequest::fromString(std::string const&)@plt>
+  8743ae:	200c      	movs	r0, #12
+  8743b0:	f619 efaa 	blx	68e308 <operator new(unsigned int)@plt>
+  8743b4:	4605      	mov	r5, r0
+  8743b6:	a901      	add	r1, sp, #4
+  8743b8:	4628      	mov	r0, r5
+  8743ba:	f61c eb8c 	blx	690ad4 <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  8743be:	6960      	ldr	r0, [r4, #20]
+  8743c0:	6165      	str	r5, [r4, #20]
+  8743c2:	b118      	cbz	r0, 8743cc <LoginPacket::read(BinaryStream&)+0x68>
+  8743c4:	f61c eb4a 	blx	690a5c <ConnectionRequest::~ConnectionRequest()@plt>
+  8743c8:	f619 eec6 	blx	68e158 <operator delete(void*)@plt>
+  8743cc:	a801      	add	r0, sp, #4
+  8743ce:	f61c eb46 	blx	690a5c <ConnectionRequest::~ConnectionRequest()@plt>
+  8743d2:	485c      	ldr	r0, [pc, #368]	; (874544 <LoginPacket::read(BinaryStream&)+0x1e0>)
+  8743d4:	4c56      	ldr	r4, [pc, #344]	; (874530 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  8743d6:	4478      	add	r0, pc
+  8743d8:	9904      	ldr	r1, [sp, #16]
+  8743da:	5822      	ldr	r2, [r4, r0]
+  8743dc:	f1a1 000c 	sub.w	r0, r1, #12
+  8743e0:	4290      	cmp	r0, r2
+  8743e2:	d110      	bne.n	874406 <LoginPacket::read(BinaryStream&)+0xa2>
+  8743e4:	4859      	ldr	r0, [pc, #356]	; (87454c <LoginPacket::read(BinaryStream&)+0x1e8>)
+  8743e6:	9906      	ldr	r1, [sp, #24]
+  8743e8:	4478      	add	r0, pc
+  8743ea:	5822      	ldr	r2, [r4, r0]
+  8743ec:	f1a1 000c 	sub.w	r0, r1, #12
+  8743f0:	4290      	cmp	r0, r2
+  8743f2:	d11a      	bne.n	87442a <LoginPacket::read(BinaryStream&)+0xc6>
+  8743f4:	b008      	add	sp, #32
+  8743f6:	bd70      	pop	{r4, r5, r6, pc}
+  8743f8:	68e8      	ldr	r0, [r5, #12]
+  8743fa:	6800      	ldr	r0, [r0, #0]
+  8743fc:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  874400:	6068      	str	r0, [r5, #4]
+  874402:	b008      	add	sp, #32
+  874404:	bd70      	pop	{r4, r5, r6, pc}
+  874406:	4a50      	ldr	r2, [pc, #320]	; (874548 <LoginPacket::read(BinaryStream&)+0x1e4>)
+  874408:	4b4b      	ldr	r3, [pc, #300]	; (874538 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  87440a:	447a      	add	r2, pc
+  87440c:	589b      	ldr	r3, [r3, r2]
+  87440e:	1f0a      	subs	r2, r1, #4
+  874410:	b1eb      	cbz	r3, 87444e <LoginPacket::read(BinaryStream&)+0xea>
+  874412:	f3bf 8f5b 	dmb	ish
+  874416:	e852 1f00 	ldrex	r1, [r2]
+  87441a:	1e4b      	subs	r3, r1, #1
+  87441c:	e842 3600 	strex	r6, r3, [r2]
+  874420:	2e00      	cmp	r6, #0
+  874422:	d1f8      	bne.n	874416 <LoginPacket::read(BinaryStream&)+0xb2>
+  874424:	f3bf 8f5b 	dmb	ish
+  874428:	e014      	b.n	874454 <LoginPacket::read(BinaryStream&)+0xf0>
+  87442a:	4a49      	ldr	r2, [pc, #292]	; (874550 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  87442c:	4b42      	ldr	r3, [pc, #264]	; (874538 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  87442e:	447a      	add	r2, pc
+  874430:	589b      	ldr	r3, [r3, r2]
+  874432:	1f0a      	subs	r2, r1, #4
+  874434:	b1a3      	cbz	r3, 874460 <LoginPacket::read(BinaryStream&)+0xfc>
+  874436:	f3bf 8f5b 	dmb	ish
+  87443a:	e852 1f00 	ldrex	r1, [r2]
+  87443e:	1e4b      	subs	r3, r1, #1
+  874440:	e842 3600 	strex	r6, r3, [r2]
+  874444:	2e00      	cmp	r6, #0
+  874446:	d1f8      	bne.n	87443a <LoginPacket::read(BinaryStream&)+0xd6>
+  874448:	f3bf 8f5b 	dmb	ish
+  87444c:	e00b      	b.n	874466 <LoginPacket::read(BinaryStream&)+0x102>
+  87444e:	6811      	ldr	r1, [r2, #0]
+  874450:	1e4b      	subs	r3, r1, #1
+  874452:	6013      	str	r3, [r2, #0]
+  874454:	2900      	cmp	r1, #0
+  874456:	dcc5      	bgt.n	8743e4 <LoginPacket::read(BinaryStream&)+0x80>
+  874458:	a907      	add	r1, sp, #28
+  87445a:	f280 eefe 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87445e:	e7c1      	b.n	8743e4 <LoginPacket::read(BinaryStream&)+0x80>
+  874460:	6811      	ldr	r1, [r2, #0]
+  874462:	1e4b      	subs	r3, r1, #1
+  874464:	6013      	str	r3, [r2, #0]
+  874466:	2900      	cmp	r1, #0
+  874468:	dcc4      	bgt.n	8743f4 <LoginPacket::read(BinaryStream&)+0x90>
+  87446a:	a904      	add	r1, sp, #16
+  87446c:	f280 eef4 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  874470:	e7c0      	b.n	8743f4 <LoginPacket::read(BinaryStream&)+0x90>
+  874472:	4604      	mov	r4, r0
+  874474:	e013      	b.n	87449e <LoginPacket::read(BinaryStream&)+0x13a>
+  874476:	4604      	mov	r4, r0
+  874478:	e008      	b.n	87448c <LoginPacket::read(BinaryStream&)+0x128>
+  87447a:	4604      	mov	r4, r0
+  87447c:	e003      	b.n	874486 <LoginPacket::read(BinaryStream&)+0x122>
+  87447e:	4604      	mov	r4, r0
+  874480:	4628      	mov	r0, r5
+  874482:	f619 ee6a 	blx	68e158 <operator delete(void*)@plt>
+  874486:	a801      	add	r0, sp, #4
+  874488:	f61c eae8 	blx	690a5c <ConnectionRequest::~ConnectionRequest()@plt>
+  87448c:	4827      	ldr	r0, [pc, #156]	; (87452c <LoginPacket::read(BinaryStream&)+0x1c8>)
+  87448e:	4a28      	ldr	r2, [pc, #160]	; (874530 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  874490:	4478      	add	r0, pc
+  874492:	9904      	ldr	r1, [sp, #16]
+  874494:	5812      	ldr	r2, [r2, r0]
+  874496:	f1a1 000c 	sub.w	r0, r1, #12
+  87449a:	4290      	cmp	r0, r2
+  87449c:	d122      	bne.n	8744e4 <LoginPacket::read(BinaryStream&)+0x180>
+  87449e:	4827      	ldr	r0, [pc, #156]	; (87453c <LoginPacket::read(BinaryStream&)+0x1d8>)
+  8744a0:	4a23      	ldr	r2, [pc, #140]	; (874530 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  8744a2:	4478      	add	r0, pc
+  8744a4:	9906      	ldr	r1, [sp, #24]
+  8744a6:	5812      	ldr	r2, [r2, r0]
+  8744a8:	f1a1 000c 	sub.w	r0, r1, #12
+  8744ac:	4290      	cmp	r0, r2
+  8744ae:	d016      	beq.n	8744de <LoginPacket::read(BinaryStream&)+0x17a>
+  8744b0:	4a23      	ldr	r2, [pc, #140]	; (874540 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  8744b2:	4b21      	ldr	r3, [pc, #132]	; (874538 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  8744b4:	447a      	add	r2, pc
+  8744b6:	589b      	ldr	r3, [r3, r2]
+  8744b8:	1f0a      	subs	r2, r1, #4
+  8744ba:	b373      	cbz	r3, 87451a <LoginPacket::read(BinaryStream&)+0x1b6>
+  8744bc:	f3bf 8f5b 	dmb	ish
+  8744c0:	e852 1f00 	ldrex	r1, [r2]
+  8744c4:	1e4b      	subs	r3, r1, #1
+  8744c6:	e842 3600 	strex	r6, r3, [r2]
+  8744ca:	2e00      	cmp	r6, #0
+  8744cc:	d1f8      	bne.n	8744c0 <LoginPacket::read(BinaryStream&)+0x15c>
+  8744ce:	f3bf 8f5b 	dmb	ish
+  8744d2:	2900      	cmp	r1, #0
+  8744d4:	bfdc      	itt	le
+  8744d6:	f10d 011c 	addle.w	r1, sp, #28
+  8744da:	f280 eebe 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  8744de:	4620      	mov	r0, r4
+  8744e0:	f619 ef0c 	blx	68e2fc <_Unwind_Resume@plt>
+  8744e4:	4a13      	ldr	r2, [pc, #76]	; (874534 <LoginPacket::read(BinaryStream&)+0x1d0>)
+  8744e6:	4b14      	ldr	r3, [pc, #80]	; (874538 <LoginPacket::read(BinaryStream&)+0x1d4>)
+  8744e8:	447a      	add	r2, pc
+  8744ea:	589b      	ldr	r3, [r3, r2]
+  8744ec:	1f0a      	subs	r2, r1, #4
+  8744ee:	b15b      	cbz	r3, 874508 <LoginPacket::read(BinaryStream&)+0x1a4>
+  8744f0:	f3bf 8f5b 	dmb	ish
+  8744f4:	e852 1f00 	ldrex	r1, [r2]
+  8744f8:	1e4b      	subs	r3, r1, #1
+  8744fa:	e842 3600 	strex	r6, r3, [r2]
+  8744fe:	2e00      	cmp	r6, #0
+  874500:	d1f8      	bne.n	8744f4 <LoginPacket::read(BinaryStream&)+0x190>
+  874502:	f3bf 8f5b 	dmb	ish
+  874506:	e002      	b.n	87450e <LoginPacket::read(BinaryStream&)+0x1aa>
+  874508:	6811      	ldr	r1, [r2, #0]
+  87450a:	1e4b      	subs	r3, r1, #1
+  87450c:	6013      	str	r3, [r2, #0]
+  87450e:	2900      	cmp	r1, #0
+  874510:	dcc5      	bgt.n	87449e <LoginPacket::read(BinaryStream&)+0x13a>
+  874512:	a907      	add	r1, sp, #28
+  874514:	f280 eea0 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  874518:	e7c1      	b.n	87449e <LoginPacket::read(BinaryStream&)+0x13a>
+  87451a:	6811      	ldr	r1, [r2, #0]
+  87451c:	1e4b      	subs	r3, r1, #1
+  87451e:	6013      	str	r3, [r2, #0]
+  874520:	e7d7      	b.n	8744d2 <LoginPacket::read(BinaryStream&)+0x16e>
+  874522:	bf00      	nop
+  874524:	9250      	str	r2, [sp, #320]	; 0x140
+  874526:	0155      	lsls	r5, r2, #5
+  874528:	8da4      	ldrh	r4, [r4, #44]	; 0x2c
+  87452a:	ffff 9130 	vsra.u32	d25, d16, #1
+  87452e:	0155      	lsls	r5, r2, #5
+  874530:	8ae4      	ldrh	r4, [r4, #22]
+  874532:	ffff 90d8 	vshr.u64	<illegal reg q12.5>, q4, #1
+  874536:	0155      	lsls	r5, r2, #5
+  874538:	8ae8      	ldrh	r0, [r5, #22]
+  87453a:	ffff 911e 	vsra.u32	d25, d14, #1
+  87453e:	0155      	lsls	r5, r2, #5
+  874540:	910c      	str	r1, [sp, #48]	; 0x30
+  874542:	0155      	lsls	r5, r2, #5
+  874544:	91ea      	str	r1, [sp, #936]	; 0x3a8
+  874546:	0155      	lsls	r5, r2, #5
+  874548:	91b6      	str	r1, [sp, #728]	; 0x2d8
+  87454a:	0155      	lsls	r5, r2, #5
+  87454c:	91d8      	str	r1, [sp, #864]	; 0x360
+  87454e:	0155      	lsls	r5, r2, #5
+  874550:	9192      	str	r1, [sp, #584]	; 0x248
+  874552:	0155      	lsls	r5, r2, #5

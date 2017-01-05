@@ -1,0 +1,107 @@
+  87a138:	b570      	push	{r4, r5, r6, lr}
+  87a13a:	b086      	sub	sp, #24
+  87a13c:	4604      	mov	r4, r0
+  87a13e:	a802      	add	r0, sp, #8
+  87a140:	460d      	mov	r5, r1
+  87a142:	f616 ed52 	blx	690be8 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87a146:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87a14a:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  87a14e:	a802      	add	r0, sp, #8
+  87a150:	4629      	mov	r1, r5
+  87a152:	f616 ed50 	blx	690bf4 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87a156:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87a15a:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  87a15e:	a802      	add	r0, sp, #8
+  87a160:	4629      	mov	r1, r5
+  87a162:	f616 ee02 	blx	690d68 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  87a166:	9802      	ldr	r0, [sp, #8]
+  87a168:	6220      	str	r0, [r4, #32]
+  87a16a:	9803      	ldr	r0, [sp, #12]
+  87a16c:	6260      	str	r0, [r4, #36]	; 0x24
+  87a16e:	9804      	ldr	r0, [sp, #16]
+  87a170:	62a0      	str	r0, [r4, #40]	; 0x28
+  87a172:	4628      	mov	r0, r5
+  87a174:	f616 ed0e 	blx	690b94 <ReadOnlyBinaryStream::getVarInt()@plt>
+  87a178:	ae01      	add	r6, sp, #4
+  87a17a:	62e0      	str	r0, [r4, #44]	; 0x2c
+  87a17c:	4629      	mov	r1, r5
+  87a17e:	4630      	mov	r0, r6
+  87a180:	f616 e82e 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87a184:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  87a188:	4631      	mov	r1, r6
+  87a18a:	f27b e8b6 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87a18e:	482b      	ldr	r0, [pc, #172]	; (87a23c <AddPaintingPacket::read(BinaryStream&)+0x104>)
+  87a190:	4a27      	ldr	r2, [pc, #156]	; (87a230 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  87a192:	4478      	add	r0, pc
+  87a194:	9901      	ldr	r1, [sp, #4]
+  87a196:	5812      	ldr	r2, [r2, r0]
+  87a198:	f1a1 000c 	sub.w	r0, r1, #12
+  87a19c:	4290      	cmp	r0, r2
+  87a19e:	d101      	bne.n	87a1a4 <AddPaintingPacket::read(BinaryStream&)+0x6c>
+  87a1a0:	b006      	add	sp, #24
+  87a1a2:	bd70      	pop	{r4, r5, r6, pc}
+  87a1a4:	4a26      	ldr	r2, [pc, #152]	; (87a240 <AddPaintingPacket::read(BinaryStream&)+0x108>)
+  87a1a6:	4b24      	ldr	r3, [pc, #144]	; (87a238 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  87a1a8:	447a      	add	r2, pc
+  87a1aa:	589b      	ldr	r3, [r3, r2]
+  87a1ac:	1f0a      	subs	r2, r1, #4
+  87a1ae:	b15b      	cbz	r3, 87a1c8 <AddPaintingPacket::read(BinaryStream&)+0x90>
+  87a1b0:	f3bf 8f5b 	dmb	ish
+  87a1b4:	e852 1f00 	ldrex	r1, [r2]
+  87a1b8:	1e4b      	subs	r3, r1, #1
+  87a1ba:	e842 3600 	strex	r6, r3, [r2]
+  87a1be:	2e00      	cmp	r6, #0
+  87a1c0:	d1f8      	bne.n	87a1b4 <AddPaintingPacket::read(BinaryStream&)+0x7c>
+  87a1c2:	f3bf 8f5b 	dmb	ish
+  87a1c6:	e002      	b.n	87a1ce <AddPaintingPacket::read(BinaryStream&)+0x96>
+  87a1c8:	6811      	ldr	r1, [r2, #0]
+  87a1ca:	1e4b      	subs	r3, r1, #1
+  87a1cc:	6013      	str	r3, [r2, #0]
+  87a1ce:	2900      	cmp	r1, #0
+  87a1d0:	dce6      	bgt.n	87a1a0 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  87a1d2:	a902      	add	r1, sp, #8
+  87a1d4:	f27b e840 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87a1d8:	e7e2      	b.n	87a1a0 <AddPaintingPacket::read(BinaryStream&)+0x68>
+  87a1da:	4a14      	ldr	r2, [pc, #80]	; (87a22c <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+  87a1dc:	4604      	mov	r4, r0
+  87a1de:	4b14      	ldr	r3, [pc, #80]	; (87a230 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+  87a1e0:	447a      	add	r2, pc
+  87a1e2:	9901      	ldr	r1, [sp, #4]
+  87a1e4:	f1a1 000c 	sub.w	r0, r1, #12
+  87a1e8:	589a      	ldr	r2, [r3, r2]
+  87a1ea:	4290      	cmp	r0, r2
+  87a1ec:	d016      	beq.n	87a21c <AddPaintingPacket::read(BinaryStream&)+0xe4>
+  87a1ee:	4a11      	ldr	r2, [pc, #68]	; (87a234 <AddPaintingPacket::read(BinaryStream&)+0xfc>)
+  87a1f0:	4b11      	ldr	r3, [pc, #68]	; (87a238 <AddPaintingPacket::read(BinaryStream&)+0x100>)
+  87a1f2:	447a      	add	r2, pc
+  87a1f4:	589b      	ldr	r3, [r3, r2]
+  87a1f6:	1f0a      	subs	r2, r1, #4
+  87a1f8:	b19b      	cbz	r3, 87a222 <AddPaintingPacket::read(BinaryStream&)+0xea>
+  87a1fa:	f3bf 8f5b 	dmb	ish
+  87a1fe:	e852 1f00 	ldrex	r1, [r2]
+  87a202:	1e4b      	subs	r3, r1, #1
+  87a204:	e842 3600 	strex	r6, r3, [r2]
+  87a208:	2e00      	cmp	r6, #0
+  87a20a:	d1f8      	bne.n	87a1fe <AddPaintingPacket::read(BinaryStream&)+0xc6>
+  87a20c:	f3bf 8f5b 	dmb	ish
+  87a210:	2900      	cmp	r1, #0
+  87a212:	bfdc      	itt	le
+  87a214:	f10d 0108 	addle.w	r1, sp, #8
+  87a218:	f27b e81e 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87a21c:	4620      	mov	r0, r4
+  87a21e:	f614 e86e 	blx	68e2fc <_Unwind_Resume@plt>
+  87a222:	6811      	ldr	r1, [r2, #0]
+  87a224:	1e4b      	subs	r3, r1, #1
+  87a226:	6013      	str	r3, [r2, #0]
+  87a228:	e7f2      	b.n	87a210 <AddPaintingPacket::read(BinaryStream&)+0xd8>
+  87a22a:	bf00      	nop
+  87a22c:	33e0      	adds	r3, #224	; 0xe0
+  87a22e:	0155      	lsls	r5, r2, #5
+  87a230:	8ae4      	ldrh	r4, [r4, #22]
+  87a232:	ffff 33ce 			; <UNDEFINED> instruction: 0xffff33ce
+  87a236:	0155      	lsls	r5, r2, #5
+  87a238:	8ae8      	ldrh	r0, [r5, #22]
+  87a23a:	ffff 342e 	vraddhn.i<illegal width 128>	d19, <illegal reg q7.5>, q15
+  87a23e:	0155      	lsls	r5, r2, #5
+  87a240:	3418      	adds	r4, #24
+  87a242:	0155      	lsls	r5, r2, #5

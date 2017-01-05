@@ -1,0 +1,92 @@
+  87a7f4:	b570      	push	{r4, r5, r6, lr}
+  87a7f6:	b086      	sub	sp, #24
+  87a7f8:	4605      	mov	r5, r0
+  87a7fa:	a802      	add	r0, sp, #8
+  87a7fc:	460c      	mov	r4, r1
+  87a7fe:	f616 eaf6 	blx	690dec <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  87a802:	9802      	ldr	r0, [sp, #8]
+  87a804:	ae01      	add	r6, sp, #4
+  87a806:	60e8      	str	r0, [r5, #12]
+  87a808:	4621      	mov	r1, r4
+  87a80a:	9803      	ldr	r0, [sp, #12]
+  87a80c:	6128      	str	r0, [r5, #16]
+  87a80e:	4630      	mov	r0, r6
+  87a810:	f615 ece6 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87a814:	f105 0014 	add.w	r0, r5, #20
+  87a818:	4631      	mov	r1, r6
+  87a81a:	f27a ed6e 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87a81e:	482b      	ldr	r0, [pc, #172]	; (87a8cc <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  87a820:	4a27      	ldr	r2, [pc, #156]	; (87a8c0 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  87a822:	4478      	add	r0, pc
+  87a824:	9901      	ldr	r1, [sp, #4]
+  87a826:	5812      	ldr	r2, [r2, r0]
+  87a828:	f1a1 000c 	sub.w	r0, r1, #12
+  87a82c:	4290      	cmp	r0, r2
+  87a82e:	d101      	bne.n	87a834 <FullChunkDataPacket::read(BinaryStream&)+0x40>
+  87a830:	b006      	add	sp, #24
+  87a832:	bd70      	pop	{r4, r5, r6, pc}
+  87a834:	4a26      	ldr	r2, [pc, #152]	; (87a8d0 <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  87a836:	4b24      	ldr	r3, [pc, #144]	; (87a8c8 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  87a838:	447a      	add	r2, pc
+  87a83a:	589b      	ldr	r3, [r3, r2]
+  87a83c:	1f0a      	subs	r2, r1, #4
+  87a83e:	b15b      	cbz	r3, 87a858 <FullChunkDataPacket::read(BinaryStream&)+0x64>
+  87a840:	f3bf 8f5b 	dmb	ish
+  87a844:	e852 1f00 	ldrex	r1, [r2]
+  87a848:	1e4b      	subs	r3, r1, #1
+  87a84a:	e842 3600 	strex	r6, r3, [r2]
+  87a84e:	2e00      	cmp	r6, #0
+  87a850:	d1f8      	bne.n	87a844 <FullChunkDataPacket::read(BinaryStream&)+0x50>
+  87a852:	f3bf 8f5b 	dmb	ish
+  87a856:	e002      	b.n	87a85e <FullChunkDataPacket::read(BinaryStream&)+0x6a>
+  87a858:	6811      	ldr	r1, [r2, #0]
+  87a85a:	1e4b      	subs	r3, r1, #1
+  87a85c:	6013      	str	r3, [r2, #0]
+  87a85e:	2900      	cmp	r1, #0
+  87a860:	dce6      	bgt.n	87a830 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  87a862:	a904      	add	r1, sp, #16
+  87a864:	f27a ecf8 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87a868:	e7e2      	b.n	87a830 <FullChunkDataPacket::read(BinaryStream&)+0x3c>
+  87a86a:	4a14      	ldr	r2, [pc, #80]	; (87a8bc <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+  87a86c:	4604      	mov	r4, r0
+  87a86e:	4b14      	ldr	r3, [pc, #80]	; (87a8c0 <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+  87a870:	447a      	add	r2, pc
+  87a872:	9901      	ldr	r1, [sp, #4]
+  87a874:	f1a1 000c 	sub.w	r0, r1, #12
+  87a878:	589a      	ldr	r2, [r3, r2]
+  87a87a:	4290      	cmp	r0, r2
+  87a87c:	d016      	beq.n	87a8ac <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+  87a87e:	4a11      	ldr	r2, [pc, #68]	; (87a8c4 <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  87a880:	4b11      	ldr	r3, [pc, #68]	; (87a8c8 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  87a882:	447a      	add	r2, pc
+  87a884:	589b      	ldr	r3, [r3, r2]
+  87a886:	1f0a      	subs	r2, r1, #4
+  87a888:	b19b      	cbz	r3, 87a8b2 <FullChunkDataPacket::read(BinaryStream&)+0xbe>
+  87a88a:	f3bf 8f5b 	dmb	ish
+  87a88e:	e852 1f00 	ldrex	r1, [r2]
+  87a892:	1e4b      	subs	r3, r1, #1
+  87a894:	e842 3600 	strex	r6, r3, [r2]
+  87a898:	2e00      	cmp	r6, #0
+  87a89a:	d1f8      	bne.n	87a88e <FullChunkDataPacket::read(BinaryStream&)+0x9a>
+  87a89c:	f3bf 8f5b 	dmb	ish
+  87a8a0:	2900      	cmp	r1, #0
+  87a8a2:	bfdc      	itt	le
+  87a8a4:	f10d 0114 	addle.w	r1, sp, #20
+  87a8a8:	f27a ecd6 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87a8ac:	4620      	mov	r0, r4
+  87a8ae:	f613 ed26 	blx	68e2fc <_Unwind_Resume@plt>
+  87a8b2:	6811      	ldr	r1, [r2, #0]
+  87a8b4:	1e4b      	subs	r3, r1, #1
+  87a8b6:	6013      	str	r3, [r2, #0]
+  87a8b8:	e7f2      	b.n	87a8a0 <FullChunkDataPacket::read(BinaryStream&)+0xac>
+  87a8ba:	bf00      	nop
+  87a8bc:	2d50      	cmp	r5, #80	; 0x50
+  87a8be:	0155      	lsls	r5, r2, #5
+  87a8c0:	8ae4      	ldrh	r4, [r4, #22]
+  87a8c2:	ffff 2d3e 			; <UNDEFINED> instruction: 0xffff2d3e
+  87a8c6:	0155      	lsls	r5, r2, #5
+  87a8c8:	8ae8      	ldrh	r0, [r5, #22]
+  87a8ca:	ffff 2d9e 			; <UNDEFINED> instruction: 0xffff2d9e
+  87a8ce:	0155      	lsls	r5, r2, #5
+  87a8d0:	2d88      	cmp	r5, #136	; 0x88
+  87a8d2:	0155      	lsls	r5, r2, #5

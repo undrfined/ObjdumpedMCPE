@@ -1,0 +1,28 @@
+  87bc34:	b570      	push	{r4, r5, r6, lr}
+  87bc36:	b086      	sub	sp, #24
+  87bc38:	ae01      	add	r6, sp, #4
+  87bc3a:	4604      	mov	r4, r0
+  87bc3c:	460d      	mov	r5, r1
+  87bc3e:	4630      	mov	r0, r6
+  87bc40:	f615 e868 	blx	690d14 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  87bc44:	f104 000c 	add.w	r0, r4, #12
+  87bc48:	4631      	mov	r1, r6
+  87bc4a:	f614 eb54 	blx	6902f4 <ItemInstance::operator=(ItemInstance const&)@plt>
+  87bc4e:	9803      	ldr	r0, [sp, #12]
+  87bc50:	b110      	cbz	r0, 87bc58 <ReplaceItemInSlotPacket::read(BinaryStream&)+0x24>
+  87bc52:	6801      	ldr	r1, [r0, #0]
+  87bc54:	6849      	ldr	r1, [r1, #4]
+  87bc56:	4788      	blx	r1
+  87bc58:	4628      	mov	r0, r5
+  87bc5a:	f615 e8fe 	blx	690e58 <ReadOnlyBinaryStream::getSignedInt()@plt>
+  87bc5e:	6220      	str	r0, [r4, #32]
+  87bc60:	b006      	add	sp, #24
+  87bc62:	bd70      	pop	{r4, r5, r6, pc}
+  87bc64:	4604      	mov	r4, r0
+  87bc66:	9803      	ldr	r0, [sp, #12]
+  87bc68:	b110      	cbz	r0, 87bc70 <ReplaceItemInSlotPacket::read(BinaryStream&)+0x3c>
+  87bc6a:	6801      	ldr	r1, [r0, #0]
+  87bc6c:	6849      	ldr	r1, [r1, #4]
+  87bc6e:	4788      	blx	r1
+  87bc70:	4620      	mov	r0, r4
+  87bc72:	f612 eb44 	blx	68e2fc <_Unwind_Resume@plt>

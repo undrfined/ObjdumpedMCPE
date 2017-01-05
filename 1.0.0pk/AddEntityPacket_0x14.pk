@@ -1,0 +1,254 @@
+  87761c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  877620:	b093      	sub	sp, #76	; 0x4c
+  877622:	4605      	mov	r5, r0
+  877624:	a80e      	add	r0, sp, #56	; 0x38
+  877626:	460c      	mov	r4, r1
+  877628:	f619 eade 	blx	690be8 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87762c:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  877630:	e9c5 010c 	strd	r0, r1, [r5, #48]	; 0x30
+  877634:	a80e      	add	r0, sp, #56	; 0x38
+  877636:	4621      	mov	r1, r4
+  877638:	f619 eadc 	blx	690bf4 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  87763c:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  877640:	e9c5 010e 	strd	r0, r1, [r5, #56]	; 0x38
+  877644:	4620      	mov	r0, r4
+  877646:	f619 e8f0 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87764a:	6468      	str	r0, [r5, #68]	; 0x44
+  87764c:	a80e      	add	r0, sp, #56	; 0x38
+  87764e:	4621      	mov	r1, r4
+  877650:	f619 ead6 	blx	690c00 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  877654:	980e      	ldr	r0, [sp, #56]	; 0x38
+  877656:	4621      	mov	r1, r4
+  877658:	64a8      	str	r0, [r5, #72]	; 0x48
+  87765a:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  87765c:	64e8      	str	r0, [r5, #76]	; 0x4c
+  87765e:	9810      	ldr	r0, [sp, #64]	; 0x40
+  877660:	6528      	str	r0, [r5, #80]	; 0x50
+  877662:	a80e      	add	r0, sp, #56	; 0x38
+  877664:	f619 eacc 	blx	690c00 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  877668:	980e      	ldr	r0, [sp, #56]	; 0x38
+  87766a:	f10d 0b38 	add.w	fp, sp, #56	; 0x38
+  87766e:	6568      	str	r0, [r5, #84]	; 0x54
+  877670:	4621      	mov	r1, r4
+  877672:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  877674:	65a8      	str	r0, [r5, #88]	; 0x58
+  877676:	9810      	ldr	r0, [sp, #64]	; 0x40
+  877678:	65e8      	str	r0, [r5, #92]	; 0x5c
+  87767a:	4658      	mov	r0, fp
+  87767c:	f619 eac6 	blx	690c0c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  877680:	e9dd 010e 	ldrd	r0, r1, [sp, #56]	; 0x38
+  877684:	e9c5 0109 	strd	r0, r1, [r5, #36]	; 0x24
+  877688:	4620      	mov	r0, r4
+  87768a:	f619 e8ce 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87768e:	4607      	mov	r7, r0
+  877690:	f105 006c 	add.w	r0, r5, #108	; 0x6c
+  877694:	4639      	mov	r1, r7
+  877696:	9002      	str	r0, [sp, #8]
+  877698:	f619 eb0c 	blx	690cb4 <std::vector<SyncedAttribute, std::allocator<SyncedAttribute> >::reserve(unsigned int)@plt>
+  87769c:	2f00      	cmp	r7, #0
+  87769e:	f000 8087 	beq.w	8777b0 <AddEntityPacket::read(BinaryStream&)+0x194>
+  8776a2:	487e      	ldr	r0, [pc, #504]	; (87789c <AddEntityPacket::read(BinaryStream&)+0x280>)
+  8776a4:	f10b 0904 	add.w	r9, fp, #4
+  8776a8:	497d      	ldr	r1, [pc, #500]	; (8778a0 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  8776aa:	f04f 0a00 	mov.w	sl, #0
+  8776ae:	4478      	add	r0, pc
+  8776b0:	4e7e      	ldr	r6, [pc, #504]	; (8778ac <AddEntityPacket::read(BinaryStream&)+0x290>)
+  8776b2:	f851 8000 	ldr.w	r8, [r1, r0]
+  8776b6:	5830      	ldr	r0, [r6, r0]
+  8776b8:	f108 010c 	add.w	r1, r8, #12
+  8776bc:	9103      	str	r1, [sp, #12]
+  8776be:	9001      	str	r0, [sp, #4]
+  8776c0:	e033      	b.n	87772a <AddEntityPacket::read(BinaryStream&)+0x10e>
+  8776c2:	1f0a      	subs	r2, r1, #4
+  8776c4:	9901      	ldr	r1, [sp, #4]
+  8776c6:	b1f1      	cbz	r1, 877706 <AddEntityPacket::read(BinaryStream&)+0xea>
+  8776c8:	46b4      	mov	ip, r6
+  8776ca:	f3bf 8f5b 	dmb	ish
+  8776ce:	e852 1f00 	ldrex	r1, [r2]
+  8776d2:	1e4b      	subs	r3, r1, #1
+  8776d4:	e842 3600 	strex	r6, r3, [r2]
+  8776d8:	2e00      	cmp	r6, #0
+  8776da:	d1f8      	bne.n	8776ce <AddEntityPacket::read(BinaryStream&)+0xb2>
+  8776dc:	f3bf 8f5b 	dmb	ish
+  8776e0:	4666      	mov	r6, ip
+  8776e2:	e013      	b.n	87770c <AddEntityPacket::read(BinaryStream&)+0xf0>
+  8776e4:	1f0a      	subs	r2, r1, #4
+  8776e6:	9901      	ldr	r1, [sp, #4]
+  8776e8:	b1b1      	cbz	r1, 877718 <AddEntityPacket::read(BinaryStream&)+0xfc>
+  8776ea:	46b4      	mov	ip, r6
+  8776ec:	f3bf 8f5b 	dmb	ish
+  8776f0:	e852 1f00 	ldrex	r1, [r2]
+  8776f4:	1e4b      	subs	r3, r1, #1
+  8776f6:	e842 3600 	strex	r6, r3, [r2]
+  8776fa:	2e00      	cmp	r6, #0
+  8776fc:	d1f8      	bne.n	8776f0 <AddEntityPacket::read(BinaryStream&)+0xd4>
+  8776fe:	f3bf 8f5b 	dmb	ish
+  877702:	4666      	mov	r6, ip
+  877704:	e00b      	b.n	87771e <AddEntityPacket::read(BinaryStream&)+0x102>
+  877706:	6811      	ldr	r1, [r2, #0]
+  877708:	1e4b      	subs	r3, r1, #1
+  87770a:	6013      	str	r3, [r2, #0]
+  87770c:	2900      	cmp	r1, #0
+  87770e:	dc1b      	bgt.n	877748 <AddEntityPacket::read(BinaryStream&)+0x12c>
+  877710:	a912      	add	r1, sp, #72	; 0x48
+  877712:	f27d eda2 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  877716:	e017      	b.n	877748 <AddEntityPacket::read(BinaryStream&)+0x12c>
+  877718:	6811      	ldr	r1, [r2, #0]
+  87771a:	1e4b      	subs	r3, r1, #1
+  87771c:	6013      	str	r3, [r2, #0]
+  87771e:	2900      	cmp	r1, #0
+  877720:	dc42      	bgt.n	8777a8 <AddEntityPacket::read(BinaryStream&)+0x18c>
+  877722:	a912      	add	r1, sp, #72	; 0x48
+  877724:	f27d ed98 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  877728:	e03e      	b.n	8777a8 <AddEntityPacket::read(BinaryStream&)+0x18c>
+  87772a:	9803      	ldr	r0, [sp, #12]
+  87772c:	900e      	str	r0, [sp, #56]	; 0x38
+  87772e:	a80d      	add	r0, sp, #52	; 0x34
+  877730:	4621      	mov	r1, r4
+  877732:	f618 ed56 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  877736:	a90d      	add	r1, sp, #52	; 0x34
+  877738:	4658      	mov	r0, fp
+  87773a:	f27d edde 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87773e:	990d      	ldr	r1, [sp, #52]	; 0x34
+  877740:	f1a1 000c 	sub.w	r0, r1, #12
+  877744:	4540      	cmp	r0, r8
+  877746:	d1bc      	bne.n	8776c2 <AddEntityPacket::read(BinaryStream&)+0xa6>
+  877748:	4620      	mov	r0, r4
+  87774a:	f619 eaba 	blx	690cc0 <ReadOnlyBinaryStream::getFloat()@plt>
+  87774e:	ec40 0b10 	vmov	d0, r0, r0
+  877752:	ed8d 0a0f 	vstr	s0, [sp, #60]	; 0x3c
+  877756:	4620      	mov	r0, r4
+  877758:	f619 eab2 	blx	690cc0 <ReadOnlyBinaryStream::getFloat()@plt>
+  87775c:	ec40 0b10 	vmov	d0, r0, r0
+  877760:	ed8d 0a10 	vstr	s0, [sp, #64]	; 0x40
+  877764:	4620      	mov	r0, r4
+  877766:	f619 eaac 	blx	690cc0 <ReadOnlyBinaryStream::getFloat()@plt>
+  87776a:	ec40 0b10 	vmov	d0, r0, r0
+  87776e:	ed8d 0a11 	vstr	s0, [sp, #68]	; 0x44
+  877772:	e9d5 011c 	ldrd	r0, r1, [r5, #112]	; 0x70
+  877776:	4288      	cmp	r0, r1
+  877778:	d00d      	beq.n	877796 <AddEntityPacket::read(BinaryStream&)+0x17a>
+  87777a:	4659      	mov	r1, fp
+  87777c:	f27d ed64 	blx	af5248 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1de>
+  877780:	edd9 0b00 	vldr	d16, [r9]
+  877784:	f8d9 1008 	ldr.w	r1, [r9, #8]
+  877788:	60c1      	str	r1, [r0, #12]
+  87778a:	edc0 0b01 	vstr	d16, [r0, #4]
+  87778e:	6f28      	ldr	r0, [r5, #112]	; 0x70
+  877790:	3010      	adds	r0, #16
+  877792:	6728      	str	r0, [r5, #112]	; 0x70
+  877794:	e003      	b.n	87779e <AddEntityPacket::read(BinaryStream&)+0x182>
+  877796:	9802      	ldr	r0, [sp, #8]
+  877798:	4659      	mov	r1, fp
+  87779a:	f619 ea98 	blx	690ccc <void std::vector<SyncedAttribute, std::allocator<SyncedAttribute> >::_M_emplace_back_aux<SyncedAttribute&>(SyncedAttribute&)@plt>
+  87779e:	990e      	ldr	r1, [sp, #56]	; 0x38
+  8777a0:	f1a1 000c 	sub.w	r0, r1, #12
+  8777a4:	4540      	cmp	r0, r8
+  8777a6:	d19d      	bne.n	8776e4 <AddEntityPacket::read(BinaryStream&)+0xc8>
+  8777a8:	f10a 0a01 	add.w	sl, sl, #1
+  8777ac:	45ba      	cmp	sl, r7
+  8777ae:	d1bc      	bne.n	87772a <AddEntityPacket::read(BinaryStream&)+0x10e>
+  8777b0:	f105 0118 	add.w	r1, r5, #24
+  8777b4:	4620      	mov	r0, r4
+  8777b6:	f619 ea90 	blx	690cd8 <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  8777ba:	4620      	mov	r0, r4
+  8777bc:	f619 e834 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8777c0:	4606      	mov	r6, r0
+  8777c2:	b1ee      	cbz	r6, 877800 <AddEntityPacket::read(BinaryStream&)+0x1e4>
+  8777c4:	f105 080c 	add.w	r8, r5, #12
+  8777c8:	af04      	add	r7, sp, #16
+  8777ca:	4638      	mov	r0, r7
+  8777cc:	4621      	mov	r1, r4
+  8777ce:	f619 ea8a 	blx	690ce4 <EntityLink ReadOnlyBinaryStream::getType<EntityLink>()@plt>
+  8777d2:	e9d5 0104 	ldrd	r0, r1, [r5, #16]
+  8777d6:	4288      	cmp	r0, r1
+  8777d8:	d00c      	beq.n	8777f4 <AddEntityPacket::read(BinaryStream&)+0x1d8>
+  8777da:	4639      	mov	r1, r7
+  8777dc:	f961 0acd 	vld1.64	{d16-d17}, [r1]!
+  8777e0:	f961 2acf 	vld1.64	{d18-d19}, [r1]
+  8777e4:	f940 0acd 	vst1.64	{d16-d17}, [r0]!
+  8777e8:	f940 2acf 	vst1.64	{d18-d19}, [r0]
+  8777ec:	6928      	ldr	r0, [r5, #16]
+  8777ee:	3020      	adds	r0, #32
+  8777f0:	6128      	str	r0, [r5, #16]
+  8777f2:	e003      	b.n	8777fc <AddEntityPacket::read(BinaryStream&)+0x1e0>
+  8777f4:	4640      	mov	r0, r8
+  8777f6:	4639      	mov	r1, r7
+  8777f8:	f619 ea7a 	blx	690cf0 <void std::vector<EntityLink, std::allocator<EntityLink> >::_M_emplace_back_aux<EntityLink>(EntityLink&&)@plt>
+  8777fc:	3e01      	subs	r6, #1
+  8777fe:	d1e4      	bne.n	8777ca <AddEntityPacket::read(BinaryStream&)+0x1ae>
+  877800:	b013      	add	sp, #76	; 0x4c
+  877802:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  877806:	4604      	mov	r4, r0
+  877808:	4d25      	ldr	r5, [pc, #148]	; (8778a0 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  87780a:	4829      	ldr	r0, [pc, #164]	; (8778b0 <AddEntityPacket::read(BinaryStream&)+0x294>)
+  87780c:	990e      	ldr	r1, [sp, #56]	; 0x38
+  87780e:	4478      	add	r0, pc
+  877810:	582a      	ldr	r2, [r5, r0]
+  877812:	f1a1 000c 	sub.w	r0, r1, #12
+  877816:	4290      	cmp	r0, r2
+  877818:	d015      	beq.n	877846 <AddEntityPacket::read(BinaryStream&)+0x22a>
+  87781a:	4a26      	ldr	r2, [pc, #152]	; (8778b4 <AddEntityPacket::read(BinaryStream&)+0x298>)
+  87781c:	447a      	add	r2, pc
+  87781e:	58b3      	ldr	r3, [r6, r2]
+  877820:	1f0a      	subs	r2, r1, #4
+  877822:	b3bb      	cbz	r3, 877894 <AddEntityPacket::read(BinaryStream&)+0x278>
+  877824:	f3bf 8f5b 	dmb	ish
+  877828:	e852 1f00 	ldrex	r1, [r2]
+  87782c:	1e4b      	subs	r3, r1, #1
+  87782e:	e842 3700 	strex	r7, r3, [r2]
+  877832:	2f00      	cmp	r7, #0
+  877834:	d1f8      	bne.n	877828 <AddEntityPacket::read(BinaryStream&)+0x20c>
+  877836:	f3bf 8f5b 	dmb	ish
+  87783a:	2900      	cmp	r1, #0
+  87783c:	bfdc      	itt	le
+  87783e:	f10d 0148 	addle.w	r1, sp, #72	; 0x48
+  877842:	f27d ed0a 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  877846:	4620      	mov	r0, r4
+  877848:	f616 ed58 	blx	68e2fc <_Unwind_Resume@plt>
+  87784c:	4a15      	ldr	r2, [pc, #84]	; (8778a4 <AddEntityPacket::read(BinaryStream&)+0x288>)
+  87784e:	4604      	mov	r4, r0
+  877850:	4d13      	ldr	r5, [pc, #76]	; (8778a0 <AddEntityPacket::read(BinaryStream&)+0x284>)
+  877852:	447a      	add	r2, pc
+  877854:	990d      	ldr	r1, [sp, #52]	; 0x34
+  877856:	f1a1 000c 	sub.w	r0, r1, #12
+  87785a:	58aa      	ldr	r2, [r5, r2]
+  87785c:	4290      	cmp	r0, r2
+  87785e:	d0d4      	beq.n	87780a <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  877860:	4a11      	ldr	r2, [pc, #68]	; (8778a8 <AddEntityPacket::read(BinaryStream&)+0x28c>)
+  877862:	447a      	add	r2, pc
+  877864:	58b3      	ldr	r3, [r6, r2]
+  877866:	1f0a      	subs	r2, r1, #4
+  877868:	b15b      	cbz	r3, 877882 <AddEntityPacket::read(BinaryStream&)+0x266>
+  87786a:	f3bf 8f5b 	dmb	ish
+  87786e:	e852 1f00 	ldrex	r1, [r2]
+  877872:	1e4b      	subs	r3, r1, #1
+  877874:	e842 3700 	strex	r7, r3, [r2]
+  877878:	2f00      	cmp	r7, #0
+  87787a:	d1f8      	bne.n	87786e <AddEntityPacket::read(BinaryStream&)+0x252>
+  87787c:	f3bf 8f5b 	dmb	ish
+  877880:	e002      	b.n	877888 <AddEntityPacket::read(BinaryStream&)+0x26c>
+  877882:	6811      	ldr	r1, [r2, #0]
+  877884:	1e4b      	subs	r3, r1, #1
+  877886:	6013      	str	r3, [r2, #0]
+  877888:	2900      	cmp	r1, #0
+  87788a:	dcbe      	bgt.n	87780a <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  87788c:	a912      	add	r1, sp, #72	; 0x48
+  87788e:	f27d ece4 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  877892:	e7ba      	b.n	87780a <AddEntityPacket::read(BinaryStream&)+0x1ee>
+  877894:	6811      	ldr	r1, [r2, #0]
+  877896:	1e4b      	subs	r3, r1, #1
+  877898:	6013      	str	r3, [r2, #0]
+  87789a:	e7ce      	b.n	87783a <AddEntityPacket::read(BinaryStream&)+0x21e>
+  87789c:	5f12      	ldrsh	r2, [r2, r4]
+  87789e:	0155      	lsls	r5, r2, #5
+  8778a0:	8ae4      	ldrh	r4, [r4, #22]
+  8778a2:	ffff 5d6e 	vqrdmulh.s<illegal width 64>	<illegal reg q10.5>, <illegal reg q7.5>, d30[0]
+  8778a6:	0155      	lsls	r5, r2, #5
+  8778a8:	5d5e      	ldrb	r6, [r3, r5]
+  8778aa:	0155      	lsls	r5, r2, #5
+  8778ac:	8ae8      	ldrh	r0, [r5, #22]
+  8778ae:	ffff 5db2 			; <UNDEFINED> instruction: 0xffff5db2
+  8778b2:	0155      	lsls	r5, r2, #5
+  8778b4:	5da4      	ldrb	r4, [r4, r6]
+  8778b6:	0155      	lsls	r5, r2, #5

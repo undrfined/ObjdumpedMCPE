@@ -1,0 +1,58 @@
+  8786a8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  8786ac:	b089      	sub	sp, #36	; 0x24
+  8786ae:	4605      	mov	r5, r0
+  8786b0:	a806      	add	r0, sp, #24
+  8786b2:	468b      	mov	fp, r1
+  8786b4:	f618 eaa4 	blx	690c00 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  8786b8:	eddf 0b1f 	vldr	d16, [pc, #124]	; 878738 <ExplodePacket::read(BinaryStream&)+0x90>
+  8786bc:	462e      	mov	r6, r5
+  8786be:	9806      	ldr	r0, [sp, #24]
+  8786c0:	ec53 2b30 	vmov	r2, r3, d16
+  8786c4:	f846 0f10 	str.w	r0, [r6, #16]!
+  8786c8:	9807      	ldr	r0, [sp, #28]
+  8786ca:	6070      	str	r0, [r6, #4]
+  8786cc:	9808      	ldr	r0, [sp, #32]
+  8786ce:	60b0      	str	r0, [r6, #8]
+  8786d0:	4658      	mov	r0, fp
+  8786d2:	f618 eb5c 	blx	690d8c <ReadOnlyBinaryStream::getFixedFloat(double)@plt>
+  8786d6:	60f0      	str	r0, [r6, #12]
+  8786d8:	a806      	add	r0, sp, #24
+  8786da:	4631      	mov	r1, r6
+  8786dc:	f616 ea22 	blx	68eb24 <BlockPos::BlockPos(Vec3 const&)@plt>
+  8786e0:	4658      	mov	r0, fp
+  8786e2:	f618 e8a2 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8786e6:	4606      	mov	r6, r0
+  8786e8:	b31e      	cbz	r6, 878732 <ExplodePacket::read(BinaryStream&)+0x8a>
+  8786ea:	f105 0820 	add.w	r8, r5, #32
+  8786ee:	f10d 090c 	add.w	r9, sp, #12
+  8786f2:	46ea      	mov	sl, sp
+  8786f4:	4650      	mov	r0, sl
+  8786f6:	4659      	mov	r1, fp
+  8786f8:	f618 eb4e 	blx	690d98 <BlockPos ReadOnlyBinaryStream::getType<BlockPos>()@plt>
+  8786fc:	e89d 0007 	ldmia.w	sp, {r0, r1, r2}
+  878700:	e9dd 3706 	ldrd	r3, r7, [sp, #24]
+  878704:	4439      	add	r1, r7
+  878706:	9c08      	ldr	r4, [sp, #32]
+  878708:	4418      	add	r0, r3
+  87870a:	9003      	str	r0, [sp, #12]
+  87870c:	9104      	str	r1, [sp, #16]
+  87870e:	4422      	add	r2, r4
+  878710:	9205      	str	r2, [sp, #20]
+  878712:	e9d5 3709 	ldrd	r3, r7, [r5, #36]	; 0x24
+  878716:	42bb      	cmp	r3, r7
+  878718:	d005      	beq.n	878726 <ExplodePacket::read(BinaryStream&)+0x7e>
+  87871a:	e883 0007 	stmia.w	r3, {r0, r1, r2}
+  87871e:	f103 000c 	add.w	r0, r3, #12
+  878722:	6268      	str	r0, [r5, #36]	; 0x24
+  878724:	e003      	b.n	87872e <ExplodePacket::read(BinaryStream&)+0x86>
+  878726:	4640      	mov	r0, r8
+  878728:	4649      	mov	r1, r9
+  87872a:	f618 eb3c 	blx	690da4 <void std::vector<BlockPos, std::allocator<BlockPos> >::_M_emplace_back_aux<BlockPos>(BlockPos&&)@plt>
+  87872e:	3e01      	subs	r6, #1
+  878730:	d1e0      	bne.n	8786f4 <ExplodePacket::read(BinaryStream&)+0x4c>
+  878732:	b009      	add	sp, #36	; 0x24
+  878734:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  878738:	0000      	movs	r0, r0
+  87873a:	0000      	movs	r0, r0
+  87873c:	0000      	movs	r0, r0
+  87873e:	4040      	eors	r0, r0

@@ -1,0 +1,193 @@
+  87bf10:	b570      	push	{r4, r5, r6, lr}
+  87bf12:	b084      	sub	sp, #16
+  87bf14:	4604      	mov	r4, r0
+  87bf16:	a802      	add	r0, sp, #8
+  87bf18:	460d      	mov	r5, r1
+  87bf1a:	f614 ee66 	blx	690be8 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87bf1e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87bf22:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  87bf26:	4628      	mov	r0, r5
+  87bf28:	f614 ec7e 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87bf2c:	62a0      	str	r0, [r4, #40]	; 0x28
+  87bf2e:	2807      	cmp	r0, #7
+  87bf30:	d84d      	bhi.n	87bfce <BossEventPacket::read(BinaryStream&)+0xbe>
+  87bf32:	e8df f000 	tbb	[pc, r0]
+  87bf36:	040d      	lsls	r5, r1, #16
+  87bf38:	044c      	lsls	r4, r1, #17
+  87bf3a:	3933      	subs	r1, #51	; 0x33
+  87bf3c:	2924      	cmp	r1, #36	; 0x24
+  87bf3e:	a802      	add	r0, sp, #8
+  87bf40:	4629      	mov	r1, r5
+  87bf42:	f614 ee52 	blx	690be8 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  87bf46:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  87bf4a:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  87bf4e:	e03e      	b.n	87bfce <BossEventPacket::read(BinaryStream&)+0xbe>
+  87bf50:	ae01      	add	r6, sp, #4
+  87bf52:	4629      	mov	r1, r5
+  87bf54:	4630      	mov	r0, r6
+  87bf56:	f614 e944 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87bf5a:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  87bf5e:	4631      	mov	r1, r6
+  87bf60:	f279 e9ca 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87bf64:	4860      	ldr	r0, [pc, #384]	; (87c0e8 <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  87bf66:	4a59      	ldr	r2, [pc, #356]	; (87c0cc <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87bf68:	4478      	add	r0, pc
+  87bf6a:	9901      	ldr	r1, [sp, #4]
+  87bf6c:	5812      	ldr	r2, [r2, r0]
+  87bf6e:	f1a1 000c 	sub.w	r0, r1, #12
+  87bf72:	4290      	cmp	r0, r2
+  87bf74:	d12d      	bne.n	87bfd2 <BossEventPacket::read(BinaryStream&)+0xc2>
+  87bf76:	4628      	mov	r0, r5
+  87bf78:	f614 eea2 	blx	690cc0 <ReadOnlyBinaryStream::getFloat()@plt>
+  87bf7c:	6320      	str	r0, [r4, #48]	; 0x30
+  87bf7e:	4628      	mov	r0, r5
+  87bf80:	f614 edcc 	blx	690b1c <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  87bf84:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  87bf88:	4628      	mov	r0, r5
+  87bf8a:	f614 ec4e 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87bf8e:	6360      	str	r0, [r4, #52]	; 0x34
+  87bf90:	4628      	mov	r0, r5
+  87bf92:	f614 ec4a 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  87bf96:	63a0      	str	r0, [r4, #56]	; 0x38
+  87bf98:	b004      	add	sp, #16
+  87bf9a:	bd70      	pop	{r4, r5, r6, pc}
+  87bf9c:	4628      	mov	r0, r5
+  87bf9e:	f614 ee90 	blx	690cc0 <ReadOnlyBinaryStream::getFloat()@plt>
+  87bfa2:	6320      	str	r0, [r4, #48]	; 0x30
+  87bfa4:	b004      	add	sp, #16
+  87bfa6:	bd70      	pop	{r4, r5, r6, pc}
+  87bfa8:	466e      	mov	r6, sp
+  87bfaa:	4629      	mov	r1, r5
+  87bfac:	4630      	mov	r0, r6
+  87bfae:	f614 e918 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87bfb2:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  87bfb6:	4631      	mov	r1, r6
+  87bfb8:	f279 e99e 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87bfbc:	4846      	ldr	r0, [pc, #280]	; (87c0d8 <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  87bfbe:	4a43      	ldr	r2, [pc, #268]	; (87c0cc <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87bfc0:	4478      	add	r0, pc
+  87bfc2:	9900      	ldr	r1, [sp, #0]
+  87bfc4:	5812      	ldr	r2, [r2, r0]
+  87bfc6:	f1a1 000c 	sub.w	r0, r1, #12
+  87bfca:	4290      	cmp	r0, r2
+  87bfcc:	d113      	bne.n	87bff6 <BossEventPacket::read(BinaryStream&)+0xe6>
+  87bfce:	b004      	add	sp, #16
+  87bfd0:	bd70      	pop	{r4, r5, r6, pc}
+  87bfd2:	4a46      	ldr	r2, [pc, #280]	; (87c0ec <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  87bfd4:	4b3f      	ldr	r3, [pc, #252]	; (87c0d4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87bfd6:	447a      	add	r2, pc
+  87bfd8:	589b      	ldr	r3, [r3, r2]
+  87bfda:	1f0a      	subs	r2, r1, #4
+  87bfdc:	b1eb      	cbz	r3, 87c01a <BossEventPacket::read(BinaryStream&)+0x10a>
+  87bfde:	f3bf 8f5b 	dmb	ish
+  87bfe2:	e852 1f00 	ldrex	r1, [r2]
+  87bfe6:	1e4b      	subs	r3, r1, #1
+  87bfe8:	e842 3600 	strex	r6, r3, [r2]
+  87bfec:	2e00      	cmp	r6, #0
+  87bfee:	d1f8      	bne.n	87bfe2 <BossEventPacket::read(BinaryStream&)+0xd2>
+  87bff0:	f3bf 8f5b 	dmb	ish
+  87bff4:	e014      	b.n	87c020 <BossEventPacket::read(BinaryStream&)+0x110>
+  87bff6:	4a39      	ldr	r2, [pc, #228]	; (87c0dc <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  87bff8:	4b36      	ldr	r3, [pc, #216]	; (87c0d4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87bffa:	447a      	add	r2, pc
+  87bffc:	589b      	ldr	r3, [r3, r2]
+  87bffe:	1f0a      	subs	r2, r1, #4
+  87c000:	b1a3      	cbz	r3, 87c02c <BossEventPacket::read(BinaryStream&)+0x11c>
+  87c002:	f3bf 8f5b 	dmb	ish
+  87c006:	e852 1f00 	ldrex	r1, [r2]
+  87c00a:	1e4b      	subs	r3, r1, #1
+  87c00c:	e842 3600 	strex	r6, r3, [r2]
+  87c010:	2e00      	cmp	r6, #0
+  87c012:	d1f8      	bne.n	87c006 <BossEventPacket::read(BinaryStream&)+0xf6>
+  87c014:	f3bf 8f5b 	dmb	ish
+  87c018:	e00b      	b.n	87c032 <BossEventPacket::read(BinaryStream&)+0x122>
+  87c01a:	6811      	ldr	r1, [r2, #0]
+  87c01c:	1e4b      	subs	r3, r1, #1
+  87c01e:	6013      	str	r3, [r2, #0]
+  87c020:	2900      	cmp	r1, #0
+  87c022:	dca8      	bgt.n	87bf76 <BossEventPacket::read(BinaryStream&)+0x66>
+  87c024:	a902      	add	r1, sp, #8
+  87c026:	f279 e918 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87c02a:	e7a4      	b.n	87bf76 <BossEventPacket::read(BinaryStream&)+0x66>
+  87c02c:	6811      	ldr	r1, [r2, #0]
+  87c02e:	1e4b      	subs	r3, r1, #1
+  87c030:	6013      	str	r3, [r2, #0]
+  87c032:	2900      	cmp	r1, #0
+  87c034:	dccb      	bgt.n	87bfce <BossEventPacket::read(BinaryStream&)+0xbe>
+  87c036:	a902      	add	r1, sp, #8
+  87c038:	f279 e90e 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87c03c:	b004      	add	sp, #16
+  87c03e:	bd70      	pop	{r4, r5, r6, pc}
+  87c040:	4a27      	ldr	r2, [pc, #156]	; (87c0e0 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  87c042:	4604      	mov	r4, r0
+  87c044:	4b21      	ldr	r3, [pc, #132]	; (87c0cc <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87c046:	447a      	add	r2, pc
+  87c048:	9901      	ldr	r1, [sp, #4]
+  87c04a:	f1a1 000c 	sub.w	r0, r1, #12
+  87c04e:	589a      	ldr	r2, [r3, r2]
+  87c050:	4290      	cmp	r0, r2
+  87c052:	d032      	beq.n	87c0ba <BossEventPacket::read(BinaryStream&)+0x1aa>
+  87c054:	4a23      	ldr	r2, [pc, #140]	; (87c0e4 <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  87c056:	4b1f      	ldr	r3, [pc, #124]	; (87c0d4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87c058:	447a      	add	r2, pc
+  87c05a:	589b      	ldr	r3, [r3, r2]
+  87c05c:	1f0a      	subs	r2, r1, #4
+  87c05e:	b37b      	cbz	r3, 87c0c0 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  87c060:	f3bf 8f5b 	dmb	ish
+  87c064:	e852 1f00 	ldrex	r1, [r2]
+  87c068:	1e4b      	subs	r3, r1, #1
+  87c06a:	e842 3600 	strex	r6, r3, [r2]
+  87c06e:	2e00      	cmp	r6, #0
+  87c070:	d1f8      	bne.n	87c064 <BossEventPacket::read(BinaryStream&)+0x154>
+  87c072:	f3bf 8f5b 	dmb	ish
+  87c076:	e01a      	b.n	87c0ae <BossEventPacket::read(BinaryStream&)+0x19e>
+  87c078:	4a13      	ldr	r2, [pc, #76]	; (87c0c8 <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  87c07a:	4604      	mov	r4, r0
+  87c07c:	4b13      	ldr	r3, [pc, #76]	; (87c0cc <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  87c07e:	447a      	add	r2, pc
+  87c080:	9900      	ldr	r1, [sp, #0]
+  87c082:	f1a1 000c 	sub.w	r0, r1, #12
+  87c086:	589a      	ldr	r2, [r3, r2]
+  87c088:	4290      	cmp	r0, r2
+  87c08a:	d016      	beq.n	87c0ba <BossEventPacket::read(BinaryStream&)+0x1aa>
+  87c08c:	4a10      	ldr	r2, [pc, #64]	; (87c0d0 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  87c08e:	4b11      	ldr	r3, [pc, #68]	; (87c0d4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  87c090:	447a      	add	r2, pc
+  87c092:	589b      	ldr	r3, [r3, r2]
+  87c094:	1f0a      	subs	r2, r1, #4
+  87c096:	b19b      	cbz	r3, 87c0c0 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  87c098:	f3bf 8f5b 	dmb	ish
+  87c09c:	e852 1f00 	ldrex	r1, [r2]
+  87c0a0:	1e4b      	subs	r3, r1, #1
+  87c0a2:	e842 3600 	strex	r6, r3, [r2]
+  87c0a6:	2e00      	cmp	r6, #0
+  87c0a8:	d1f8      	bne.n	87c09c <BossEventPacket::read(BinaryStream&)+0x18c>
+  87c0aa:	f3bf 8f5b 	dmb	ish
+  87c0ae:	2900      	cmp	r1, #0
+  87c0b0:	bfdc      	itt	le
+  87c0b2:	f10d 0108 	addle.w	r1, sp, #8
+  87c0b6:	f279 e8d0 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87c0ba:	4620      	mov	r0, r4
+  87c0bc:	f612 e91e 	blx	68e2fc <_Unwind_Resume@plt>
+  87c0c0:	6811      	ldr	r1, [r2, #0]
+  87c0c2:	1e4b      	subs	r3, r1, #1
+  87c0c4:	6013      	str	r3, [r2, #0]
+  87c0c6:	e7f2      	b.n	87c0ae <BossEventPacket::read(BinaryStream&)+0x19e>
+  87c0c8:	1542      	asrs	r2, r0, #21
+  87c0ca:	0155      	lsls	r5, r2, #5
+  87c0cc:	8ae4      	ldrh	r4, [r4, #22]
+  87c0ce:	ffff 1530 	vsli.32	d17, d16, #31
+  87c0d2:	0155      	lsls	r5, r2, #5
+  87c0d4:	8ae8      	ldrh	r0, [r5, #22]
+  87c0d6:	ffff 1600 	vcvt.f<illegal width 64>.s<illegal width 64>	d17, d0
+  87c0da:	0155      	lsls	r5, r2, #5
+  87c0dc:	15c6      	asrs	r6, r0, #23
+  87c0de:	0155      	lsls	r5, r2, #5
+  87c0e0:	157a      	asrs	r2, r7, #21
+  87c0e2:	0155      	lsls	r5, r2, #5
+  87c0e4:	1568      	asrs	r0, r5, #21
+  87c0e6:	0155      	lsls	r5, r2, #5
+  87c0e8:	1658      	asrs	r0, r3, #25
+  87c0ea:	0155      	lsls	r5, r2, #5
+  87c0ec:	15ea      	asrs	r2, r5, #23
+  87c0ee:	0155      	lsls	r5, r2, #5

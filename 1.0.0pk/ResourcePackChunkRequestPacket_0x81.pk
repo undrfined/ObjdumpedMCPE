@@ -1,0 +1,88 @@
+  87cdd8:	b570      	push	{r4, r5, r6, lr}
+  87cdda:	b084      	sub	sp, #16
+  87cddc:	ae01      	add	r6, sp, #4
+  87cdde:	4604      	mov	r4, r0
+  87cde0:	460d      	mov	r5, r1
+  87cde2:	4630      	mov	r0, r6
+  87cde4:	f613 e9fc 	blx	6901e0 <ReadOnlyBinaryStream::getString()@plt>
+  87cde8:	f104 000c 	add.w	r0, r4, #12
+  87cdec:	4631      	mov	r1, r6
+  87cdee:	f278 ea84 	blx	af52f8 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x28e>
+  87cdf2:	482d      	ldr	r0, [pc, #180]	; (87cea8 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xd0>)
+  87cdf4:	4a29      	ldr	r2, [pc, #164]	; (87ce9c <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc4>)
+  87cdf6:	4478      	add	r0, pc
+  87cdf8:	9901      	ldr	r1, [sp, #4]
+  87cdfa:	5812      	ldr	r2, [r2, r0]
+  87cdfc:	f1a1 000c 	sub.w	r0, r1, #12
+  87ce00:	4290      	cmp	r0, r2
+  87ce02:	d105      	bne.n	87ce10 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x38>
+  87ce04:	4628      	mov	r0, r5
+  87ce06:	f614 e846 	blx	690e94 <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  87ce0a:	6120      	str	r0, [r4, #16]
+  87ce0c:	b004      	add	sp, #16
+  87ce0e:	bd70      	pop	{r4, r5, r6, pc}
+  87ce10:	4a26      	ldr	r2, [pc, #152]	; (87ceac <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xd4>)
+  87ce12:	4b24      	ldr	r3, [pc, #144]	; (87cea4 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xcc>)
+  87ce14:	447a      	add	r2, pc
+  87ce16:	589b      	ldr	r3, [r3, r2]
+  87ce18:	1f0a      	subs	r2, r1, #4
+  87ce1a:	b15b      	cbz	r3, 87ce34 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x5c>
+  87ce1c:	f3bf 8f5b 	dmb	ish
+  87ce20:	e852 1f00 	ldrex	r1, [r2]
+  87ce24:	1e4b      	subs	r3, r1, #1
+  87ce26:	e842 3600 	strex	r6, r3, [r2]
+  87ce2a:	2e00      	cmp	r6, #0
+  87ce2c:	d1f8      	bne.n	87ce20 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x48>
+  87ce2e:	f3bf 8f5b 	dmb	ish
+  87ce32:	e002      	b.n	87ce3a <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x62>
+  87ce34:	6811      	ldr	r1, [r2, #0]
+  87ce36:	1e4b      	subs	r3, r1, #1
+  87ce38:	6013      	str	r3, [r2, #0]
+  87ce3a:	2900      	cmp	r1, #0
+  87ce3c:	dce2      	bgt.n	87ce04 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x2c>
+  87ce3e:	a902      	add	r1, sp, #8
+  87ce40:	f278 ea0a 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ce44:	e7de      	b.n	87ce04 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x2c>
+  87ce46:	4a14      	ldr	r2, [pc, #80]	; (87ce98 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc0>)
+  87ce48:	4604      	mov	r4, r0
+  87ce4a:	4b14      	ldr	r3, [pc, #80]	; (87ce9c <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc4>)
+  87ce4c:	447a      	add	r2, pc
+  87ce4e:	9901      	ldr	r1, [sp, #4]
+  87ce50:	f1a1 000c 	sub.w	r0, r1, #12
+  87ce54:	589a      	ldr	r2, [r3, r2]
+  87ce56:	4290      	cmp	r0, r2
+  87ce58:	d016      	beq.n	87ce88 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xb0>
+  87ce5a:	4a11      	ldr	r2, [pc, #68]	; (87cea0 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc8>)
+  87ce5c:	4b11      	ldr	r3, [pc, #68]	; (87cea4 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xcc>)
+  87ce5e:	447a      	add	r2, pc
+  87ce60:	589b      	ldr	r3, [r3, r2]
+  87ce62:	1f0a      	subs	r2, r1, #4
+  87ce64:	b19b      	cbz	r3, 87ce8e <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xb6>
+  87ce66:	f3bf 8f5b 	dmb	ish
+  87ce6a:	e852 1f00 	ldrex	r1, [r2]
+  87ce6e:	1e4b      	subs	r3, r1, #1
+  87ce70:	e842 3600 	strex	r6, r3, [r2]
+  87ce74:	2e00      	cmp	r6, #0
+  87ce76:	d1f8      	bne.n	87ce6a <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x92>
+  87ce78:	f3bf 8f5b 	dmb	ish
+  87ce7c:	2900      	cmp	r1, #0
+  87ce7e:	bfdc      	itt	le
+  87ce80:	f10d 010c 	addle.w	r1, sp, #12
+  87ce84:	f278 e9e8 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  87ce88:	4620      	mov	r0, r4
+  87ce8a:	f611 ea38 	blx	68e2fc <_Unwind_Resume@plt>
+  87ce8e:	6811      	ldr	r1, [r2, #0]
+  87ce90:	1e4b      	subs	r3, r1, #1
+  87ce92:	6013      	str	r3, [r2, #0]
+  87ce94:	e7f2      	b.n	87ce7c <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xa4>
+  87ce96:	bf00      	nop
+  87ce98:	0774      	lsls	r4, r6, #29
+  87ce9a:	0155      	lsls	r5, r2, #5
+  87ce9c:	8ae4      	ldrh	r4, [r4, #22]
+  87ce9e:	ffff 0762 	vcvt.s<illegal width 64>.f<illegal width 64>	q8, q9
+  87cea2:	0155      	lsls	r5, r2, #5
+  87cea4:	8ae8      	ldrh	r0, [r5, #22]
+  87cea6:	ffff 07ca 	vcvt.u<illegal width 64>.f<illegal width 64>	q8, q5
+  87ceaa:	0155      	lsls	r5, r2, #5
+  87ceac:	07ac      	lsls	r4, r5, #30
+  87ceae:	0155      	lsls	r5, r2, #5

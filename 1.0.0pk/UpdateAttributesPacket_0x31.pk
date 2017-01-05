@@ -1,0 +1,132 @@
+  8826c8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  8826cc:	b081      	sub	sp, #4
+  8826ce:	ed2d 8b04 	vpush	{d8-d9}
+  8826d2:	b088      	sub	sp, #32
+  8826d4:	ae02      	add	r6, sp, #8
+  8826d6:	4605      	mov	r5, r0
+  8826d8:	4689      	mov	r9, r1
+  8826da:	4630      	mov	r0, r6
+  8826dc:	f60e ea8a 	blx	690bf4 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  8826e0:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  8826e4:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  8826e8:	4648      	mov	r0, r9
+  8826ea:	f60e e89e 	blx	690828 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  8826ee:	f105 0718 	add.w	r7, r5, #24
+  8826f2:	4680      	mov	r8, r0
+  8826f4:	4641      	mov	r1, r8
+  8826f6:	4638      	mov	r0, r7
+  8826f8:	f610 e982 	blx	692a00 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  8826fc:	f1b8 0f00 	cmp.w	r8, #0
+  882700:	d053      	beq.n	8827aa <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  882702:	4841      	ldr	r0, [pc, #260]	; (882808 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  882704:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  882708:	4940      	ldr	r1, [pc, #256]	; (88280c <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  88270a:	f106 0410 	add.w	r4, r6, #16
+  88270e:	4478      	add	r0, pc
+  882710:	f04f 0b00 	mov.w	fp, #0
+  882714:	eb01 0a00 	add.w	sl, r1, r0
+  882718:	493e      	ldr	r1, [pc, #248]	; (882814 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  88271a:	5809      	ldr	r1, [r1, r0]
+  88271c:	9101      	str	r1, [sp, #4]
+  88271e:	493f      	ldr	r1, [pc, #252]	; (88281c <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  882720:	5808      	ldr	r0, [r1, r0]
+  882722:	9000      	str	r0, [sp, #0]
+  882724:	e019      	b.n	88275a <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  882726:	1f0a      	subs	r2, r1, #4
+  882728:	9900      	ldr	r1, [sp, #0]
+  88272a:	b169      	cbz	r1, 882748 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  88272c:	46bc      	mov	ip, r7
+  88272e:	f3bf 8f5b 	dmb	ish
+  882732:	e852 1f00 	ldrex	r1, [r2]
+  882736:	1e4b      	subs	r3, r1, #1
+  882738:	e842 3700 	strex	r7, r3, [r2]
+  88273c:	2f00      	cmp	r7, #0
+  88273e:	d1f8      	bne.n	882732 <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  882740:	f3bf 8f5b 	dmb	ish
+  882744:	4667      	mov	r7, ip
+  882746:	e002      	b.n	88274e <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  882748:	6811      	ldr	r1, [r2, #0]
+  88274a:	1e4b      	subs	r3, r1, #1
+  88274c:	6013      	str	r3, [r2, #0]
+  88274e:	2900      	cmp	r1, #0
+  882750:	dc27      	bgt.n	8827a2 <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  882752:	a907      	add	r1, sp, #28
+  882754:	f272 ed80 	blx	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  882758:	e023      	b.n	8827a2 <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  88275a:	aa07      	add	r2, sp, #28
+  88275c:	4620      	mov	r0, r4
+  88275e:	4651      	mov	r1, sl
+  882760:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  882764:	f272 ed80 	blx	af5268 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1fe>
+  882768:	4630      	mov	r0, r6
+  88276a:	4649      	mov	r1, r9
+  88276c:	f610 e94e 	blx	692a0c <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  882770:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  882774:	4288      	cmp	r0, r1
+  882776:	d00a      	beq.n	88278e <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  882778:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  88277c:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  882780:	4621      	mov	r1, r4
+  882782:	f272 ed62 	blx	af5248 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1de>
+  882786:	69e8      	ldr	r0, [r5, #28]
+  882788:	3014      	adds	r0, #20
+  88278a:	61e8      	str	r0, [r5, #28]
+  88278c:	e003      	b.n	882796 <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  88278e:	4638      	mov	r0, r7
+  882790:	4631      	mov	r1, r6
+  882792:	f610 e942 	blx	692a18 <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  882796:	9906      	ldr	r1, [sp, #24]
+  882798:	9a01      	ldr	r2, [sp, #4]
+  88279a:	f1a1 000c 	sub.w	r0, r1, #12
+  88279e:	4290      	cmp	r0, r2
+  8827a0:	d1c1      	bne.n	882726 <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  8827a2:	f10b 0b01 	add.w	fp, fp, #1
+  8827a6:	45c3      	cmp	fp, r8
+  8827a8:	d3d7      	bcc.n	88275a <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  8827aa:	b008      	add	sp, #32
+  8827ac:	ecbd 8b04 	vpop	{d8-d9}
+  8827b0:	b001      	add	sp, #4
+  8827b2:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  8827b6:	4a16      	ldr	r2, [pc, #88]	; (882810 <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  8827b8:	4604      	mov	r4, r0
+  8827ba:	4b16      	ldr	r3, [pc, #88]	; (882814 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  8827bc:	447a      	add	r2, pc
+  8827be:	9906      	ldr	r1, [sp, #24]
+  8827c0:	f1a1 000c 	sub.w	r0, r1, #12
+  8827c4:	589a      	ldr	r2, [r3, r2]
+  8827c6:	4290      	cmp	r0, r2
+  8827c8:	d016      	beq.n	8827f8 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  8827ca:	4a13      	ldr	r2, [pc, #76]	; (882818 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  8827cc:	4b13      	ldr	r3, [pc, #76]	; (88281c <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  8827ce:	447a      	add	r2, pc
+  8827d0:	589b      	ldr	r3, [r3, r2]
+  8827d2:	1f0a      	subs	r2, r1, #4
+  8827d4:	b19b      	cbz	r3, 8827fe <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  8827d6:	f3bf 8f5b 	dmb	ish
+  8827da:	e852 1f00 	ldrex	r1, [r2]
+  8827de:	1e4b      	subs	r3, r1, #1
+  8827e0:	e842 3700 	strex	r7, r3, [r2]
+  8827e4:	2f00      	cmp	r7, #0
+  8827e6:	d1f8      	bne.n	8827da <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  8827e8:	f3bf 8f5b 	dmb	ish
+  8827ec:	2900      	cmp	r1, #0
+  8827ee:	bfdc      	itt	le
+  8827f0:	f10d 011c 	addle.w	r1, sp, #28
+  8827f4:	f272 ed30 	blxle	af5258 <void std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >::_M_emplace_back_aux<EntityUniqueID const&>(EntityUniqueID const&)+0x1ee>
+  8827f8:	4620      	mov	r0, r4
+  8827fa:	f60b ed80 	blx	68e2fc <_Unwind_Resume@plt>
+  8827fe:	6811      	ldr	r1, [r2, #0]
+  882800:	1e4b      	subs	r3, r1, #1
+  882802:	6013      	str	r3, [r2, #0]
+  882804:	e7f2      	b.n	8827ec <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  882806:	bf00      	nop
+  882808:	aeb2      	add	r6, sp, #712	; 0x2c8
+  88280a:	0154      	lsls	r4, r2, #5
+  88280c:	0565      	lsls	r5, r4, #21
+  88280e:	ffe7 ae04 	vmull.p64	q13, d7, d4
+  882812:	0154      	lsls	r4, r2, #5
+  882814:	8ae4      	ldrh	r4, [r4, #22]
+  882816:	ffff adf2 			; <UNDEFINED> instruction: 0xffffadf2
+  88281a:	0154      	lsls	r4, r2, #5
+  88281c:	8ae8      	ldrh	r0, [r5, #22]
+  88281e:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29
