@@ -1,0 +1,95 @@
+  ce4c30:	b570      	push	{r4, r5, r6, lr}
+  ce4c32:	b086      	sub	sp, #24
+  ce4c34:	4605      	mov	r5, r0
+  ce4c36:	a802      	add	r0, sp, #8
+  ce4c38:	460c      	mov	r4, r1
+  ce4c3a:	f56b e5a4 	blx	650784 <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+  ce4c3e:	9802      	ldr	r0, [sp, #8]
+  ce4c40:	60e8      	str	r0, [r5, #12]
+  ce4c42:	9803      	ldr	r0, [sp, #12]
+  ce4c44:	6128      	str	r0, [r5, #16]
+  ce4c46:	4620      	mov	r0, r4
+  ce4c48:	f548 e5b8 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  ce4c4c:	ae01      	add	r6, sp, #4
+  ce4c4e:	7528      	strb	r0, [r5, #20]
+  ce4c50:	4621      	mov	r1, r4
+  ce4c52:	4630      	mov	r0, r6
+  ce4c54:	f548 e60c 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce4c58:	f105 0018 	add.w	r0, r5, #24
+  ce4c5c:	4631      	mov	r1, r6
+  ce4c5e:	f2fe dfcd 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce4c62:	482b      	ldr	r0, [pc, #172]	; (ce4d10 <FullChunkDataPacket::read(BinaryStream&)+0xe0>)
+  ce4c64:	4a27      	ldr	r2, [pc, #156]	; (ce4d04 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  ce4c66:	4478      	add	r0, pc
+  ce4c68:	9901      	ldr	r1, [sp, #4]
+  ce4c6a:	5812      	ldr	r2, [r2, r0]
+  ce4c6c:	f1a1 000c 	sub.w	r0, r1, #12
+  ce4c70:	4290      	cmp	r0, r2
+  ce4c72:	d101      	bne.n	ce4c78 <FullChunkDataPacket::read(BinaryStream&)+0x48>
+  ce4c74:	b006      	add	sp, #24
+  ce4c76:	bd70      	pop	{r4, r5, r6, pc}
+  ce4c78:	4a26      	ldr	r2, [pc, #152]	; (ce4d14 <FullChunkDataPacket::read(BinaryStream&)+0xe4>)
+  ce4c7a:	4b24      	ldr	r3, [pc, #144]	; (ce4d0c <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  ce4c7c:	447a      	add	r2, pc
+  ce4c7e:	589b      	ldr	r3, [r3, r2]
+  ce4c80:	1f0a      	subs	r2, r1, #4
+  ce4c82:	b15b      	cbz	r3, ce4c9c <FullChunkDataPacket::read(BinaryStream&)+0x6c>
+  ce4c84:	f3bf 8f5b 	dmb	ish
+  ce4c88:	e852 1f00 	ldrex	r1, [r2]
+  ce4c8c:	1e4b      	subs	r3, r1, #1
+  ce4c8e:	e842 3600 	strex	r6, r3, [r2]
+  ce4c92:	2e00      	cmp	r6, #0
+  ce4c94:	d1f8      	bne.n	ce4c88 <FullChunkDataPacket::read(BinaryStream&)+0x58>
+  ce4c96:	f3bf 8f5b 	dmb	ish
+  ce4c9a:	e002      	b.n	ce4ca2 <FullChunkDataPacket::read(BinaryStream&)+0x72>
+  ce4c9c:	6811      	ldr	r1, [r2, #0]
+  ce4c9e:	1e4b      	subs	r3, r1, #1
+  ce4ca0:	6013      	str	r3, [r2, #0]
+  ce4ca2:	2900      	cmp	r1, #0
+  ce4ca4:	dce6      	bgt.n	ce4c74 <FullChunkDataPacket::read(BinaryStream&)+0x44>
+  ce4ca6:	a904      	add	r1, sp, #16
+  ce4ca8:	f300 d974 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce4cac:	e7e2      	b.n	ce4c74 <FullChunkDataPacket::read(BinaryStream&)+0x44>
+  ce4cae:	4a14      	ldr	r2, [pc, #80]	; (ce4d00 <FullChunkDataPacket::read(BinaryStream&)+0xd0>)
+  ce4cb0:	4604      	mov	r4, r0
+  ce4cb2:	4b14      	ldr	r3, [pc, #80]	; (ce4d04 <FullChunkDataPacket::read(BinaryStream&)+0xd4>)
+  ce4cb4:	447a      	add	r2, pc
+  ce4cb6:	9901      	ldr	r1, [sp, #4]
+  ce4cb8:	f1a1 000c 	sub.w	r0, r1, #12
+  ce4cbc:	589a      	ldr	r2, [r3, r2]
+  ce4cbe:	4290      	cmp	r0, r2
+  ce4cc0:	d016      	beq.n	ce4cf0 <FullChunkDataPacket::read(BinaryStream&)+0xc0>
+  ce4cc2:	4a11      	ldr	r2, [pc, #68]	; (ce4d08 <FullChunkDataPacket::read(BinaryStream&)+0xd8>)
+  ce4cc4:	4b11      	ldr	r3, [pc, #68]	; (ce4d0c <FullChunkDataPacket::read(BinaryStream&)+0xdc>)
+  ce4cc6:	447a      	add	r2, pc
+  ce4cc8:	589b      	ldr	r3, [r3, r2]
+  ce4cca:	1f0a      	subs	r2, r1, #4
+  ce4ccc:	b19b      	cbz	r3, ce4cf6 <FullChunkDataPacket::read(BinaryStream&)+0xc6>
+  ce4cce:	f3bf 8f5b 	dmb	ish
+  ce4cd2:	e852 1f00 	ldrex	r1, [r2]
+  ce4cd6:	1e4b      	subs	r3, r1, #1
+  ce4cd8:	e842 3600 	strex	r6, r3, [r2]
+  ce4cdc:	2e00      	cmp	r6, #0
+  ce4cde:	d1f8      	bne.n	ce4cd2 <FullChunkDataPacket::read(BinaryStream&)+0xa2>
+  ce4ce0:	f3bf 8f5b 	dmb	ish
+  ce4ce4:	2900      	cmp	r1, #0
+  ce4ce6:	bfdc      	itt	le
+  ce4ce8:	f10d 0114 	addle.w	r1, sp, #20
+  ce4cec:	f300 d952 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce4cf0:	4620      	mov	r0, r4
+  ce4cf2:	f546 e0a0 	blx	62ae34 <_Unwind_Resume@plt>
+  ce4cf6:	6811      	ldr	r1, [r2, #0]
+  ce4cf8:	1e4b      	subs	r3, r1, #1
+  ce4cfa:	6013      	str	r3, [r2, #0]
+  ce4cfc:	e7f2      	b.n	ce4ce4 <FullChunkDataPacket::read(BinaryStream&)+0xb4>
+  ce4cfe:	bf00      	nop
+  ce4d00:	682c      	ldr	r4, [r5, #0]
+  ce4d02:	00ee      	lsls	r6, r5, #3
+  ce4d04:	9080      	str	r0, [sp, #512]	; 0x200
+  ce4d06:	ffff 681a 	vqshrun.s64	d22, q5, #1
+  ce4d0a:	00ee      	lsls	r6, r5, #3
+  ce4d0c:	9084      	str	r0, [sp, #528]	; 0x210
+  ce4d0e:	ffff 687a 	vqrshrun.s64	d22, q13, #1
+  ce4d12:	00ee      	lsls	r6, r5, #3
+  ce4d14:	6864      	ldr	r4, [r4, #4]
+  ce4d16:	00ee      	lsls	r6, r5, #3

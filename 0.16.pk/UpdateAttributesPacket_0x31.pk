@@ -1,0 +1,131 @@
+  ceb4c4:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  ceb4c8:	b081      	sub	sp, #4
+  ceb4ca:	ed2d 8b04 	vpush	{d8-d9}
+  ceb4ce:	b088      	sub	sp, #32
+  ceb4d0:	ae02      	add	r6, sp, #8
+  ceb4d2:	4605      	mov	r5, r0
+  ceb4d4:	4689      	mov	r9, r1
+  ceb4d6:	4630      	mov	r0, r6
+  ceb4d8:	f542 e176 	blx	62d7c8 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  ceb4dc:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ceb4e0:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  ceb4e4:	4648      	mov	r0, r9
+  ceb4e6:	f54f e5d6 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ceb4ea:	f105 0718 	add.w	r7, r5, #24
+  ceb4ee:	4680      	mov	r8, r0
+  ceb4f0:	4641      	mov	r1, r8
+  ceb4f2:	4638      	mov	r0, r7
+  ceb4f4:	f566 e168 	blx	6517c8 <std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::reserve(unsigned int)@plt>
+  ceb4f8:	f1b8 0f00 	cmp.w	r8, #0
+  ceb4fc:	d053      	beq.n	ceb5a6 <UpdateAttributesPacket::read(BinaryStream&)+0xe2>
+  ceb4fe:	4841      	ldr	r0, [pc, #260]	; (ceb604 <UpdateAttributesPacket::read(BinaryStream&)+0x140>)
+  ceb500:	ef80 8050 	vmov.i32	q4, #0	; 0x00000000
+  ceb504:	4940      	ldr	r1, [pc, #256]	; (ceb608 <UpdateAttributesPacket::read(BinaryStream&)+0x144>)
+  ceb506:	f106 0410 	add.w	r4, r6, #16
+  ceb50a:	4478      	add	r0, pc
+  ceb50c:	f04f 0b00 	mov.w	fp, #0
+  ceb510:	eb01 0a00 	add.w	sl, r1, r0
+  ceb514:	493e      	ldr	r1, [pc, #248]	; (ceb610 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  ceb516:	5809      	ldr	r1, [r1, r0]
+  ceb518:	9101      	str	r1, [sp, #4]
+  ceb51a:	493f      	ldr	r1, [pc, #252]	; (ceb618 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  ceb51c:	5808      	ldr	r0, [r1, r0]
+  ceb51e:	9000      	str	r0, [sp, #0]
+  ceb520:	e019      	b.n	ceb556 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  ceb522:	1f0a      	subs	r2, r1, #4
+  ceb524:	9900      	ldr	r1, [sp, #0]
+  ceb526:	b169      	cbz	r1, ceb544 <UpdateAttributesPacket::read(BinaryStream&)+0x80>
+  ceb528:	46bc      	mov	ip, r7
+  ceb52a:	f3bf 8f5b 	dmb	ish
+  ceb52e:	e852 1f00 	ldrex	r1, [r2]
+  ceb532:	1e4b      	subs	r3, r1, #1
+  ceb534:	e842 3700 	strex	r7, r3, [r2]
+  ceb538:	2f00      	cmp	r7, #0
+  ceb53a:	d1f8      	bne.n	ceb52e <UpdateAttributesPacket::read(BinaryStream&)+0x6a>
+  ceb53c:	f3bf 8f5b 	dmb	ish
+  ceb540:	4667      	mov	r7, ip
+  ceb542:	e002      	b.n	ceb54a <UpdateAttributesPacket::read(BinaryStream&)+0x86>
+  ceb544:	6811      	ldr	r1, [r2, #0]
+  ceb546:	1e4b      	subs	r3, r1, #1
+  ceb548:	6013      	str	r3, [r2, #0]
+  ceb54a:	2900      	cmp	r1, #0
+  ceb54c:	dc27      	bgt.n	ceb59e <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  ceb54e:	a907      	add	r1, sp, #28
+  ceb550:	f2f9 dd20 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ceb554:	e023      	b.n	ceb59e <UpdateAttributesPacket::read(BinaryStream&)+0xda>
+  ceb556:	aa07      	add	r2, sp, #28
+  ceb558:	4620      	mov	r0, r4
+  ceb55a:	4651      	mov	r1, sl
+  ceb55c:	f906 8acf 	vst1.64	{d8-d9}, [r6]
+  ceb560:	f2fa da72 	bl	17e5a48 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x333a0>
+  ceb564:	4630      	mov	r0, r6
+  ceb566:	4649      	mov	r1, r9
+  ceb568:	f566 e134 	blx	6517d4 <UpdateAttributesPacket::AttributeData::read(BinaryStream&)@plt>
+  ceb56c:	e9d5 0107 	ldrd	r0, r1, [r5, #28]
+  ceb570:	4288      	cmp	r0, r1
+  ceb572:	d00a      	beq.n	ceb58a <UpdateAttributesPacket::read(BinaryStream&)+0xc6>
+  ceb574:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  ceb578:	f940 0a8d 	vst1.32	{d16-d17}, [r0]!
+  ceb57c:	4621      	mov	r1, r4
+  ceb57e:	f2f9 dd83 	bl	17e5088 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x329e0>
+  ceb582:	69e8      	ldr	r0, [r5, #28]
+  ceb584:	3014      	adds	r0, #20
+  ceb586:	61e8      	str	r0, [r5, #28]
+  ceb588:	e003      	b.n	ceb592 <UpdateAttributesPacket::read(BinaryStream&)+0xce>
+  ceb58a:	4638      	mov	r0, r7
+  ceb58c:	4631      	mov	r1, r6
+  ceb58e:	f566 e128 	blx	6517e0 <void std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >::_M_emplace_back_aux<UpdateAttributesPacket::AttributeData const&>(UpdateAttributesPacket::AttributeData const&)@plt>
+  ceb592:	9906      	ldr	r1, [sp, #24]
+  ceb594:	9a01      	ldr	r2, [sp, #4]
+  ceb596:	f1a1 000c 	sub.w	r0, r1, #12
+  ceb59a:	4290      	cmp	r0, r2
+  ceb59c:	d1c1      	bne.n	ceb522 <UpdateAttributesPacket::read(BinaryStream&)+0x5e>
+  ceb59e:	f10b 0b01 	add.w	fp, fp, #1
+  ceb5a2:	45c3      	cmp	fp, r8
+  ceb5a4:	d3d7      	bcc.n	ceb556 <UpdateAttributesPacket::read(BinaryStream&)+0x92>
+  ceb5a6:	b008      	add	sp, #32
+  ceb5a8:	ecbd 8b04 	vpop	{d8-d9}
+  ceb5ac:	b001      	add	sp, #4
+  ceb5ae:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  ceb5b2:	4a16      	ldr	r2, [pc, #88]	; (ceb60c <UpdateAttributesPacket::read(BinaryStream&)+0x148>)
+  ceb5b4:	4604      	mov	r4, r0
+  ceb5b6:	4b16      	ldr	r3, [pc, #88]	; (ceb610 <UpdateAttributesPacket::read(BinaryStream&)+0x14c>)
+  ceb5b8:	447a      	add	r2, pc
+  ceb5ba:	9906      	ldr	r1, [sp, #24]
+  ceb5bc:	f1a1 000c 	sub.w	r0, r1, #12
+  ceb5c0:	589a      	ldr	r2, [r3, r2]
+  ceb5c2:	4290      	cmp	r0, r2
+  ceb5c4:	d016      	beq.n	ceb5f4 <UpdateAttributesPacket::read(BinaryStream&)+0x130>
+  ceb5c6:	4a13      	ldr	r2, [pc, #76]	; (ceb614 <UpdateAttributesPacket::read(BinaryStream&)+0x150>)
+  ceb5c8:	4b13      	ldr	r3, [pc, #76]	; (ceb618 <UpdateAttributesPacket::read(BinaryStream&)+0x154>)
+  ceb5ca:	447a      	add	r2, pc
+  ceb5cc:	589b      	ldr	r3, [r3, r2]
+  ceb5ce:	1f0a      	subs	r2, r1, #4
+  ceb5d0:	b19b      	cbz	r3, ceb5fa <UpdateAttributesPacket::read(BinaryStream&)+0x136>
+  ceb5d2:	f3bf 8f5b 	dmb	ish
+  ceb5d6:	e852 1f00 	ldrex	r1, [r2]
+  ceb5da:	1e4b      	subs	r3, r1, #1
+  ceb5dc:	e842 3700 	strex	r7, r3, [r2]
+  ceb5e0:	2f00      	cmp	r7, #0
+  ceb5e2:	d1f8      	bne.n	ceb5d6 <UpdateAttributesPacket::read(BinaryStream&)+0x112>
+  ceb5e4:	f3bf 8f5b 	dmb	ish
+  ceb5e8:	2900      	cmp	r1, #0
+  ceb5ea:	bfdc      	itt	le
+  ceb5ec:	f10d 011c 	addle.w	r1, sp, #28
+  ceb5f0:	f2f9 dcd0 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ceb5f4:	4620      	mov	r0, r4
+  ceb5f6:	f53f e41e 	blx	62ae34 <_Unwind_Resume@plt>
+  ceb5fa:	6811      	ldr	r1, [r2, #0]
+  ceb5fc:	1e4b      	subs	r3, r1, #1
+  ceb5fe:	6013      	str	r3, [r2, #0]
+  ceb600:	e7f2      	b.n	ceb5e8 <UpdateAttributesPacket::read(BinaryStream&)+0x124>
+  ceb602:	bf00      	nop
+  ceb604:	ffd6 00ed 	vmla.i16	q8, q11, d5[3]
+  ceb608:	6de0      	ldr	r0, [r4, #92]	; 0x5c
+  ceb60a:	ffe9 ff28 			; <UNDEFINED> instruction: 0xffe9ff28
+  ceb60e:	00ed      	lsls	r5, r5, #3
+  ceb610:	9080      	str	r0, [sp, #512]	; 0x200
+  ceb612:	ffff ff16 	vcvt.u32.f32	d31, d6, #1
+  ceb616:	00ed      	lsls	r5, r5, #3
+  ceb618:	9084      	str	r0, [sp, #528]	; 0x210
+  ceb61a:	ffff e92d 	vtbl.8	d30, {d15-d16}, d29

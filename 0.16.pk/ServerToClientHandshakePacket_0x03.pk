@@ -1,0 +1,158 @@
+  ce0e14:	b5f0      	push	{r4, r5, r6, r7, lr}
+  ce0e16:	b087      	sub	sp, #28
+  ce0e18:	ae02      	add	r6, sp, #8
+  ce0e1a:	4604      	mov	r4, r0
+  ce0e1c:	460d      	mov	r5, r1
+  ce0e1e:	4630      	mov	r0, r6
+  ce0e20:	f54c e526 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce0e24:	f104 000c 	add.w	r0, r4, #12
+  ce0e28:	4631      	mov	r1, r6
+  ce0e2a:	f302 dee7 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce0e2e:	4852      	ldr	r0, [pc, #328]	; (ce0f78 <ServerToClientHandshakePacket::read(BinaryStream&)+0x164>)
+  ce0e30:	4f4e      	ldr	r7, [pc, #312]	; (ce0f6c <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  ce0e32:	4478      	add	r0, pc
+  ce0e34:	9902      	ldr	r1, [sp, #8]
+  ce0e36:	583a      	ldr	r2, [r7, r0]
+  ce0e38:	f1a1 000c 	sub.w	r0, r1, #12
+  ce0e3c:	4290      	cmp	r0, r2
+  ce0e3e:	d113      	bne.n	ce0e68 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+  ce0e40:	ae01      	add	r6, sp, #4
+  ce0e42:	4629      	mov	r1, r5
+  ce0e44:	4630      	mov	r0, r6
+  ce0e46:	f54c e514 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce0e4a:	f104 0010 	add.w	r0, r4, #16
+  ce0e4e:	4631      	mov	r1, r6
+  ce0e50:	f302 ded4 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce0e54:	484c      	ldr	r0, [pc, #304]	; (ce0f88 <ServerToClientHandshakePacket::read(BinaryStream&)+0x174>)
+  ce0e56:	9901      	ldr	r1, [sp, #4]
+  ce0e58:	4478      	add	r0, pc
+  ce0e5a:	583a      	ldr	r2, [r7, r0]
+  ce0e5c:	f1a1 000c 	sub.w	r0, r1, #12
+  ce0e60:	4290      	cmp	r0, r2
+  ce0e62:	d113      	bne.n	ce0e8c <ServerToClientHandshakePacket::read(BinaryStream&)+0x78>
+  ce0e64:	b007      	add	sp, #28
+  ce0e66:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  ce0e68:	4a44      	ldr	r2, [pc, #272]	; (ce0f7c <ServerToClientHandshakePacket::read(BinaryStream&)+0x168>)
+  ce0e6a:	4b42      	ldr	r3, [pc, #264]	; (ce0f74 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  ce0e6c:	447a      	add	r2, pc
+  ce0e6e:	589b      	ldr	r3, [r3, r2]
+  ce0e70:	1f0a      	subs	r2, r1, #4
+  ce0e72:	b1eb      	cbz	r3, ce0eb0 <ServerToClientHandshakePacket::read(BinaryStream&)+0x9c>
+  ce0e74:	f3bf 8f5b 	dmb	ish
+  ce0e78:	e852 1f00 	ldrex	r1, [r2]
+  ce0e7c:	1e4b      	subs	r3, r1, #1
+  ce0e7e:	e842 3600 	strex	r6, r3, [r2]
+  ce0e82:	2e00      	cmp	r6, #0
+  ce0e84:	d1f8      	bne.n	ce0e78 <ServerToClientHandshakePacket::read(BinaryStream&)+0x64>
+  ce0e86:	f3bf 8f5b 	dmb	ish
+  ce0e8a:	e014      	b.n	ce0eb6 <ServerToClientHandshakePacket::read(BinaryStream&)+0xa2>
+  ce0e8c:	4a3f      	ldr	r2, [pc, #252]	; (ce0f8c <ServerToClientHandshakePacket::read(BinaryStream&)+0x178>)
+  ce0e8e:	4b39      	ldr	r3, [pc, #228]	; (ce0f74 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  ce0e90:	447a      	add	r2, pc
+  ce0e92:	589b      	ldr	r3, [r3, r2]
+  ce0e94:	1f0a      	subs	r2, r1, #4
+  ce0e96:	b1a3      	cbz	r3, ce0ec2 <ServerToClientHandshakePacket::read(BinaryStream&)+0xae>
+  ce0e98:	f3bf 8f5b 	dmb	ish
+  ce0e9c:	e852 1f00 	ldrex	r1, [r2]
+  ce0ea0:	1e4b      	subs	r3, r1, #1
+  ce0ea2:	e842 3700 	strex	r7, r3, [r2]
+  ce0ea6:	2f00      	cmp	r7, #0
+  ce0ea8:	d1f8      	bne.n	ce0e9c <ServerToClientHandshakePacket::read(BinaryStream&)+0x88>
+  ce0eaa:	f3bf 8f5b 	dmb	ish
+  ce0eae:	e00b      	b.n	ce0ec8 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>
+  ce0eb0:	6811      	ldr	r1, [r2, #0]
+  ce0eb2:	1e4b      	subs	r3, r1, #1
+  ce0eb4:	6013      	str	r3, [r2, #0]
+  ce0eb6:	2900      	cmp	r1, #0
+  ce0eb8:	dcc2      	bgt.n	ce0e40 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  ce0eba:	a903      	add	r1, sp, #12
+  ce0ebc:	f304 d86a 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce0ec0:	e7be      	b.n	ce0e40 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+  ce0ec2:	6811      	ldr	r1, [r2, #0]
+  ce0ec4:	1e4b      	subs	r3, r1, #1
+  ce0ec6:	6013      	str	r3, [r2, #0]
+  ce0ec8:	2900      	cmp	r1, #0
+  ce0eca:	dccb      	bgt.n	ce0e64 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  ce0ecc:	a904      	add	r1, sp, #16
+  ce0ece:	f304 d861 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce0ed2:	e7c7      	b.n	ce0e64 <ServerToClientHandshakePacket::read(BinaryStream&)+0x50>
+  ce0ed4:	4a24      	ldr	r2, [pc, #144]	; (ce0f68 <ServerToClientHandshakePacket::read(BinaryStream&)+0x154>)
+  ce0ed6:	4604      	mov	r4, r0
+  ce0ed8:	4b24      	ldr	r3, [pc, #144]	; (ce0f6c <ServerToClientHandshakePacket::read(BinaryStream&)+0x158>)
+  ce0eda:	447a      	add	r2, pc
+  ce0edc:	9902      	ldr	r1, [sp, #8]
+  ce0ede:	f1a1 000c 	sub.w	r0, r1, #12
+  ce0ee2:	589a      	ldr	r2, [r3, r2]
+  ce0ee4:	4290      	cmp	r0, r2
+  ce0ee6:	d033      	beq.n	ce0f50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  ce0ee8:	4a21      	ldr	r2, [pc, #132]	; (ce0f70 <ServerToClientHandshakePacket::read(BinaryStream&)+0x15c>)
+  ce0eea:	4b22      	ldr	r3, [pc, #136]	; (ce0f74 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  ce0eec:	447a      	add	r2, pc
+  ce0eee:	589b      	ldr	r3, [r3, r2]
+  ce0ef0:	1f0a      	subs	r2, r1, #4
+  ce0ef2:	b383      	cbz	r3, ce0f56 <ServerToClientHandshakePacket::read(BinaryStream&)+0x142>
+  ce0ef4:	f3bf 8f5b 	dmb	ish
+  ce0ef8:	e852 1f00 	ldrex	r1, [r2]
+  ce0efc:	1e4b      	subs	r3, r1, #1
+  ce0efe:	e842 3700 	strex	r7, r3, [r2]
+  ce0f02:	2f00      	cmp	r7, #0
+  ce0f04:	d1f8      	bne.n	ce0ef8 <ServerToClientHandshakePacket::read(BinaryStream&)+0xe4>
+  ce0f06:	f3bf 8f5b 	dmb	ish
+  ce0f0a:	2900      	cmp	r1, #0
+  ce0f0c:	dc20      	bgt.n	ce0f50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  ce0f0e:	a905      	add	r1, sp, #20
+  ce0f10:	e01c      	b.n	ce0f4c <ServerToClientHandshakePacket::read(BinaryStream&)+0x138>
+  ce0f12:	4a1b      	ldr	r2, [pc, #108]	; (ce0f80 <ServerToClientHandshakePacket::read(BinaryStream&)+0x16c>)
+  ce0f14:	4604      	mov	r4, r0
+  ce0f16:	9901      	ldr	r1, [sp, #4]
+  ce0f18:	447a      	add	r2, pc
+  ce0f1a:	f1a1 000c 	sub.w	r0, r1, #12
+  ce0f1e:	58ba      	ldr	r2, [r7, r2]
+  ce0f20:	4290      	cmp	r0, r2
+  ce0f22:	d015      	beq.n	ce0f50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  ce0f24:	4a17      	ldr	r2, [pc, #92]	; (ce0f84 <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  ce0f26:	4b13      	ldr	r3, [pc, #76]	; (ce0f74 <ServerToClientHandshakePacket::read(BinaryStream&)+0x160>)
+  ce0f28:	447a      	add	r2, pc
+  ce0f2a:	589b      	ldr	r3, [r3, r2]
+  ce0f2c:	1f0a      	subs	r2, r1, #4
+  ce0f2e:	b1b3      	cbz	r3, ce0f5e <ServerToClientHandshakePacket::read(BinaryStream&)+0x14a>
+  ce0f30:	f3bf 8f5b 	dmb	ish
+  ce0f34:	e852 1f00 	ldrex	r1, [r2]
+  ce0f38:	1e4b      	subs	r3, r1, #1
+  ce0f3a:	e842 3700 	strex	r7, r3, [r2]
+  ce0f3e:	2f00      	cmp	r7, #0
+  ce0f40:	d1f8      	bne.n	ce0f34 <ServerToClientHandshakePacket::read(BinaryStream&)+0x120>
+  ce0f42:	f3bf 8f5b 	dmb	ish
+  ce0f46:	2900      	cmp	r1, #0
+  ce0f48:	dc02      	bgt.n	ce0f50 <ServerToClientHandshakePacket::read(BinaryStream&)+0x13c>
+  ce0f4a:	a906      	add	r1, sp, #24
+  ce0f4c:	f304 d822 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce0f50:	4620      	mov	r0, r4
+  ce0f52:	f549 e770 	blx	62ae34 <_Unwind_Resume@plt>
+  ce0f56:	6811      	ldr	r1, [r2, #0]
+  ce0f58:	1e4b      	subs	r3, r1, #1
+  ce0f5a:	6013      	str	r3, [r2, #0]
+  ce0f5c:	e7d5      	b.n	ce0f0a <ServerToClientHandshakePacket::read(BinaryStream&)+0xf6>
+  ce0f5e:	6811      	ldr	r1, [r2, #0]
+  ce0f60:	1e4b      	subs	r3, r1, #1
+  ce0f62:	6013      	str	r3, [r2, #0]
+  ce0f64:	e7ef      	b.n	ce0f46 <ServerToClientHandshakePacket::read(BinaryStream&)+0x132>
+  ce0f66:	bf00      	nop
+  ce0f68:	a606      	add	r6, pc, #24	; (adr r6, ce0f84 <ServerToClientHandshakePacket::read(BinaryStream&)+0x170>)
+  ce0f6a:	00ee      	lsls	r6, r5, #3
+  ce0f6c:	9080      	str	r0, [sp, #512]	; 0x200
+  ce0f6e:	ffff a5f4 	vsli.64	q13, q10, #63	; 0x3f
+  ce0f72:	00ee      	lsls	r6, r5, #3
+  ce0f74:	9084      	str	r0, [sp, #528]	; 0x210
+  ce0f76:	ffff a6ae 	vcvt.f<illegal width 64>.u<illegal width 64>	d26, d30
+  ce0f7a:	00ee      	lsls	r6, r5, #3
+  ce0f7c:	a674      	add	r6, pc, #464	; (adr r6, ce1150 <ResourcePacksInfoPacket::read(BinaryStream&)+0xdc>)
+  ce0f7e:	00ee      	lsls	r6, r5, #3
+  ce0f80:	a5c8      	add	r5, pc, #800	; (adr r5, ce12a4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x230>)
+  ce0f82:	00ee      	lsls	r6, r5, #3
+  ce0f84:	a5b8      	add	r5, pc, #736	; (adr r5, ce1268 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1f4>)
+  ce0f86:	00ee      	lsls	r6, r5, #3
+  ce0f88:	a688      	add	r6, pc, #544	; (adr r6, ce11ac <ResourcePacksInfoPacket::read(BinaryStream&)+0x138>)
+  ce0f8a:	00ee      	lsls	r6, r5, #3
+  ce0f8c:	a650      	add	r6, pc, #320	; (adr r6, ce10d0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x5c>)
+  ce0f8e:	00ee      	lsls	r6, r5, #3

@@ -1,0 +1,83 @@
+  ce6adc:	b5b0      	push	{r4, r5, r7, lr}
+  ce6ade:	b084      	sub	sp, #16
+  ce6ae0:	ad01      	add	r5, sp, #4
+  ce6ae2:	4604      	mov	r4, r0
+  ce6ae4:	4628      	mov	r0, r5
+  ce6ae6:	f546 e6c4 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce6aea:	f104 000c 	add.w	r0, r4, #12
+  ce6aee:	4629      	mov	r1, r5
+  ce6af0:	f2fd d884 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce6af4:	482a      	ldr	r0, [pc, #168]	; (ce6ba0 <BatchPacket::read(BinaryStream&)+0xc4>)
+  ce6af6:	4a27      	ldr	r2, [pc, #156]	; (ce6b94 <BatchPacket::read(BinaryStream&)+0xb8>)
+  ce6af8:	4478      	add	r0, pc
+  ce6afa:	9901      	ldr	r1, [sp, #4]
+  ce6afc:	5812      	ldr	r2, [r2, r0]
+  ce6afe:	f1a1 000c 	sub.w	r0, r1, #12
+  ce6b02:	4290      	cmp	r0, r2
+  ce6b04:	d101      	bne.n	ce6b0a <BatchPacket::read(BinaryStream&)+0x2e>
+  ce6b06:	b004      	add	sp, #16
+  ce6b08:	bdb0      	pop	{r4, r5, r7, pc}
+  ce6b0a:	4a26      	ldr	r2, [pc, #152]	; (ce6ba4 <BatchPacket::read(BinaryStream&)+0xc8>)
+  ce6b0c:	4b23      	ldr	r3, [pc, #140]	; (ce6b9c <BatchPacket::read(BinaryStream&)+0xc0>)
+  ce6b0e:	447a      	add	r2, pc
+  ce6b10:	589b      	ldr	r3, [r3, r2]
+  ce6b12:	1f0a      	subs	r2, r1, #4
+  ce6b14:	b15b      	cbz	r3, ce6b2e <BatchPacket::read(BinaryStream&)+0x52>
+  ce6b16:	f3bf 8f5b 	dmb	ish
+  ce6b1a:	e852 1f00 	ldrex	r1, [r2]
+  ce6b1e:	1e4b      	subs	r3, r1, #1
+  ce6b20:	e842 3500 	strex	r5, r3, [r2]
+  ce6b24:	2d00      	cmp	r5, #0
+  ce6b26:	d1f8      	bne.n	ce6b1a <BatchPacket::read(BinaryStream&)+0x3e>
+  ce6b28:	f3bf 8f5b 	dmb	ish
+  ce6b2c:	e002      	b.n	ce6b34 <BatchPacket::read(BinaryStream&)+0x58>
+  ce6b2e:	6811      	ldr	r1, [r2, #0]
+  ce6b30:	1e4b      	subs	r3, r1, #1
+  ce6b32:	6013      	str	r3, [r2, #0]
+  ce6b34:	2900      	cmp	r1, #0
+  ce6b36:	dce6      	bgt.n	ce6b06 <BatchPacket::read(BinaryStream&)+0x2a>
+  ce6b38:	a902      	add	r1, sp, #8
+  ce6b3a:	f2fe da2b 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce6b3e:	e7e2      	b.n	ce6b06 <BatchPacket::read(BinaryStream&)+0x2a>
+  ce6b40:	4a13      	ldr	r2, [pc, #76]	; (ce6b90 <BatchPacket::read(BinaryStream&)+0xb4>)
+  ce6b42:	4604      	mov	r4, r0
+  ce6b44:	4b13      	ldr	r3, [pc, #76]	; (ce6b94 <BatchPacket::read(BinaryStream&)+0xb8>)
+  ce6b46:	447a      	add	r2, pc
+  ce6b48:	9901      	ldr	r1, [sp, #4]
+  ce6b4a:	f1a1 000c 	sub.w	r0, r1, #12
+  ce6b4e:	589a      	ldr	r2, [r3, r2]
+  ce6b50:	4290      	cmp	r0, r2
+  ce6b52:	d016      	beq.n	ce6b82 <BatchPacket::read(BinaryStream&)+0xa6>
+  ce6b54:	4a10      	ldr	r2, [pc, #64]	; (ce6b98 <BatchPacket::read(BinaryStream&)+0xbc>)
+  ce6b56:	4b11      	ldr	r3, [pc, #68]	; (ce6b9c <BatchPacket::read(BinaryStream&)+0xc0>)
+  ce6b58:	447a      	add	r2, pc
+  ce6b5a:	589b      	ldr	r3, [r3, r2]
+  ce6b5c:	1f0a      	subs	r2, r1, #4
+  ce6b5e:	b19b      	cbz	r3, ce6b88 <BatchPacket::read(BinaryStream&)+0xac>
+  ce6b60:	f3bf 8f5b 	dmb	ish
+  ce6b64:	e852 1f00 	ldrex	r1, [r2]
+  ce6b68:	1e4b      	subs	r3, r1, #1
+  ce6b6a:	e842 3500 	strex	r5, r3, [r2]
+  ce6b6e:	2d00      	cmp	r5, #0
+  ce6b70:	d1f8      	bne.n	ce6b64 <BatchPacket::read(BinaryStream&)+0x88>
+  ce6b72:	f3bf 8f5b 	dmb	ish
+  ce6b76:	2900      	cmp	r1, #0
+  ce6b78:	bfdc      	itt	le
+  ce6b7a:	f10d 010c 	addle.w	r1, sp, #12
+  ce6b7e:	f2fe da09 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce6b82:	4620      	mov	r0, r4
+  ce6b84:	f544 e156 	blx	62ae34 <_Unwind_Resume@plt>
+  ce6b88:	6811      	ldr	r1, [r2, #0]
+  ce6b8a:	1e4b      	subs	r3, r1, #1
+  ce6b8c:	6013      	str	r3, [r2, #0]
+  ce6b8e:	e7f2      	b.n	ce6b76 <BatchPacket::read(BinaryStream&)+0x9a>
+  ce6b90:	499a      	ldr	r1, [pc, #616]	; (ce6dfc <BatchPacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0x254>)
+  ce6b92:	00ee      	lsls	r6, r5, #3
+  ce6b94:	9080      	str	r0, [sp, #512]	; 0x200
+  ce6b96:	ffff 4988 	vtbl.8	d20, {d31-<overflow reg d32}, d8
+  ce6b9a:	00ee      	lsls	r6, r5, #3
+  ce6b9c:	9084      	str	r0, [sp, #528]	; 0x210
+  ce6b9e:	ffff 49e8 	vtbx.8	d20, {d31-<overflow reg d32}, d24
+  ce6ba2:	00ee      	lsls	r6, r5, #3
+  ce6ba4:	49d2      	ldr	r1, [pc, #840]	; (ce6ef0 <BatchPacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0x348>)
+  ce6ba6:	00ee      	lsls	r6, r5, #3

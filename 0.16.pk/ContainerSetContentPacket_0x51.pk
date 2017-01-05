@@ -1,0 +1,111 @@
+  ce449e:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  ce44a2:	b085      	sub	sp, #20
+  ce44a4:	4688      	mov	r8, r1
+  ce44a6:	4605      	mov	r5, r0
+  ce44a8:	4640      	mov	r0, r8
+  ce44aa:	f549 e188 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  ce44ae:	7328      	strb	r0, [r5, #12]
+  ce44b0:	4640      	mov	r0, r8
+  ce44b2:	f556 e5f0 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ce44b6:	0401      	lsls	r1, r0, #16
+  ce44b8:	2901      	cmp	r1, #1
+  ce44ba:	db23      	blt.n	ce4504 <ContainerSetContentPacket::read(BinaryStream&)+0x66>
+  ce44bc:	f105 0910 	add.w	r9, r5, #16
+  ce44c0:	b204      	sxth	r4, r0
+  ce44c2:	f04f 0a00 	mov.w	sl, #0
+  ce44c6:	466f      	mov	r7, sp
+  ce44c8:	2600      	movs	r6, #0
+  ce44ca:	4638      	mov	r0, r7
+  ce44cc:	4641      	mov	r1, r8
+  ce44ce:	f556 e5e8 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ce44d2:	e9d5 0105 	ldrd	r0, r1, [r5, #20]
+  ce44d6:	4288      	cmp	r0, r1
+  ce44d8:	d006      	beq.n	ce44e8 <ContainerSetContentPacket::read(BinaryStream&)+0x4a>
+  ce44da:	4639      	mov	r1, r7
+  ce44dc:	f54c e1bc 	blx	630858 <ItemInstance::ItemInstance(ItemInstance const&)@plt>
+  ce44e0:	6968      	ldr	r0, [r5, #20]
+  ce44e2:	3014      	adds	r0, #20
+  ce44e4:	6168      	str	r0, [r5, #20]
+  ce44e6:	e003      	b.n	ce44f0 <ContainerSetContentPacket::read(BinaryStream&)+0x52>
+  ce44e8:	4648      	mov	r0, r9
+  ce44ea:	4639      	mov	r1, r7
+  ce44ec:	f556 e458 	blx	63ada0 <void std::vector<ItemInstance, std::allocator<ItemInstance> >::_M_emplace_back_aux<ItemInstance>(ItemInstance&&)@plt>
+  ce44f0:	9802      	ldr	r0, [sp, #8]
+  ce44f2:	b110      	cbz	r0, ce44fa <ContainerSetContentPacket::read(BinaryStream&)+0x5c>
+  ce44f4:	6801      	ldr	r1, [r0, #0]
+  ce44f6:	6849      	ldr	r1, [r1, #4]
+  ce44f8:	4788      	blx	r1
+  ce44fa:	3601      	adds	r6, #1
+  ce44fc:	f8cd a008 	str.w	sl, [sp, #8]
+  ce4500:	42a6      	cmp	r6, r4
+  ce4502:	dbe2      	blt.n	ce44ca <ContainerSetContentPacket::read(BinaryStream&)+0x2c>
+  ce4504:	4640      	mov	r0, r8
+  ce4506:	f556 e5c6 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ce450a:	0401      	lsls	r1, r0, #16
+  ce450c:	2901      	cmp	r1, #1
+  ce450e:	db4b      	blt.n	ce45a8 <ContainerSetContentPacket::read(BinaryStream&)+0x10a>
+  ce4510:	fa0f f980 	sxth.w	r9, r0
+  ce4514:	2700      	movs	r7, #0
+  ce4516:	4640      	mov	r0, r8
+  ce4518:	f549 e16e 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ce451c:	4683      	mov	fp, r0
+  ce451e:	e9d5 0108 	ldrd	r0, r1, [r5, #32]
+  ce4522:	4288      	cmp	r0, r1
+  ce4524:	d003      	beq.n	ce452e <ContainerSetContentPacket::read(BinaryStream&)+0x90>
+  ce4526:	f840 bb04 	str.w	fp, [r0], #4
+  ce452a:	6228      	str	r0, [r5, #32]
+  ce452c:	e039      	b.n	ce45a2 <ContainerSetContentPacket::read(BinaryStream&)+0x104>
+  ce452e:	69ec      	ldr	r4, [r5, #28]
+  ce4530:	2600      	movs	r6, #0
+  ce4532:	1b01      	subs	r1, r0, r4
+  ce4534:	108a      	asrs	r2, r1, #2
+  ce4536:	ebb6 0fa1 	cmp.w	r6, r1, asr #2
+  ce453a:	bf08      	it	eq
+  ce453c:	2201      	moveq	r2, #1
+  ce453e:	eb02 01a1 	add.w	r1, r2, r1, asr #2
+  ce4542:	ebb6 7f91 	cmp.w	r6, r1, lsr #30
+  ce4546:	468a      	mov	sl, r1
+  ce4548:	bf18      	it	ne
+  ce454a:	f06f 4a40 	mvnne.w	sl, #3221225472	; 0xc0000000
+  ce454e:	4291      	cmp	r1, r2
+  ce4550:	bf38      	it	cc
+  ce4552:	f06f 4a40 	mvncc.w	sl, #3221225472	; 0xc0000000
+  ce4556:	f1ba 0f00 	cmp.w	sl, #0
+  ce455a:	d009      	beq.n	ce4570 <ContainerSetContentPacket::read(BinaryStream&)+0xd2>
+  ce455c:	f1ba 4f80 	cmp.w	sl, #1073741824	; 0x40000000
+  ce4560:	d22e      	bcs.n	ce45c0 <ContainerSetContentPacket::read(BinaryStream&)+0x122>
+  ce4562:	ea4f 008a 	mov.w	r0, sl, lsl #2
+  ce4566:	f546 e46c 	blx	62ae40 <operator new(unsigned int)@plt>
+  ce456a:	4606      	mov	r6, r0
+  ce456c:	e9d5 4007 	ldrd	r4, r0, [r5, #28]
+  ce4570:	1b02      	subs	r2, r0, r4
+  ce4572:	2000      	movs	r0, #0
+  ce4574:	f846 b002 	str.w	fp, [r6, r2]
+  ce4578:	eb06 0b02 	add.w	fp, r6, r2
+  ce457c:	ebb0 0fa2 	cmp.w	r0, r2, asr #2
+  ce4580:	d003      	beq.n	ce458a <ContainerSetContentPacket::read(BinaryStream&)+0xec>
+  ce4582:	4630      	mov	r0, r6
+  ce4584:	4621      	mov	r1, r4
+  ce4586:	f549 e2c4 	blx	62db10 <__aeabi_memmove4@plt>
+  ce458a:	2c00      	cmp	r4, #0
+  ce458c:	f10b 0b04 	add.w	fp, fp, #4
+  ce4590:	bf1c      	itt	ne
+  ce4592:	4620      	movne	r0, r4
+  ce4594:	f546 e37c 	blxne	62ac90 <operator delete(void*)@plt>
+  ce4598:	eb06 008a 	add.w	r0, r6, sl, lsl #2
+  ce459c:	e9c5 6b07 	strd	r6, fp, [r5, #28]
+  ce45a0:	6268      	str	r0, [r5, #36]	; 0x24
+  ce45a2:	3701      	adds	r7, #1
+  ce45a4:	454f      	cmp	r7, r9
+  ce45a6:	dbb6      	blt.n	ce4516 <ContainerSetContentPacket::read(BinaryStream&)+0x78>
+  ce45a8:	b005      	add	sp, #20
+  ce45aa:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  ce45ae:	4604      	mov	r4, r0
+  ce45b0:	9802      	ldr	r0, [sp, #8]
+  ce45b2:	b110      	cbz	r0, ce45ba <ContainerSetContentPacket::read(BinaryStream&)+0x11c>
+  ce45b4:	6801      	ldr	r1, [r0, #0]
+  ce45b6:	6849      	ldr	r1, [r1, #4]
+  ce45b8:	4788      	blx	r1
+  ce45ba:	4620      	mov	r0, r4
+  ce45bc:	f546 e43a 	blx	62ae34 <_Unwind_Resume@plt>
+  ce45c0:	f2fd dbe2 	bl	17e1d88 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x2f6e0>

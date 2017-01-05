@@ -1,0 +1,29 @@
+  af30cc:	b570      	push	{r4, r5, r6, lr}
+  af30ce:	b086      	sub	sp, #24
+  af30d0:	460c      	mov	r4, r1
+  af30d2:	4605      	mov	r5, r0
+  af30d4:	4620      	mov	r0, r4
+  af30d6:	f73a e372 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  af30da:	ae01      	add	r6, sp, #4
+  af30dc:	7328      	strb	r0, [r5, #12]
+  af30de:	4621      	mov	r1, r4
+  af30e0:	4630      	mov	r0, r6
+  af30e2:	f747 e7de 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  af30e6:	f105 0010 	add.w	r0, r5, #16
+  af30ea:	4631      	mov	r1, r6
+  af30ec:	f73d e3a8 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  af30f0:	9803      	ldr	r0, [sp, #12]
+  af30f2:	b110      	cbz	r0, af30fa <DropItemPacket::read(BinaryStream&)+0x2e>
+  af30f4:	6801      	ldr	r1, [r0, #0]
+  af30f6:	6849      	ldr	r1, [r1, #4]
+  af30f8:	4788      	blx	r1
+  af30fa:	b006      	add	sp, #24
+  af30fc:	bd70      	pop	{r4, r5, r6, pc}
+  af30fe:	4604      	mov	r4, r0
+  af3100:	9803      	ldr	r0, [sp, #12]
+  af3102:	b110      	cbz	r0, af310a <DropItemPacket::read(BinaryStream&)+0x3e>
+  af3104:	6801      	ldr	r1, [r0, #0]
+  af3106:	6849      	ldr	r1, [r1, #4]
+  af3108:	4788      	blx	r1
+  af310a:	4620      	mov	r0, r4
+  af310c:	f737 e692 	blx	62ae34 <_Unwind_Resume@plt>

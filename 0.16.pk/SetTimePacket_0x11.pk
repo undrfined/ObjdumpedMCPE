@@ -1,0 +1,10 @@
+  ce262a:	b5b0      	push	{r4, r5, r7, lr}
+  ce262c:	460c      	mov	r4, r1
+  ce262e:	4605      	mov	r5, r0
+  ce2630:	4620      	mov	r0, r4
+  ce2632:	f54b e0e2 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ce2636:	60e8      	str	r0, [r5, #12]
+  ce2638:	4620      	mov	r0, r4
+  ce263a:	f54b e0ea 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  ce263e:	7428      	strb	r0, [r5, #16]
+  ce2640:	bdb0      	pop	{r4, r5, r7, pc}

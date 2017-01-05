@@ -1,0 +1,49 @@
+  ce48b0:	b5b0      	push	{r4, r5, r7, lr}
+  ce48b2:	b084      	sub	sp, #16
+  ce48b4:	4604      	mov	r4, r0
+  ce48b6:	a801      	add	r0, sp, #4
+  ce48b8:	460d      	mov	r5, r1
+  ce48ba:	f548 e7a4 	blx	62d804 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  ce48be:	4816      	ldr	r0, [pc, #88]	; (ce4918 <BlockEntityDataPacket::read(BinaryStream&)+0x68>)
+  ce48c0:	9a01      	ldr	r2, [sp, #4]
+  ce48c2:	4916      	ldr	r1, [pc, #88]	; (ce491c <BlockEntityDataPacket::read(BinaryStream&)+0x6c>)
+  ce48c4:	4478      	add	r0, pc
+  ce48c6:	60e2      	str	r2, [r4, #12]
+  ce48c8:	9a02      	ldr	r2, [sp, #8]
+  ce48ca:	5808      	ldr	r0, [r1, r0]
+  ce48cc:	6122      	str	r2, [r4, #16]
+  ce48ce:	9903      	ldr	r1, [sp, #12]
+  ce48d0:	3008      	adds	r0, #8
+  ce48d2:	6161      	str	r1, [r4, #20]
+  ce48d4:	e9cd 0501 	strd	r0, r5, [sp, #4]
+  ce48d8:	a901      	add	r1, sp, #4
+  ce48da:	4668      	mov	r0, sp
+  ce48dc:	f56b e740 	blx	650760 <NbtIo::read(IDataInput&)@plt>
+  ce48e0:	9d00      	ldr	r5, [sp, #0]
+  ce48e2:	f104 0018 	add.w	r0, r4, #24
+  ce48e6:	4629      	mov	r1, r5
+  ce48e8:	f56b e740 	blx	65076c <CompoundTag::operator=(CompoundTag&&)@plt>
+  ce48ec:	b11d      	cbz	r5, ce48f6 <BlockEntityDataPacket::read(BinaryStream&)+0x46>
+  ce48ee:	6828      	ldr	r0, [r5, #0]
+  ce48f0:	6841      	ldr	r1, [r0, #4]
+  ce48f2:	4628      	mov	r0, r5
+  ce48f4:	4788      	blx	r1
+  ce48f6:	b004      	add	sp, #16
+  ce48f8:	bdb0      	pop	{r4, r5, r7, pc}
+  ce48fa:	4604      	mov	r4, r0
+  ce48fc:	f546 e29a 	blx	62ae34 <_Unwind_Resume@plt>
+  ce4900:	4604      	mov	r4, r0
+  ce4902:	b11d      	cbz	r5, ce490c <BlockEntityDataPacket::read(BinaryStream&)+0x5c>
+  ce4904:	6828      	ldr	r0, [r5, #0]
+  ce4906:	6841      	ldr	r1, [r0, #4]
+  ce4908:	4628      	mov	r0, r5
+  ce490a:	4788      	blx	r1
+  ce490c:	2000      	movs	r0, #0
+  ce490e:	9000      	str	r0, [sp, #0]
+  ce4910:	4620      	mov	r0, r4
+  ce4912:	f546 e290 	blx	62ae34 <_Unwind_Resume@plt>
+  ce4916:	bf00      	nop
+  ce4918:	6c1c      	ldr	r4, [r3, #64]	; 0x40
+  ce491a:	00ee      	lsls	r6, r5, #3
+  ce491c:	a0ac      	add	r0, pc, #688	; (adr r0, ce4bd0 <FullChunkDataPacket::~FullChunkDataPacket()+0x48>)
+  ce491e:	ffff 4684 	vcvt.f<illegal width 64>.u<illegal width 64>	d20, d4

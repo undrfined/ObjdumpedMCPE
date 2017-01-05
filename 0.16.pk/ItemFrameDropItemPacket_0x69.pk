@@ -1,0 +1,34 @@
+  ce4226:	b570      	push	{r4, r5, r6, lr}
+  ce4228:	b086      	sub	sp, #24
+  ce422a:	4605      	mov	r5, r0
+  ce422c:	a801      	add	r0, sp, #4
+  ce422e:	460c      	mov	r4, r1
+  ce4230:	f549 e2e8 	blx	62d804 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  ce4234:	9801      	ldr	r0, [sp, #4]
+  ce4236:	ae01      	add	r6, sp, #4
+  ce4238:	6228      	str	r0, [r5, #32]
+  ce423a:	4621      	mov	r1, r4
+  ce423c:	9802      	ldr	r0, [sp, #8]
+  ce423e:	6268      	str	r0, [r5, #36]	; 0x24
+  ce4240:	9803      	ldr	r0, [sp, #12]
+  ce4242:	62a8      	str	r0, [r5, #40]	; 0x28
+  ce4244:	4630      	mov	r0, r6
+  ce4246:	f556 e72c 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ce424a:	f105 000c 	add.w	r0, r5, #12
+  ce424e:	4631      	mov	r1, r6
+  ce4250:	f54c e2f6 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  ce4254:	9803      	ldr	r0, [sp, #12]
+  ce4256:	b110      	cbz	r0, ce425e <ItemFrameDropItemPacket::read(BinaryStream&)+0x38>
+  ce4258:	6801      	ldr	r1, [r0, #0]
+  ce425a:	6849      	ldr	r1, [r1, #4]
+  ce425c:	4788      	blx	r1
+  ce425e:	b006      	add	sp, #24
+  ce4260:	bd70      	pop	{r4, r5, r6, pc}
+  ce4262:	4604      	mov	r4, r0
+  ce4264:	9803      	ldr	r0, [sp, #12]
+  ce4266:	b110      	cbz	r0, ce426e <ItemFrameDropItemPacket::read(BinaryStream&)+0x48>
+  ce4268:	6801      	ldr	r1, [r0, #0]
+  ce426a:	6849      	ldr	r1, [r1, #4]
+  ce426c:	4788      	blx	r1
+  ce426e:	4620      	mov	r0, r4
+  ce4270:	f546 e5e0 	blx	62ae34 <_Unwind_Resume@plt>

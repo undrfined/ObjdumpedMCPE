@@ -1,0 +1,16 @@
+  af338a:	b5b0      	push	{r4, r5, r7, lr}
+  af338c:	b082      	sub	sp, #8
+  af338e:	4605      	mov	r5, r0
+  af3390:	4668      	mov	r0, sp
+  af3392:	460c      	mov	r4, r1
+  af3394:	f752 e320 	blx	6459d8 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  af3398:	e9dd 0100 	ldrd	r0, r1, [sp]
+  af339c:	e9c5 0103 	strd	r0, r1, [r5, #12]
+  af33a0:	4620      	mov	r0, r4
+  af33a2:	f73a e236 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  af33a6:	7528      	strb	r0, [r5, #20]
+  af33a8:	4620      	mov	r0, r4
+  af33aa:	f73a e232 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  af33ae:	7568      	strb	r0, [r5, #21]
+  af33b0:	b002      	add	sp, #8
+  af33b2:	bdb0      	pop	{r4, r5, r7, pc}

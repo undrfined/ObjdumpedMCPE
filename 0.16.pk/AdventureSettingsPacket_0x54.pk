@@ -1,0 +1,10 @@
+  af2f04:	b5b0      	push	{r4, r5, r7, lr}
+  af2f06:	460c      	mov	r4, r1
+  af2f08:	4605      	mov	r5, r0
+  af2f0a:	4620      	mov	r0, r4
+  af2f0c:	f748 e0c2 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  af2f10:	60e8      	str	r0, [r5, #12]
+  af2f12:	4620      	mov	r0, r4
+  af2f14:	f748 e0be 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  af2f18:	7428      	strb	r0, [r5, #16]
+  af2f1a:	bdb0      	pop	{r4, r5, r7, pc}

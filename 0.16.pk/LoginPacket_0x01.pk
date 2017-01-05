@@ -1,0 +1,204 @@
+  acd968:	b570      	push	{r4, r5, r6, lr}
+  acd96a:	b088      	sub	sp, #32
+  acd96c:	4604      	mov	r4, r0
+  acd96e:	486e      	ldr	r0, [pc, #440]	; (acdb28 <LoginPacket::read(BinaryStream&)+0x1c0>)
+  acd970:	460d      	mov	r5, r1
+  acd972:	496e      	ldr	r1, [pc, #440]	; (acdb2c <LoginPacket::read(BinaryStream&)+0x1c4>)
+  acd974:	4478      	add	r0, pc
+  acd976:	5808      	ldr	r0, [r1, r0]
+  acd978:	6806      	ldr	r6, [r0, #0]
+  acd97a:	4628      	mov	r0, r5
+  acd97c:	f776 e396 	blx	6440ac <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+  acd980:	6120      	str	r0, [r4, #16]
+  acd982:	42b0      	cmp	r0, r6
+  acd984:	d13a      	bne.n	acd9fc <LoginPacket::read(BinaryStream&)+0x94>
+  acd986:	4628      	mov	r0, r5
+  acd988:	f75f e718 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  acd98c:	ae06      	add	r6, sp, #24
+  acd98e:	7320      	strb	r0, [r4, #12]
+  acd990:	4629      	mov	r1, r5
+  acd992:	4630      	mov	r0, r6
+  acd994:	f75f e76c 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  acd998:	a804      	add	r0, sp, #16
+  acd99a:	f10d 0217 	add.w	r2, sp, #23
+  acd99e:	4631      	mov	r1, r6
+  acd9a0:	f776 e38a 	blx	6440b8 <Util::decompress(std::string const&, bool&)@plt>
+  acd9a4:	f89d 0017 	ldrb.w	r0, [sp, #23]
+  acd9a8:	b1a8      	cbz	r0, acd9d6 <LoginPacket::read(BinaryStream&)+0x6e>
+  acd9aa:	a801      	add	r0, sp, #4
+  acd9ac:	a904      	add	r1, sp, #16
+  acd9ae:	f776 e38a 	blx	6440c4 <ConnectionRequest::fromString(std::string const&)@plt>
+  acd9b2:	200c      	movs	r0, #12
+  acd9b4:	f75d e244 	blx	62ae40 <operator new(unsigned int)@plt>
+  acd9b8:	4605      	mov	r5, r0
+  acd9ba:	a901      	add	r1, sp, #4
+  acd9bc:	4628      	mov	r0, r5
+  acd9be:	f776 e13c 	blx	643c38 <ConnectionRequest::ConnectionRequest(ConnectionRequest const&)@plt>
+  acd9c2:	6960      	ldr	r0, [r4, #20]
+  acd9c4:	6165      	str	r5, [r4, #20]
+  acd9c6:	b118      	cbz	r0, acd9d0 <LoginPacket::read(BinaryStream&)+0x68>
+  acd9c8:	f776 e13c 	blx	643c44 <ConnectionRequest::~ConnectionRequest()@plt>
+  acd9cc:	f75d e160 	blx	62ac90 <operator delete(void*)@plt>
+  acd9d0:	a801      	add	r0, sp, #4
+  acd9d2:	f776 e138 	blx	643c44 <ConnectionRequest::~ConnectionRequest()@plt>
+  acd9d6:	485c      	ldr	r0, [pc, #368]	; (acdb48 <LoginPacket::read(BinaryStream&)+0x1e0>)
+  acd9d8:	4c56      	ldr	r4, [pc, #344]	; (acdb34 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  acd9da:	4478      	add	r0, pc
+  acd9dc:	9904      	ldr	r1, [sp, #16]
+  acd9de:	5822      	ldr	r2, [r4, r0]
+  acd9e0:	f1a1 000c 	sub.w	r0, r1, #12
+  acd9e4:	4290      	cmp	r0, r2
+  acd9e6:	d110      	bne.n	acda0a <LoginPacket::read(BinaryStream&)+0xa2>
+  acd9e8:	4859      	ldr	r0, [pc, #356]	; (acdb50 <LoginPacket::read(BinaryStream&)+0x1e8>)
+  acd9ea:	9906      	ldr	r1, [sp, #24]
+  acd9ec:	4478      	add	r0, pc
+  acd9ee:	5822      	ldr	r2, [r4, r0]
+  acd9f0:	f1a1 000c 	sub.w	r0, r1, #12
+  acd9f4:	4290      	cmp	r0, r2
+  acd9f6:	d11a      	bne.n	acda2e <LoginPacket::read(BinaryStream&)+0xc6>
+  acd9f8:	b008      	add	sp, #32
+  acd9fa:	bd70      	pop	{r4, r5, r6, pc}
+  acd9fc:	68e8      	ldr	r0, [r5, #12]
+  acd9fe:	6800      	ldr	r0, [r0, #0]
+  acda00:	f850 0c0c 	ldr.w	r0, [r0, #-12]
+  acda04:	6068      	str	r0, [r5, #4]
+  acda06:	b008      	add	sp, #32
+  acda08:	bd70      	pop	{r4, r5, r6, pc}
+  acda0a:	4a50      	ldr	r2, [pc, #320]	; (acdb4c <LoginPacket::read(BinaryStream&)+0x1e4>)
+  acda0c:	4b4b      	ldr	r3, [pc, #300]	; (acdb3c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  acda0e:	447a      	add	r2, pc
+  acda10:	589b      	ldr	r3, [r3, r2]
+  acda12:	1f0a      	subs	r2, r1, #4
+  acda14:	b1eb      	cbz	r3, acda52 <LoginPacket::read(BinaryStream&)+0xea>
+  acda16:	f3bf 8f5b 	dmb	ish
+  acda1a:	e852 1f00 	ldrex	r1, [r2]
+  acda1e:	1e4b      	subs	r3, r1, #1
+  acda20:	e842 3600 	strex	r6, r3, [r2]
+  acda24:	2e00      	cmp	r6, #0
+  acda26:	d1f8      	bne.n	acda1a <LoginPacket::read(BinaryStream&)+0xb2>
+  acda28:	f3bf 8f5b 	dmb	ish
+  acda2c:	e014      	b.n	acda58 <LoginPacket::read(BinaryStream&)+0xf0>
+  acda2e:	4a49      	ldr	r2, [pc, #292]	; (acdb54 <LoginPacket::read(BinaryStream&)+0x1ec>)
+  acda30:	4b42      	ldr	r3, [pc, #264]	; (acdb3c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  acda32:	447a      	add	r2, pc
+  acda34:	589b      	ldr	r3, [r3, r2]
+  acda36:	1f0a      	subs	r2, r1, #4
+  acda38:	b1a3      	cbz	r3, acda64 <LoginPacket::read(BinaryStream&)+0xfc>
+  acda3a:	f3bf 8f5b 	dmb	ish
+  acda3e:	e852 1f00 	ldrex	r1, [r2]
+  acda42:	1e4b      	subs	r3, r1, #1
+  acda44:	e842 3600 	strex	r6, r3, [r2]
+  acda48:	2e00      	cmp	r6, #0
+  acda4a:	d1f8      	bne.n	acda3e <LoginPacket::read(BinaryStream&)+0xd6>
+  acda4c:	f3bf 8f5b 	dmb	ish
+  acda50:	e00b      	b.n	acda6a <LoginPacket::read(BinaryStream&)+0x102>
+  acda52:	6811      	ldr	r1, [r2, #0]
+  acda54:	1e4b      	subs	r3, r1, #1
+  acda56:	6013      	str	r3, [r2, #0]
+  acda58:	2900      	cmp	r1, #0
+  acda5a:	dcc5      	bgt.n	acd9e8 <LoginPacket::read(BinaryStream&)+0x80>
+  acda5c:	a907      	add	r1, sp, #28
+  acda5e:	f117 d299 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  acda62:	e7c1      	b.n	acd9e8 <LoginPacket::read(BinaryStream&)+0x80>
+  acda64:	6811      	ldr	r1, [r2, #0]
+  acda66:	1e4b      	subs	r3, r1, #1
+  acda68:	6013      	str	r3, [r2, #0]
+  acda6a:	2900      	cmp	r1, #0
+  acda6c:	dcc4      	bgt.n	acd9f8 <LoginPacket::read(BinaryStream&)+0x90>
+  acda6e:	a904      	add	r1, sp, #16
+  acda70:	f117 d290 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  acda74:	e7c0      	b.n	acd9f8 <LoginPacket::read(BinaryStream&)+0x90>
+  acda76:	4604      	mov	r4, r0
+  acda78:	e013      	b.n	acdaa2 <LoginPacket::read(BinaryStream&)+0x13a>
+  acda7a:	4604      	mov	r4, r0
+  acda7c:	e008      	b.n	acda90 <LoginPacket::read(BinaryStream&)+0x128>
+  acda7e:	4604      	mov	r4, r0
+  acda80:	e003      	b.n	acda8a <LoginPacket::read(BinaryStream&)+0x122>
+  acda82:	4604      	mov	r4, r0
+  acda84:	4628      	mov	r0, r5
+  acda86:	f75d e104 	blx	62ac90 <operator delete(void*)@plt>
+  acda8a:	a801      	add	r0, sp, #4
+  acda8c:	f776 e0da 	blx	643c44 <ConnectionRequest::~ConnectionRequest()@plt>
+  acda90:	4827      	ldr	r0, [pc, #156]	; (acdb30 <LoginPacket::read(BinaryStream&)+0x1c8>)
+  acda92:	4a28      	ldr	r2, [pc, #160]	; (acdb34 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  acda94:	4478      	add	r0, pc
+  acda96:	9904      	ldr	r1, [sp, #16]
+  acda98:	5812      	ldr	r2, [r2, r0]
+  acda9a:	f1a1 000c 	sub.w	r0, r1, #12
+  acda9e:	4290      	cmp	r0, r2
+  acdaa0:	d122      	bne.n	acdae8 <LoginPacket::read(BinaryStream&)+0x180>
+  acdaa2:	4827      	ldr	r0, [pc, #156]	; (acdb40 <LoginPacket::read(BinaryStream&)+0x1d8>)
+  acdaa4:	4a23      	ldr	r2, [pc, #140]	; (acdb34 <LoginPacket::read(BinaryStream&)+0x1cc>)
+  acdaa6:	4478      	add	r0, pc
+  acdaa8:	9906      	ldr	r1, [sp, #24]
+  acdaaa:	5812      	ldr	r2, [r2, r0]
+  acdaac:	f1a1 000c 	sub.w	r0, r1, #12
+  acdab0:	4290      	cmp	r0, r2
+  acdab2:	d016      	beq.n	acdae2 <LoginPacket::read(BinaryStream&)+0x17a>
+  acdab4:	4a23      	ldr	r2, [pc, #140]	; (acdb44 <LoginPacket::read(BinaryStream&)+0x1dc>)
+  acdab6:	4b21      	ldr	r3, [pc, #132]	; (acdb3c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  acdab8:	447a      	add	r2, pc
+  acdaba:	589b      	ldr	r3, [r3, r2]
+  acdabc:	1f0a      	subs	r2, r1, #4
+  acdabe:	b373      	cbz	r3, acdb1e <LoginPacket::read(BinaryStream&)+0x1b6>
+  acdac0:	f3bf 8f5b 	dmb	ish
+  acdac4:	e852 1f00 	ldrex	r1, [r2]
+  acdac8:	1e4b      	subs	r3, r1, #1
+  acdaca:	e842 3600 	strex	r6, r3, [r2]
+  acdace:	2e00      	cmp	r6, #0
+  acdad0:	d1f8      	bne.n	acdac4 <LoginPacket::read(BinaryStream&)+0x15c>
+  acdad2:	f3bf 8f5b 	dmb	ish
+  acdad6:	2900      	cmp	r1, #0
+  acdad8:	bfdc      	itt	le
+  acdada:	f10d 011c 	addle.w	r1, sp, #28
+  acdade:	f117 d259 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  acdae2:	4620      	mov	r0, r4
+  acdae4:	f75d e1a6 	blx	62ae34 <_Unwind_Resume@plt>
+  acdae8:	4a13      	ldr	r2, [pc, #76]	; (acdb38 <LoginPacket::read(BinaryStream&)+0x1d0>)
+  acdaea:	4b14      	ldr	r3, [pc, #80]	; (acdb3c <LoginPacket::read(BinaryStream&)+0x1d4>)
+  acdaec:	447a      	add	r2, pc
+  acdaee:	589b      	ldr	r3, [r3, r2]
+  acdaf0:	1f0a      	subs	r2, r1, #4
+  acdaf2:	b15b      	cbz	r3, acdb0c <LoginPacket::read(BinaryStream&)+0x1a4>
+  acdaf4:	f3bf 8f5b 	dmb	ish
+  acdaf8:	e852 1f00 	ldrex	r1, [r2]
+  acdafc:	1e4b      	subs	r3, r1, #1
+  acdafe:	e842 3600 	strex	r6, r3, [r2]
+  acdb02:	2e00      	cmp	r6, #0
+  acdb04:	d1f8      	bne.n	acdaf8 <LoginPacket::read(BinaryStream&)+0x190>
+  acdb06:	f3bf 8f5b 	dmb	ish
+  acdb0a:	e002      	b.n	acdb12 <LoginPacket::read(BinaryStream&)+0x1aa>
+  acdb0c:	6811      	ldr	r1, [r2, #0]
+  acdb0e:	1e4b      	subs	r3, r1, #1
+  acdb10:	6013      	str	r3, [r2, #0]
+  acdb12:	2900      	cmp	r1, #0
+  acdb14:	dcc5      	bgt.n	acdaa2 <LoginPacket::read(BinaryStream&)+0x13a>
+  acdb16:	a907      	add	r1, sp, #28
+  acdb18:	f117 d23c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  acdb1c:	e7c1      	b.n	acdaa2 <LoginPacket::read(BinaryStream&)+0x13a>
+  acdb1e:	6811      	ldr	r1, [r2, #0]
+  acdb20:	1e4b      	subs	r3, r1, #1
+  acdb22:	6013      	str	r3, [r2, #0]
+  acdb24:	e7d7      	b.n	acdad6 <LoginPacket::read(BinaryStream&)+0x16e>
+  acdb26:	bf00      	nop
+  acdb28:	db6c      	blt.n	acdc04 <BinaryDataInput::numBytesLeft() const+0x8>
+  acdb2a:	010f      	lsls	r7, r1, #4
+  acdb2c:	a098      	add	r0, pc, #608	; (adr r0, acdd90 <std::pair<std::__detail::_Node_iterator<BlockPos, true, true>, bool> std::_Hashtable<BlockPos, BlockPos, std::allocator<BlockPos>, std::__detail::_Identity, std::equal_to<BlockPos>, std::hash<BlockPos>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<BlockPos const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<BlockPos, true> > > >(BlockPos const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<BlockPos, true> > > const&, std::integral_constant<bool, true>)+0x64>)
+  acdb2e:	ffff da4c 	vtbx.8	d29, {d15-d17}, d12
+  acdb32:	010f      	lsls	r7, r1, #4
+  acdb34:	9080      	str	r0, [sp, #512]	; 0x200
+  acdb36:	ffff d9f4 			; <UNDEFINED> instruction: 0xffffd9f4
+  acdb3a:	010f      	lsls	r7, r1, #4
+  acdb3c:	9084      	str	r0, [sp, #528]	; 0x210
+  acdb3e:	ffff da3a 	vshll.u32	<illegal reg q14.5>, d26, #31
+  acdb42:	010f      	lsls	r7, r1, #4
+  acdb44:	da28      	bge.n	acdb98 <SetEntityLinkPacket::read(BinaryStream&)+0x1c>
+  acdb46:	010f      	lsls	r7, r1, #4
+  acdb48:	db06      	blt.n	acdb58 <LoginPacket::handle(NetworkIdentifier const&, NetEventCallback&) const>
+  acdb4a:	010f      	lsls	r7, r1, #4
+  acdb4c:	dad2      	bge.n	acdaf4 <LoginPacket::read(BinaryStream&)+0x18c>
+  acdb4e:	010f      	lsls	r7, r1, #4
+  acdb50:	daf4      	bge.n	acdb3c <LoginPacket::read(BinaryStream&)+0x1d4>
+  acdb52:	010f      	lsls	r7, r1, #4
+  acdb54:	daae      	bge.n	acdab4 <LoginPacket::read(BinaryStream&)+0x14c>
+  acdb56:	010f      	lsls	r7, r1, #4

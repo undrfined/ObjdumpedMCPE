@@ -1,0 +1,158 @@
+  ce6610:	b5f0      	push	{r4, r5, r6, r7, lr}
+  ce6612:	b087      	sub	sp, #28
+  ce6614:	ae02      	add	r6, sp, #8
+  ce6616:	4604      	mov	r4, r0
+  ce6618:	460d      	mov	r5, r1
+  ce661a:	4630      	mov	r0, r6
+  ce661c:	f547 e128 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce6620:	f104 000c 	add.w	r0, r4, #12
+  ce6624:	4631      	mov	r1, r6
+  ce6626:	f2fd dae9 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce662a:	4852      	ldr	r0, [pc, #328]	; (ce6774 <AvailableCommandsPacket::read(BinaryStream&)+0x164>)
+  ce662c:	4f4e      	ldr	r7, [pc, #312]	; (ce6768 <AvailableCommandsPacket::read(BinaryStream&)+0x158>)
+  ce662e:	4478      	add	r0, pc
+  ce6630:	9902      	ldr	r1, [sp, #8]
+  ce6632:	583a      	ldr	r2, [r7, r0]
+  ce6634:	f1a1 000c 	sub.w	r0, r1, #12
+  ce6638:	4290      	cmp	r0, r2
+  ce663a:	d113      	bne.n	ce6664 <AvailableCommandsPacket::read(BinaryStream&)+0x54>
+  ce663c:	ae01      	add	r6, sp, #4
+  ce663e:	4629      	mov	r1, r5
+  ce6640:	4630      	mov	r0, r6
+  ce6642:	f547 e116 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce6646:	f104 0010 	add.w	r0, r4, #16
+  ce664a:	4631      	mov	r1, r6
+  ce664c:	f2fd dad6 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce6650:	484c      	ldr	r0, [pc, #304]	; (ce6784 <AvailableCommandsPacket::read(BinaryStream&)+0x174>)
+  ce6652:	9901      	ldr	r1, [sp, #4]
+  ce6654:	4478      	add	r0, pc
+  ce6656:	583a      	ldr	r2, [r7, r0]
+  ce6658:	f1a1 000c 	sub.w	r0, r1, #12
+  ce665c:	4290      	cmp	r0, r2
+  ce665e:	d113      	bne.n	ce6688 <AvailableCommandsPacket::read(BinaryStream&)+0x78>
+  ce6660:	b007      	add	sp, #28
+  ce6662:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  ce6664:	4a44      	ldr	r2, [pc, #272]	; (ce6778 <AvailableCommandsPacket::read(BinaryStream&)+0x168>)
+  ce6666:	4b42      	ldr	r3, [pc, #264]	; (ce6770 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  ce6668:	447a      	add	r2, pc
+  ce666a:	589b      	ldr	r3, [r3, r2]
+  ce666c:	1f0a      	subs	r2, r1, #4
+  ce666e:	b1eb      	cbz	r3, ce66ac <AvailableCommandsPacket::read(BinaryStream&)+0x9c>
+  ce6670:	f3bf 8f5b 	dmb	ish
+  ce6674:	e852 1f00 	ldrex	r1, [r2]
+  ce6678:	1e4b      	subs	r3, r1, #1
+  ce667a:	e842 3600 	strex	r6, r3, [r2]
+  ce667e:	2e00      	cmp	r6, #0
+  ce6680:	d1f8      	bne.n	ce6674 <AvailableCommandsPacket::read(BinaryStream&)+0x64>
+  ce6682:	f3bf 8f5b 	dmb	ish
+  ce6686:	e014      	b.n	ce66b2 <AvailableCommandsPacket::read(BinaryStream&)+0xa2>
+  ce6688:	4a3f      	ldr	r2, [pc, #252]	; (ce6788 <AvailableCommandsPacket::read(BinaryStream&)+0x178>)
+  ce668a:	4b39      	ldr	r3, [pc, #228]	; (ce6770 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  ce668c:	447a      	add	r2, pc
+  ce668e:	589b      	ldr	r3, [r3, r2]
+  ce6690:	1f0a      	subs	r2, r1, #4
+  ce6692:	b1a3      	cbz	r3, ce66be <AvailableCommandsPacket::read(BinaryStream&)+0xae>
+  ce6694:	f3bf 8f5b 	dmb	ish
+  ce6698:	e852 1f00 	ldrex	r1, [r2]
+  ce669c:	1e4b      	subs	r3, r1, #1
+  ce669e:	e842 3700 	strex	r7, r3, [r2]
+  ce66a2:	2f00      	cmp	r7, #0
+  ce66a4:	d1f8      	bne.n	ce6698 <AvailableCommandsPacket::read(BinaryStream&)+0x88>
+  ce66a6:	f3bf 8f5b 	dmb	ish
+  ce66aa:	e00b      	b.n	ce66c4 <AvailableCommandsPacket::read(BinaryStream&)+0xb4>
+  ce66ac:	6811      	ldr	r1, [r2, #0]
+  ce66ae:	1e4b      	subs	r3, r1, #1
+  ce66b0:	6013      	str	r3, [r2, #0]
+  ce66b2:	2900      	cmp	r1, #0
+  ce66b4:	dcc2      	bgt.n	ce663c <AvailableCommandsPacket::read(BinaryStream&)+0x2c>
+  ce66b6:	a903      	add	r1, sp, #12
+  ce66b8:	f2fe dc6c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce66bc:	e7be      	b.n	ce663c <AvailableCommandsPacket::read(BinaryStream&)+0x2c>
+  ce66be:	6811      	ldr	r1, [r2, #0]
+  ce66c0:	1e4b      	subs	r3, r1, #1
+  ce66c2:	6013      	str	r3, [r2, #0]
+  ce66c4:	2900      	cmp	r1, #0
+  ce66c6:	dccb      	bgt.n	ce6660 <AvailableCommandsPacket::read(BinaryStream&)+0x50>
+  ce66c8:	a904      	add	r1, sp, #16
+  ce66ca:	f2fe dc63 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce66ce:	e7c7      	b.n	ce6660 <AvailableCommandsPacket::read(BinaryStream&)+0x50>
+  ce66d0:	4a24      	ldr	r2, [pc, #144]	; (ce6764 <AvailableCommandsPacket::read(BinaryStream&)+0x154>)
+  ce66d2:	4604      	mov	r4, r0
+  ce66d4:	4b24      	ldr	r3, [pc, #144]	; (ce6768 <AvailableCommandsPacket::read(BinaryStream&)+0x158>)
+  ce66d6:	447a      	add	r2, pc
+  ce66d8:	9902      	ldr	r1, [sp, #8]
+  ce66da:	f1a1 000c 	sub.w	r0, r1, #12
+  ce66de:	589a      	ldr	r2, [r3, r2]
+  ce66e0:	4290      	cmp	r0, r2
+  ce66e2:	d033      	beq.n	ce674c <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  ce66e4:	4a21      	ldr	r2, [pc, #132]	; (ce676c <AvailableCommandsPacket::read(BinaryStream&)+0x15c>)
+  ce66e6:	4b22      	ldr	r3, [pc, #136]	; (ce6770 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  ce66e8:	447a      	add	r2, pc
+  ce66ea:	589b      	ldr	r3, [r3, r2]
+  ce66ec:	1f0a      	subs	r2, r1, #4
+  ce66ee:	b383      	cbz	r3, ce6752 <AvailableCommandsPacket::read(BinaryStream&)+0x142>
+  ce66f0:	f3bf 8f5b 	dmb	ish
+  ce66f4:	e852 1f00 	ldrex	r1, [r2]
+  ce66f8:	1e4b      	subs	r3, r1, #1
+  ce66fa:	e842 3700 	strex	r7, r3, [r2]
+  ce66fe:	2f00      	cmp	r7, #0
+  ce6700:	d1f8      	bne.n	ce66f4 <AvailableCommandsPacket::read(BinaryStream&)+0xe4>
+  ce6702:	f3bf 8f5b 	dmb	ish
+  ce6706:	2900      	cmp	r1, #0
+  ce6708:	dc20      	bgt.n	ce674c <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  ce670a:	a905      	add	r1, sp, #20
+  ce670c:	e01c      	b.n	ce6748 <AvailableCommandsPacket::read(BinaryStream&)+0x138>
+  ce670e:	4a1b      	ldr	r2, [pc, #108]	; (ce677c <AvailableCommandsPacket::read(BinaryStream&)+0x16c>)
+  ce6710:	4604      	mov	r4, r0
+  ce6712:	9901      	ldr	r1, [sp, #4]
+  ce6714:	447a      	add	r2, pc
+  ce6716:	f1a1 000c 	sub.w	r0, r1, #12
+  ce671a:	58ba      	ldr	r2, [r7, r2]
+  ce671c:	4290      	cmp	r0, r2
+  ce671e:	d015      	beq.n	ce674c <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  ce6720:	4a17      	ldr	r2, [pc, #92]	; (ce6780 <AvailableCommandsPacket::read(BinaryStream&)+0x170>)
+  ce6722:	4b13      	ldr	r3, [pc, #76]	; (ce6770 <AvailableCommandsPacket::read(BinaryStream&)+0x160>)
+  ce6724:	447a      	add	r2, pc
+  ce6726:	589b      	ldr	r3, [r3, r2]
+  ce6728:	1f0a      	subs	r2, r1, #4
+  ce672a:	b1b3      	cbz	r3, ce675a <AvailableCommandsPacket::read(BinaryStream&)+0x14a>
+  ce672c:	f3bf 8f5b 	dmb	ish
+  ce6730:	e852 1f00 	ldrex	r1, [r2]
+  ce6734:	1e4b      	subs	r3, r1, #1
+  ce6736:	e842 3700 	strex	r7, r3, [r2]
+  ce673a:	2f00      	cmp	r7, #0
+  ce673c:	d1f8      	bne.n	ce6730 <AvailableCommandsPacket::read(BinaryStream&)+0x120>
+  ce673e:	f3bf 8f5b 	dmb	ish
+  ce6742:	2900      	cmp	r1, #0
+  ce6744:	dc02      	bgt.n	ce674c <AvailableCommandsPacket::read(BinaryStream&)+0x13c>
+  ce6746:	a906      	add	r1, sp, #24
+  ce6748:	f2fe dc24 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce674c:	4620      	mov	r0, r4
+  ce674e:	f544 e372 	blx	62ae34 <_Unwind_Resume@plt>
+  ce6752:	6811      	ldr	r1, [r2, #0]
+  ce6754:	1e4b      	subs	r3, r1, #1
+  ce6756:	6013      	str	r3, [r2, #0]
+  ce6758:	e7d5      	b.n	ce6706 <AvailableCommandsPacket::read(BinaryStream&)+0xf6>
+  ce675a:	6811      	ldr	r1, [r2, #0]
+  ce675c:	1e4b      	subs	r3, r1, #1
+  ce675e:	6013      	str	r3, [r2, #0]
+  ce6760:	e7ef      	b.n	ce6742 <AvailableCommandsPacket::read(BinaryStream&)+0x132>
+  ce6762:	bf00      	nop
+  ce6764:	4e0a      	ldr	r6, [pc, #40]	; (ce6790 <AvailableCommandsPacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0x4>)
+  ce6766:	00ee      	lsls	r6, r5, #3
+  ce6768:	9080      	str	r0, [sp, #512]	; 0x200
+  ce676a:	ffff 4df8 			; <UNDEFINED> instruction: 0xffff4df8
+  ce676e:	00ee      	lsls	r6, r5, #3
+  ce6770:	9084      	str	r0, [sp, #528]	; 0x210
+  ce6772:	ffff 4eb2 			; <UNDEFINED> instruction: 0xffff4eb2
+  ce6776:	00ee      	lsls	r6, r5, #3
+  ce6778:	4e78      	ldr	r6, [pc, #480]	; (ce695c <BatchPacket::add(Packet const&)+0x38>)
+  ce677a:	00ee      	lsls	r6, r5, #3
+  ce677c:	4dcc      	ldr	r5, [pc, #816]	; (ce6ab0 <BatchPacket::add(Packet const&)+0x18c>)
+  ce677e:	00ee      	lsls	r6, r5, #3
+  ce6780:	4dbc      	ldr	r5, [pc, #752]	; (ce6a74 <BatchPacket::add(Packet const&)+0x150>)
+  ce6782:	00ee      	lsls	r6, r5, #3
+  ce6784:	4e8c      	ldr	r6, [pc, #560]	; (ce69b8 <BatchPacket::add(Packet const&)+0x94>)
+  ce6786:	00ee      	lsls	r6, r5, #3
+  ce6788:	4e54      	ldr	r6, [pc, #336]	; (ce68dc <AvailableCommandsPacket::~AvailableCommandsPacket()+0x80>)
+  ce678a:	00ee      	lsls	r6, r5, #3

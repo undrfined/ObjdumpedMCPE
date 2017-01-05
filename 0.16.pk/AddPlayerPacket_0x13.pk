@@ -1,0 +1,151 @@
+  ce3748:	b570      	push	{r4, r5, r6, lr}
+  ce374a:	b08c      	sub	sp, #48	; 0x30
+  ce374c:	ae02      	add	r6, sp, #8
+  ce374e:	4605      	mov	r5, r0
+  ce3750:	460c      	mov	r4, r1
+  ce3752:	4630      	mov	r0, r6
+  ce3754:	f557 e498 	blx	63b088 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  ce3758:	f966 0acf 	vld1.64	{d16-d17}, [r6]
+  ce375c:	f105 0010 	add.w	r0, r5, #16
+  ce3760:	ae01      	add	r6, sp, #4
+  ce3762:	4621      	mov	r1, r4
+  ce3764:	f940 0acf 	vst1.64	{d16-d17}, [r0]
+  ce3768:	4630      	mov	r0, r6
+  ce376a:	f54a e082 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce376e:	f105 000c 	add.w	r0, r5, #12
+  ce3772:	4631      	mov	r1, r6
+  ce3774:	f300 da42 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce3778:	4851      	ldr	r0, [pc, #324]	; (ce38c0 <AddPlayerPacket::read(BinaryStream&)+0x178>)
+  ce377a:	4a4e      	ldr	r2, [pc, #312]	; (ce38b4 <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  ce377c:	4478      	add	r0, pc
+  ce377e:	9901      	ldr	r1, [sp, #4]
+  ce3780:	5812      	ldr	r2, [r2, r0]
+  ce3782:	f1a1 000c 	sub.w	r0, r1, #12
+  ce3786:	4290      	cmp	r0, r2
+  ce3788:	d145      	bne.n	ce3816 <AddPlayerPacket::read(BinaryStream&)+0xce>
+  ce378a:	a806      	add	r0, sp, #24
+  ce378c:	4621      	mov	r1, r4
+  ce378e:	f55f e77e 	blx	64368c <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  ce3792:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  ce3796:	e9c5 0108 	strd	r0, r1, [r5, #32]
+  ce379a:	a806      	add	r0, sp, #24
+  ce379c:	4621      	mov	r1, r4
+  ce379e:	f54a e014 	blx	62d7c8 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  ce37a2:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  ce37a6:	e9c5 010a 	strd	r0, r1, [r5, #40]	; 0x28
+  ce37aa:	a806      	add	r0, sp, #24
+  ce37ac:	4621      	mov	r1, r4
+  ce37ae:	f562 e10e 	blx	6459cc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  ce37b2:	9806      	ldr	r0, [sp, #24]
+  ce37b4:	4621      	mov	r1, r4
+  ce37b6:	6328      	str	r0, [r5, #48]	; 0x30
+  ce37b8:	9807      	ldr	r0, [sp, #28]
+  ce37ba:	6368      	str	r0, [r5, #52]	; 0x34
+  ce37bc:	9808      	ldr	r0, [sp, #32]
+  ce37be:	63a8      	str	r0, [r5, #56]	; 0x38
+  ce37c0:	a806      	add	r0, sp, #24
+  ce37c2:	f562 e104 	blx	6459cc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  ce37c6:	9806      	ldr	r0, [sp, #24]
+  ce37c8:	4621      	mov	r1, r4
+  ce37ca:	63e8      	str	r0, [r5, #60]	; 0x3c
+  ce37cc:	9807      	ldr	r0, [sp, #28]
+  ce37ce:	6428      	str	r0, [r5, #64]	; 0x40
+  ce37d0:	9808      	ldr	r0, [sp, #32]
+  ce37d2:	6468      	str	r0, [r5, #68]	; 0x44
+  ce37d4:	a806      	add	r0, sp, #24
+  ce37d6:	f562 e100 	blx	6459d8 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  ce37da:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
+  ce37de:	e9c5 0112 	strd	r0, r1, [r5, #72]	; 0x48
+  ce37e2:	4620      	mov	r0, r4
+  ce37e4:	f55f e758 	blx	643698 <ReadOnlyBinaryStream::getFloat()@plt>
+  ce37e8:	ae06      	add	r6, sp, #24
+  ce37ea:	6528      	str	r0, [r5, #80]	; 0x50
+  ce37ec:	4621      	mov	r1, r4
+  ce37ee:	4630      	mov	r0, r6
+  ce37f0:	f557 e456 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ce37f4:	f105 0054 	add.w	r0, r5, #84	; 0x54
+  ce37f8:	4631      	mov	r1, r6
+  ce37fa:	f54d e022 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  ce37fe:	9808      	ldr	r0, [sp, #32]
+  ce3800:	b110      	cbz	r0, ce3808 <AddPlayerPacket::read(BinaryStream&)+0xc0>
+  ce3802:	6801      	ldr	r1, [r0, #0]
+  ce3804:	6849      	ldr	r1, [r1, #4]
+  ce3806:	4788      	blx	r1
+  ce3808:	f105 0168 	add.w	r1, r5, #104	; 0x68
+  ce380c:	4620      	mov	r0, r4
+  ce380e:	f56c e766 	blx	6506dc <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+  ce3812:	b00c      	add	sp, #48	; 0x30
+  ce3814:	bd70      	pop	{r4, r5, r6, pc}
+  ce3816:	4a2b      	ldr	r2, [pc, #172]	; (ce38c4 <AddPlayerPacket::read(BinaryStream&)+0x17c>)
+  ce3818:	4b28      	ldr	r3, [pc, #160]	; (ce38bc <AddPlayerPacket::read(BinaryStream&)+0x174>)
+  ce381a:	447a      	add	r2, pc
+  ce381c:	589b      	ldr	r3, [r3, r2]
+  ce381e:	1f0a      	subs	r2, r1, #4
+  ce3820:	b15b      	cbz	r3, ce383a <AddPlayerPacket::read(BinaryStream&)+0xf2>
+  ce3822:	f3bf 8f5b 	dmb	ish
+  ce3826:	e852 1f00 	ldrex	r1, [r2]
+  ce382a:	1e4b      	subs	r3, r1, #1
+  ce382c:	e842 3600 	strex	r6, r3, [r2]
+  ce3830:	2e00      	cmp	r6, #0
+  ce3832:	d1f8      	bne.n	ce3826 <AddPlayerPacket::read(BinaryStream&)+0xde>
+  ce3834:	f3bf 8f5b 	dmb	ish
+  ce3838:	e002      	b.n	ce3840 <AddPlayerPacket::read(BinaryStream&)+0xf8>
+  ce383a:	6811      	ldr	r1, [r2, #0]
+  ce383c:	1e4b      	subs	r3, r1, #1
+  ce383e:	6013      	str	r3, [r2, #0]
+  ce3840:	2900      	cmp	r1, #0
+  ce3842:	dca2      	bgt.n	ce378a <AddPlayerPacket::read(BinaryStream&)+0x42>
+  ce3844:	a902      	add	r1, sp, #8
+  ce3846:	f301 dba5 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce384a:	e79e      	b.n	ce378a <AddPlayerPacket::read(BinaryStream&)+0x42>
+  ce384c:	4a18      	ldr	r2, [pc, #96]	; (ce38b0 <AddPlayerPacket::read(BinaryStream&)+0x168>)
+  ce384e:	4604      	mov	r4, r0
+  ce3850:	4b18      	ldr	r3, [pc, #96]	; (ce38b4 <AddPlayerPacket::read(BinaryStream&)+0x16c>)
+  ce3852:	447a      	add	r2, pc
+  ce3854:	9901      	ldr	r1, [sp, #4]
+  ce3856:	f1a1 000c 	sub.w	r0, r1, #12
+  ce385a:	589a      	ldr	r2, [r3, r2]
+  ce385c:	4290      	cmp	r0, r2
+  ce385e:	d01a      	beq.n	ce3896 <AddPlayerPacket::read(BinaryStream&)+0x14e>
+  ce3860:	4a15      	ldr	r2, [pc, #84]	; (ce38b8 <AddPlayerPacket::read(BinaryStream&)+0x170>)
+  ce3862:	4b16      	ldr	r3, [pc, #88]	; (ce38bc <AddPlayerPacket::read(BinaryStream&)+0x174>)
+  ce3864:	447a      	add	r2, pc
+  ce3866:	589b      	ldr	r3, [r3, r2]
+  ce3868:	1f0a      	subs	r2, r1, #4
+  ce386a:	b1eb      	cbz	r3, ce38a8 <AddPlayerPacket::read(BinaryStream&)+0x160>
+  ce386c:	f3bf 8f5b 	dmb	ish
+  ce3870:	e852 1f00 	ldrex	r1, [r2]
+  ce3874:	1e4b      	subs	r3, r1, #1
+  ce3876:	e842 3600 	strex	r6, r3, [r2]
+  ce387a:	2e00      	cmp	r6, #0
+  ce387c:	d1f8      	bne.n	ce3870 <AddPlayerPacket::read(BinaryStream&)+0x128>
+  ce387e:	f3bf 8f5b 	dmb	ish
+  ce3882:	2900      	cmp	r1, #0
+  ce3884:	bfdc      	itt	le
+  ce3886:	f10d 0108 	addle.w	r1, sp, #8
+  ce388a:	f301 db83 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce388e:	e002      	b.n	ce3896 <AddPlayerPacket::read(BinaryStream&)+0x14e>
+  ce3890:	4604      	mov	r4, r0
+  ce3892:	9808      	ldr	r0, [sp, #32]
+  ce3894:	b910      	cbnz	r0, ce389c <AddPlayerPacket::read(BinaryStream&)+0x154>
+  ce3896:	4620      	mov	r0, r4
+  ce3898:	f547 e2cc 	blx	62ae34 <_Unwind_Resume@plt>
+  ce389c:	6801      	ldr	r1, [r0, #0]
+  ce389e:	6849      	ldr	r1, [r1, #4]
+  ce38a0:	4788      	blx	r1
+  ce38a2:	4620      	mov	r0, r4
+  ce38a4:	f547 e2c6 	blx	62ae34 <_Unwind_Resume@plt>
+  ce38a8:	6811      	ldr	r1, [r2, #0]
+  ce38aa:	1e4b      	subs	r3, r1, #1
+  ce38ac:	6013      	str	r3, [r2, #0]
+  ce38ae:	e7e8      	b.n	ce3882 <AddPlayerPacket::read(BinaryStream&)+0x13a>
+  ce38b0:	7c8e      	ldrb	r6, [r1, #18]
+  ce38b2:	00ee      	lsls	r6, r5, #3
+  ce38b4:	9080      	str	r0, [sp, #512]	; 0x200
+  ce38b6:	ffff 7c7c 			; <UNDEFINED> instruction: 0xffff7c7c
+  ce38ba:	00ee      	lsls	r6, r5, #3
+  ce38bc:	9084      	str	r0, [sp, #528]	; 0x210
+  ce38be:	ffff 7d64 	vqrdmulh.s<illegal width 64>	<illegal reg q11.5>, <illegal reg q7.5>, d20[0]
+  ce38c2:	00ee      	lsls	r6, r5, #3
+  ce38c4:	7cc6      	ldrb	r6, [r0, #19]
+  ce38c6:	00ee      	lsls	r6, r5, #3

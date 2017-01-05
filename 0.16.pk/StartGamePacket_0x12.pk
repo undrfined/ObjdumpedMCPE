@@ -1,0 +1,197 @@
+  ce2828:	b5f0      	push	{r4, r5, r6, r7, lr}
+  ce282a:	b093      	sub	sp, #76	; 0x4c
+  ce282c:	4604      	mov	r4, r0
+  ce282e:	a802      	add	r0, sp, #8
+  ce2830:	460d      	mov	r5, r1
+  ce2832:	f560 e72c 	blx	64368c <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  ce2836:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ce283a:	e9c4 0114 	strd	r0, r1, [r4, #80]	; 0x50
+  ce283e:	a802      	add	r0, sp, #8
+  ce2840:	4629      	mov	r1, r5
+  ce2842:	f54a e7c2 	blx	62d7c8 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  ce2846:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ce284a:	e9c4 0116 	strd	r0, r1, [r4, #88]	; 0x58
+  ce284e:	a802      	add	r0, sp, #8
+  ce2850:	4629      	mov	r1, r5
+  ce2852:	f563 e0bc 	blx	6459cc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  ce2856:	9802      	ldr	r0, [sp, #8]
+  ce2858:	ae02      	add	r6, sp, #8
+  ce285a:	6620      	str	r0, [r4, #96]	; 0x60
+  ce285c:	4629      	mov	r1, r5
+  ce285e:	9803      	ldr	r0, [sp, #12]
+  ce2860:	6660      	str	r0, [r4, #100]	; 0x64
+  ce2862:	9804      	ldr	r0, [sp, #16]
+  ce2864:	66a0      	str	r0, [r4, #104]	; 0x68
+  ce2866:	4630      	mov	r0, r6
+  ce2868:	f563 e0b6 	blx	6459d8 <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  ce286c:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ce2870:	e9c4 011b 	strd	r0, r1, [r4, #108]	; 0x6c
+  ce2874:	4630      	mov	r0, r6
+  ce2876:	4629      	mov	r1, r5
+  ce2878:	f56d e6f4 	blx	650664 <LevelSettings ReadOnlyBinaryStream::getType<LevelSettings>()@plt>
+  ce287c:	f106 0020 	add.w	r0, r6, #32
+  ce2880:	f966 0acd 	vld1.64	{d16-d17}, [r6]!
+  ce2884:	4629      	mov	r1, r5
+  ce2886:	f960 2acf 	vld1.64	{d18-d19}, [r0]
+  ce288a:	f8bd 0038 	ldrh.w	r0, [sp, #56]	; 0x38
+  ce288e:	f966 4acf 	vld1.64	{d20-d21}, [r6]
+  ce2892:	ae01      	add	r6, sp, #4
+  ce2894:	87a0      	strh	r0, [r4, #60]	; 0x3c
+  ce2896:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  ce289a:	f940 2a8f 	vst1.32	{d18-d19}, [r0]
+  ce289e:	f104 000c 	add.w	r0, r4, #12
+  ce28a2:	f940 0a8f 	vst1.32	{d16-d17}, [r0]
+  ce28a6:	f104 001c 	add.w	r0, r4, #28
+  ce28aa:	f940 4a8f 	vst1.32	{d20-d21}, [r0]
+  ce28ae:	980f      	ldr	r0, [sp, #60]	; 0x3c
+  ce28b0:	6420      	str	r0, [r4, #64]	; 0x40
+  ce28b2:	9810      	ldr	r0, [sp, #64]	; 0x40
+  ce28b4:	6460      	str	r0, [r4, #68]	; 0x44
+  ce28b6:	9811      	ldr	r0, [sp, #68]	; 0x44
+  ce28b8:	64a0      	str	r0, [r4, #72]	; 0x48
+  ce28ba:	4630      	mov	r0, r6
+  ce28bc:	f54a e7d8 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce28c0:	f104 0074 	add.w	r0, r4, #116	; 0x74
+  ce28c4:	4631      	mov	r1, r6
+  ce28c6:	f301 d999 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce28ca:	484f      	ldr	r0, [pc, #316]	; (ce2a08 <StartGamePacket::read(BinaryStream&)+0x1e0>)
+  ce28cc:	4f4b      	ldr	r7, [pc, #300]	; (ce29fc <StartGamePacket::read(BinaryStream&)+0x1d4>)
+  ce28ce:	4478      	add	r0, pc
+  ce28d0:	9901      	ldr	r1, [sp, #4]
+  ce28d2:	583a      	ldr	r2, [r7, r0]
+  ce28d4:	f1a1 000c 	sub.w	r0, r1, #12
+  ce28d8:	4290      	cmp	r0, r2
+  ce28da:	d113      	bne.n	ce2904 <StartGamePacket::read(BinaryStream&)+0xdc>
+  ce28dc:	466e      	mov	r6, sp
+  ce28de:	4629      	mov	r1, r5
+  ce28e0:	4630      	mov	r0, r6
+  ce28e2:	f54a e7c6 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce28e6:	f104 0078 	add.w	r0, r4, #120	; 0x78
+  ce28ea:	4631      	mov	r1, r6
+  ce28ec:	f301 d986 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce28f0:	4849      	ldr	r0, [pc, #292]	; (ce2a18 <StartGamePacket::read(BinaryStream&)+0x1f0>)
+  ce28f2:	9900      	ldr	r1, [sp, #0]
+  ce28f4:	4478      	add	r0, pc
+  ce28f6:	583a      	ldr	r2, [r7, r0]
+  ce28f8:	f1a1 000c 	sub.w	r0, r1, #12
+  ce28fc:	4290      	cmp	r0, r2
+  ce28fe:	d113      	bne.n	ce2928 <StartGamePacket::read(BinaryStream&)+0x100>
+  ce2900:	b013      	add	sp, #76	; 0x4c
+  ce2902:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  ce2904:	4a41      	ldr	r2, [pc, #260]	; (ce2a0c <StartGamePacket::read(BinaryStream&)+0x1e4>)
+  ce2906:	4b3f      	ldr	r3, [pc, #252]	; (ce2a04 <StartGamePacket::read(BinaryStream&)+0x1dc>)
+  ce2908:	447a      	add	r2, pc
+  ce290a:	589b      	ldr	r3, [r3, r2]
+  ce290c:	1f0a      	subs	r2, r1, #4
+  ce290e:	b1eb      	cbz	r3, ce294c <StartGamePacket::read(BinaryStream&)+0x124>
+  ce2910:	f3bf 8f5b 	dmb	ish
+  ce2914:	e852 1f00 	ldrex	r1, [r2]
+  ce2918:	1e4b      	subs	r3, r1, #1
+  ce291a:	e842 3600 	strex	r6, r3, [r2]
+  ce291e:	2e00      	cmp	r6, #0
+  ce2920:	d1f8      	bne.n	ce2914 <StartGamePacket::read(BinaryStream&)+0xec>
+  ce2922:	f3bf 8f5b 	dmb	ish
+  ce2926:	e014      	b.n	ce2952 <StartGamePacket::read(BinaryStream&)+0x12a>
+  ce2928:	4a3c      	ldr	r2, [pc, #240]	; (ce2a1c <StartGamePacket::read(BinaryStream&)+0x1f4>)
+  ce292a:	4b36      	ldr	r3, [pc, #216]	; (ce2a04 <StartGamePacket::read(BinaryStream&)+0x1dc>)
+  ce292c:	447a      	add	r2, pc
+  ce292e:	589b      	ldr	r3, [r3, r2]
+  ce2930:	1f0a      	subs	r2, r1, #4
+  ce2932:	b1a3      	cbz	r3, ce295e <StartGamePacket::read(BinaryStream&)+0x136>
+  ce2934:	f3bf 8f5b 	dmb	ish
+  ce2938:	e852 1f00 	ldrex	r1, [r2]
+  ce293c:	1e4b      	subs	r3, r1, #1
+  ce293e:	e842 3700 	strex	r7, r3, [r2]
+  ce2942:	2f00      	cmp	r7, #0
+  ce2944:	d1f8      	bne.n	ce2938 <StartGamePacket::read(BinaryStream&)+0x110>
+  ce2946:	f3bf 8f5b 	dmb	ish
+  ce294a:	e00b      	b.n	ce2964 <StartGamePacket::read(BinaryStream&)+0x13c>
+  ce294c:	6811      	ldr	r1, [r2, #0]
+  ce294e:	1e4b      	subs	r3, r1, #1
+  ce2950:	6013      	str	r3, [r2, #0]
+  ce2952:	2900      	cmp	r1, #0
+  ce2954:	dcc2      	bgt.n	ce28dc <StartGamePacket::read(BinaryStream&)+0xb4>
+  ce2956:	a902      	add	r1, sp, #8
+  ce2958:	f302 db1c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce295c:	e7be      	b.n	ce28dc <StartGamePacket::read(BinaryStream&)+0xb4>
+  ce295e:	6811      	ldr	r1, [r2, #0]
+  ce2960:	1e4b      	subs	r3, r1, #1
+  ce2962:	6013      	str	r3, [r2, #0]
+  ce2964:	2900      	cmp	r1, #0
+  ce2966:	dccb      	bgt.n	ce2900 <StartGamePacket::read(BinaryStream&)+0xd8>
+  ce2968:	a902      	add	r1, sp, #8
+  ce296a:	f302 db13 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce296e:	e7c7      	b.n	ce2900 <StartGamePacket::read(BinaryStream&)+0xd8>
+  ce2970:	4a21      	ldr	r2, [pc, #132]	; (ce29f8 <StartGamePacket::read(BinaryStream&)+0x1d0>)
+  ce2972:	4604      	mov	r4, r0
+  ce2974:	4b21      	ldr	r3, [pc, #132]	; (ce29fc <StartGamePacket::read(BinaryStream&)+0x1d4>)
+  ce2976:	447a      	add	r2, pc
+  ce2978:	9901      	ldr	r1, [sp, #4]
+  ce297a:	f1a1 000c 	sub.w	r0, r1, #12
+  ce297e:	589a      	ldr	r2, [r3, r2]
+  ce2980:	4290      	cmp	r0, r2
+  ce2982:	d031      	beq.n	ce29e8 <StartGamePacket::read(BinaryStream&)+0x1c0>
+  ce2984:	4a1e      	ldr	r2, [pc, #120]	; (ce2a00 <StartGamePacket::read(BinaryStream&)+0x1d8>)
+  ce2986:	4b1f      	ldr	r3, [pc, #124]	; (ce2a04 <StartGamePacket::read(BinaryStream&)+0x1dc>)
+  ce2988:	447a      	add	r2, pc
+  ce298a:	589b      	ldr	r3, [r3, r2]
+  ce298c:	1f0a      	subs	r2, r1, #4
+  ce298e:	b373      	cbz	r3, ce29ee <StartGamePacket::read(BinaryStream&)+0x1c6>
+  ce2990:	f3bf 8f5b 	dmb	ish
+  ce2994:	e852 1f00 	ldrex	r1, [r2]
+  ce2998:	1e4b      	subs	r3, r1, #1
+  ce299a:	e842 3700 	strex	r7, r3, [r2]
+  ce299e:	2f00      	cmp	r7, #0
+  ce29a0:	d1f8      	bne.n	ce2994 <StartGamePacket::read(BinaryStream&)+0x16c>
+  ce29a2:	f3bf 8f5b 	dmb	ish
+  ce29a6:	e019      	b.n	ce29dc <StartGamePacket::read(BinaryStream&)+0x1b4>
+  ce29a8:	4a19      	ldr	r2, [pc, #100]	; (ce2a10 <StartGamePacket::read(BinaryStream&)+0x1e8>)
+  ce29aa:	4604      	mov	r4, r0
+  ce29ac:	9900      	ldr	r1, [sp, #0]
+  ce29ae:	447a      	add	r2, pc
+  ce29b0:	f1a1 000c 	sub.w	r0, r1, #12
+  ce29b4:	58ba      	ldr	r2, [r7, r2]
+  ce29b6:	4290      	cmp	r0, r2
+  ce29b8:	d016      	beq.n	ce29e8 <StartGamePacket::read(BinaryStream&)+0x1c0>
+  ce29ba:	4a16      	ldr	r2, [pc, #88]	; (ce2a14 <StartGamePacket::read(BinaryStream&)+0x1ec>)
+  ce29bc:	4b11      	ldr	r3, [pc, #68]	; (ce2a04 <StartGamePacket::read(BinaryStream&)+0x1dc>)
+  ce29be:	447a      	add	r2, pc
+  ce29c0:	589b      	ldr	r3, [r3, r2]
+  ce29c2:	1f0a      	subs	r2, r1, #4
+  ce29c4:	b19b      	cbz	r3, ce29ee <StartGamePacket::read(BinaryStream&)+0x1c6>
+  ce29c6:	f3bf 8f5b 	dmb	ish
+  ce29ca:	e852 1f00 	ldrex	r1, [r2]
+  ce29ce:	1e4b      	subs	r3, r1, #1
+  ce29d0:	e842 3700 	strex	r7, r3, [r2]
+  ce29d4:	2f00      	cmp	r7, #0
+  ce29d6:	d1f8      	bne.n	ce29ca <StartGamePacket::read(BinaryStream&)+0x1a2>
+  ce29d8:	f3bf 8f5b 	dmb	ish
+  ce29dc:	2900      	cmp	r1, #0
+  ce29de:	bfdc      	itt	le
+  ce29e0:	f10d 0108 	addle.w	r1, sp, #8
+  ce29e4:	f302 dad6 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce29e8:	4620      	mov	r0, r4
+  ce29ea:	f548 e224 	blx	62ae34 <_Unwind_Resume@plt>
+  ce29ee:	6811      	ldr	r1, [r2, #0]
+  ce29f0:	1e4b      	subs	r3, r1, #1
+  ce29f2:	6013      	str	r3, [r2, #0]
+  ce29f4:	e7f2      	b.n	ce29dc <StartGamePacket::read(BinaryStream&)+0x1b4>
+  ce29f6:	bf00      	nop
+  ce29f8:	8b6a      	ldrh	r2, [r5, #26]
+  ce29fa:	00ee      	lsls	r6, r5, #3
+  ce29fc:	9080      	str	r0, [sp, #512]	; 0x200
+  ce29fe:	ffff 8b58 			; <UNDEFINED> instruction: 0xffff8b58
+  ce2a02:	00ee      	lsls	r6, r5, #3
+  ce2a04:	9084      	str	r0, [sp, #528]	; 0x210
+  ce2a06:	ffff 8c12 			; <UNDEFINED> instruction: 0xffff8c12
+  ce2a0a:	00ee      	lsls	r6, r5, #3
+  ce2a0c:	8bd8      	ldrh	r0, [r3, #30]
+  ce2a0e:	00ee      	lsls	r6, r5, #3
+  ce2a10:	8b32      	ldrh	r2, [r6, #24]
+  ce2a12:	00ee      	lsls	r6, r5, #3
+  ce2a14:	8b22      	ldrh	r2, [r4, #24]
+  ce2a16:	00ee      	lsls	r6, r5, #3
+  ce2a18:	8bec      	ldrh	r4, [r5, #30]
+  ce2a1a:	00ee      	lsls	r6, r5, #3
+  ce2a1c:	8bb4      	ldrh	r4, [r6, #28]
+  ce2a1e:	00ee      	lsls	r6, r5, #3

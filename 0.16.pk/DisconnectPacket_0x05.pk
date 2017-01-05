@@ -1,0 +1,90 @@
+  ce2520:	b570      	push	{r4, r5, r6, lr}
+  ce2522:	b084      	sub	sp, #16
+  ce2524:	460d      	mov	r5, r1
+  ce2526:	4604      	mov	r4, r0
+  ce2528:	4628      	mov	r0, r5
+  ce252a:	f54b e172 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  ce252e:	7320      	strb	r0, [r4, #12]
+  ce2530:	b990      	cbnz	r0, ce2558 <DisconnectPacket::read(BinaryStream&)+0x38>
+  ce2532:	ae01      	add	r6, sp, #4
+  ce2534:	4629      	mov	r1, r5
+  ce2536:	4630      	mov	r0, r6
+  ce2538:	f54b e19a 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce253c:	f104 0010 	add.w	r0, r4, #16
+  ce2540:	4631      	mov	r1, r6
+  ce2542:	f301 db5b 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce2546:	482b      	ldr	r0, [pc, #172]	; (ce25f4 <DisconnectPacket::read(BinaryStream&)+0xd4>)
+  ce2548:	4a27      	ldr	r2, [pc, #156]	; (ce25e8 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  ce254a:	4478      	add	r0, pc
+  ce254c:	9901      	ldr	r1, [sp, #4]
+  ce254e:	5812      	ldr	r2, [r2, r0]
+  ce2550:	f1a1 000c 	sub.w	r0, r1, #12
+  ce2554:	4290      	cmp	r0, r2
+  ce2556:	d101      	bne.n	ce255c <DisconnectPacket::read(BinaryStream&)+0x3c>
+  ce2558:	b004      	add	sp, #16
+  ce255a:	bd70      	pop	{r4, r5, r6, pc}
+  ce255c:	4a26      	ldr	r2, [pc, #152]	; (ce25f8 <DisconnectPacket::read(BinaryStream&)+0xd8>)
+  ce255e:	4b24      	ldr	r3, [pc, #144]	; (ce25f0 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  ce2560:	447a      	add	r2, pc
+  ce2562:	589b      	ldr	r3, [r3, r2]
+  ce2564:	1f0a      	subs	r2, r1, #4
+  ce2566:	b15b      	cbz	r3, ce2580 <DisconnectPacket::read(BinaryStream&)+0x60>
+  ce2568:	f3bf 8f5b 	dmb	ish
+  ce256c:	e852 1f00 	ldrex	r1, [r2]
+  ce2570:	1e4b      	subs	r3, r1, #1
+  ce2572:	e842 3600 	strex	r6, r3, [r2]
+  ce2576:	2e00      	cmp	r6, #0
+  ce2578:	d1f8      	bne.n	ce256c <DisconnectPacket::read(BinaryStream&)+0x4c>
+  ce257a:	f3bf 8f5b 	dmb	ish
+  ce257e:	e002      	b.n	ce2586 <DisconnectPacket::read(BinaryStream&)+0x66>
+  ce2580:	6811      	ldr	r1, [r2, #0]
+  ce2582:	1e4b      	subs	r3, r1, #1
+  ce2584:	6013      	str	r3, [r2, #0]
+  ce2586:	2900      	cmp	r1, #0
+  ce2588:	dce6      	bgt.n	ce2558 <DisconnectPacket::read(BinaryStream&)+0x38>
+  ce258a:	a902      	add	r1, sp, #8
+  ce258c:	f302 dd02 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce2590:	e7e2      	b.n	ce2558 <DisconnectPacket::read(BinaryStream&)+0x38>
+  ce2592:	4a14      	ldr	r2, [pc, #80]	; (ce25e4 <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  ce2594:	4604      	mov	r4, r0
+  ce2596:	4b14      	ldr	r3, [pc, #80]	; (ce25e8 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  ce2598:	447a      	add	r2, pc
+  ce259a:	9901      	ldr	r1, [sp, #4]
+  ce259c:	f1a1 000c 	sub.w	r0, r1, #12
+  ce25a0:	589a      	ldr	r2, [r3, r2]
+  ce25a2:	4290      	cmp	r0, r2
+  ce25a4:	d016      	beq.n	ce25d4 <DisconnectPacket::read(BinaryStream&)+0xb4>
+  ce25a6:	4a11      	ldr	r2, [pc, #68]	; (ce25ec <DisconnectPacket::read(BinaryStream&)+0xcc>)
+  ce25a8:	4b11      	ldr	r3, [pc, #68]	; (ce25f0 <DisconnectPacket::read(BinaryStream&)+0xd0>)
+  ce25aa:	447a      	add	r2, pc
+  ce25ac:	589b      	ldr	r3, [r3, r2]
+  ce25ae:	1f0a      	subs	r2, r1, #4
+  ce25b0:	b19b      	cbz	r3, ce25da <DisconnectPacket::read(BinaryStream&)+0xba>
+  ce25b2:	f3bf 8f5b 	dmb	ish
+  ce25b6:	e852 1f00 	ldrex	r1, [r2]
+  ce25ba:	1e4b      	subs	r3, r1, #1
+  ce25bc:	e842 3600 	strex	r6, r3, [r2]
+  ce25c0:	2e00      	cmp	r6, #0
+  ce25c2:	d1f8      	bne.n	ce25b6 <DisconnectPacket::read(BinaryStream&)+0x96>
+  ce25c4:	f3bf 8f5b 	dmb	ish
+  ce25c8:	2900      	cmp	r1, #0
+  ce25ca:	bfdc      	itt	le
+  ce25cc:	f10d 010c 	addle.w	r1, sp, #12
+  ce25d0:	f302 dce0 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce25d4:	4620      	mov	r0, r4
+  ce25d6:	f548 e42e 	blx	62ae34 <_Unwind_Resume@plt>
+  ce25da:	6811      	ldr	r1, [r2, #0]
+  ce25dc:	1e4b      	subs	r3, r1, #1
+  ce25de:	6013      	str	r3, [r2, #0]
+  ce25e0:	e7f2      	b.n	ce25c8 <DisconnectPacket::read(BinaryStream&)+0xa8>
+  ce25e2:	bf00      	nop
+  ce25e4:	8f48      	ldrh	r0, [r1, #58]	; 0x3a
+  ce25e6:	00ee      	lsls	r6, r5, #3
+  ce25e8:	9080      	str	r0, [sp, #512]	; 0x200
+  ce25ea:	ffff 8f36 	vcvt.u32.f32	d24, d22, #1
+  ce25ee:	00ee      	lsls	r6, r5, #3
+  ce25f0:	9084      	str	r0, [sp, #528]	; 0x210
+  ce25f2:	ffff 8f96 			; <UNDEFINED> instruction: 0xffff8f96
+  ce25f6:	00ee      	lsls	r6, r5, #3
+  ce25f8:	8f80      	ldrh	r0, [r0, #60]	; 0x3c
+  ce25fa:	00ee      	lsls	r6, r5, #3

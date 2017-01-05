@@ -1,0 +1,193 @@
+  ac91f0:	b570      	push	{r4, r5, r6, lr}
+  ac91f2:	b084      	sub	sp, #16
+  ac91f4:	4604      	mov	r4, r0
+  ac91f6:	a802      	add	r0, sp, #8
+  ac91f8:	460d      	mov	r5, r1
+  ac91fa:	f77a e248 	blx	64368c <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  ac91fe:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ac9202:	e9c4 0106 	strd	r0, r1, [r4, #24]
+  ac9206:	4628      	mov	r0, r5
+  ac9208:	f771 e744 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ac920c:	62a0      	str	r0, [r4, #40]	; 0x28
+  ac920e:	2807      	cmp	r0, #7
+  ac9210:	d84d      	bhi.n	ac92ae <BossEventPacket::read(BinaryStream&)+0xbe>
+  ac9212:	e8df f000 	tbb	[pc, r0]
+  ac9216:	040d      	lsls	r5, r1, #16
+  ac9218:	044c      	lsls	r4, r1, #17
+  ac921a:	3933      	subs	r1, #51	; 0x33
+  ac921c:	2924      	cmp	r1, #36	; 0x24
+  ac921e:	a802      	add	r0, sp, #8
+  ac9220:	4629      	mov	r1, r5
+  ac9222:	f77a e234 	blx	64368c <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  ac9226:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+  ac922a:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  ac922e:	e03e      	b.n	ac92ae <BossEventPacket::read(BinaryStream&)+0xbe>
+  ac9230:	ae01      	add	r6, sp, #4
+  ac9232:	4629      	mov	r1, r5
+  ac9234:	4630      	mov	r0, r6
+  ac9236:	f764 e31c 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ac923a:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  ac923e:	4631      	mov	r1, r6
+  ac9240:	f11a d4dc 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ac9244:	4860      	ldr	r0, [pc, #384]	; (ac93c8 <BossEventPacket::read(BinaryStream&)+0x1d8>)
+  ac9246:	4a59      	ldr	r2, [pc, #356]	; (ac93ac <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  ac9248:	4478      	add	r0, pc
+  ac924a:	9901      	ldr	r1, [sp, #4]
+  ac924c:	5812      	ldr	r2, [r2, r0]
+  ac924e:	f1a1 000c 	sub.w	r0, r1, #12
+  ac9252:	4290      	cmp	r0, r2
+  ac9254:	d12d      	bne.n	ac92b2 <BossEventPacket::read(BinaryStream&)+0xc2>
+  ac9256:	4628      	mov	r0, r5
+  ac9258:	f77a e21e 	blx	643698 <ReadOnlyBinaryStream::getFloat()@plt>
+  ac925c:	6320      	str	r0, [r4, #48]	; 0x30
+  ac925e:	4628      	mov	r0, r5
+  ac9260:	f764 e2fa 	blx	62d858 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  ac9264:	f884 003c 	strb.w	r0, [r4, #60]	; 0x3c
+  ac9268:	4628      	mov	r0, r5
+  ac926a:	f771 e714 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ac926e:	6360      	str	r0, [r4, #52]	; 0x34
+  ac9270:	4628      	mov	r0, r5
+  ac9272:	f771 e710 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ac9276:	63a0      	str	r0, [r4, #56]	; 0x38
+  ac9278:	b004      	add	sp, #16
+  ac927a:	bd70      	pop	{r4, r5, r6, pc}
+  ac927c:	4628      	mov	r0, r5
+  ac927e:	f77a e20c 	blx	643698 <ReadOnlyBinaryStream::getFloat()@plt>
+  ac9282:	6320      	str	r0, [r4, #48]	; 0x30
+  ac9284:	b004      	add	sp, #16
+  ac9286:	bd70      	pop	{r4, r5, r6, pc}
+  ac9288:	466e      	mov	r6, sp
+  ac928a:	4629      	mov	r1, r5
+  ac928c:	4630      	mov	r0, r6
+  ac928e:	f764 e2f0 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ac9292:	f104 002c 	add.w	r0, r4, #44	; 0x2c
+  ac9296:	4631      	mov	r1, r6
+  ac9298:	f11a d4b0 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ac929c:	4846      	ldr	r0, [pc, #280]	; (ac93b8 <BossEventPacket::read(BinaryStream&)+0x1c8>)
+  ac929e:	4a43      	ldr	r2, [pc, #268]	; (ac93ac <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  ac92a0:	4478      	add	r0, pc
+  ac92a2:	9900      	ldr	r1, [sp, #0]
+  ac92a4:	5812      	ldr	r2, [r2, r0]
+  ac92a6:	f1a1 000c 	sub.w	r0, r1, #12
+  ac92aa:	4290      	cmp	r0, r2
+  ac92ac:	d113      	bne.n	ac92d6 <BossEventPacket::read(BinaryStream&)+0xe6>
+  ac92ae:	b004      	add	sp, #16
+  ac92b0:	bd70      	pop	{r4, r5, r6, pc}
+  ac92b2:	4a46      	ldr	r2, [pc, #280]	; (ac93cc <BossEventPacket::read(BinaryStream&)+0x1dc>)
+  ac92b4:	4b3f      	ldr	r3, [pc, #252]	; (ac93b4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  ac92b6:	447a      	add	r2, pc
+  ac92b8:	589b      	ldr	r3, [r3, r2]
+  ac92ba:	1f0a      	subs	r2, r1, #4
+  ac92bc:	b1eb      	cbz	r3, ac92fa <BossEventPacket::read(BinaryStream&)+0x10a>
+  ac92be:	f3bf 8f5b 	dmb	ish
+  ac92c2:	e852 1f00 	ldrex	r1, [r2]
+  ac92c6:	1e4b      	subs	r3, r1, #1
+  ac92c8:	e842 3600 	strex	r6, r3, [r2]
+  ac92cc:	2e00      	cmp	r6, #0
+  ac92ce:	d1f8      	bne.n	ac92c2 <BossEventPacket::read(BinaryStream&)+0xd2>
+  ac92d0:	f3bf 8f5b 	dmb	ish
+  ac92d4:	e014      	b.n	ac9300 <BossEventPacket::read(BinaryStream&)+0x110>
+  ac92d6:	4a39      	ldr	r2, [pc, #228]	; (ac93bc <BossEventPacket::read(BinaryStream&)+0x1cc>)
+  ac92d8:	4b36      	ldr	r3, [pc, #216]	; (ac93b4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  ac92da:	447a      	add	r2, pc
+  ac92dc:	589b      	ldr	r3, [r3, r2]
+  ac92de:	1f0a      	subs	r2, r1, #4
+  ac92e0:	b1a3      	cbz	r3, ac930c <BossEventPacket::read(BinaryStream&)+0x11c>
+  ac92e2:	f3bf 8f5b 	dmb	ish
+  ac92e6:	e852 1f00 	ldrex	r1, [r2]
+  ac92ea:	1e4b      	subs	r3, r1, #1
+  ac92ec:	e842 3600 	strex	r6, r3, [r2]
+  ac92f0:	2e00      	cmp	r6, #0
+  ac92f2:	d1f8      	bne.n	ac92e6 <BossEventPacket::read(BinaryStream&)+0xf6>
+  ac92f4:	f3bf 8f5b 	dmb	ish
+  ac92f8:	e00b      	b.n	ac9312 <BossEventPacket::read(BinaryStream&)+0x122>
+  ac92fa:	6811      	ldr	r1, [r2, #0]
+  ac92fc:	1e4b      	subs	r3, r1, #1
+  ac92fe:	6013      	str	r3, [r2, #0]
+  ac9300:	2900      	cmp	r1, #0
+  ac9302:	dca8      	bgt.n	ac9256 <BossEventPacket::read(BinaryStream&)+0x66>
+  ac9304:	a902      	add	r1, sp, #8
+  ac9306:	f11b d645 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ac930a:	e7a4      	b.n	ac9256 <BossEventPacket::read(BinaryStream&)+0x66>
+  ac930c:	6811      	ldr	r1, [r2, #0]
+  ac930e:	1e4b      	subs	r3, r1, #1
+  ac9310:	6013      	str	r3, [r2, #0]
+  ac9312:	2900      	cmp	r1, #0
+  ac9314:	dccb      	bgt.n	ac92ae <BossEventPacket::read(BinaryStream&)+0xbe>
+  ac9316:	a902      	add	r1, sp, #8
+  ac9318:	f11b d63c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ac931c:	b004      	add	sp, #16
+  ac931e:	bd70      	pop	{r4, r5, r6, pc}
+  ac9320:	4a27      	ldr	r2, [pc, #156]	; (ac93c0 <BossEventPacket::read(BinaryStream&)+0x1d0>)
+  ac9322:	4604      	mov	r4, r0
+  ac9324:	4b21      	ldr	r3, [pc, #132]	; (ac93ac <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  ac9326:	447a      	add	r2, pc
+  ac9328:	9901      	ldr	r1, [sp, #4]
+  ac932a:	f1a1 000c 	sub.w	r0, r1, #12
+  ac932e:	589a      	ldr	r2, [r3, r2]
+  ac9330:	4290      	cmp	r0, r2
+  ac9332:	d032      	beq.n	ac939a <BossEventPacket::read(BinaryStream&)+0x1aa>
+  ac9334:	4a23      	ldr	r2, [pc, #140]	; (ac93c4 <BossEventPacket::read(BinaryStream&)+0x1d4>)
+  ac9336:	4b1f      	ldr	r3, [pc, #124]	; (ac93b4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  ac9338:	447a      	add	r2, pc
+  ac933a:	589b      	ldr	r3, [r3, r2]
+  ac933c:	1f0a      	subs	r2, r1, #4
+  ac933e:	b37b      	cbz	r3, ac93a0 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  ac9340:	f3bf 8f5b 	dmb	ish
+  ac9344:	e852 1f00 	ldrex	r1, [r2]
+  ac9348:	1e4b      	subs	r3, r1, #1
+  ac934a:	e842 3600 	strex	r6, r3, [r2]
+  ac934e:	2e00      	cmp	r6, #0
+  ac9350:	d1f8      	bne.n	ac9344 <BossEventPacket::read(BinaryStream&)+0x154>
+  ac9352:	f3bf 8f5b 	dmb	ish
+  ac9356:	e01a      	b.n	ac938e <BossEventPacket::read(BinaryStream&)+0x19e>
+  ac9358:	4a13      	ldr	r2, [pc, #76]	; (ac93a8 <BossEventPacket::read(BinaryStream&)+0x1b8>)
+  ac935a:	4604      	mov	r4, r0
+  ac935c:	4b13      	ldr	r3, [pc, #76]	; (ac93ac <BossEventPacket::read(BinaryStream&)+0x1bc>)
+  ac935e:	447a      	add	r2, pc
+  ac9360:	9900      	ldr	r1, [sp, #0]
+  ac9362:	f1a1 000c 	sub.w	r0, r1, #12
+  ac9366:	589a      	ldr	r2, [r3, r2]
+  ac9368:	4290      	cmp	r0, r2
+  ac936a:	d016      	beq.n	ac939a <BossEventPacket::read(BinaryStream&)+0x1aa>
+  ac936c:	4a10      	ldr	r2, [pc, #64]	; (ac93b0 <BossEventPacket::read(BinaryStream&)+0x1c0>)
+  ac936e:	4b11      	ldr	r3, [pc, #68]	; (ac93b4 <BossEventPacket::read(BinaryStream&)+0x1c4>)
+  ac9370:	447a      	add	r2, pc
+  ac9372:	589b      	ldr	r3, [r3, r2]
+  ac9374:	1f0a      	subs	r2, r1, #4
+  ac9376:	b19b      	cbz	r3, ac93a0 <BossEventPacket::read(BinaryStream&)+0x1b0>
+  ac9378:	f3bf 8f5b 	dmb	ish
+  ac937c:	e852 1f00 	ldrex	r1, [r2]
+  ac9380:	1e4b      	subs	r3, r1, #1
+  ac9382:	e842 3600 	strex	r6, r3, [r2]
+  ac9386:	2e00      	cmp	r6, #0
+  ac9388:	d1f8      	bne.n	ac937c <BossEventPacket::read(BinaryStream&)+0x18c>
+  ac938a:	f3bf 8f5b 	dmb	ish
+  ac938e:	2900      	cmp	r1, #0
+  ac9390:	bfdc      	itt	le
+  ac9392:	f10d 0108 	addle.w	r1, sp, #8
+  ac9396:	f11b d5fd 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ac939a:	4620      	mov	r0, r4
+  ac939c:	f761 e54a 	blx	62ae34 <_Unwind_Resume@plt>
+  ac93a0:	6811      	ldr	r1, [r2, #0]
+  ac93a2:	1e4b      	subs	r3, r1, #1
+  ac93a4:	6013      	str	r3, [r2, #0]
+  ac93a6:	e7f2      	b.n	ac938e <BossEventPacket::read(BinaryStream&)+0x19e>
+  ac93a8:	2182      	movs	r1, #130	; 0x82
+  ac93aa:	0110      	lsls	r0, r2, #4
+  ac93ac:	9080      	str	r0, [sp, #512]	; 0x200
+  ac93ae:	ffff 2170 	vsra.u32	q9, q8, #1
+  ac93b2:	0110      	lsls	r0, r2, #4
+  ac93b4:	9084      	str	r0, [sp, #528]	; 0x210
+  ac93b6:	ffff 2240 	vmlal.u<illegal width 64>	q9, d15, d0[0]
+  ac93ba:	0110      	lsls	r0, r2, #4
+  ac93bc:	2206      	movs	r2, #6
+  ac93be:	0110      	lsls	r0, r2, #4
+  ac93c0:	21ba      	movs	r1, #186	; 0xba
+  ac93c2:	0110      	lsls	r0, r2, #4
+  ac93c4:	21a8      	movs	r1, #168	; 0xa8
+  ac93c6:	0110      	lsls	r0, r2, #4
+  ac93c8:	2298      	movs	r2, #152	; 0x98
+  ac93ca:	0110      	lsls	r0, r2, #4
+  ac93cc:	222a      	movs	r2, #42	; 0x2a
+  ac93ce:	0110      	lsls	r0, r2, #4

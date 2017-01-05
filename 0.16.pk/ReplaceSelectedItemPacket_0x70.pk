@@ -1,0 +1,24 @@
+  ce5d90:	b5b0      	push	{r4, r5, r7, lr}
+  ce5d92:	b086      	sub	sp, #24
+  ce5d94:	ad01      	add	r5, sp, #4
+  ce5d96:	4604      	mov	r4, r0
+  ce5d98:	4628      	mov	r0, r5
+  ce5d9a:	f555 e182 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ce5d9e:	f104 000c 	add.w	r0, r4, #12
+  ce5da2:	4629      	mov	r1, r5
+  ce5da4:	f54a e54c 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  ce5da8:	9803      	ldr	r0, [sp, #12]
+  ce5daa:	b110      	cbz	r0, ce5db2 <ReplaceSelectedItemPacket::read(BinaryStream&)+0x22>
+  ce5dac:	6801      	ldr	r1, [r0, #0]
+  ce5dae:	6849      	ldr	r1, [r1, #4]
+  ce5db0:	4788      	blx	r1
+  ce5db2:	b006      	add	sp, #24
+  ce5db4:	bdb0      	pop	{r4, r5, r7, pc}
+  ce5db6:	4604      	mov	r4, r0
+  ce5db8:	9803      	ldr	r0, [sp, #12]
+  ce5dba:	b110      	cbz	r0, ce5dc2 <ReplaceSelectedItemPacket::read(BinaryStream&)+0x32>
+  ce5dbc:	6801      	ldr	r1, [r0, #0]
+  ce5dbe:	6849      	ldr	r1, [r1, #4]
+  ce5dc0:	4788      	blx	r1
+  ce5dc2:	4620      	mov	r0, r4
+  ce5dc4:	f545 e036 	blx	62ae34 <_Unwind_Resume@plt>

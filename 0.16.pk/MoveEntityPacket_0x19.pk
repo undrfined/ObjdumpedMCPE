@@ -1,0 +1,19 @@
+  ce38e8:	b510      	push	{r4, lr}
+  ce38ea:	b086      	sub	sp, #24
+  ce38ec:	4604      	mov	r4, r0
+  ce38ee:	4668      	mov	r0, sp
+  ce38f0:	f56c e70c 	blx	65070c <MoveEntityPacketData ReadOnlyBinaryStream::getType<MoveEntityPacketData>()@plt>
+  ce38f4:	e9dd 0100 	ldrd	r0, r1, [sp]
+  ce38f8:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  ce38fc:	9802      	ldr	r0, [sp, #8]
+  ce38fe:	61a0      	str	r0, [r4, #24]
+  ce3900:	9803      	ldr	r0, [sp, #12]
+  ce3902:	61e0      	str	r0, [r4, #28]
+  ce3904:	9804      	ldr	r0, [sp, #16]
+  ce3906:	6220      	str	r0, [r4, #32]
+  ce3908:	f89d 0016 	ldrb.w	r0, [sp, #22]
+  ce390c:	f8bd 1014 	ldrh.w	r1, [sp, #20]
+  ce3910:	f884 0026 	strb.w	r0, [r4, #38]	; 0x26
+  ce3914:	84a1      	strh	r1, [r4, #36]	; 0x24
+  ce3916:	b006      	add	sp, #24
+  ce3918:	bd10      	pop	{r4, pc}

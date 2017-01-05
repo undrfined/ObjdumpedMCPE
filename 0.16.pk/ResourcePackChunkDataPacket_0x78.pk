@@ -1,0 +1,116 @@
+  ce62c8:	b5f0      	push	{r4, r5, r6, r7, lr}
+  ce62ca:	b083      	sub	sp, #12
+  ce62cc:	466e      	mov	r6, sp
+  ce62ce:	4605      	mov	r5, r0
+  ce62d0:	4630      	mov	r0, r6
+  ce62d2:	460c      	mov	r4, r1
+  ce62d4:	f547 e2cc 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce62d8:	f105 000c 	add.w	r0, r5, #12
+  ce62dc:	4631      	mov	r1, r6
+  ce62de:	f2fd dc8d 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce62e2:	483e      	ldr	r0, [pc, #248]	; (ce63dc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x114>)
+  ce62e4:	4a3a      	ldr	r2, [pc, #232]	; (ce63d0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  ce62e6:	4478      	add	r0, pc
+  ce62e8:	9900      	ldr	r1, [sp, #0]
+  ce62ea:	5812      	ldr	r2, [r2, r0]
+  ce62ec:	f1a1 000c 	sub.w	r0, r1, #12
+  ce62f0:	4290      	cmp	r0, r2
+  ce62f2:	d128      	bne.n	ce6346 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7e>
+  ce62f4:	4620      	mov	r0, r4
+  ce62f6:	f55d e1b2 	blx	64365c <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  ce62fa:	6128      	str	r0, [r5, #16]
+  ce62fc:	4620      	mov	r0, r4
+  ce62fe:	f55d e1b4 	blx	643668 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  ce6302:	e9c5 0106 	strd	r0, r1, [r5, #24]
+  ce6306:	4620      	mov	r0, r4
+  ce6308:	f55d e1a8 	blx	64365c <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+  ce630c:	462f      	mov	r7, r5
+  ce630e:	4606      	mov	r6, r0
+  ce6310:	f857 0f20 	ldr.w	r0, [r7, #32]!
+  ce6314:	6879      	ldr	r1, [r7, #4]
+  ce6316:	1a09      	subs	r1, r1, r0
+  ce6318:	428e      	cmp	r6, r1
+  ce631a:	d904      	bls.n	ce6326 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5e>
+  ce631c:	1a71      	subs	r1, r6, r1
+  ce631e:	4638      	mov	r0, r7
+  ce6320:	f565 e270 	blx	64b804 <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+  ce6324:	e002      	b.n	ce632c <ResourcePackChunkDataPacket::read(BinaryStream&)+0x64>
+  ce6326:	bf3c      	itt	cc
+  ce6328:	4430      	addcc	r0, r6
+  ce632a:	6268      	strcc	r0, [r5, #36]	; 0x24
+  ce632c:	2e01      	cmp	r6, #1
+  ce632e:	db08      	blt.n	ce6342 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7a>
+  ce6330:	2500      	movs	r5, #0
+  ce6332:	4620      	mov	r0, r4
+  ce6334:	f547 e242 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  ce6338:	6839      	ldr	r1, [r7, #0]
+  ce633a:	5548      	strb	r0, [r1, r5]
+  ce633c:	3501      	adds	r5, #1
+  ce633e:	42ae      	cmp	r6, r5
+  ce6340:	d1f7      	bne.n	ce6332 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x6a>
+  ce6342:	b003      	add	sp, #12
+  ce6344:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  ce6346:	4a26      	ldr	r2, [pc, #152]	; (ce63e0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x118>)
+  ce6348:	4b23      	ldr	r3, [pc, #140]	; (ce63d8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  ce634a:	447a      	add	r2, pc
+  ce634c:	589b      	ldr	r3, [r3, r2]
+  ce634e:	1f0a      	subs	r2, r1, #4
+  ce6350:	b15b      	cbz	r3, ce636a <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa2>
+  ce6352:	f3bf 8f5b 	dmb	ish
+  ce6356:	e852 1f00 	ldrex	r1, [r2]
+  ce635a:	1e4b      	subs	r3, r1, #1
+  ce635c:	e842 3700 	strex	r7, r3, [r2]
+  ce6360:	2f00      	cmp	r7, #0
+  ce6362:	d1f8      	bne.n	ce6356 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8e>
+  ce6364:	f3bf 8f5b 	dmb	ish
+  ce6368:	e002      	b.n	ce6370 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa8>
+  ce636a:	6811      	ldr	r1, [r2, #0]
+  ce636c:	1e4b      	subs	r3, r1, #1
+  ce636e:	6013      	str	r3, [r2, #0]
+  ce6370:	2900      	cmp	r1, #0
+  ce6372:	dcbf      	bgt.n	ce62f4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  ce6374:	a901      	add	r1, sp, #4
+  ce6376:	f2fe de0d 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce637a:	e7bb      	b.n	ce62f4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2c>
+  ce637c:	4a13      	ldr	r2, [pc, #76]	; (ce63cc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+  ce637e:	4604      	mov	r4, r0
+  ce6380:	4b13      	ldr	r3, [pc, #76]	; (ce63d0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+  ce6382:	447a      	add	r2, pc
+  ce6384:	9900      	ldr	r1, [sp, #0]
+  ce6386:	f1a1 000c 	sub.w	r0, r1, #12
+  ce638a:	589a      	ldr	r2, [r3, r2]
+  ce638c:	4290      	cmp	r0, r2
+  ce638e:	d016      	beq.n	ce63be <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+  ce6390:	4a10      	ldr	r2, [pc, #64]	; (ce63d4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+  ce6392:	4b11      	ldr	r3, [pc, #68]	; (ce63d8 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x110>)
+  ce6394:	447a      	add	r2, pc
+  ce6396:	589b      	ldr	r3, [r3, r2]
+  ce6398:	1f0a      	subs	r2, r1, #4
+  ce639a:	b19b      	cbz	r3, ce63c4 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xfc>
+  ce639c:	f3bf 8f5b 	dmb	ish
+  ce63a0:	e852 1f00 	ldrex	r1, [r2]
+  ce63a4:	1e4b      	subs	r3, r1, #1
+  ce63a6:	e842 3700 	strex	r7, r3, [r2]
+  ce63aa:	2f00      	cmp	r7, #0
+  ce63ac:	d1f8      	bne.n	ce63a0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd8>
+  ce63ae:	f3bf 8f5b 	dmb	ish
+  ce63b2:	2900      	cmp	r1, #0
+  ce63b4:	bfdc      	itt	le
+  ce63b6:	f10d 0108 	addle.w	r1, sp, #8
+  ce63ba:	f2fe ddeb 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce63be:	4620      	mov	r0, r4
+  ce63c0:	f544 e538 	blx	62ae34 <_Unwind_Resume@plt>
+  ce63c4:	6811      	ldr	r1, [r2, #0]
+  ce63c6:	1e4b      	subs	r3, r1, #1
+  ce63c8:	6013      	str	r3, [r2, #0]
+  ce63ca:	e7f2      	b.n	ce63b2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xea>
+  ce63cc:	515e      	str	r6, [r3, r5]
+  ce63ce:	00ee      	lsls	r6, r5, #3
+  ce63d0:	9080      	str	r0, [sp, #512]	; 0x200
+  ce63d2:	ffff 514c 	vmla.f<illegal width 64>	<illegal reg q10.5>, <illegal reg q7.5>, d12[0]
+  ce63d6:	00ee      	lsls	r6, r5, #3
+  ce63d8:	9084      	str	r0, [sp, #528]	; 0x210
+  ce63da:	ffff 51fa 	vsra.u64	<illegal reg q10.5>, q13, #1
+  ce63de:	00ee      	lsls	r6, r5, #3
+  ce63e0:	5196      	str	r6, [r2, r6]
+  ce63e2:	00ee      	lsls	r6, r5, #3

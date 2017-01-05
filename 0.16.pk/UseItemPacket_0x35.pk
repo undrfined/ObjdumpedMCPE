@@ -1,0 +1,58 @@
+  ce3f18:	b570      	push	{r4, r5, r6, lr}
+  ce3f1a:	b086      	sub	sp, #24
+  ce3f1c:	4604      	mov	r4, r0
+  ce3f1e:	a801      	add	r0, sp, #4
+  ce3f20:	460d      	mov	r5, r1
+  ce3f22:	f549 e470 	blx	62d804 <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+  ce3f26:	9801      	ldr	r0, [sp, #4]
+  ce3f28:	60e0      	str	r0, [r4, #12]
+  ce3f2a:	9802      	ldr	r0, [sp, #8]
+  ce3f2c:	6120      	str	r0, [r4, #16]
+  ce3f2e:	9803      	ldr	r0, [sp, #12]
+  ce3f30:	6160      	str	r0, [r4, #20]
+  ce3f32:	4628      	mov	r0, r5
+  ce3f34:	f549 e460 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ce3f38:	7620      	strb	r0, [r4, #24]
+  ce3f3a:	a801      	add	r0, sp, #4
+  ce3f3c:	4629      	mov	r1, r5
+  ce3f3e:	f561 e546 	blx	6459cc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  ce3f42:	9801      	ldr	r0, [sp, #4]
+  ce3f44:	4629      	mov	r1, r5
+  ce3f46:	62a0      	str	r0, [r4, #40]	; 0x28
+  ce3f48:	9802      	ldr	r0, [sp, #8]
+  ce3f4a:	62e0      	str	r0, [r4, #44]	; 0x2c
+  ce3f4c:	9803      	ldr	r0, [sp, #12]
+  ce3f4e:	6320      	str	r0, [r4, #48]	; 0x30
+  ce3f50:	a801      	add	r0, sp, #4
+  ce3f52:	f561 e53c 	blx	6459cc <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  ce3f56:	9801      	ldr	r0, [sp, #4]
+  ce3f58:	61e0      	str	r0, [r4, #28]
+  ce3f5a:	9802      	ldr	r0, [sp, #8]
+  ce3f5c:	6220      	str	r0, [r4, #32]
+  ce3f5e:	9803      	ldr	r0, [sp, #12]
+  ce3f60:	6260      	str	r0, [r4, #36]	; 0x24
+  ce3f62:	4628      	mov	r0, r5
+  ce3f64:	f549 e448 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ce3f68:	ae01      	add	r6, sp, #4
+  ce3f6a:	64a0      	str	r0, [r4, #72]	; 0x48
+  ce3f6c:	4629      	mov	r1, r5
+  ce3f6e:	4630      	mov	r0, r6
+  ce3f70:	f557 e096 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ce3f74:	f104 0034 	add.w	r0, r4, #52	; 0x34
+  ce3f78:	4631      	mov	r1, r6
+  ce3f7a:	f54c e462 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  ce3f7e:	9803      	ldr	r0, [sp, #12]
+  ce3f80:	b110      	cbz	r0, ce3f88 <UseItemPacket::read(BinaryStream&)+0x70>
+  ce3f82:	6801      	ldr	r1, [r0, #0]
+  ce3f84:	6849      	ldr	r1, [r1, #4]
+  ce3f86:	4788      	blx	r1
+  ce3f88:	b006      	add	sp, #24
+  ce3f8a:	bd70      	pop	{r4, r5, r6, pc}
+  ce3f8c:	4604      	mov	r4, r0
+  ce3f8e:	9803      	ldr	r0, [sp, #12]
+  ce3f90:	b110      	cbz	r0, ce3f98 <UseItemPacket::read(BinaryStream&)+0x80>
+  ce3f92:	6801      	ldr	r1, [r0, #0]
+  ce3f94:	6849      	ldr	r1, [r1, #4]
+  ce3f96:	4788      	blx	r1
+  ce3f98:	4620      	mov	r0, r4
+  ce3f9a:	f546 e74c 	blx	62ae34 <_Unwind_Resume@plt>

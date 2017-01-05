@@ -1,0 +1,92 @@
+  cea250:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  cea254:	b08b      	sub	sp, #44	; 0x2c
+  cea256:	468a      	mov	sl, r1
+  cea258:	4604      	mov	r4, r0
+  cea25a:	4650      	mov	r0, sl
+  cea25c:	f550 e71a 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  cea260:	4606      	mov	r6, r0
+  cea262:	2e00      	cmp	r6, #0
+  cea264:	d043      	beq.n	cea2ee <CraftingDataPacket::read(BinaryStream&)+0x9e>
+  cea266:	a802      	add	r0, sp, #8
+  cea268:	2500      	movs	r5, #0
+  cea26a:	f100 070c 	add.w	r7, r0, #12
+  cea26e:	f04f 0b01 	mov.w	fp, #1
+  cea272:	f04f 0800 	mov.w	r8, #0
+  cea276:	f104 000c 	add.w	r0, r4, #12
+  cea27a:	9001      	str	r0, [sp, #4]
+  cea27c:	9502      	str	r5, [sp, #8]
+  cea27e:	4638      	mov	r0, r7
+  cea280:	f546 e2d8 	blx	630834 <ItemInstance::ItemInstance()@plt>
+  cea284:	f8cd b028 	str.w	fp, [sp, #40]	; 0x28
+  cea288:	e9d4 9004 	ldrd	r9, r0, [r4, #16]
+  cea28c:	4581      	cmp	r9, r0
+  cea28e:	d015      	beq.n	cea2bc <CraftingDataPacket::read(BinaryStream&)+0x6c>
+  cea290:	9802      	ldr	r0, [sp, #8]
+  cea292:	9502      	str	r5, [sp, #8]
+  cea294:	f8c9 0000 	str.w	r0, [r9]
+  cea298:	9803      	ldr	r0, [sp, #12]
+  cea29a:	f8c9 0004 	str.w	r0, [r9, #4]
+  cea29e:	9804      	ldr	r0, [sp, #16]
+  cea2a0:	f8c9 0008 	str.w	r0, [r9, #8]
+  cea2a4:	f109 000c 	add.w	r0, r9, #12
+  cea2a8:	4639      	mov	r1, r7
+  cea2aa:	f546 e2d6 	blx	630858 <ItemInstance::ItemInstance(ItemInstance const&)@plt>
+  cea2ae:	980a      	ldr	r0, [sp, #40]	; 0x28
+  cea2b0:	f8c9 0020 	str.w	r0, [r9, #32]
+  cea2b4:	6920      	ldr	r0, [r4, #16]
+  cea2b6:	3024      	adds	r0, #36	; 0x24
+  cea2b8:	6120      	str	r0, [r4, #16]
+  cea2ba:	e003      	b.n	cea2c4 <CraftingDataPacket::read(BinaryStream&)+0x74>
+  cea2bc:	9801      	ldr	r0, [sp, #4]
+  cea2be:	a902      	add	r1, sp, #8
+  cea2c0:	f567 e1ec 	blx	65169c <void std::vector<CraftingDataEntry, std::allocator<CraftingDataEntry> >::_M_emplace_back_aux<CraftingDataEntry>(CraftingDataEntry&&)@plt>
+  cea2c4:	9807      	ldr	r0, [sp, #28]
+  cea2c6:	b110      	cbz	r0, cea2ce <CraftingDataPacket::read(BinaryStream&)+0x7e>
+  cea2c8:	6801      	ldr	r1, [r0, #0]
+  cea2ca:	6849      	ldr	r1, [r1, #4]
+  cea2cc:	4788      	blx	r1
+  cea2ce:	9507      	str	r5, [sp, #28]
+  cea2d0:	9802      	ldr	r0, [sp, #8]
+  cea2d2:	b110      	cbz	r0, cea2da <CraftingDataPacket::read(BinaryStream&)+0x8a>
+  cea2d4:	6801      	ldr	r1, [r0, #0]
+  cea2d6:	6849      	ldr	r1, [r1, #4]
+  cea2d8:	4788      	blx	r1
+  cea2da:	9502      	str	r5, [sp, #8]
+  cea2dc:	4651      	mov	r1, sl
+  cea2de:	6920      	ldr	r0, [r4, #16]
+  cea2e0:	3824      	subs	r0, #36	; 0x24
+  cea2e2:	f567 e1e2 	blx	6516a8 <CraftingDataEntry::read(BinaryStream&)@plt>
+  cea2e6:	f108 0801 	add.w	r8, r8, #1
+  cea2ea:	45b0      	cmp	r8, r6
+  cea2ec:	d3c6      	bcc.n	cea27c <CraftingDataPacket::read(BinaryStream&)+0x2c>
+  cea2ee:	4650      	mov	r0, sl
+  cea2f0:	f543 e28e 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  cea2f4:	7620      	strb	r0, [r4, #24]
+  cea2f6:	b00b      	add	sp, #44	; 0x2c
+  cea2f8:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  cea2fc:	4604      	mov	r4, r0
+  cea2fe:	e012      	b.n	cea326 <CraftingDataPacket::read(BinaryStream&)+0xd6>
+  cea300:	4604      	mov	r4, r0
+  cea302:	f8d9 0000 	ldr.w	r0, [r9]
+  cea306:	b110      	cbz	r0, cea30e <CraftingDataPacket::read(BinaryStream&)+0xbe>
+  cea308:	6801      	ldr	r1, [r0, #0]
+  cea30a:	6849      	ldr	r1, [r1, #4]
+  cea30c:	4788      	blx	r1
+  cea30e:	2000      	movs	r0, #0
+  cea310:	f8c9 0000 	str.w	r0, [r9]
+  cea314:	e000      	b.n	cea318 <CraftingDataPacket::read(BinaryStream&)+0xc8>
+  cea316:	4604      	mov	r4, r0
+  cea318:	9807      	ldr	r0, [sp, #28]
+  cea31a:	b110      	cbz	r0, cea322 <CraftingDataPacket::read(BinaryStream&)+0xd2>
+  cea31c:	6801      	ldr	r1, [r0, #0]
+  cea31e:	6849      	ldr	r1, [r1, #4]
+  cea320:	4788      	blx	r1
+  cea322:	2000      	movs	r0, #0
+  cea324:	9007      	str	r0, [sp, #28]
+  cea326:	9802      	ldr	r0, [sp, #8]
+  cea328:	b110      	cbz	r0, cea330 <CraftingDataPacket::read(BinaryStream&)+0xe0>
+  cea32a:	6801      	ldr	r1, [r0, #0]
+  cea32c:	6849      	ldr	r1, [r1, #4]
+  cea32e:	4788      	blx	r1
+  cea330:	4620      	mov	r0, r4
+  cea332:	f540 e580 	blx	62ae34 <_Unwind_Resume@plt>

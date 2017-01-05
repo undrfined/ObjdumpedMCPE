@@ -1,0 +1,35 @@
+  ceab7a:	b570      	push	{r4, r5, r6, lr}
+  ceab7c:	b086      	sub	sp, #24
+  ceab7e:	460d      	mov	r5, r1
+  ceab80:	4604      	mov	r4, r0
+  ceab82:	4628      	mov	r0, r5
+  ceab84:	f550 e286 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ceab88:	ae01      	add	r6, sp, #4
+  ceab8a:	f884 0020 	strb.w	r0, [r4, #32]
+  ceab8e:	4629      	mov	r1, r5
+  ceab90:	4630      	mov	r0, r6
+  ceab92:	f550 e286 	blx	63b0a0 <ItemInstance ReadOnlyBinaryStream::getType<ItemInstance>()@plt>
+  ceab96:	f104 000c 	add.w	r0, r4, #12
+  ceab9a:	4631      	mov	r1, r6
+  ceab9c:	f545 e650 	blx	630840 <ItemInstance::operator=(ItemInstance const&)@plt>
+  ceaba0:	9803      	ldr	r0, [sp, #12]
+  ceaba2:	b110      	cbz	r0, ceabaa <InventoryActionPacket::read(BinaryStream&)+0x30>
+  ceaba4:	6801      	ldr	r1, [r0, #0]
+  ceaba6:	6849      	ldr	r1, [r1, #4]
+  ceaba8:	4788      	blx	r1
+  ceabaa:	4628      	mov	r0, r5
+  ceabac:	f542 e624 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceabb0:	6260      	str	r0, [r4, #36]	; 0x24
+  ceabb2:	4628      	mov	r0, r5
+  ceabb4:	f542 e620 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceabb8:	62a0      	str	r0, [r4, #40]	; 0x28
+  ceabba:	b006      	add	sp, #24
+  ceabbc:	bd70      	pop	{r4, r5, r6, pc}
+  ceabbe:	4604      	mov	r4, r0
+  ceabc0:	9803      	ldr	r0, [sp, #12]
+  ceabc2:	b110      	cbz	r0, ceabca <InventoryActionPacket::read(BinaryStream&)+0x50>
+  ceabc4:	6801      	ldr	r1, [r0, #0]
+  ceabc6:	6849      	ldr	r1, [r1, #4]
+  ceabc8:	4788      	blx	r1
+  ceabca:	4620      	mov	r0, r4
+  ceabcc:	f540 e132 	blx	62ae34 <_Unwind_Resume@plt>

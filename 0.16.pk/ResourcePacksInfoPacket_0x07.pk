@@ -1,0 +1,884 @@
+  ce1074:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  ce1078:	b099      	sub	sp, #100	; 0x64
+  ce107a:	468b      	mov	fp, r1
+  ce107c:	4604      	mov	r4, r0
+  ce107e:	4658      	mov	r0, fp
+  ce1080:	f8cd b01c 	str.w	fp, [sp, #28]
+  ce1084:	9403      	str	r4, [sp, #12]
+  ce1086:	f54c e3c4 	blx	62d810 <ReadOnlyBinaryStream::getBool()@plt>
+  ce108a:	7320      	strb	r0, [r4, #12]
+  ce108c:	4658      	mov	r0, fp
+  ce108e:	f54c e3e4 	blx	62d858 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  ce1092:	4601      	mov	r1, r0
+  ce1094:	f104 0010 	add.w	r0, r4, #16
+  ce1098:	f56f e2c0 	blx	65061c <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)@plt>
+  ce109c:	e9d4 6004 	ldrd	r6, r0, [r4, #16]
+  ce10a0:	9006      	str	r0, [sp, #24]
+  ce10a2:	4286      	cmp	r6, r0
+  ce10a4:	f000 8112 	beq.w	ce12cc <ResourcePacksInfoPacket::read(BinaryStream&)+0x258>
+  ce10a8:	f10d 0848 	add.w	r8, sp, #72	; 0x48
+  ce10ac:	f8df 183c 	ldr.w	r1, [pc, #2108]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce10b0:	f048 0004 	orr.w	r0, r8, #4
+  ce10b4:	9005      	str	r0, [sp, #20]
+  ce10b6:	f8df 0868 	ldr.w	r0, [pc, #2152]	; ce1920 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8ac>
+  ce10ba:	f108 0a08 	add.w	sl, r8, #8
+  ce10be:	ad17      	add	r5, sp, #92	; 0x5c
+  ce10c0:	f10d 0958 	add.w	r9, sp, #88	; 0x58
+  ce10c4:	4478      	add	r0, pc
+  ce10c6:	5809      	ldr	r1, [r1, r0]
+  ce10c8:	9104      	str	r1, [sp, #16]
+  ce10ca:	f8df 1828 	ldr.w	r1, [pc, #2088]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce10ce:	5808      	ldr	r0, [r1, r0]
+  ce10d0:	9002      	str	r0, [sp, #8]
+  ce10d2:	e0a0      	b.n	ce1216 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1a2>
+  ce10d4:	1f0a      	subs	r2, r1, #4
+  ce10d6:	9902      	ldr	r1, [sp, #8]
+  ce10d8:	2900      	cmp	r1, #0
+  ce10da:	d066      	beq.n	ce11aa <ResourcePacksInfoPacket::read(BinaryStream&)+0x136>
+  ce10dc:	46ac      	mov	ip, r5
+  ce10de:	f3bf 8f5b 	dmb	ish
+  ce10e2:	e852 1f00 	ldrex	r1, [r2]
+  ce10e6:	1e4b      	subs	r3, r1, #1
+  ce10e8:	e842 3500 	strex	r5, r3, [r2]
+  ce10ec:	2d00      	cmp	r5, #0
+  ce10ee:	d1f8      	bne.n	ce10e2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6e>
+  ce10f0:	f3bf 8f5b 	dmb	ish
+  ce10f4:	4665      	mov	r5, ip
+  ce10f6:	e05b      	b.n	ce11b0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x13c>
+  ce10f8:	1f0a      	subs	r2, r1, #4
+  ce10fa:	9902      	ldr	r1, [sp, #8]
+  ce10fc:	2900      	cmp	r1, #0
+  ce10fe:	d05d      	beq.n	ce11bc <ResourcePacksInfoPacket::read(BinaryStream&)+0x148>
+  ce1100:	46ac      	mov	ip, r5
+  ce1102:	f3bf 8f5b 	dmb	ish
+  ce1106:	e852 1f00 	ldrex	r1, [r2]
+  ce110a:	1e4b      	subs	r3, r1, #1
+  ce110c:	e842 3500 	strex	r5, r3, [r2]
+  ce1110:	2d00      	cmp	r5, #0
+  ce1112:	d1f8      	bne.n	ce1106 <ResourcePacksInfoPacket::read(BinaryStream&)+0x92>
+  ce1114:	f3bf 8f5b 	dmb	ish
+  ce1118:	4665      	mov	r5, ip
+  ce111a:	e052      	b.n	ce11c2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x14e>
+  ce111c:	1f0a      	subs	r2, r1, #4
+  ce111e:	9902      	ldr	r1, [sp, #8]
+  ce1120:	2900      	cmp	r1, #0
+  ce1122:	d054      	beq.n	ce11ce <ResourcePacksInfoPacket::read(BinaryStream&)+0x15a>
+  ce1124:	46ac      	mov	ip, r5
+  ce1126:	f3bf 8f5b 	dmb	ish
+  ce112a:	e852 1f00 	ldrex	r1, [r2]
+  ce112e:	1e4b      	subs	r3, r1, #1
+  ce1130:	e842 3500 	strex	r5, r3, [r2]
+  ce1134:	2d00      	cmp	r5, #0
+  ce1136:	d1f8      	bne.n	ce112a <ResourcePacksInfoPacket::read(BinaryStream&)+0xb6>
+  ce1138:	f3bf 8f5b 	dmb	ish
+  ce113c:	4665      	mov	r5, ip
+  ce113e:	e049      	b.n	ce11d4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x160>
+  ce1140:	1f0a      	subs	r2, r1, #4
+  ce1142:	9902      	ldr	r1, [sp, #8]
+  ce1144:	2900      	cmp	r1, #0
+  ce1146:	d04b      	beq.n	ce11e0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x16c>
+  ce1148:	46ac      	mov	ip, r5
+  ce114a:	f3bf 8f5b 	dmb	ish
+  ce114e:	e852 1f00 	ldrex	r1, [r2]
+  ce1152:	1e4b      	subs	r3, r1, #1
+  ce1154:	e842 3500 	strex	r5, r3, [r2]
+  ce1158:	2d00      	cmp	r5, #0
+  ce115a:	d1f8      	bne.n	ce114e <ResourcePacksInfoPacket::read(BinaryStream&)+0xda>
+  ce115c:	f3bf 8f5b 	dmb	ish
+  ce1160:	4665      	mov	r5, ip
+  ce1162:	e040      	b.n	ce11e6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x172>
+  ce1164:	1f0a      	subs	r2, r1, #4
+  ce1166:	9902      	ldr	r1, [sp, #8]
+  ce1168:	2900      	cmp	r1, #0
+  ce116a:	d042      	beq.n	ce11f2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x17e>
+  ce116c:	46ac      	mov	ip, r5
+  ce116e:	f3bf 8f5b 	dmb	ish
+  ce1172:	e852 1f00 	ldrex	r1, [r2]
+  ce1176:	1e4b      	subs	r3, r1, #1
+  ce1178:	e842 3500 	strex	r5, r3, [r2]
+  ce117c:	2d00      	cmp	r5, #0
+  ce117e:	d1f8      	bne.n	ce1172 <ResourcePacksInfoPacket::read(BinaryStream&)+0xfe>
+  ce1180:	f3bf 8f5b 	dmb	ish
+  ce1184:	4665      	mov	r5, ip
+  ce1186:	e037      	b.n	ce11f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x184>
+  ce1188:	1f0a      	subs	r2, r1, #4
+  ce118a:	9902      	ldr	r1, [sp, #8]
+  ce118c:	b3d1      	cbz	r1, ce1204 <ResourcePacksInfoPacket::read(BinaryStream&)+0x190>
+  ce118e:	46ac      	mov	ip, r5
+  ce1190:	f3bf 8f5b 	dmb	ish
+  ce1194:	e852 1f00 	ldrex	r1, [r2]
+  ce1198:	1e4b      	subs	r3, r1, #1
+  ce119a:	e842 3500 	strex	r5, r3, [r2]
+  ce119e:	2d00      	cmp	r5, #0
+  ce11a0:	d1f8      	bne.n	ce1194 <ResourcePacksInfoPacket::read(BinaryStream&)+0x120>
+  ce11a2:	f3bf 8f5b 	dmb	ish
+  ce11a6:	4665      	mov	r5, ip
+  ce11a8:	e02f      	b.n	ce120a <ResourcePacksInfoPacket::read(BinaryStream&)+0x196>
+  ce11aa:	6811      	ldr	r1, [r2, #0]
+  ce11ac:	1e4b      	subs	r3, r1, #1
+  ce11ae:	6013      	str	r3, [r2, #0]
+  ce11b0:	2900      	cmp	r1, #0
+  ce11b2:	dc65      	bgt.n	ce1280 <ResourcePacksInfoPacket::read(BinaryStream&)+0x20c>
+  ce11b4:	a918      	add	r1, sp, #96	; 0x60
+  ce11b6:	f303 deed 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce11ba:	e061      	b.n	ce1280 <ResourcePacksInfoPacket::read(BinaryStream&)+0x20c>
+  ce11bc:	6811      	ldr	r1, [r2, #0]
+  ce11be:	1e4b      	subs	r3, r1, #1
+  ce11c0:	6013      	str	r3, [r2, #0]
+  ce11c2:	2900      	cmp	r1, #0
+  ce11c4:	dc64      	bgt.n	ce1290 <ResourcePacksInfoPacket::read(BinaryStream&)+0x21c>
+  ce11c6:	a918      	add	r1, sp, #96	; 0x60
+  ce11c8:	f303 dee4 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce11cc:	e060      	b.n	ce1290 <ResourcePacksInfoPacket::read(BinaryStream&)+0x21c>
+  ce11ce:	6811      	ldr	r1, [r2, #0]
+  ce11d0:	1e4b      	subs	r3, r1, #1
+  ce11d2:	6013      	str	r3, [r2, #0]
+  ce11d4:	2900      	cmp	r1, #0
+  ce11d6:	dc63      	bgt.n	ce12a0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x22c>
+  ce11d8:	a918      	add	r1, sp, #96	; 0x60
+  ce11da:	f303 dedb 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce11de:	e05f      	b.n	ce12a0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x22c>
+  ce11e0:	6811      	ldr	r1, [r2, #0]
+  ce11e2:	1e4b      	subs	r3, r1, #1
+  ce11e4:	6013      	str	r3, [r2, #0]
+  ce11e6:	2900      	cmp	r1, #0
+  ce11e8:	dc60      	bgt.n	ce12ac <ResourcePacksInfoPacket::read(BinaryStream&)+0x238>
+  ce11ea:	a918      	add	r1, sp, #96	; 0x60
+  ce11ec:	f303 ded2 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce11f0:	e05c      	b.n	ce12ac <ResourcePacksInfoPacket::read(BinaryStream&)+0x238>
+  ce11f2:	6811      	ldr	r1, [r2, #0]
+  ce11f4:	1e4b      	subs	r3, r1, #1
+  ce11f6:	6013      	str	r3, [r2, #0]
+  ce11f8:	2900      	cmp	r1, #0
+  ce11fa:	dc5d      	bgt.n	ce12b8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x244>
+  ce11fc:	a918      	add	r1, sp, #96	; 0x60
+  ce11fe:	f303 dec9 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1202:	e059      	b.n	ce12b8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x244>
+  ce1204:	6811      	ldr	r1, [r2, #0]
+  ce1206:	1e4b      	subs	r3, r1, #1
+  ce1208:	6013      	str	r3, [r2, #0]
+  ce120a:	2900      	cmp	r1, #0
+  ce120c:	dc5a      	bgt.n	ce12c4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x250>
+  ce120e:	a918      	add	r1, sp, #96	; 0x60
+  ce1210:	f303 dec0 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1214:	e056      	b.n	ce12c4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x250>
+  ce1216:	4628      	mov	r0, r5
+  ce1218:	4659      	mov	r1, fp
+  ce121a:	f54c e32a 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce121e:	4648      	mov	r0, r9
+  ce1220:	4659      	mov	r1, fp
+  ce1222:	f54c e326 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce1226:	4658      	mov	r0, fp
+  ce1228:	4644      	mov	r4, r8
+  ce122a:	f562 e21e 	blx	643668 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  ce122e:	4683      	mov	fp, r0
+  ce1230:	4688      	mov	r8, r1
+  ce1232:	a811      	add	r0, sp, #68	; 0x44
+  ce1234:	4629      	mov	r1, r5
+  ce1236:	f303 df27 	bl	17e5088 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x329e0>
+  ce123a:	af10      	add	r7, sp, #64	; 0x40
+  ce123c:	4649      	mov	r1, r9
+  ce123e:	4638      	mov	r0, r7
+  ce1240:	f303 df22 	bl	17e5088 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x329e0>
+  ce1244:	46a9      	mov	r9, r5
+  ce1246:	4625      	mov	r5, r4
+  ce1248:	a911      	add	r1, sp, #68	; 0x44
+  ce124a:	4628      	mov	r0, r5
+  ce124c:	463a      	mov	r2, r7
+  ce124e:	f56a e6d6 	blx	64bffc <PackIdVersion::PackIdVersion(std::string const&, std::string const&)@plt>
+  ce1252:	e9ca b800 	strd	fp, r8, [sl]
+  ce1256:	4630      	mov	r0, r6
+  ce1258:	4629      	mov	r1, r5
+  ce125a:	f302 dccf 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce125e:	46a8      	mov	r8, r5
+  ce1260:	9905      	ldr	r1, [sp, #20]
+  ce1262:	1d30      	adds	r0, r6, #4
+  ce1264:	f302 dcca 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce1268:	e9da 0100 	ldrd	r0, r1, [sl]
+  ce126c:	464d      	mov	r5, r9
+  ce126e:	e9c6 0102 	strd	r0, r1, [r6, #8]
+  ce1272:	9913      	ldr	r1, [sp, #76]	; 0x4c
+  ce1274:	9c04      	ldr	r4, [sp, #16]
+  ce1276:	f1a1 000c 	sub.w	r0, r1, #12
+  ce127a:	42a0      	cmp	r0, r4
+  ce127c:	f47f af2a 	bne.w	ce10d4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x60>
+  ce1280:	9912      	ldr	r1, [sp, #72]	; 0x48
+  ce1282:	f8dd b01c 	ldr.w	fp, [sp, #28]
+  ce1286:	f1a1 000c 	sub.w	r0, r1, #12
+  ce128a:	42a0      	cmp	r0, r4
+  ce128c:	f47f af34 	bne.w	ce10f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x84>
+  ce1290:	9910      	ldr	r1, [sp, #64]	; 0x40
+  ce1292:	f10d 0958 	add.w	r9, sp, #88	; 0x58
+  ce1296:	f1a1 000c 	sub.w	r0, r1, #12
+  ce129a:	42a0      	cmp	r0, r4
+  ce129c:	f47f af3e 	bne.w	ce111c <ResourcePacksInfoPacket::read(BinaryStream&)+0xa8>
+  ce12a0:	9911      	ldr	r1, [sp, #68]	; 0x44
+  ce12a2:	f1a1 000c 	sub.w	r0, r1, #12
+  ce12a6:	42a0      	cmp	r0, r4
+  ce12a8:	f47f af4a 	bne.w	ce1140 <ResourcePacksInfoPacket::read(BinaryStream&)+0xcc>
+  ce12ac:	9916      	ldr	r1, [sp, #88]	; 0x58
+  ce12ae:	f1a1 000c 	sub.w	r0, r1, #12
+  ce12b2:	42a0      	cmp	r0, r4
+  ce12b4:	f47f af56 	bne.w	ce1164 <ResourcePacksInfoPacket::read(BinaryStream&)+0xf0>
+  ce12b8:	9917      	ldr	r1, [sp, #92]	; 0x5c
+  ce12ba:	f1a1 000c 	sub.w	r0, r1, #12
+  ce12be:	42a0      	cmp	r0, r4
+  ce12c0:	f47f af62 	bne.w	ce1188 <ResourcePacksInfoPacket::read(BinaryStream&)+0x114>
+  ce12c4:	3610      	adds	r6, #16
+  ce12c6:	9806      	ldr	r0, [sp, #24]
+  ce12c8:	4286      	cmp	r6, r0
+  ce12ca:	d1a4      	bne.n	ce1216 <ResourcePacksInfoPacket::read(BinaryStream&)+0x1a2>
+  ce12cc:	4658      	mov	r0, fp
+  ce12ce:	f54c e2c4 	blx	62d858 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  ce12d2:	9c03      	ldr	r4, [sp, #12]
+  ce12d4:	4601      	mov	r1, r0
+  ce12d6:	f104 001c 	add.w	r0, r4, #28
+  ce12da:	f56f e1a0 	blx	65061c <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)@plt>
+  ce12de:	e9d4 9007 	ldrd	r9, r0, [r4, #28]
+  ce12e2:	9006      	str	r0, [sp, #24]
+  ce12e4:	4581      	cmp	r9, r0
+  ce12e6:	f000 8194 	beq.w	ce1612 <ResourcePacksInfoPacket::read(BinaryStream&)+0x59e>
+  ce12ea:	ae0a      	add	r6, sp, #40	; 0x28
+  ce12ec:	f8df 15fc 	ldr.w	r1, [pc, #1532]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce12f0:	f046 0004 	orr.w	r0, r6, #4
+  ce12f4:	9005      	str	r0, [sp, #20]
+  ce12f6:	f8df 065c 	ldr.w	r0, [pc, #1628]	; ce1954 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8e0>
+  ce12fa:	f106 0a08 	add.w	sl, r6, #8
+  ce12fe:	ad0f      	add	r5, sp, #60	; 0x3c
+  ce1300:	f10d 0838 	add.w	r8, sp, #56	; 0x38
+  ce1304:	4478      	add	r0, pc
+  ce1306:	5809      	ldr	r1, [r1, r0]
+  ce1308:	9104      	str	r1, [sp, #16]
+  ce130a:	f8df 15e8 	ldr.w	r1, [pc, #1512]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce130e:	5808      	ldr	r0, [r1, r0]
+  ce1310:	9003      	str	r0, [sp, #12]
+  ce1312:	e11f      	b.n	ce1554 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4e0>
+  ce1314:	4604      	mov	r4, r0
+  ce1316:	f8df 65d4 	ldr.w	r6, [pc, #1492]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce131a:	f8df 55d8 	ldr.w	r5, [pc, #1496]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce131e:	e050      	b.n	ce13c2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x34e>
+  ce1320:	f8df 25c4 	ldr.w	r2, [pc, #1476]	; ce18e8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x874>
+  ce1324:	4604      	mov	r4, r0
+  ce1326:	f8df 65c4 	ldr.w	r6, [pc, #1476]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce132a:	447a      	add	r2, pc
+  ce132c:	9913      	ldr	r1, [sp, #76]	; 0x4c
+  ce132e:	f8df 55c4 	ldr.w	r5, [pc, #1476]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce1332:	f1a1 000c 	sub.w	r0, r1, #12
+  ce1336:	58b2      	ldr	r2, [r6, r2]
+  ce1338:	4290      	cmp	r0, r2
+  ce133a:	f040 823a 	bne.w	ce17b2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x73e>
+  ce133e:	f8df 05b8 	ldr.w	r0, [pc, #1464]	; ce18f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x884>
+  ce1342:	9912      	ldr	r1, [sp, #72]	; 0x48
+  ce1344:	4478      	add	r0, pc
+  ce1346:	5832      	ldr	r2, [r6, r0]
+  ce1348:	f1a1 000c 	sub.w	r0, r1, #12
+  ce134c:	4290      	cmp	r0, r2
+  ce134e:	d024      	beq.n	ce139a <ResourcePacksInfoPacket::read(BinaryStream&)+0x326>
+  ce1350:	f8df 25a8 	ldr.w	r2, [pc, #1448]	; ce18fc <ResourcePacksInfoPacket::read(BinaryStream&)+0x888>
+  ce1354:	447a      	add	r2, pc
+  ce1356:	58ab      	ldr	r3, [r5, r2]
+  ce1358:	1f0a      	subs	r2, r1, #4
+  ce135a:	2b00      	cmp	r3, #0
+  ce135c:	f000 8272 	beq.w	ce1844 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7d0>
+  ce1360:	f3bf 8f5b 	dmb	ish
+  ce1364:	e852 1f00 	ldrex	r1, [r2]
+  ce1368:	1e4b      	subs	r3, r1, #1
+  ce136a:	e842 3700 	strex	r7, r3, [r2]
+  ce136e:	2f00      	cmp	r7, #0
+  ce1370:	d1f8      	bne.n	ce1364 <ResourcePacksInfoPacket::read(BinaryStream&)+0x2f0>
+  ce1372:	f3bf 8f5b 	dmb	ish
+  ce1376:	e268      	b.n	ce184a <ResourcePacksInfoPacket::read(BinaryStream&)+0x7d6>
+  ce1378:	4604      	mov	r4, r0
+  ce137a:	f8df 6570 	ldr.w	r6, [pc, #1392]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce137e:	f8df 5574 	ldr.w	r5, [pc, #1396]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce1382:	e028      	b.n	ce13d6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x362>
+  ce1384:	4604      	mov	r4, r0
+  ce1386:	f8df 6564 	ldr.w	r6, [pc, #1380]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce138a:	f8df 5568 	ldr.w	r5, [pc, #1384]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce138e:	e00e      	b.n	ce13ae <ResourcePacksInfoPacket::read(BinaryStream&)+0x33a>
+  ce1390:	4604      	mov	r4, r0
+  ce1392:	f8df 6558 	ldr.w	r6, [pc, #1368]	; ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>
+  ce1396:	f8df 555c 	ldr.w	r5, [pc, #1372]	; ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>
+  ce139a:	f8df 0564 	ldr.w	r0, [pc, #1380]	; ce1900 <ResourcePacksInfoPacket::read(BinaryStream&)+0x88c>
+  ce139e:	9910      	ldr	r1, [sp, #64]	; 0x40
+  ce13a0:	4478      	add	r0, pc
+  ce13a2:	5832      	ldr	r2, [r6, r0]
+  ce13a4:	f1a1 000c 	sub.w	r0, r1, #12
+  ce13a8:	4290      	cmp	r0, r2
+  ce13aa:	f040 81d4 	bne.w	ce1756 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6e2>
+  ce13ae:	f8df 0558 	ldr.w	r0, [pc, #1368]	; ce1908 <ResourcePacksInfoPacket::read(BinaryStream&)+0x894>
+  ce13b2:	9911      	ldr	r1, [sp, #68]	; 0x44
+  ce13b4:	4478      	add	r0, pc
+  ce13b6:	5832      	ldr	r2, [r6, r0]
+  ce13b8:	f1a1 000c 	sub.w	r0, r1, #12
+  ce13bc:	4290      	cmp	r0, r2
+  ce13be:	f040 81af 	bne.w	ce1720 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ac>
+  ce13c2:	f8df 054c 	ldr.w	r0, [pc, #1356]	; ce1910 <ResourcePacksInfoPacket::read(BinaryStream&)+0x89c>
+  ce13c6:	9916      	ldr	r1, [sp, #88]	; 0x58
+  ce13c8:	4478      	add	r0, pc
+  ce13ca:	5832      	ldr	r2, [r6, r0]
+  ce13cc:	f1a1 000c 	sub.w	r0, r1, #12
+  ce13d0:	4290      	cmp	r0, r2
+  ce13d2:	f040 8194 	bne.w	ce16fe <ResourcePacksInfoPacket::read(BinaryStream&)+0x68a>
+  ce13d6:	f8df 0540 	ldr.w	r0, [pc, #1344]	; ce1918 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8a4>
+  ce13da:	9917      	ldr	r1, [sp, #92]	; 0x5c
+  ce13dc:	4478      	add	r0, pc
+  ce13de:	5832      	ldr	r2, [r6, r0]
+  ce13e0:	f1a1 000c 	sub.w	r0, r1, #12
+  ce13e4:	4290      	cmp	r0, r2
+  ce13e6:	f000 8187 	beq.w	ce16f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x684>
+  ce13ea:	f8df 2530 	ldr.w	r2, [pc, #1328]	; ce191c <ResourcePacksInfoPacket::read(BinaryStream&)+0x8a8>
+  ce13ee:	447a      	add	r2, pc
+  ce13f0:	58ab      	ldr	r3, [r5, r2]
+  ce13f2:	1f0a      	subs	r2, r1, #4
+  ce13f4:	2b00      	cmp	r3, #0
+  ce13f6:	f000 8272 	beq.w	ce18de <ResourcePacksInfoPacket::read(BinaryStream&)+0x86a>
+  ce13fa:	f3bf 8f5b 	dmb	ish
+  ce13fe:	e852 1f00 	ldrex	r1, [r2]
+  ce1402:	1e4b      	subs	r3, r1, #1
+  ce1404:	e842 3700 	strex	r7, r3, [r2]
+  ce1408:	2f00      	cmp	r7, #0
+  ce140a:	d1f8      	bne.n	ce13fe <ResourcePacksInfoPacket::read(BinaryStream&)+0x38a>
+  ce140c:	f3bf 8f5b 	dmb	ish
+  ce1410:	e16c      	b.n	ce16ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x678>
+  ce1412:	1f0a      	subs	r2, r1, #4
+  ce1414:	9903      	ldr	r1, [sp, #12]
+  ce1416:	2900      	cmp	r1, #0
+  ce1418:	d066      	beq.n	ce14e8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x474>
+  ce141a:	46ac      	mov	ip, r5
+  ce141c:	f3bf 8f5b 	dmb	ish
+  ce1420:	e852 1f00 	ldrex	r1, [r2]
+  ce1424:	1e4b      	subs	r3, r1, #1
+  ce1426:	e842 3500 	strex	r5, r3, [r2]
+  ce142a:	2d00      	cmp	r5, #0
+  ce142c:	d1f8      	bne.n	ce1420 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3ac>
+  ce142e:	f3bf 8f5b 	dmb	ish
+  ce1432:	4665      	mov	r5, ip
+  ce1434:	e05b      	b.n	ce14ee <ResourcePacksInfoPacket::read(BinaryStream&)+0x47a>
+  ce1436:	1f0a      	subs	r2, r1, #4
+  ce1438:	9903      	ldr	r1, [sp, #12]
+  ce143a:	2900      	cmp	r1, #0
+  ce143c:	d05d      	beq.n	ce14fa <ResourcePacksInfoPacket::read(BinaryStream&)+0x486>
+  ce143e:	46ac      	mov	ip, r5
+  ce1440:	f3bf 8f5b 	dmb	ish
+  ce1444:	e852 1f00 	ldrex	r1, [r2]
+  ce1448:	1e4b      	subs	r3, r1, #1
+  ce144a:	e842 3500 	strex	r5, r3, [r2]
+  ce144e:	2d00      	cmp	r5, #0
+  ce1450:	d1f8      	bne.n	ce1444 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3d0>
+  ce1452:	f3bf 8f5b 	dmb	ish
+  ce1456:	4665      	mov	r5, ip
+  ce1458:	e052      	b.n	ce1500 <ResourcePacksInfoPacket::read(BinaryStream&)+0x48c>
+  ce145a:	1f0a      	subs	r2, r1, #4
+  ce145c:	9903      	ldr	r1, [sp, #12]
+  ce145e:	2900      	cmp	r1, #0
+  ce1460:	d054      	beq.n	ce150c <ResourcePacksInfoPacket::read(BinaryStream&)+0x498>
+  ce1462:	46ac      	mov	ip, r5
+  ce1464:	f3bf 8f5b 	dmb	ish
+  ce1468:	e852 1f00 	ldrex	r1, [r2]
+  ce146c:	1e4b      	subs	r3, r1, #1
+  ce146e:	e842 3500 	strex	r5, r3, [r2]
+  ce1472:	2d00      	cmp	r5, #0
+  ce1474:	d1f8      	bne.n	ce1468 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3f4>
+  ce1476:	f3bf 8f5b 	dmb	ish
+  ce147a:	4665      	mov	r5, ip
+  ce147c:	e049      	b.n	ce1512 <ResourcePacksInfoPacket::read(BinaryStream&)+0x49e>
+  ce147e:	1f0a      	subs	r2, r1, #4
+  ce1480:	9903      	ldr	r1, [sp, #12]
+  ce1482:	2900      	cmp	r1, #0
+  ce1484:	d04b      	beq.n	ce151e <ResourcePacksInfoPacket::read(BinaryStream&)+0x4aa>
+  ce1486:	46ac      	mov	ip, r5
+  ce1488:	f3bf 8f5b 	dmb	ish
+  ce148c:	e852 1f00 	ldrex	r1, [r2]
+  ce1490:	1e4b      	subs	r3, r1, #1
+  ce1492:	e842 3500 	strex	r5, r3, [r2]
+  ce1496:	2d00      	cmp	r5, #0
+  ce1498:	d1f8      	bne.n	ce148c <ResourcePacksInfoPacket::read(BinaryStream&)+0x418>
+  ce149a:	f3bf 8f5b 	dmb	ish
+  ce149e:	4665      	mov	r5, ip
+  ce14a0:	e040      	b.n	ce1524 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4b0>
+  ce14a2:	1f0a      	subs	r2, r1, #4
+  ce14a4:	9903      	ldr	r1, [sp, #12]
+  ce14a6:	2900      	cmp	r1, #0
+  ce14a8:	d042      	beq.n	ce1530 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4bc>
+  ce14aa:	46ac      	mov	ip, r5
+  ce14ac:	f3bf 8f5b 	dmb	ish
+  ce14b0:	e852 1f00 	ldrex	r1, [r2]
+  ce14b4:	1e4b      	subs	r3, r1, #1
+  ce14b6:	e842 3500 	strex	r5, r3, [r2]
+  ce14ba:	2d00      	cmp	r5, #0
+  ce14bc:	d1f8      	bne.n	ce14b0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x43c>
+  ce14be:	f3bf 8f5b 	dmb	ish
+  ce14c2:	4665      	mov	r5, ip
+  ce14c4:	e037      	b.n	ce1536 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4c2>
+  ce14c6:	1f0a      	subs	r2, r1, #4
+  ce14c8:	9903      	ldr	r1, [sp, #12]
+  ce14ca:	b3d1      	cbz	r1, ce1542 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4ce>
+  ce14cc:	46ac      	mov	ip, r5
+  ce14ce:	f3bf 8f5b 	dmb	ish
+  ce14d2:	e852 1f00 	ldrex	r1, [r2]
+  ce14d6:	1e4b      	subs	r3, r1, #1
+  ce14d8:	e842 3500 	strex	r5, r3, [r2]
+  ce14dc:	2d00      	cmp	r5, #0
+  ce14de:	d1f8      	bne.n	ce14d2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x45e>
+  ce14e0:	f3bf 8f5b 	dmb	ish
+  ce14e4:	4665      	mov	r5, ip
+  ce14e6:	e02f      	b.n	ce1548 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4d4>
+  ce14e8:	6811      	ldr	r1, [r2, #0]
+  ce14ea:	1e4b      	subs	r3, r1, #1
+  ce14ec:	6013      	str	r3, [r2, #0]
+  ce14ee:	2900      	cmp	r1, #0
+  ce14f0:	dc6a      	bgt.n	ce15c8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x554>
+  ce14f2:	a918      	add	r1, sp, #96	; 0x60
+  ce14f4:	f303 dd4e 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce14f8:	e066      	b.n	ce15c8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x554>
+  ce14fa:	6811      	ldr	r1, [r2, #0]
+  ce14fc:	1e4b      	subs	r3, r1, #1
+  ce14fe:	6013      	str	r3, [r2, #0]
+  ce1500:	2900      	cmp	r1, #0
+  ce1502:	dc69      	bgt.n	ce15d8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x564>
+  ce1504:	a918      	add	r1, sp, #96	; 0x60
+  ce1506:	f303 dd45 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce150a:	e065      	b.n	ce15d8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x564>
+  ce150c:	6811      	ldr	r1, [r2, #0]
+  ce150e:	1e4b      	subs	r3, r1, #1
+  ce1510:	6013      	str	r3, [r2, #0]
+  ce1512:	2900      	cmp	r1, #0
+  ce1514:	dc66      	bgt.n	ce15e4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x570>
+  ce1516:	a918      	add	r1, sp, #96	; 0x60
+  ce1518:	f303 dd3c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce151c:	e062      	b.n	ce15e4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x570>
+  ce151e:	6811      	ldr	r1, [r2, #0]
+  ce1520:	1e4b      	subs	r3, r1, #1
+  ce1522:	6013      	str	r3, [r2, #0]
+  ce1524:	2900      	cmp	r1, #0
+  ce1526:	dc63      	bgt.n	ce15f0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x57c>
+  ce1528:	a918      	add	r1, sp, #96	; 0x60
+  ce152a:	f303 dd33 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce152e:	e05f      	b.n	ce15f0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x57c>
+  ce1530:	6811      	ldr	r1, [r2, #0]
+  ce1532:	1e4b      	subs	r3, r1, #1
+  ce1534:	6013      	str	r3, [r2, #0]
+  ce1536:	2900      	cmp	r1, #0
+  ce1538:	dc60      	bgt.n	ce15fc <ResourcePacksInfoPacket::read(BinaryStream&)+0x588>
+  ce153a:	a918      	add	r1, sp, #96	; 0x60
+  ce153c:	f303 dd2a 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1540:	e05c      	b.n	ce15fc <ResourcePacksInfoPacket::read(BinaryStream&)+0x588>
+  ce1542:	6811      	ldr	r1, [r2, #0]
+  ce1544:	1e4b      	subs	r3, r1, #1
+  ce1546:	6013      	str	r3, [r2, #0]
+  ce1548:	2900      	cmp	r1, #0
+  ce154a:	dc5d      	bgt.n	ce1608 <ResourcePacksInfoPacket::read(BinaryStream&)+0x594>
+  ce154c:	a918      	add	r1, sp, #96	; 0x60
+  ce154e:	f303 dd21 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1552:	e059      	b.n	ce1608 <ResourcePacksInfoPacket::read(BinaryStream&)+0x594>
+  ce1554:	4628      	mov	r0, r5
+  ce1556:	4659      	mov	r1, fp
+  ce1558:	f54c e18a 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce155c:	4640      	mov	r0, r8
+  ce155e:	4659      	mov	r1, fp
+  ce1560:	f54c e186 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  ce1564:	4658      	mov	r0, fp
+  ce1566:	4657      	mov	r7, sl
+  ce1568:	4634      	mov	r4, r6
+  ce156a:	f562 e07e 	blx	643668 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+  ce156e:	4683      	mov	fp, r0
+  ce1570:	468a      	mov	sl, r1
+  ce1572:	a809      	add	r0, sp, #36	; 0x24
+  ce1574:	4629      	mov	r1, r5
+  ce1576:	f303 dd87 	bl	17e5088 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x329e0>
+  ce157a:	ae08      	add	r6, sp, #32
+  ce157c:	4641      	mov	r1, r8
+  ce157e:	4630      	mov	r0, r6
+  ce1580:	f303 dd82 	bl	17e5088 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x329e0>
+  ce1584:	46a8      	mov	r8, r5
+  ce1586:	4625      	mov	r5, r4
+  ce1588:	a909      	add	r1, sp, #36	; 0x24
+  ce158a:	4628      	mov	r0, r5
+  ce158c:	4632      	mov	r2, r6
+  ce158e:	f56a e536 	blx	64bffc <PackIdVersion::PackIdVersion(std::string const&, std::string const&)@plt>
+  ce1592:	e9c7 ba00 	strd	fp, sl, [r7]
+  ce1596:	46ba      	mov	sl, r7
+  ce1598:	4648      	mov	r0, r9
+  ce159a:	4629      	mov	r1, r5
+  ce159c:	f302 db2e 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce15a0:	462e      	mov	r6, r5
+  ce15a2:	9905      	ldr	r1, [sp, #20]
+  ce15a4:	f109 0004 	add.w	r0, r9, #4
+  ce15a8:	f302 db28 	bl	17e3bfc <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x31554>
+  ce15ac:	e9da 0100 	ldrd	r0, r1, [sl]
+  ce15b0:	4645      	mov	r5, r8
+  ce15b2:	e9c9 0102 	strd	r0, r1, [r9, #8]
+  ce15b6:	990b      	ldr	r1, [sp, #44]	; 0x2c
+  ce15b8:	9c04      	ldr	r4, [sp, #16]
+  ce15ba:	f8dd b01c 	ldr.w	fp, [sp, #28]
+  ce15be:	f1a1 000c 	sub.w	r0, r1, #12
+  ce15c2:	42a0      	cmp	r0, r4
+  ce15c4:	f47f af25 	bne.w	ce1412 <ResourcePacksInfoPacket::read(BinaryStream&)+0x39e>
+  ce15c8:	990a      	ldr	r1, [sp, #40]	; 0x28
+  ce15ca:	f10d 0838 	add.w	r8, sp, #56	; 0x38
+  ce15ce:	f1a1 000c 	sub.w	r0, r1, #12
+  ce15d2:	42a0      	cmp	r0, r4
+  ce15d4:	f47f af2f 	bne.w	ce1436 <ResourcePacksInfoPacket::read(BinaryStream&)+0x3c2>
+  ce15d8:	9908      	ldr	r1, [sp, #32]
+  ce15da:	f1a1 000c 	sub.w	r0, r1, #12
+  ce15de:	42a0      	cmp	r0, r4
+  ce15e0:	f47f af3b 	bne.w	ce145a <ResourcePacksInfoPacket::read(BinaryStream&)+0x3e6>
+  ce15e4:	9909      	ldr	r1, [sp, #36]	; 0x24
+  ce15e6:	f1a1 000c 	sub.w	r0, r1, #12
+  ce15ea:	42a0      	cmp	r0, r4
+  ce15ec:	f47f af47 	bne.w	ce147e <ResourcePacksInfoPacket::read(BinaryStream&)+0x40a>
+  ce15f0:	990e      	ldr	r1, [sp, #56]	; 0x38
+  ce15f2:	f1a1 000c 	sub.w	r0, r1, #12
+  ce15f6:	42a0      	cmp	r0, r4
+  ce15f8:	f47f af53 	bne.w	ce14a2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x42e>
+  ce15fc:	990f      	ldr	r1, [sp, #60]	; 0x3c
+  ce15fe:	f1a1 000c 	sub.w	r0, r1, #12
+  ce1602:	42a0      	cmp	r0, r4
+  ce1604:	f47f af5f 	bne.w	ce14c6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x452>
+  ce1608:	f109 0910 	add.w	r9, r9, #16
+  ce160c:	9806      	ldr	r0, [sp, #24]
+  ce160e:	4581      	cmp	r9, r0
+  ce1610:	d1a0      	bne.n	ce1554 <ResourcePacksInfoPacket::read(BinaryStream&)+0x4e0>
+  ce1612:	b019      	add	sp, #100	; 0x64
+  ce1614:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  ce1618:	4604      	mov	r4, r0
+  ce161a:	4eb4      	ldr	r6, [pc, #720]	; (ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>)
+  ce161c:	4db5      	ldr	r5, [pc, #724]	; (ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>)
+  ce161e:	e043      	b.n	ce16a8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x634>
+  ce1620:	4ac0      	ldr	r2, [pc, #768]	; (ce1924 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b0>)
+  ce1622:	4604      	mov	r4, r0
+  ce1624:	4eb1      	ldr	r6, [pc, #708]	; (ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>)
+  ce1626:	447a      	add	r2, pc
+  ce1628:	990b      	ldr	r1, [sp, #44]	; 0x2c
+  ce162a:	4db2      	ldr	r5, [pc, #712]	; (ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>)
+  ce162c:	f1a1 000c 	sub.w	r0, r1, #12
+  ce1630:	58b2      	ldr	r2, [r6, r2]
+  ce1632:	4290      	cmp	r0, r2
+  ce1634:	f040 8124 	bne.w	ce1880 <ResourcePacksInfoPacket::read(BinaryStream&)+0x80c>
+  ce1638:	48bc      	ldr	r0, [pc, #752]	; (ce192c <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b8>)
+  ce163a:	990a      	ldr	r1, [sp, #40]	; 0x28
+  ce163c:	4478      	add	r0, pc
+  ce163e:	5832      	ldr	r2, [r6, r0]
+  ce1640:	f1a1 000c 	sub.w	r0, r1, #12
+  ce1644:	4290      	cmp	r0, r2
+  ce1646:	d01d      	beq.n	ce1684 <ResourcePacksInfoPacket::read(BinaryStream&)+0x610>
+  ce1648:	4ab9      	ldr	r2, [pc, #740]	; (ce1930 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8bc>)
+  ce164a:	447a      	add	r2, pc
+  ce164c:	58ab      	ldr	r3, [r5, r2]
+  ce164e:	1f0a      	subs	r2, r1, #4
+  ce1650:	2b00      	cmp	r3, #0
+  ce1652:	f000 8130 	beq.w	ce18b6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x842>
+  ce1656:	f3bf 8f5b 	dmb	ish
+  ce165a:	e852 1f00 	ldrex	r1, [r2]
+  ce165e:	1e4b      	subs	r3, r1, #1
+  ce1660:	e842 3700 	strex	r7, r3, [r2]
+  ce1664:	2f00      	cmp	r7, #0
+  ce1666:	d1f8      	bne.n	ce165a <ResourcePacksInfoPacket::read(BinaryStream&)+0x5e6>
+  ce1668:	f3bf 8f5b 	dmb	ish
+  ce166c:	e126      	b.n	ce18bc <ResourcePacksInfoPacket::read(BinaryStream&)+0x848>
+  ce166e:	4604      	mov	r4, r0
+  ce1670:	4e9e      	ldr	r6, [pc, #632]	; (ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>)
+  ce1672:	4da0      	ldr	r5, [pc, #640]	; (ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>)
+  ce1674:	e020      	b.n	ce16b8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x644>
+  ce1676:	4604      	mov	r4, r0
+  ce1678:	4e9c      	ldr	r6, [pc, #624]	; (ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>)
+  ce167a:	4d9e      	ldr	r5, [pc, #632]	; (ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>)
+  ce167c:	e00b      	b.n	ce1696 <ResourcePacksInfoPacket::read(BinaryStream&)+0x622>
+  ce167e:	4604      	mov	r4, r0
+  ce1680:	4e9a      	ldr	r6, [pc, #616]	; (ce18ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x878>)
+  ce1682:	4d9c      	ldr	r5, [pc, #624]	; (ce18f4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x880>)
+  ce1684:	48ab      	ldr	r0, [pc, #684]	; (ce1934 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8c0>)
+  ce1686:	9908      	ldr	r1, [sp, #32]
+  ce1688:	4478      	add	r0, pc
+  ce168a:	5832      	ldr	r2, [r6, r0]
+  ce168c:	f1a1 000c 	sub.w	r0, r1, #12
+  ce1690:	4290      	cmp	r0, r2
+  ce1692:	f040 80c6 	bne.w	ce1822 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7ae>
+  ce1696:	48a9      	ldr	r0, [pc, #676]	; (ce193c <ResourcePacksInfoPacket::read(BinaryStream&)+0x8c8>)
+  ce1698:	9909      	ldr	r1, [sp, #36]	; 0x24
+  ce169a:	4478      	add	r0, pc
+  ce169c:	5832      	ldr	r2, [r6, r0]
+  ce169e:	f1a1 000c 	sub.w	r0, r1, #12
+  ce16a2:	4290      	cmp	r0, r2
+  ce16a4:	f040 8097 	bne.w	ce17d6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x762>
+  ce16a8:	48a6      	ldr	r0, [pc, #664]	; (ce1944 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8d0>)
+  ce16aa:	990e      	ldr	r1, [sp, #56]	; 0x38
+  ce16ac:	4478      	add	r0, pc
+  ce16ae:	5832      	ldr	r2, [r6, r0]
+  ce16b0:	f1a1 000c 	sub.w	r0, r1, #12
+  ce16b4:	4290      	cmp	r0, r2
+  ce16b6:	d160      	bne.n	ce177a <ResourcePacksInfoPacket::read(BinaryStream&)+0x706>
+  ce16b8:	48a4      	ldr	r0, [pc, #656]	; (ce194c <ResourcePacksInfoPacket::read(BinaryStream&)+0x8d8>)
+  ce16ba:	990f      	ldr	r1, [sp, #60]	; 0x3c
+  ce16bc:	4478      	add	r0, pc
+  ce16be:	5832      	ldr	r2, [r6, r0]
+  ce16c0:	f1a1 000c 	sub.w	r0, r1, #12
+  ce16c4:	4290      	cmp	r0, r2
+  ce16c6:	d017      	beq.n	ce16f8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x684>
+  ce16c8:	4aa1      	ldr	r2, [pc, #644]	; (ce1950 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8dc>)
+  ce16ca:	447a      	add	r2, pc
+  ce16cc:	58ab      	ldr	r3, [r5, r2]
+  ce16ce:	1f0a      	subs	r2, r1, #4
+  ce16d0:	2b00      	cmp	r3, #0
+  ce16d2:	f000 8104 	beq.w	ce18de <ResourcePacksInfoPacket::read(BinaryStream&)+0x86a>
+  ce16d6:	f3bf 8f5b 	dmb	ish
+  ce16da:	e852 1f00 	ldrex	r1, [r2]
+  ce16de:	1e4b      	subs	r3, r1, #1
+  ce16e0:	e842 3700 	strex	r7, r3, [r2]
+  ce16e4:	2f00      	cmp	r7, #0
+  ce16e6:	d1f8      	bne.n	ce16da <ResourcePacksInfoPacket::read(BinaryStream&)+0x666>
+  ce16e8:	f3bf 8f5b 	dmb	ish
+  ce16ec:	2900      	cmp	r1, #0
+  ce16ee:	bfdc      	itt	le
+  ce16f0:	f10d 0160 	addle.w	r1, sp, #96	; 0x60
+  ce16f4:	f303 dc4e 	blle	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce16f8:	4620      	mov	r0, r4
+  ce16fa:	f549 e39c 	blx	62ae34 <_Unwind_Resume@plt>
+  ce16fe:	4a85      	ldr	r2, [pc, #532]	; (ce1914 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8a0>)
+  ce1700:	447a      	add	r2, pc
+  ce1702:	58ab      	ldr	r3, [r5, r2]
+  ce1704:	1f0a      	subs	r2, r1, #4
+  ce1706:	b1e3      	cbz	r3, ce1742 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ce>
+  ce1708:	f3bf 8f5b 	dmb	ish
+  ce170c:	e852 1f00 	ldrex	r1, [r2]
+  ce1710:	1e4b      	subs	r3, r1, #1
+  ce1712:	e842 3700 	strex	r7, r3, [r2]
+  ce1716:	2f00      	cmp	r7, #0
+  ce1718:	d1f8      	bne.n	ce170c <ResourcePacksInfoPacket::read(BinaryStream&)+0x698>
+  ce171a:	f3bf 8f5b 	dmb	ish
+  ce171e:	e013      	b.n	ce1748 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6d4>
+  ce1720:	4a7a      	ldr	r2, [pc, #488]	; (ce190c <ResourcePacksInfoPacket::read(BinaryStream&)+0x898>)
+  ce1722:	447a      	add	r2, pc
+  ce1724:	58ab      	ldr	r3, [r5, r2]
+  ce1726:	1f0a      	subs	r2, r1, #4
+  ce1728:	b3cb      	cbz	r3, ce179e <ResourcePacksInfoPacket::read(BinaryStream&)+0x72a>
+  ce172a:	f3bf 8f5b 	dmb	ish
+  ce172e:	e852 1f00 	ldrex	r1, [r2]
+  ce1732:	1e4b      	subs	r3, r1, #1
+  ce1734:	e842 3700 	strex	r7, r3, [r2]
+  ce1738:	2f00      	cmp	r7, #0
+  ce173a:	d1f8      	bne.n	ce172e <ResourcePacksInfoPacket::read(BinaryStream&)+0x6ba>
+  ce173c:	f3bf 8f5b 	dmb	ish
+  ce1740:	e030      	b.n	ce17a4 <ResourcePacksInfoPacket::read(BinaryStream&)+0x730>
+  ce1742:	6811      	ldr	r1, [r2, #0]
+  ce1744:	1e4b      	subs	r3, r1, #1
+  ce1746:	6013      	str	r3, [r2, #0]
+  ce1748:	2900      	cmp	r1, #0
+  ce174a:	f73f ae44 	bgt.w	ce13d6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x362>
+  ce174e:	a918      	add	r1, sp, #96	; 0x60
+  ce1750:	f303 dc20 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1754:	e63f      	b.n	ce13d6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x362>
+  ce1756:	4a6b      	ldr	r2, [pc, #428]	; (ce1904 <ResourcePacksInfoPacket::read(BinaryStream&)+0x890>)
+  ce1758:	447a      	add	r2, pc
+  ce175a:	58ab      	ldr	r3, [r5, r2]
+  ce175c:	1f0a      	subs	r2, r1, #4
+  ce175e:	2b00      	cmp	r3, #0
+  ce1760:	d04b      	beq.n	ce17fa <ResourcePacksInfoPacket::read(BinaryStream&)+0x786>
+  ce1762:	f3bf 8f5b 	dmb	ish
+  ce1766:	e852 1f00 	ldrex	r1, [r2]
+  ce176a:	1e4b      	subs	r3, r1, #1
+  ce176c:	e842 3700 	strex	r7, r3, [r2]
+  ce1770:	2f00      	cmp	r7, #0
+  ce1772:	d1f8      	bne.n	ce1766 <ResourcePacksInfoPacket::read(BinaryStream&)+0x6f2>
+  ce1774:	f3bf 8f5b 	dmb	ish
+  ce1778:	e042      	b.n	ce1800 <ResourcePacksInfoPacket::read(BinaryStream&)+0x78c>
+  ce177a:	4a73      	ldr	r2, [pc, #460]	; (ce1948 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8d4>)
+  ce177c:	447a      	add	r2, pc
+  ce177e:	58ab      	ldr	r3, [r5, r2]
+  ce1780:	1f0a      	subs	r2, r1, #4
+  ce1782:	2b00      	cmp	r3, #0
+  ce1784:	d043      	beq.n	ce180e <ResourcePacksInfoPacket::read(BinaryStream&)+0x79a>
+  ce1786:	f3bf 8f5b 	dmb	ish
+  ce178a:	e852 1f00 	ldrex	r1, [r2]
+  ce178e:	1e4b      	subs	r3, r1, #1
+  ce1790:	e842 3700 	strex	r7, r3, [r2]
+  ce1794:	2f00      	cmp	r7, #0
+  ce1796:	d1f8      	bne.n	ce178a <ResourcePacksInfoPacket::read(BinaryStream&)+0x716>
+  ce1798:	f3bf 8f5b 	dmb	ish
+  ce179c:	e03a      	b.n	ce1814 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7a0>
+  ce179e:	6811      	ldr	r1, [r2, #0]
+  ce17a0:	1e4b      	subs	r3, r1, #1
+  ce17a2:	6013      	str	r3, [r2, #0]
+  ce17a4:	2900      	cmp	r1, #0
+  ce17a6:	f73f ae0c 	bgt.w	ce13c2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x34e>
+  ce17aa:	a918      	add	r1, sp, #96	; 0x60
+  ce17ac:	f303 dbf2 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce17b0:	e607      	b.n	ce13c2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x34e>
+  ce17b2:	4a4f      	ldr	r2, [pc, #316]	; (ce18f0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x87c>)
+  ce17b4:	447a      	add	r2, pc
+  ce17b6:	58ab      	ldr	r3, [r5, r2]
+  ce17b8:	1f0a      	subs	r2, r1, #4
+  ce17ba:	2b00      	cmp	r3, #0
+  ce17bc:	d04c      	beq.n	ce1858 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7e4>
+  ce17be:	f3bf 8f5b 	dmb	ish
+  ce17c2:	e852 1f00 	ldrex	r1, [r2]
+  ce17c6:	1e4b      	subs	r3, r1, #1
+  ce17c8:	e842 3700 	strex	r7, r3, [r2]
+  ce17cc:	2f00      	cmp	r7, #0
+  ce17ce:	d1f8      	bne.n	ce17c2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x74e>
+  ce17d0:	f3bf 8f5b 	dmb	ish
+  ce17d4:	e043      	b.n	ce185e <ResourcePacksInfoPacket::read(BinaryStream&)+0x7ea>
+  ce17d6:	4a5a      	ldr	r2, [pc, #360]	; (ce1940 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8cc>)
+  ce17d8:	447a      	add	r2, pc
+  ce17da:	58ab      	ldr	r3, [r5, r2]
+  ce17dc:	1f0a      	subs	r2, r1, #4
+  ce17de:	2b00      	cmp	r3, #0
+  ce17e0:	d044      	beq.n	ce186c <ResourcePacksInfoPacket::read(BinaryStream&)+0x7f8>
+  ce17e2:	f3bf 8f5b 	dmb	ish
+  ce17e6:	e852 1f00 	ldrex	r1, [r2]
+  ce17ea:	1e4b      	subs	r3, r1, #1
+  ce17ec:	e842 3700 	strex	r7, r3, [r2]
+  ce17f0:	2f00      	cmp	r7, #0
+  ce17f2:	d1f8      	bne.n	ce17e6 <ResourcePacksInfoPacket::read(BinaryStream&)+0x772>
+  ce17f4:	f3bf 8f5b 	dmb	ish
+  ce17f8:	e03b      	b.n	ce1872 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7fe>
+  ce17fa:	6811      	ldr	r1, [r2, #0]
+  ce17fc:	1e4b      	subs	r3, r1, #1
+  ce17fe:	6013      	str	r3, [r2, #0]
+  ce1800:	2900      	cmp	r1, #0
+  ce1802:	f73f add4 	bgt.w	ce13ae <ResourcePacksInfoPacket::read(BinaryStream&)+0x33a>
+  ce1806:	a918      	add	r1, sp, #96	; 0x60
+  ce1808:	f303 dbc4 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce180c:	e5cf      	b.n	ce13ae <ResourcePacksInfoPacket::read(BinaryStream&)+0x33a>
+  ce180e:	6811      	ldr	r1, [r2, #0]
+  ce1810:	1e4b      	subs	r3, r1, #1
+  ce1812:	6013      	str	r3, [r2, #0]
+  ce1814:	2900      	cmp	r1, #0
+  ce1816:	f73f af4f 	bgt.w	ce16b8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x644>
+  ce181a:	a918      	add	r1, sp, #96	; 0x60
+  ce181c:	f303 dbba 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1820:	e74a      	b.n	ce16b8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x644>
+  ce1822:	4a45      	ldr	r2, [pc, #276]	; (ce1938 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8c4>)
+  ce1824:	447a      	add	r2, pc
+  ce1826:	58ab      	ldr	r3, [r5, r2]
+  ce1828:	1f0a      	subs	r2, r1, #4
+  ce182a:	b3d3      	cbz	r3, ce18a2 <ResourcePacksInfoPacket::read(BinaryStream&)+0x82e>
+  ce182c:	f3bf 8f5b 	dmb	ish
+  ce1830:	e852 1f00 	ldrex	r1, [r2]
+  ce1834:	1e4b      	subs	r3, r1, #1
+  ce1836:	e842 3700 	strex	r7, r3, [r2]
+  ce183a:	2f00      	cmp	r7, #0
+  ce183c:	d1f8      	bne.n	ce1830 <ResourcePacksInfoPacket::read(BinaryStream&)+0x7bc>
+  ce183e:	f3bf 8f5b 	dmb	ish
+  ce1842:	e031      	b.n	ce18a8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x834>
+  ce1844:	6811      	ldr	r1, [r2, #0]
+  ce1846:	1e4b      	subs	r3, r1, #1
+  ce1848:	6013      	str	r3, [r2, #0]
+  ce184a:	2900      	cmp	r1, #0
+  ce184c:	f73f ada5 	bgt.w	ce139a <ResourcePacksInfoPacket::read(BinaryStream&)+0x326>
+  ce1850:	a918      	add	r1, sp, #96	; 0x60
+  ce1852:	f303 db9f 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce1856:	e5a0      	b.n	ce139a <ResourcePacksInfoPacket::read(BinaryStream&)+0x326>
+  ce1858:	6811      	ldr	r1, [r2, #0]
+  ce185a:	1e4b      	subs	r3, r1, #1
+  ce185c:	6013      	str	r3, [r2, #0]
+  ce185e:	2900      	cmp	r1, #0
+  ce1860:	f73f ad6d 	bgt.w	ce133e <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ca>
+  ce1864:	a918      	add	r1, sp, #96	; 0x60
+  ce1866:	f303 db95 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce186a:	e568      	b.n	ce133e <ResourcePacksInfoPacket::read(BinaryStream&)+0x2ca>
+  ce186c:	6811      	ldr	r1, [r2, #0]
+  ce186e:	1e4b      	subs	r3, r1, #1
+  ce1870:	6013      	str	r3, [r2, #0]
+  ce1872:	2900      	cmp	r1, #0
+  ce1874:	f73f af18 	bgt.w	ce16a8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x634>
+  ce1878:	a918      	add	r1, sp, #96	; 0x60
+  ce187a:	f303 db8b 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce187e:	e713      	b.n	ce16a8 <ResourcePacksInfoPacket::read(BinaryStream&)+0x634>
+  ce1880:	4a29      	ldr	r2, [pc, #164]	; (ce1928 <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b4>)
+  ce1882:	447a      	add	r2, pc
+  ce1884:	58ab      	ldr	r3, [r5, r2]
+  ce1886:	1f0a      	subs	r2, r1, #4
+  ce1888:	b1fb      	cbz	r3, ce18ca <ResourcePacksInfoPacket::read(BinaryStream&)+0x856>
+  ce188a:	f3bf 8f5b 	dmb	ish
+  ce188e:	e852 1f00 	ldrex	r1, [r2]
+  ce1892:	1e4b      	subs	r3, r1, #1
+  ce1894:	e842 3700 	strex	r7, r3, [r2]
+  ce1898:	2f00      	cmp	r7, #0
+  ce189a:	d1f8      	bne.n	ce188e <ResourcePacksInfoPacket::read(BinaryStream&)+0x81a>
+  ce189c:	f3bf 8f5b 	dmb	ish
+  ce18a0:	e016      	b.n	ce18d0 <ResourcePacksInfoPacket::read(BinaryStream&)+0x85c>
+  ce18a2:	6811      	ldr	r1, [r2, #0]
+  ce18a4:	1e4b      	subs	r3, r1, #1
+  ce18a6:	6013      	str	r3, [r2, #0]
+  ce18a8:	2900      	cmp	r1, #0
+  ce18aa:	f73f aef4 	bgt.w	ce1696 <ResourcePacksInfoPacket::read(BinaryStream&)+0x622>
+  ce18ae:	a918      	add	r1, sp, #96	; 0x60
+  ce18b0:	f303 db70 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce18b4:	e6ef      	b.n	ce1696 <ResourcePacksInfoPacket::read(BinaryStream&)+0x622>
+  ce18b6:	6811      	ldr	r1, [r2, #0]
+  ce18b8:	1e4b      	subs	r3, r1, #1
+  ce18ba:	6013      	str	r3, [r2, #0]
+  ce18bc:	2900      	cmp	r1, #0
+  ce18be:	f73f aee1 	bgt.w	ce1684 <ResourcePacksInfoPacket::read(BinaryStream&)+0x610>
+  ce18c2:	a918      	add	r1, sp, #96	; 0x60
+  ce18c4:	f303 db66 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce18c8:	e6dc      	b.n	ce1684 <ResourcePacksInfoPacket::read(BinaryStream&)+0x610>
+  ce18ca:	6811      	ldr	r1, [r2, #0]
+  ce18cc:	1e4b      	subs	r3, r1, #1
+  ce18ce:	6013      	str	r3, [r2, #0]
+  ce18d0:	2900      	cmp	r1, #0
+  ce18d2:	f73f aeb1 	bgt.w	ce1638 <ResourcePacksInfoPacket::read(BinaryStream&)+0x5c4>
+  ce18d6:	a918      	add	r1, sp, #96	; 0x60
+  ce18d8:	f303 db5c 	bl	17e4f94 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x328ec>
+  ce18dc:	e6ac      	b.n	ce1638 <ResourcePacksInfoPacket::read(BinaryStream&)+0x5c4>
+  ce18de:	6811      	ldr	r1, [r2, #0]
+  ce18e0:	1e4b      	subs	r3, r1, #1
+  ce18e2:	6013      	str	r3, [r2, #0]
+  ce18e4:	e702      	b.n	ce16ec <ResourcePacksInfoPacket::read(BinaryStream&)+0x678>
+  ce18e6:	bf00      	nop
+  ce18e8:	a1b6      	add	r1, pc, #728	; (adr r1, ce1bc4 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::_M_default_append(unsigned int)+0x188>)
+  ce18ea:	00ee      	lsls	r6, r5, #3
+  ce18ec:	9080      	str	r0, [sp, #512]	; 0x200
+  ce18ee:	ffff 9d2c 			; <UNDEFINED> instruction: 0xffff9d2c
+  ce18f2:	00ee      	lsls	r6, r5, #3
+  ce18f4:	9084      	str	r0, [sp, #528]	; 0x210
+  ce18f6:	ffff a19c 	vsra.u64	d26, d12, #1
+  ce18fa:	00ee      	lsls	r6, r5, #3
+  ce18fc:	a18c      	add	r1, pc, #560	; (adr r1, ce1b30 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::_M_default_append(unsigned int)+0xf4>)
+  ce18fe:	00ee      	lsls	r6, r5, #3
+  ce1900:	a140      	add	r1, pc, #256	; (adr r1, ce1a04 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)+0xa0>)
+  ce1902:	00ee      	lsls	r6, r5, #3
+  ce1904:	9d88      	ldr	r5, [sp, #544]	; 0x220
+  ce1906:	00ee      	lsls	r6, r5, #3
+  ce1908:	a12c      	add	r1, pc, #176	; (adr r1, ce19bc <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)+0x58>)
+  ce190a:	00ee      	lsls	r6, r5, #3
+  ce190c:	9dbe      	ldr	r5, [sp, #760]	; 0x2f8
+  ce190e:	00ee      	lsls	r6, r5, #3
+  ce1910:	a118      	add	r1, pc, #96	; (adr r1, ce1974 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)+0x10>)
+  ce1912:	00ee      	lsls	r6, r5, #3
+  ce1914:	9de0      	ldr	r5, [sp, #896]	; 0x380
+  ce1916:	00ee      	lsls	r6, r5, #3
+  ce1918:	a104      	add	r1, pc, #16	; (adr r1, ce192c <ResourcePacksInfoPacket::read(BinaryStream&)+0x8b8>)
+  ce191a:	00ee      	lsls	r6, r5, #3
+  ce191c:	a0f2      	add	r0, pc, #968	; (adr r0, ce1ce8 <ResourcePackStackPacket::~ResourcePackStackPacket()+0xc4>)
+  ce191e:	00ee      	lsls	r6, r5, #3
+  ce1920:	a41c      	add	r4, pc, #112	; (adr r4, ce1994 <std::vector<ResourcePackInfoData, std::allocator<ResourcePackInfoData> >::resize(unsigned int)+0x30>)
+  ce1922:	00ee      	lsls	r6, r5, #3
+  ce1924:	9eba      	ldr	r6, [sp, #744]	; 0x2e8
+  ce1926:	00ee      	lsls	r6, r5, #3
+  ce1928:	9c5e      	ldr	r4, [sp, #376]	; 0x178
+  ce192a:	00ee      	lsls	r6, r5, #3
+  ce192c:	9ea4      	ldr	r6, [sp, #656]	; 0x290
+  ce192e:	00ee      	lsls	r6, r5, #3
+  ce1930:	9e96      	ldr	r6, [sp, #600]	; 0x258
+  ce1932:	00ee      	lsls	r6, r5, #3
+  ce1934:	9e58      	ldr	r6, [sp, #352]	; 0x160
+  ce1936:	00ee      	lsls	r6, r5, #3
+  ce1938:	9cbc      	ldr	r4, [sp, #752]	; 0x2f0
+  ce193a:	00ee      	lsls	r6, r5, #3
+  ce193c:	9e46      	ldr	r6, [sp, #280]	; 0x118
+  ce193e:	00ee      	lsls	r6, r5, #3
+  ce1940:	9d08      	ldr	r5, [sp, #32]
+  ce1942:	00ee      	lsls	r6, r5, #3
+  ce1944:	9e34      	ldr	r6, [sp, #208]	; 0xd0
+  ce1946:	00ee      	lsls	r6, r5, #3
+  ce1948:	9d64      	ldr	r5, [sp, #400]	; 0x190
+  ce194a:	00ee      	lsls	r6, r5, #3
+  ce194c:	9e24      	ldr	r6, [sp, #144]	; 0x90
+  ce194e:	00ee      	lsls	r6, r5, #3
+  ce1950:	9e16      	ldr	r6, [sp, #88]	; 0x58
+  ce1952:	00ee      	lsls	r6, r5, #3
+  ce1954:	a1dc      	add	r1, pc, #880	; (adr r1, ce1cc8 <ResourcePackStackPacket::~ResourcePackStackPacket()+0xa4>)
+  ce1956:	00ee      	lsls	r6, r5, #3

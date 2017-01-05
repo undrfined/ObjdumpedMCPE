@@ -1,0 +1,161 @@
+  7ade50:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  7ade54:	b085      	sub	sp, #20
+  7ade56:	468b      	mov	fp, r1
+  7ade58:	4605      	mov	r5, r0
+  7ade5a:	4658      	mov	r0, fp
+  7ade5c:	f67f ecae 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  7ade60:	7628      	strb	r0, [r5, #24]
+  7ade62:	4658      	mov	r0, fp
+  7ade64:	f67f ecf8 	blx	62d858 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  7ade68:	46aa      	mov	sl, r5
+  7ade6a:	f85a 1f0c 	ldr.w	r1, [sl, #12]!
+  7ade6e:	f8da 4004 	ldr.w	r4, [sl, #4]
+  7ade72:	1a63      	subs	r3, r4, r1
+  7ade74:	109a      	asrs	r2, r3, #2
+  7ade76:	ebb0 0fa3 	cmp.w	r0, r3, asr #2
+  7ade7a:	d906      	bls.n	7ade8a <ResourcePackClientResponsePacket::read(BinaryStream&)+0x3a>
+  7ade7c:	1a81      	subs	r1, r0, r2
+  7ade7e:	4650      	mov	r0, sl
+  7ade80:	f67f ecf0 	blx	62d864 <std::vector<std::string, std::allocator<std::string> >::_M_default_append(unsigned int)@plt>
+  7ade84:	f8d5 e010 	ldr.w	lr, [r5, #16]
+  7ade88:	e03e      	b.n	7adf08 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb8>
+  7ade8a:	4290      	cmp	r0, r2
+  7ade8c:	d23b      	bcs.n	7adf06 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb6>
+  7ade8e:	eb01 0e80 	add.w	lr, r1, r0, lsl #2
+  7ade92:	4574      	cmp	r4, lr
+  7ade94:	d034      	beq.n	7adf00 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb0>
+  7ade96:	4852      	ldr	r0, [pc, #328]	; (7adfe0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x190>)
+  7ade98:	46f1      	mov	r9, lr
+  7ade9a:	4952      	ldr	r1, [pc, #328]	; (7adfe4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  7ade9c:	4478      	add	r0, pc
+  7ade9e:	f851 8000 	ldr.w	r8, [r1, r0]
+  7adea2:	4951      	ldr	r1, [pc, #324]	; (7adfe8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x198>)
+  7adea4:	f851 c000 	ldr.w	ip, [r1, r0]
+  7adea8:	a902      	add	r1, sp, #8
+  7adeaa:	e01f      	b.n	7adeec <ResourcePackClientResponsePacket::read(BinaryStream&)+0x9c>
+  7adeac:	3a04      	subs	r2, #4
+  7adeae:	f1bc 0f00 	cmp.w	ip, #0
+  7adeb2:	d00b      	beq.n	7adecc <ResourcePackClientResponsePacket::read(BinaryStream&)+0x7c>
+  7adeb4:	f3bf 8f5b 	dmb	ish
+  7adeb8:	e852 7f00 	ldrex	r7, [r2]
+  7adebc:	1e7b      	subs	r3, r7, #1
+  7adebe:	e842 3600 	strex	r6, r3, [r2]
+  7adec2:	2e00      	cmp	r6, #0
+  7adec4:	d1f8      	bne.n	7adeb8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x68>
+  7adec6:	f3bf 8f5b 	dmb	ish
+  7adeca:	e002      	b.n	7aded2 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x82>
+  7adecc:	6817      	ldr	r7, [r2, #0]
+  7adece:	1e7b      	subs	r3, r7, #1
+  7aded0:	6013      	str	r3, [r2, #0]
+  7aded2:	2f00      	cmp	r7, #0
+  7aded4:	dc10      	bgt.n	7adef8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa8>
+  7aded6:	4666      	mov	r6, ip
+  7aded8:	460f      	mov	r7, r1
+  7adeda:	f8cd e000 	str.w	lr, [sp]
+  7adede:	f2db ef36 	blx	a89d4c <MinecraftInputMappingFactory::_addInvariantGamePlayTouchControls(TouchInputMapping&) const+0xe08>
+  7adee2:	f8dd e000 	ldr.w	lr, [sp]
+  7adee6:	4639      	mov	r1, r7
+  7adee8:	46b4      	mov	ip, r6
+  7adeea:	e005      	b.n	7adef8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa8>
+  7adeec:	f8d9 2000 	ldr.w	r2, [r9]
+  7adef0:	f1a2 000c 	sub.w	r0, r2, #12
+  7adef4:	4540      	cmp	r0, r8
+  7adef6:	d1d9      	bne.n	7adeac <ResourcePackClientResponsePacket::read(BinaryStream&)+0x5c>
+  7adef8:	f109 0904 	add.w	r9, r9, #4
+  7adefc:	45a1      	cmp	r9, r4
+  7adefe:	d1f5      	bne.n	7adeec <ResourcePackClientResponsePacket::read(BinaryStream&)+0x9c>
+  7adf00:	f8c5 e010 	str.w	lr, [r5, #16]
+  7adf04:	e000      	b.n	7adf08 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xb8>
+  7adf06:	46a6      	mov	lr, r4
+  7adf08:	f8da 9000 	ldr.w	r9, [sl]
+  7adf0c:	ebae 0009 	sub.w	r0, lr, r9
+  7adf10:	2801      	cmp	r0, #1
+  7adf12:	db3b      	blt.n	7adf8c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x13c>
+  7adf14:	4837      	ldr	r0, [pc, #220]	; (7adff4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x1a4>)
+  7adf16:	f10d 0a04 	add.w	sl, sp, #4
+  7adf1a:	4932      	ldr	r1, [pc, #200]	; (7adfe4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  7adf1c:	2700      	movs	r7, #0
+  7adf1e:	4e32      	ldr	r6, [pc, #200]	; (7adfe8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x198>)
+  7adf20:	4478      	add	r0, pc
+  7adf22:	580c      	ldr	r4, [r1, r0]
+  7adf24:	f856 8000 	ldr.w	r8, [r6, r0]
+  7adf28:	e01a      	b.n	7adf60 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x110>
+  7adf2a:	1f0a      	subs	r2, r1, #4
+  7adf2c:	f1b8 0f00 	cmp.w	r8, #0
+  7adf30:	d00d      	beq.n	7adf4e <ResourcePackClientResponsePacket::read(BinaryStream&)+0xfe>
+  7adf32:	46b4      	mov	ip, r6
+  7adf34:	f3bf 8f5b 	dmb	ish
+  7adf38:	e852 1f00 	ldrex	r1, [r2]
+  7adf3c:	1e4b      	subs	r3, r1, #1
+  7adf3e:	e842 3600 	strex	r6, r3, [r2]
+  7adf42:	2e00      	cmp	r6, #0
+  7adf44:	d1f8      	bne.n	7adf38 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xe8>
+  7adf46:	f3bf 8f5b 	dmb	ish
+  7adf4a:	4666      	mov	r6, ip
+  7adf4c:	e002      	b.n	7adf54 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x104>
+  7adf4e:	6811      	ldr	r1, [r2, #0]
+  7adf50:	1e4b      	subs	r3, r1, #1
+  7adf52:	6013      	str	r3, [r2, #0]
+  7adf54:	2900      	cmp	r1, #0
+  7adf56:	dc11      	bgt.n	7adf7c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x12c>
+  7adf58:	a904      	add	r1, sp, #16
+  7adf5a:	f2db eef8 	blx	a89d4c <MinecraftInputMappingFactory::_addInvariantGamePlayTouchControls(TouchInputMapping&) const+0xe08>
+  7adf5e:	e00d      	b.n	7adf7c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x12c>
+  7adf60:	4650      	mov	r0, sl
+  7adf62:	4659      	mov	r1, fp
+  7adf64:	f67f ec84 	blx	62d870 <ReadOnlyBinaryStream::getString()@plt>
+  7adf68:	eb09 0087 	add.w	r0, r9, r7, lsl #2
+  7adf6c:	4651      	mov	r1, sl
+  7adf6e:	f2db ef3e 	blx	a89dec <MinecraftInputMappingFactory::_addInvariantGamePlayTouchControls(TouchInputMapping&) const+0xea8>
+  7adf72:	9901      	ldr	r1, [sp, #4]
+  7adf74:	f1a1 000c 	sub.w	r0, r1, #12
+  7adf78:	42a0      	cmp	r0, r4
+  7adf7a:	d1d6      	bne.n	7adf2a <ResourcePackClientResponsePacket::read(BinaryStream&)+0xda>
+  7adf7c:	e9d5 9003 	ldrd	r9, r0, [r5, #12]
+  7adf80:	3701      	adds	r7, #1
+  7adf82:	eba0 0009 	sub.w	r0, r0, r9
+  7adf86:	ebb7 0fa0 	cmp.w	r7, r0, asr #2
+  7adf8a:	dbe9      	blt.n	7adf60 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x110>
+  7adf8c:	b005      	add	sp, #20
+  7adf8e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  7adf92:	4a16      	ldr	r2, [pc, #88]	; (7adfec <ResourcePackClientResponsePacket::read(BinaryStream&)+0x19c>)
+  7adf94:	4604      	mov	r4, r0
+  7adf96:	4b13      	ldr	r3, [pc, #76]	; (7adfe4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x194>)
+  7adf98:	447a      	add	r2, pc
+  7adf9a:	9901      	ldr	r1, [sp, #4]
+  7adf9c:	f1a1 000c 	sub.w	r0, r1, #12
+  7adfa0:	589a      	ldr	r2, [r3, r2]
+  7adfa2:	4290      	cmp	r0, r2
+  7adfa4:	d015      	beq.n	7adfd2 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x182>
+  7adfa6:	4a12      	ldr	r2, [pc, #72]	; (7adff0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x1a0>)
+  7adfa8:	447a      	add	r2, pc
+  7adfaa:	58b3      	ldr	r3, [r6, r2]
+  7adfac:	1f0a      	subs	r2, r1, #4
+  7adfae:	b19b      	cbz	r3, 7adfd8 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x188>
+  7adfb0:	f3bf 8f5b 	dmb	ish
+  7adfb4:	e852 1f00 	ldrex	r1, [r2]
+  7adfb8:	1e4b      	subs	r3, r1, #1
+  7adfba:	e842 3700 	strex	r7, r3, [r2]
+  7adfbe:	2f00      	cmp	r7, #0
+  7adfc0:	d1f8      	bne.n	7adfb4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x164>
+  7adfc2:	f3bf 8f5b 	dmb	ish
+  7adfc6:	2900      	cmp	r1, #0
+  7adfc8:	bfdc      	itt	le
+  7adfca:	f10d 010c 	addle.w	r1, sp, #12
+  7adfce:	f2db eebe 	blxle	a89d4c <MinecraftInputMappingFactory::_addInvariantGamePlayTouchControls(TouchInputMapping&) const+0xe08>
+  7adfd2:	4620      	mov	r0, r4
+  7adfd4:	f67c ef2e 	blx	62ae34 <_Unwind_Resume@plt>
+  7adfd8:	6811      	ldr	r1, [r2, #0]
+  7adfda:	1e4b      	subs	r3, r1, #1
+  7adfdc:	6013      	str	r3, [r2, #0]
+  7adfde:	e7f2      	b.n	7adfc6 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x176>
+  7adfe0:	d644      	bvs.n	7ae06c <std::vector<std::string, std::allocator<std::string> >::_M_default_append(unsigned int)+0x68>
+  7adfe2:	0141      	lsls	r1, r0, #5
+  7adfe4:	9080      	str	r0, [sp, #512]	; 0x200
+  7adfe6:	ffff 9084 	vaddl.u<illegal width 64>	<illegal reg q12.5>, d31, d4
+  7adfea:	ffff d548 	vmls.f<illegal width 64>	<illegal reg q14.5>, <illegal reg q7.5>, d8[0]
+  7adfee:	0141      	lsls	r1, r0, #5
+  7adff0:	d538      	bpl.n	7ae064 <std::vector<std::string, std::allocator<std::string> >::_M_default_append(unsigned int)+0x60>
+  7adff2:	0141      	lsls	r1, r0, #5
+  7adff4:	d5c0      	bpl.n	7adf78 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x128>
+  7adff6:	0141      	lsls	r1, r0, #5

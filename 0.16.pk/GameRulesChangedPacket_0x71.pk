@@ -1,0 +1,4 @@
+  ce6038:	f100 020c 	add.w	r2, r0, #12
+  ce603c:	4608      	mov	r0, r1
+  ce603e:	4611      	mov	r1, r2
+  ce6040:	f19c b858 	b.w	e820f4 <SystemFilePicker::~SystemFilePicker()+0x1450>

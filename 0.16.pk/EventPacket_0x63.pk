@@ -1,0 +1,72 @@
+  cea990:	b5b0      	push	{r4, r5, r7, lr}
+  cea992:	b082      	sub	sp, #8
+  cea994:	4604      	mov	r4, r0
+  cea996:	4668      	mov	r0, sp
+  cea998:	460d      	mov	r5, r1
+  cea99a:	f558 e678 	blx	64368c <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+  cea99e:	e9dd 0100 	ldrd	r0, r1, [sp]
+  cea9a2:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  cea9a6:	4628      	mov	r0, r5
+  cea9a8:	f542 e726 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cea9ac:	61a0      	str	r0, [r4, #24]
+  cea9ae:	4628      	mov	r0, r5
+  cea9b0:	f542 e704 	blx	62d7bc <ReadOnlyBinaryStream::getByte()@plt>
+  cea9b4:	7720      	strb	r0, [r4, #28]
+  cea9b6:	69a0      	ldr	r0, [r4, #24]
+  cea9b8:	2807      	cmp	r0, #7
+  cea9ba:	d813      	bhi.n	cea9e4 <EventPacket::read(BinaryStream&)+0x54>
+  cea9bc:	e8df f000 	tbb	[pc, r0]
+  cea9c0:	1404      	asrs	r4, r0, #16
+  cea9c2:	0a04      	lsrs	r4, r0, #8
+  cea9c4:	2a1f      	cmp	r2, #31
+  cea9c6:	380a      	subs	r0, #10
+  cea9c8:	4628      	mov	r0, r5
+  cea9ca:	f542 e716 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cea9ce:	6220      	str	r0, [r4, #32]
+  cea9d0:	b002      	add	sp, #8
+  cea9d2:	bdb0      	pop	{r4, r5, r7, pc}
+  cea9d4:	4628      	mov	r0, r5
+  cea9d6:	f542 e710 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cea9da:	6220      	str	r0, [r4, #32]
+  cea9dc:	4628      	mov	r0, r5
+  cea9de:	f542 e70c 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cea9e2:	6260      	str	r0, [r4, #36]	; 0x24
+  cea9e4:	b002      	add	sp, #8
+  cea9e6:	bdb0      	pop	{r4, r5, r7, pc}
+  cea9e8:	4628      	mov	r0, r5
+  cea9ea:	f542 e706 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  cea9ee:	62a0      	str	r0, [r4, #40]	; 0x28
+  cea9f0:	4628      	mov	r0, r5
+  cea9f2:	f559 e386 	blx	644100 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  cea9f6:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  cea9fa:	b002      	add	sp, #8
+  cea9fc:	bdb0      	pop	{r4, r5, r7, pc}
+  cea9fe:	4628      	mov	r0, r5
+  ceaa00:	f559 e37e 	blx	644100 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  ceaa04:	e9c4 0108 	strd	r0, r1, [r4, #32]
+  ceaa08:	4628      	mov	r0, r5
+  ceaa0a:	f559 e37a 	blx	644100 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  ceaa0e:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+  ceaa12:	e016      	b.n	ceaa42 <EventPacket::read(BinaryStream&)+0xb2>
+  ceaa14:	4628      	mov	r0, r5
+  ceaa16:	f550 e33e 	blx	63b094 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ceaa1a:	6260      	str	r0, [r4, #36]	; 0x24
+  ceaa1c:	4628      	mov	r0, r5
+  ceaa1e:	f542 e6ec 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceaa22:	8420      	strh	r0, [r4, #32]
+  ceaa24:	4628      	mov	r0, r5
+  ceaa26:	f542 e6e8 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceaa2a:	8520      	strh	r0, [r4, #40]	; 0x28
+  ceaa2c:	b002      	add	sp, #8
+  ceaa2e:	bdb0      	pop	{r4, r5, r7, pc}
+  ceaa30:	4628      	mov	r0, r5
+  ceaa32:	f559 e366 	blx	644100 <ReadOnlyBinaryStream::getVarInt64()@plt>
+  ceaa36:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+  ceaa3a:	4628      	mov	r0, r5
+  ceaa3c:	f542 e6dc 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceaa40:	6220      	str	r0, [r4, #32]
+  ceaa42:	4628      	mov	r0, r5
+  ceaa44:	f542 e6d8 	blx	62d7f8 <ReadOnlyBinaryStream::getVarInt()@plt>
+  ceaa48:	6320      	str	r0, [r4, #48]	; 0x30
+  ceaa4a:	b002      	add	sp, #8
+  ceaa4c:	bdb0      	pop	{r4, r5, r7, pc}
